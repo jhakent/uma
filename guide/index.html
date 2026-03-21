@@ -119,37 +119,76 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 /* ── TYPOGRAPHY ── */
 .sl{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px}
 .st{font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.15;color:var(--bright);margin-bottom:14px}
-.sd{font-size:13.5px;font-weight:300;color:var(--dim);line-height:1.9;max-width:540px}
-.bt{font-size:15px;font-weight:700;letter-spacing:-.03em;color:var(--bright);margin-bottom:8px;margin-top:32px}
-.bp{font-size:13px;font-weight:300;color:var(--text);line-height:1.85}
+.sd{font-size:14.5px;font-weight:300;color:var(--dim);line-height:1.9;max-width:560px}
+.bt{font-size:16px;font-weight:700;letter-spacing:-.03em;color:var(--bright);margin-bottom:8px;margin-top:32px}
+.bp{font-size:14px;font-weight:300;color:var(--text);line-height:1.85}
 .bp+.bp{margin-top:8px}
 
-/* ── CONCEPT GRID ── */
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.cc{background:var(--bg-warm);border:1px solid var(--border);border-radius:14px;padding:20px 16px;transition:border-color .3s}
-.cc:hover{border-color:var(--border-s)}
-.ci{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:8px}
-.cc h3{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:4px}
-.cc p{font-size:11.5px;font-weight:300;color:var(--dim);line-height:1.7}
+/* ── WORLD CARDS ── */
+.wc-stack{margin:24px 0;display:flex;flex-direction:column;gap:10px}
+.wc{
+  border-radius:16px;padding:28px 24px;
+  position:relative;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 2px 16px rgba(0,0,0,.04),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.wc:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.07)}
+.wc::before{
+  content:'';position:absolute;inset:0;
+  pointer-events:none;
+}
+.wc.wc-green::before{background:linear-gradient(135deg,rgba(0,169,95,.08),rgba(79,184,230,.04),transparent 70%)}
+.wc.wc-pink::before{background:linear-gradient(135deg,rgba(233,80,152,.07),rgba(79,184,230,.03),transparent 70%)}
+.wc.wc-sky::before{background:linear-gradient(135deg,rgba(79,184,230,.08),rgba(0,169,95,.03),transparent 70%)}
+.wc.wc-neutral::before{background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(79,184,230,.02),transparent 70%)}
+.wc-emoji{font-size:32px;margin-bottom:10px;display:block;position:relative;z-index:1}
+.wc h3{font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px;position:relative;z-index:1}
+.wc p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.8;position:relative;z-index:1}
+.wc-accent{
+  position:absolute;top:-20px;right:-20px;width:100px;height:100px;
+  border-radius:50%;pointer-events:none;opacity:.5;
+}
+.wc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wc-row .wc{padding:22px 20px}
+.wc-row .wc-emoji{font-size:26px;margin-bottom:8px}
+.wc-row .wc h3{font-size:14.5px}
+
+/* ── SIMPLE PAIR CARDS (start tab etc) ── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
+.pair-card{background:var(--bg-warm);border:1px solid var(--border);border-radius:14px;padding:20px 16px;transition:border-color .3s}
+.pair-card:hover{border-color:var(--border-s)}
+.pair-card .pc-emoji{font-size:22px;margin-bottom:6px;display:block}
+.pair-card h3{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:4px}
+.pair-card p{font-size:11.5px;font-weight:300;color:var(--dim);line-height:1.7}
+
+@media(max-width:640px){
+  .wc-row{grid-template-columns:1fr}
+  .wc{padding:24px 20px}
+  .wc h3{font-size:15px}
+  .pair{grid-template-columns:1fr}
+}
 
 /* ── NOTE ── */
 .note{background:linear-gradient(135deg,rgba(0,169,95,.04),rgba(79,184,230,.03));border:1px solid var(--border);border-radius:14px;padding:20px;margin:20px 0}
-.note h3{font-size:13.5px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:5px}
-.note p{font-size:12px;font-weight:300;color:var(--dim);line-height:1.8}
+.note h3{font-size:14.5px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:5px}
+.note p{font-size:13px;font-weight:300;color:var(--dim);line-height:1.8}
 
 /* ── INFO BOX ── */
 .ib{background:var(--bg-warm);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:0 14px 14px 0;padding:16px 18px;margin:18px 0}
 .ib.pk{border-left-color:var(--pink)}.ib.sk{border-left-color:var(--sky)}
 .ib-l{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
 .ib .ib-l{color:var(--green)}.ib.pk .ib-l{color:var(--pink)}.ib.sk .ib-l{color:var(--sky)}
-.ib p{font-size:12px;font-weight:300;color:var(--text);line-height:1.8}
+.ib p{font-size:13px;font-weight:300;color:var(--text);line-height:1.8}
 
 /* ── FEAT BANNER ── */
 .fb{border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden}
 .fb::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;pointer-events:none}
 .fb .fn{font-family:'Outfit',sans-serif;font-size:42px;font-weight:900;color:rgba(0,0,0,.04);line-height:1;margin-bottom:6px}
 .fb h3{font-size:15px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px}
-.fb p{font-size:12.5px;font-weight:300;color:var(--text);line-height:1.85;position:relative;z-index:1}
+.fb p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.85;position:relative;z-index:1}
 
 /* ── SUPPORT TYPE CARDS ── */
 .stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0}
@@ -219,10 +258,68 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 /* ── DIVIDER ── */
 .dv{margin:32px 0}.dv hr{border:none;height:1px;background:linear-gradient(to right,transparent,var(--border-s),transparent)}
 
+/* ── FOOTER CTA ── */
+.f-cta{
+  max-width:720px;margin:0 auto;
+  padding:0 24px 40px;
+}
+.f-cta-box{
+  border-radius:20px;padding:36px 28px;text-align:center;
+  background:linear-gradient(135deg,#1b8a4e,#2bb86a 40%,#4fb8e6 70%,#e95098);
+  position:relative;overflow:hidden;
+}
+.f-cta-box::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 80%,rgba(255,255,255,.15),transparent 50%),
+             radial-gradient(circle at 80% 20%,rgba(255,255,255,.1),transparent 40%);
+  pointer-events:none;
+}
+.f-cta-icon{
+  width:72px;height:72px;border-radius:16px;
+  box-shadow:0 4px 20px rgba(0,0,0,.15);
+  overflow:hidden;margin:0 auto 16px;
+  position:relative;z-index:1;
+}
+.f-cta-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.f-cta-title{
+  font-size:20px;font-weight:800;letter-spacing:-.04em;
+  color:#fff;margin-bottom:4px;position:relative;z-index:1;
+}
+.f-cta-sub{
+  font-size:13px;font-weight:400;color:rgba(255,255,255,.8);
+  margin-bottom:20px;position:relative;z-index:1;
+}
+.f-cta-dl{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.f-cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 22px;border-radius:12px;
+  font-size:13px;font-weight:600;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  letter-spacing:-.01em;
+}
+.f-cta-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.f-cta-btn.wh{background:#fff;color:var(--bright)}
+.f-cta-btn.gl{background:rgba(255,255,255,.2);color:#fff;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3)}
+
 /* ── FOOTER ── */
-.footer{text-align:center;padding:44px 24px 24px;font-size:11px;color:var(--dim);font-weight:300;line-height:1.75;max-width:720px;margin:0 auto}
-.footer .ico{font-size:16px;display:block;margin-bottom:5px;opacity:.3}
+.footer{
+  text-align:center;padding:32px 24px 28px;
+  font-size:11px;color:var(--dim);font-weight:300;line-height:1.75;
+  max-width:720px;margin:0 auto;
+}
+.footer-links{
+  display:flex;gap:16px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:11px;font-weight:500;color:var(--dim);text-decoration:none;
+  transition:color .2s;
+}
+.footer-links a:hover{color:var(--bright)}
 .footer a{color:inherit;text-decoration:underline}
+.footer .copy{opacity:.5;margin-top:10px}
 
 /* ── ANIMATION ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -231,7 +328,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
-  .cg{grid-template-columns:1fr}.lg{grid-template-columns:1fr}
+  .lg{grid-template-columns:1fr}
   .tb{font-size:11.5px;padding:9px 11px 10px}
   .top-in,.pn{padding-left:18px;padding-right:18px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
@@ -272,7 +369,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
       <div class="hero-slogan">누구보다 빠르게 달리고 싶어!</div>
       <div class="hero-dev en">Cygames / Kakao Games · 무료 · 인앱 구매</div>
       <div class="hero-dl">
-        <a class="hero-btn g" href="https://apps.apple.com/kr/app/id1580561882" target="_blank" rel="noopener">App Store</a>
+        <a class="hero-btn g" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener">App Store</a>
         <a class="hero-btn w" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener">Google Play</a>
       </div>
     </div>
@@ -301,13 +398,35 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <div class="pn on" id="world">
   <p class="sl fi" style="color:var(--green)">세계관</p>
   <h2 class="st fi">경마 × 아이돌,<br>그 기묘한 조합</h2>
-  <p class="sd fi">이 세계에는 말의 이름과 혼을 이어받은 소녀 종족 '우마무스메'가 존재한다. 머리에 말귀, 허리에 말꼬리를 가진 소녀들이 도쿄의 트레센 학원에 입학해 훈련하고, 실제 일본 경마 일정을 따르는 레이스에 출전한다.</p>
+  <p class="sd fi">이 세계에는 말의 이름과 혼을 이어받은 소녀 종족 &lsquo;우마무스메&rsquo;가 존재한다. 머리에 말귀, 허리에 말꼬리를 가진 소녀들이 도쿄의 트레센 학원에 입학해 훈련하고, 실제 일본 경마 일정을 따르는 레이스에 출전한다.</p>
 
-  <div class="cg fi">
-    <div class="cc"><div class="ci" style="background:rgba(0,169,95,.1)">🏇</div><h3>레이스</h3><p>실제 경마장 코스를 재현한 잔디 위를 달린다. 실황 아나운서의 중계까지 경마 그 자체다.</p></div>
-    <div class="cc"><div class="ci" style="background:rgba(233,80,152,.1)">🎤</div><h3>위닝 라이브</h3><p>레이스에서 이기면 3D 라이브 공연을 한다. 이 게임만의 독특한 승리 의식이다.</p></div>
-    <div class="cc"><div class="ci" style="background:rgba(79,184,230,.1)">🐴</div><h3>실존 경주마 모티프</h3><p>캐릭터 이름은 전부 실존 경주마에서 왔다. 마주에게 정식 라이선스를 받아 사용한다.</p></div>
-    <div class="cc"><div class="ci" style="background:rgba(212,42,42,.08)">🎓</div><h3>트레센 학원</h3><p>우마무스메들의 훈련 기관. 플레이어는 '트레이너'가 되어 우마무스메를 육성한다.</p></div>
+  <div class="wc-stack fi">
+    <div class="wc wc-green">
+      <div class="wc-accent" style="background:radial-gradient(circle,rgba(0,169,95,.15),transparent)"></div>
+      <span class="wc-emoji">🏇</span>
+      <h3>레이스</h3>
+      <p>실제 경마장 코스를 재현한 잔디 위를 달린다. 코너 각도, 잔디 질감, 실황 아나운서의 호흡까지 — 경마 중계 그 자체다.</p>
+    </div>
+    <div class="wc wc-pink">
+      <div class="wc-accent" style="background:radial-gradient(circle,rgba(233,80,152,.12),transparent)"></div>
+      <span class="wc-emoji">🎤</span>
+      <h3>위닝 라이브</h3>
+      <p>레이스에서 이기면 관객 앞에서 3D 라이브 공연을 한다. 승리한 우마무스메가 센터에 서는, 이 게임만의 독특한 승리 의식이다.</p>
+    </div>
+    <div class="wc-row">
+      <div class="wc wc-sky">
+        <div class="wc-accent" style="background:radial-gradient(circle,rgba(79,184,230,.12),transparent)"></div>
+        <span class="wc-emoji">🐴</span>
+        <h3>실존 경주마</h3>
+        <p>100명 넘는 캐릭터 전원이 실존 경주마의 이름을 지녔다. 마주에게 정식 라이선스를 받았다.</p>
+      </div>
+      <div class="wc wc-neutral">
+        <div class="wc-accent" style="background:radial-gradient(circle,rgba(0,0,0,.04),transparent)"></div>
+        <span class="wc-emoji">🎓</span>
+        <h3>트레센 학원</h3>
+        <p>우마무스메들의 훈련 기관. 플레이어는 이 학원의 &lsquo;트레이너&rsquo;가 되어 우마무스메를 키운다.</p>
+      </div>
+    </div>
   </div>
 
   <div class="note fi">
@@ -356,7 +475,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <p class="sd fi">게임의 기본 루프는 '육성 → 레이스 → 위닝 라이브'다. 트레이너로서 우마무스메 한 명을 선택하고, 3년간(게임 내 시간) 훈련시켜 레이스에 출전시킨다.</p>
 
   <div class="bt fi">훈련 (트레이닝)</div>
-  <p class="bp fi">매 턴(반 달)마다 5개 능력치 중 하나를 훈련한다. 서포트카드 캐릭터와 함께 훈련하면 '인연(きずな)'이 쌓이고, 인연이 80 이상이 되면 스탯이 크게 오르는 '우정 트레이닝'이 발동한다. 이것이 고스탯 육성의 핵심이다.</p>
+  <p class="bp fi">매 턴(반 달)마다 5개 능력치 중 하나를 훈련한다. 서포트카드 캐릭터와 함께 훈련하면 &lsquo;인연(きずな)&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 크게 오르는 &lsquo;우정 트레이닝&rsquo;이 발동한다. 이것이 고스탯 육성의 핵심이다.</p>
 
   <div class="bt fi">서포트카드 — 게임의 시작과 끝</div>
   <p class="bp fi">육성을 보조하는 카드다. 어떤 서포트카드를 편성하느냐에 따라 육성 결과가 완전히 달라진다. 캐릭터보다 서포트카드가 중요하다는 것이 이 게임의 대전제다. 5가지 타입이 있으며, 각각 대응하는 훈련의 효과를 강화한다.</p>
@@ -382,7 +501,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="dv"><hr></div>
 
   <div class="bt fi">인자 계승</div>
-  <p class="bp fi">육성이 끝난 우마무스메는 '인자'를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 '인자작'이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
+  <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;인자&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
 
   <div class="bt fi">가챠 시스템</div>
   <p class="bp fi">캐릭터 가챠와 서포트카드 가챠 두 종류. ★3/SSR 배출률 3%. 천장은 200연(30,000 주얼)이며, 이때 픽업 대상을 확정 교환할 수 있다. 교환 포인트는 배너 종료 시 소멸하므로, 30,000 주얼 미확보 시 뽑지 않는 것이 철칙이다.</p>
@@ -402,7 +521,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <div class="sc-item"><div class="sc-bar" style="background:#f44336"></div><div class="sc-num en">03</div><div class="sc-body"><div class="sc-title">Make a new track!! ~클라이맥스 개막~</div><div class="sc-desc">개인 목표 폐지. 아이템 구매 + 대량 레이스 출전 구조.</div></div><div class="sc-tag" style="background:rgba(244,67,54,.1);color:#f44336">KR</div></div>
     <div class="sc-item"><div class="sc-bar" style="background:#ab47bc"></div><div class="sc-num en">04</div><div class="sc-body"><div class="sc-title">수집! 꿈의 한 조각 (그랜드 라이브)</div><div class="sc-desc">라이브 공연 시스템 특화. 스킬 포인트 수급에 유리.</div></div><div class="sc-tag" style="background:rgba(171,71,188,.1);color:#ab47bc">KR</div></div>
     <div class="sc-item"><div class="sc-bar" style="background:#ffc107"></div><div class="sc-num en">05</div><div class="sc-body"><div class="sc-title">이어가라, 정상을 향해 (그랜드 마스터즈)</div><div class="sc-desc">레전드 우마무스메와 대결. 고득점 육성의 첫 전환점.</div></div><div class="sc-tag" style="background:rgba(255,193,7,.1);color:#e6a800">KR</div></div>
-    <div class="sc-item"><div class="sc-bar" style="background:#1e88e5"></div><div class="sc-num en">06</div><div class="sc-body"><div class="sc-title">Reach for the stars · Project L'Arc</div><div class="sc-desc">개선문상 원정. 전 거리/각질 대응. 빠른 육성 시간.</div></div><div class="sc-tag" style="background:rgba(30,136,229,.1);color:#1e88e5">KR</div></div>
+    <div class="sc-item"><div class="sc-bar" style="background:#1e88e5"></div><div class="sc-num en">06</div><div class="sc-body"><div class="sc-title">Reach for the stars · Project L&rsquo;Arc</div><div class="sc-desc">개선문상 원정. 전 거리/각질 대응. 빠른 육성 시간.</div></div><div class="sc-tag" style="background:rgba(30,136,229,.1);color:#1e88e5">KR</div></div>
     <div class="sc-item"><div class="sc-bar" style="background:#e53935"></div><div class="sc-num en">07</div><div class="sc-body"><div class="sc-title">U.A.F. Ready GO!</div><div class="sc-desc">격투기 테마. 상담 시스템으로 능력 밸런스를 조절.</div></div><div class="sc-tag" style="background:rgba(229,57,53,.1);color:#e53935">KR</div></div>
     <div class="sc-item"><div class="sc-bar" style="background:#ff8f00"></div><div class="sc-num en">08</div><div class="sc-body"><div class="sc-title">수확! 만복! 대풍식제</div><div class="sc-desc">요리 테마. SP 대량 수급 가능. 단거리/마일 특화.</div></div><div class="sc-tag" style="background:rgba(255,143,0,.1);color:#ff8f00">KR</div></div>
     <div class="sc-item" style="border-color:rgba(0,169,95,.2);background:rgba(0,169,95,.02)"><div class="sc-bar" style="background:#00bcd4"></div><div class="sc-num en">09</div><div class="sc-body"><div class="sc-title">달려라! 메카 우마무스메 -꿈을 잇는 발명-</div><div class="sc-desc">로봇 튜닝 + 오버드라이브. 빠른 육성. 중장거리 특화.</div></div><div class="sc-tag" style="background:rgba(0,188,212,.12);color:#00838f">한섭 최신</div></div>
@@ -421,8 +540,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
       <p class="sc-en en">2026.2.17 업데이트 · 중장거리 특화</p>
     </div>
     <div class="sc-detail-body">
-      <p>천재 박사 슈가 라이츠가 개발한 로봇 '메카 우마무스메 ST-2(새티)'를 튜닝하며 육성하는 시나리오다. 메카 에너지를 칩에 할당해 성능을 강화하고, 오버드라이브를 발동해 훈련 효과를 폭발적으로 높이는 것이 핵심이다.</p>
-      <p style="margin-top:8px">직전 시나리오(대풍식제)의 느린 진행 속도를 개선해, L'Arc 다음으로 빠른 육성 시간을 자랑한다. 시나리오 링크 0순위는 SSR 에어 샤커(스태미나)로, '연구 Lv에 따른 트레이닝 효과 상승' + '메카 에너지 초기 획득량 +1' 두 가지 핵심 효과를 모두 보유하고 있어 필수 편성이다.</p>
+      <p>천재 박사 슈가 라이츠가 개발한 로봇 &lsquo;메카 우마무스메 ST-2(새티)&rsquo;를 튜닝하며 육성하는 시나리오다. 메카 에너지를 칩에 할당해 성능을 강화하고, 오버드라이브를 발동해 훈련 효과를 폭발적으로 높이는 것이 핵심이다.</p>
+      <p style="margin-top:8px">직전 시나리오(대풍식제)의 느린 진행 속도를 개선해, L&rsquo;Arc 다음으로 빠른 육성 시간을 자랑한다. 시나리오 링크 0순위는 SSR 에어 샤커(스태미나)로, &lsquo;연구 Lv에 따른 트레이닝 효과 상승&rsquo; + &lsquo;메카 에너지 초기 획득량 +1&rsquo; 두 가지 핵심 효과를 모두 보유하고 있어 필수 편성이다.</p>
     </div>
   </div>
 
@@ -433,7 +552,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
       <p class="sc-en en">2026.2.24 · 5주년 시나리오 · 전 거리 · 잔디+더트 대응</p>
     </div>
     <div class="sc-detail-body">
-      <p>미국 브리더즈컵(Breeders' Cup) 제패를 목표로 원정 팀 'DREAMS'를 결성하는 시나리오다. 단거리·마일·중거리, 잔디·더트에서 자유롭게 목표 레이스를 선택할 수 있어 역대 가장 높은 범용성을 지닌다.</p>
+      <p>미국 브리더즈컵(Breeders&rsquo; Cup) 제패를 목표로 원정 팀 &lsquo;DREAMS&rsquo;를 결성하는 시나리오다. 단거리·마일·중거리, 잔디·더트에서 자유롭게 목표 레이스를 선택할 수 있어 역대 가장 높은 범용성을 지닌다.</p>
       <p style="margin-top:8px">핵심 캐릭터는 카지노 드라이브(친구 서포트). 팀 랭크를 올려 DREAMSトレーニング을 발동하면 최대 8인 합동 훈련이 가능하며, 스피드 스탯이 상한 2,100까지 돌파할 수 있다. 시나리오 링크: 라브즈 온리 유, 마르슈 로레느, 레드 디자이어, 에스포와르 시치, 포에버 영.</p>
     </div>
   </div>
@@ -444,9 +563,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <p class="sl fi" style="color:var(--green)">시작하기</p>
   <h2 class="st fi">설치부터 첫 육성까지</h2>
 
-  <div class="cg fi">
-    <div class="cc"><div class="ci" style="background:rgba(0,169,95,.1)">🇰🇷</div><h3>한국 서버</h3><p>앱스토어/구글 플레이에서 '우마무스메' 검색. 카카오 계정 로그인. 한국어 풀 지원.</p></div>
-    <div class="cc"><div class="ci" style="background:rgba(233,80,152,.1)">🇯🇵</div><h3>일본 서버</h3><p>QooApp(안드) / 일본 Apple ID(iOS) / Steam·DMM(PC). VPN(미꾸라지) 필요. 한글패치 적용 가능.</p></div>
+  <div class="pair fi">
+    <div class="pair-card"><span class="pc-emoji">🇰🇷</span><h3>한국 서버</h3><p>앱스토어/구글 플레이에서 &lsquo;우마무스메&rsquo; 검색. 카카오 계정 로그인. 한국어 풀 지원.</p></div>
+    <div class="pair-card"><span class="pc-emoji">🇯🇵</span><h3>일본 서버</h3><p>QooApp(안드) / 일본 Apple ID(iOS) / Steam·DMM(PC). VPN(미꾸라지) 필요. 한글패치 적용 가능.</p></div>
   </div>
 
   <div class="dv"><hr></div>
@@ -505,11 +624,28 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
 </div>
 
+<!-- FOOTER CTA -->
+<section class="f-cta">
+  <div class="f-cta-box">
+    <div class="f-cta-icon"><img src="images/uma.webp" alt="우마무스메"></div>
+    <div class="f-cta-title">지금 시작하기</div>
+    <div class="f-cta-sub">누구보다 빠르게 달리고 싶어!</div>
+    <div class="f-cta-dl">
+      <a class="f-cta-btn wh" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener">App Store</a>
+      <a class="f-cta-btn gl" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
-  <span class="ico">🏇</span>
-  이 페이지는 우마무스메 프리티 더비 입문 안내용으로 제작되었습니다.
-  <br>모든 캐릭터와 작품은 © Cygames, Inc. 에 귀속됩니다.
-  <br><span class="en" style="font-size:10px;letter-spacing:.06em;opacity:.6">Made by <a href="https://jhakentertainment.com" target="_blank">JHAK Entertainment Inc.</a></span>
+  <div class="footer-links">
+    <a href="https://jhakent.github.io/uma-movie-guide/" target="_blank">극장판 가이드</a>
+    <a href="https://jhakent.github.io/uma-gorumeno/" target="_blank">골드쉽 × 페노메노</a>
+    <a href="https://gametora.com/ko/umamusume" target="_blank">GameTora</a>
+    <a href="https://namu.wiki/w/우마무스메 프리티 더비" target="_blank">나무위키</a>
+  </div>
+  모든 캐릭터와 작품은 © Cygames, Inc. 에 귀속됩니다.
+  <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em;">Made by <a href="https://jhakentertainment.com" target="_blank">JHAK Entertainment Inc.</a></span></div>
 </footer>
 
 <script>
