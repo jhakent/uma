@@ -551,6 +551,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   .footer-links{grid-template-columns:repeat(2,1fr)}
 }
 .footer a{color:inherit;text-decoration:none}
+.footer > a{font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:text-decoration-color .15s,color .15s}
+.footer > a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
 .footer .copy a{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.15);transition:text-decoration-color .15s,color .15s}
 .footer .copy a:hover{text-decoration-color:rgba(0,0,0,.35)}
 .footer-links-own{grid-template-columns:repeat(2,1fr) !important}
