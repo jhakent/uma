@@ -146,7 +146,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .wc.wc-neutral::before{background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(79,184,230,.02),transparent 70%)}
 .wc-emoji{font-size:32px;margin-bottom:10px;display:block;position:relative;z-index:1}
 .wc h3{font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px;position:relative;z-index:1}
-.wc p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.8;position:relative;z-index:1}
+.wc p{font-size:14px;font-weight:300;color:var(--text);line-height:1.8;position:relative;z-index:1}
 .wc-accent{
   position:absolute;top:-20px;right:-20px;width:100px;height:100px;
   border-radius:50%;pointer-events:none;opacity:.5;
@@ -158,11 +158,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 /* ── SIMPLE PAIR CARDS (start tab etc) ── */
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.pair-card{background:var(--bg-warm);border:1px solid var(--border);border-radius:14px;padding:20px 16px;transition:border-color .3s}
-.pair-card:hover{border-color:var(--border-s)}
+.pair-card{background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.6);border-radius:16px;padding:22px 18px;transition:transform .2s,box-shadow .2s;box-shadow:0 1px 8px rgba(0,0,0,.03)}
+.pair-card:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
 .pair-card .pc-emoji{font-size:22px;margin-bottom:6px;display:block}
-.pair-card h3{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:4px}
-.pair-card p{font-size:11.5px;font-weight:300;color:var(--dim);line-height:1.7}
+.pair-card h3{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:4px}
+.pair-card p{font-size:12.5px;font-weight:300;color:var(--dim);line-height:1.7}
 
 @media(max-width:640px){
   .wc-row{grid-template-columns:1fr}
@@ -172,19 +172,19 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 }
 
 /* ── NOTE ── */
-.note{background:linear-gradient(135deg,rgba(0,169,95,.04),rgba(79,184,230,.03));border:1px solid var(--border);border-radius:14px;padding:20px;margin:20px 0}
+.note{background:rgba(255,255,255,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);box-shadow:0 2px 12px rgba(0,0,0,.03);border-radius:16px;padding:22px;margin:24px 0}
 .note h3{font-size:14.5px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:5px}
-.note p{font-size:13px;font-weight:300;color:var(--dim);line-height:1.8}
+.note p{font-size:13.5px;font-weight:300;color:var(--dim);line-height:1.8}
 
 /* ── INFO BOX ── */
-.ib{background:var(--bg-warm);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:0 14px 14px 0;padding:16px 18px;margin:18px 0}
+.ib{background:rgba(255,255,255,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.6);border-left:3px solid var(--green);border-radius:0 16px 16px 0;padding:18px 20px;margin:20px 0;box-shadow:0 1px 8px rgba(0,0,0,.03)}
 .ib.pk{border-left-color:var(--pink)}.ib.sk{border-left-color:var(--sky)}
 .ib-l{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
 .ib .ib-l{color:var(--green)}.ib.pk .ib-l{color:var(--pink)}.ib.sk .ib-l{color:var(--sky)}
 .ib p{font-size:13px;font-weight:300;color:var(--text);line-height:1.8}
 
 /* ── FEAT BANNER ── */
-.fb{border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden}
+.fb{border:1px solid rgba(255,255,255,.6);border-radius:20px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden;background:rgba(255,255,255,.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 2px 16px rgba(0,0,0,.03)}
 .fb::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;pointer-events:none}
 .fb .fn{font-family:'Outfit',sans-serif;font-size:42px;font-weight:900;color:rgba(0,0,0,.04);line-height:1;margin-bottom:6px}
 .fb h3{font-size:15px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px}
@@ -192,7 +192,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 /* ── SUPPORT TYPE CARDS ── */
 .stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0}
-.stype{border-radius:12px;padding:14px 10px;text-align:center;border:1px solid var(--border);transition:transform .2s}
+.stype{border-radius:14px;padding:14px 10px;text-align:center;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 6px rgba(0,0,0,.02);transition:transform .2s}
 .stype:hover{transform:translateY(-2px)}
 .stype-icon{font-size:20px;margin-bottom:4px}
 .stype-name{font-size:12px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
@@ -200,32 +200,32 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 /* ── SSR CARDS ── */
 .ssr-list{margin:18px 0}
-.ssr{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg-warm);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;transition:border-color .3s}
-.ssr:hover{border-color:var(--border-s)}
+.ssr{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.6);border-radius:14px;margin-bottom:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 1px 8px rgba(0,0,0,.03)}
+.ssr:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
 .ssr-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .ssr-info{flex:1}
-.ssr-name{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
-.ssr-sub{font-size:11px;font-weight:300;color:var(--dim)}
+.ssr-name{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
+.ssr-sub{font-size:12px;font-weight:300;color:var(--dim)}
 .ssr-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0}
 
 /* ── SCENARIO LIST ── */
 .sc-list{margin:20px 0}
-.sc-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;margin-bottom:6px;border:1px solid var(--border);transition:border-color .3s,background .3s}
-.sc-item:hover{border-color:var(--border-s);background:var(--bg-warm)}
+.sc-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;margin-bottom:6px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 6px rgba(0,0,0,.02);transition:transform .2s,box-shadow .2s}
+.sc-item:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.05)}
 .sc-bar{width:4px;height:36px;border-radius:2px;flex-shrink:0}
 .sc-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--dim);width:20px;flex-shrink:0;text-align:center}
 .sc-body{flex:1;min-width:0}
-.sc-title{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sc-desc{font-size:11px;font-weight:300;color:var(--dim);line-height:1.5;margin-top:1px}
+.sc-title{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sc-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.5;margin-top:1px}
 .sc-tag{font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0;letter-spacing:.5px}
 
 /* ── SCENARIO DETAIL CARD ── */
-.sc-detail{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}
+.sc-detail{border:1px solid rgba(255,255,255,.6);border-radius:20px;overflow:hidden;margin:20px 0;background:rgba(255,255,255,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 2px 16px rgba(0,0,0,.04)}
 .sc-detail-head{padding:24px 22px 18px;position:relative}
 .sc-detail-head h3{font-size:17px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:4px}
 .sc-detail-head .sc-en{font-family:'Outfit',sans-serif;font-size:11px;font-weight:400;letter-spacing:.06em;color:var(--dim);text-transform:uppercase}
 .sc-detail-body{padding:0 22px 22px}
-.sc-detail-body p{font-size:12.5px;font-weight:300;color:var(--text);line-height:1.85}
+.sc-detail-body p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.85}
 
 /* ── FLOW ── */
 .flow{margin:24px 0}
@@ -235,16 +235,16 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .fl:last-child .fl-line{display:none}
 .fl-dot{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:#fff;position:relative;z-index:1}
 .fl-c{flex:1;padding-top:3px}
-.fl-c h4{font-size:13.5px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:3px}
-.fl-c p{font-size:12px;font-weight:300;color:var(--dim);line-height:1.75}
+.fl-c h4{font-size:14px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:3px}
+.fl-c p{font-size:13px;font-weight:300;color:var(--dim);line-height:1.75}
 
 /* ── LINK GRID ── */
 .lg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
-.lk{display:block;background:var(--bg-warm);border:1px solid var(--border);border-radius:12px;padding:14px;text-decoration:none;transition:border-color .3s,transform .2s}
-.lk:hover{border-color:var(--border-s);transform:translateY(-2px)}
+.lk{display:block;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.6);border-radius:14px;padding:16px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 1px 8px rgba(0,0,0,.03)}
+.lk:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
 .lk-l{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:2px}
-.lk-t{font-size:12.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
-.lk-d{font-size:10.5px;font-weight:300;color:var(--dim);margin-top:1px;line-height:1.4}
+.lk-t{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
+.lk-d{font-size:11.5px;font-weight:300;color:var(--dim);margin-top:1px;line-height:1.4}
 
 /* ── TABLE ── */
 .mt{width:100%;margin:14px 0;border-collapse:collapse;font-size:12px}
@@ -285,7 +285,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   font-size:20px;font-weight:800;letter-spacing:-.04em;
   color:#fff;margin-bottom:4px;position:relative;z-index:1;
 }
-.f-cta-sub{
+.f-cta-sub{font-size:14px;
   font-size:13px;font-weight:400;color:rgba(255,255,255,.8);
   margin-bottom:20px;position:relative;z-index:1;
 }
@@ -609,9 +609,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
   <p class="bt fi">커뮤니티 &amp; 도구</p>
   <div class="lg fi">
-    <a class="lk" href="https://gametora.com/ko/umamusume" target="_blank" rel="noopener"><div class="lk-l en">Tool</div><div class="lk-t">GameTora</div><div class="lk-d">한국어. 선택지 도우미, 상성 계산기</div></a>
-    <a class="lk" href="https://gall.dcinside.com/mgallery/board/lists/?id=umamusu" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">DC 한섭갤</div><div class="lk-d">미래시, 뉴비 가이드</div></a>
-    <a class="lk" href="https://namu.wiki/w/우마무스메 프리티 더비" target="_blank" rel="noopener"><div class="lk-l en">Wiki</div><div class="lk-t">나무위키</div><div class="lk-d">한국어 최대 규모 DB</div></a>
+    <a class="lk" href="https://m.inven.co.kr/uma/" target="_blank" rel="noopener"><div class="lk-l en">Guide</div><div class="lk-t">우마무스메 인벤</div><div class="lk-d">한국어 종합 공략. 뉴비 가이드, 캐릭터·서포트 DB</div></a>
+    <a class="lk" href="https://m.dcinside.com/board/umamusu?notice=1" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">DC 한섭갤</div><div class="lk-d">미래시, 뉴비 가이드</div></a>
+    <a class="lk" href="https://namu.wiki/w/%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84" target="_blank" rel="noopener"><div class="lk-l en">Wiki</div><div class="lk-t">나무위키</div><div class="lk-d">한국어 최대 규모 DB</div></a>
     <a class="lk" href="https://arca.live/b/umamusume" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">아카라이브</div><div class="lk-d">설치 가이드, 공략</div></a>
   </div>
 
@@ -641,8 +641,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="footer-links">
     <a href="https://jhakent.github.io/uma-movie-guide/" target="_blank">극장판 가이드</a>
     <a href="https://jhakent.github.io/uma-gorumeno/" target="_blank">골드쉽 × 페노메노</a>
-    <a href="https://gametora.com/ko/umamusume" target="_blank">GameTora</a>
-    <a href="https://namu.wiki/w/우마무스메 프리티 더비" target="_blank">나무위키</a>
+    <a href="https://m.inven.co.kr/uma/" target="_blank">인벤</a>
+    <a href="https://namu.wiki/w/%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84" target="_blank">나무위키</a>
   </div>
   모든 캐릭터와 작품은 © Cygames, Inc. 에 귀속됩니다.
   <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em;">Made by <a href="https://jhakentertainment.com" target="_blank">JHAK Entertainment Inc.</a></span></div>
