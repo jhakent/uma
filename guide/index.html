@@ -180,24 +180,30 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   box-shadow:0 3px 14px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
 }
 .sys-hero::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(var(--sc),0.07),transparent 70%);
+  pointer-events:none;
 }
 .sys-hero-top{
-  display:flex;align-items:center;gap:12px;
-  margin-bottom:6px;
+  display:flex;align-items:flex-start;gap:10px;
+  position:relative;z-index:1;
 }
-.sys-hero-emoji{font-size:28px;flex-shrink:0;line-height:1}
-.sys-hero-title{font-size:19px;font-weight:800;letter-spacing:-.045em;color:var(--bright)}
+.sys-hero-emoji{font-size:28px;flex-shrink:0;line-height:1;margin-top:2px;margin-left:auto}
+.sys-hero-title{font-size:19px;font-weight:800;letter-spacing:-.045em;color:var(--bright);line-height:1.2}
+.sys-hero-body{flex:1;min-width:0}
 .sys-hero-sub{
   font-size:13.5px;font-weight:500;letter-spacing:-.01em;
-  line-height:1.4;
+  line-height:1.4;margin-top:4px;
 }
 .sys-hero-num{
-  position:absolute;top:10px;right:18px;
   font-family:'Outfit',sans-serif;
-  font-size:52px;font-weight:900;
-  line-height:1;opacity:.04;
-  pointer-events:none;
+  font-size:11px;font-weight:700;
+  letter-spacing:.06em;
+  padding:2px 8px;border-radius:6px;
+  flex-shrink:0;
+  background:rgba(var(--sc),0.1);
+  color:rgb(var(--sc));
+  margin-top:3px;
 }
 
 /* ── WORLD CARDS ── */
@@ -253,8 +259,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .note p{font-size:13.5px;font-weight:300;color:var(--dim);line-height:1.8}
 
 /* ── INFO BOX ── */
-.ib{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-left:3px solid var(--green);border-radius:0 16px 16px 0;padding:18px 20px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
-.ib.pk{border-left-color:var(--pink)}.ib.sk{border-left-color:var(--sky)}
+.ib{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-top:3px solid var(--green);border-radius:16px;padding:20px 20px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
+.ib.pk{border-top-color:var(--pink)}.ib.sk{border-top-color:var(--sky)}
 .ib-l{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;margin-bottom:4px}
 .ib-l.en{letter-spacing:2px}
 .ib .ib-l{color:var(--green)}.ib.pk .ib-l{color:var(--pink)}.ib.sk .ib-l{color:var(--sky)}
@@ -263,7 +269,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── FEAT BANNER ── */
 .fb{border:1px solid rgba(0,0,0,.04);border-radius:20px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden;background:rgba(255,255,255,.97);box-shadow:0 3px 18px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .fb::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;pointer-events:none}
-.fb .fn{font-family:'Outfit',sans-serif;font-size:42px;font-weight:900;color:rgba(0,0,0,.04);line-height:1;margin-bottom:6px}
+.fb .fn{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;line-height:1;margin-bottom:10px;display:inline-block;padding:2px 8px;border-radius:6px;background:rgba(0,0,0,.04);color:var(--dim)}
 .fb h3{font-size:15px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px}
 .fb p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.85;position:relative;z-index:1}
 
@@ -775,20 +781,16 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <h2 class="st fi">핵심 시스템 해부</h2>
   <p class="sd fi">매 턴 훈련·휴식·외출·레이스 중 하나를 선택하며, 게임 내 시간 3년간 우마무스메를 성장시킨다. 육성이 끝나면 하나의 완성된 개체가 탄생하고, 더 나은 개체를 원한다면 처음부터 다시 키운다. 한 판이 곧 하나의 육성이다.</p>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--spd)">
-    <span class="sys-hero-num en">01</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">🏋️</span><span class="sys-hero-title">훈련</span></div>
-    <div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div>
+  <div class="sys-hero fi" style="--sc:79,184,230">
+    <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">훈련</span><div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div></div><span class="sys-hero-emoji">🏋️</span></div>
   </div>
   <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다.</p>
   <p class="bp fi">서포트카드 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;우정 트레이닝&rsquo;이 발동한다. 이것이 고스탯 육성의 핵심이다. 다만 훈련에는 실패 확률이 존재하며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
 
   <div class="ib fi"><div class="ib-l">여름 합숙</div><p>2년차·3년차 여름에 진행되는 특별 기간. 모든 트레이닝 레벨이 +5 상승하고 훈련 효율이 극대화된다. 이 기간에는 레이스를 쉬고 훈련에만 집중하는 것이 정석이다.</p></div>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--green)">
-    <span class="sys-hero-num en">02</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">🏇</span><span class="sys-hero-title">레이스</span></div>
-    <div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div>
+  <div class="sys-hero fi" style="--sc:0,169,95">
+    <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">레이스</span><div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div></div><span class="sys-hero-emoji">🏇</span></div>
   </div>
   <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, 스킬 포인트, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
 
@@ -888,10 +890,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     </a>
   </div>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--green)">
-    <span class="sys-hero-num en">01</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">🐴</span><span class="sys-hero-title">캐릭터 적성</span></div>
-    <div class="sys-hero-sub" style="color:var(--green)">거리·각질·마장, 세 가지 축</div>
+  <div class="sys-hero fi" style="--sc:0,169,95">
+    <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">캐릭터 적성</span><div class="sys-hero-sub" style="color:var(--green)">거리·각질·마장, 세 가지 축</div></div><span class="sys-hero-emoji">🐴</span></div>
   </div>
   <p class="bp fi">모든 우마무스메에게는 거리 적성(단거리·마일·중거리·장거리), 각질 적성(도주·선행·선입·추입), 마장 적성(잔디·더트)이 부여되어 있다. 적성 등급은 G~S로 나뉘며, 등급이 높을수록 레이스에서 스피드·지능에 유리한 보정을 받는다.</p>
   <p class="bp fi">기본 적성이 A인 거리와 작전으로 레이스에 출전하는 것이 정석이다. 애정 캐릭터를 적성 외 거리나 작전으로 운용하고 싶다면, 인자 계승을 통해 적성을 S까지 끌어올려야 한다. S 적성은 인자 계승 이벤트에서 확률적으로 획득되며, 부모 개체의 적성 인자를 미리 준비하는 과정이 필수다.</p>
@@ -899,10 +899,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <div class="sh fi"><div class="sh-title">캐릭터 각성 레벨</div><div class="sh-sub en">Awakening Level</div></div>
   <p class="bp fi">캐릭터에는 각성 레벨(Lv.1~5)이 있으며, 각성 레벨을 올리면 초기 보유 스킬이 추가 해방된다. Lv.3과 Lv.5에서 각각 레어 스킬이 해방되며, 이 스킬은 육성 중 특정 조건을 충족하면 더 강력한 진화 스킬로 변환될 수 있다. 각성에는 마니와 전용 재화가 필요하다.</p>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--pink)">
-    <span class="sys-hero-num en">02</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">🃏</span><span class="sys-hero-title">서포트카드</span></div>
-    <div class="sys-hero-sub" style="color:var(--pink)">게임의 시작과 끝</div>
+  <div class="sys-hero fi" style="--sc:233,80,152">
+    <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">서포트카드</span><div class="sys-hero-sub" style="color:var(--pink)">게임의 시작과 끝</div></div><span class="sys-hero-emoji">🃏</span></div>
   </div>
   <p class="bp fi">육성을 보조하는 카드다. 어떤 서포트카드를 편성하느냐에 따라 육성 결과가 완전히 달라진다. 캐릭터보다 서포트카드가 중요하다는 것이 이 게임의 대전제다. 5가지 타입이 있으며, 각각 대응하는 훈련의 효과를 강화한다.</p>
 
@@ -919,10 +917,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <div class="sh fi"><div class="sh-title">레벨과 한계돌파</div><div class="sh-sub en">Level &amp; Limit Break</div></div>
   <p class="bp fi">서포트카드 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 마니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. 한계돌파 없이도 레벨 30까지는 올릴 수 있지만, 풀돌파 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--sta)">
-    <span class="sys-hero-num en">03</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">⭐</span><span class="sys-hero-title">한섭 최상위 서포트카드</span></div>
-    <div class="sys-hero-sub" style="color:var(--sta)">지금 뽑아야 하는 카드</div>
+  <div class="sys-hero fi" style="--sc:240,154,62">
+    <div class="sys-hero-top"><span class="sys-hero-num en">03</span><div class="sys-hero-body"><span class="sys-hero-title">한섭 최상위 서포트카드</span><div class="sys-hero-sub" style="color:var(--sta)">지금 뽑아야 하는 카드</div></div><span class="sys-hero-emoji">⭐</span></div>
   </div>
   <div class="ssr-list fi">
     <div class="ssr-duo-label"><span>현재 한섭 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 시나리오</b> 인권 카드</span></div>
@@ -956,10 +952,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
   <div class="dv"><hr></div>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--int)">
-    <span class="sys-hero-num en">04</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">🧬</span><span class="sys-hero-title">인자 계승</span></div>
-    <div class="sys-hero-sub" style="color:var(--int)">부모의 능력을 물려받는 구조</div>
+  <div class="sys-hero fi" style="--sc:0,169,95">
+    <div class="sys-hero-top"><span class="sys-hero-num en">04</span><div class="sys-hero-body"><span class="sys-hero-title">인자 계승</span><div class="sys-hero-sub" style="color:var(--int)">부모의 능력을 물려받는 구조</div></div><span class="sys-hero-emoji">🧬</span></div>
   </div>
   <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;인자&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
   <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·각질·마장 적성 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 G1 우승 시 생성) 등이 있다. 인자의 별 수(⭐️1~⭐️3)는 확률적으로 결정되며, ⭐️3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
@@ -968,10 +962,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
   <div class="dv"><hr></div>
 
-  <div class="sys-hero fi" style="border-left:4px solid var(--gut)">
-    <span class="sys-hero-num en">05</span>
-    <div class="sys-hero-top"><span class="sys-hero-emoji">💎</span><span class="sys-hero-title">가챠</span></div>
-    <div class="sys-hero-sub" style="color:var(--gut)">주얼로 뽑는 캐릭터와 서포트카드</div>
+  <div class="sys-hero fi" style="--sc:233,80,152">
+    <div class="sys-hero-top"><span class="sys-hero-num en">05</span><div class="sys-hero-body"><span class="sys-hero-title">가챠</span><div class="sys-hero-sub" style="color:var(--gut)">주얼로 뽑는 캐릭터와 서포트카드</div></div><span class="sys-hero-emoji">💎</span></div>
   </div>
   <p class="bp fi">캐릭터 가챠와 서포트카드 가챠, 두 종류가 있다. ⭐️3 및 SSR 배출률은 3%. 천장은 200연차, 주얼 30,000개이며, 이때 픽업 대상을 확정 교환할 수 있다. 교환 포인트는 배너 종료 시 소멸하므로, 주얼 30,000개 미확보 시 뽑지 않는 것이 철칙이다.</p>
 
@@ -1217,6 +1209,24 @@ function checkTabFade(){
 }
 tabsWrap.addEventListener('scroll',checkTabFade,{passive:true});
 checkTabFade();
+
+// swipe tab navigation
+let touchStartX=0,touchStartY=0;
+const panelWrap=document.querySelector('body');
+panelWrap.addEventListener('touchstart',e=>{
+  touchStartX=e.changedTouches[0].clientX;
+  touchStartY=e.changedTouches[0].clientY;
+},{passive:true});
+panelWrap.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchStartX;
+  const dy=e.changedTouches[0].clientY-touchStartY;
+  if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)) return;
+  const tabs=Array.from(bts);
+  const cur=tabs.findIndex(b=>b.classList.contains('on'));
+  if(cur<0) return;
+  const next=dx<0?cur+1:cur-1;
+  if(next>=0&&next<tabs.length) tabs[next].click();
+},{passive:true});
 </script>
 </body>
 </html>
