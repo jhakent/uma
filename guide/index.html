@@ -36,8 +36,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 /* ── TOP BAR ── */
 .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
-.top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 0}
-.top-logo-img{height:36px;display:block}
+.top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 2px}
+.top-logo-img{height:40px;display:block}
 .tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;justify-content:center;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
 .tabs-wrap{position:relative;text-align:center}
@@ -550,7 +550,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 @media(max-width:640px){
   .lg{grid-template-columns:1fr}
   .tb{font-size:11px;padding:9px 8px 10px;letter-spacing:-.03em}
-  .top-logo-img{height:30px}
+  .top-logo-img{height:34px}
   .tabs-guide{display:none}
   .tabs .tb:last-child{margin-right:0}
   .tabs::after{content:'';min-width:24px;flex-shrink:0}
