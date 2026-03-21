@@ -136,8 +136,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 /* ── TYPOGRAPHY ── */
 .sl{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px}
-.st{font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.15;color:var(--bright);margin-bottom:14px}
-.sd{font-size:14.5px;font-weight:300;color:var(--dim);line-height:1.9;max-width:560px}
+.st{font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.3;color:var(--bright);margin-bottom:24px}
+.sd{font-size:14.5px;font-weight:300;color:var(--dim);line-height:1.9;max-width:560px;margin-bottom:8px}
 .bt{font-size:16px;font-weight:700;letter-spacing:-.03em;color:var(--bright);margin-bottom:8px;margin-top:32px}
 .bp{font-size:14px;font-weight:300;color:var(--text);line-height:1.85}
 .bp+.bp{margin-top:8px}
@@ -263,10 +263,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .fb p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.85;position:relative;z-index:1}
 
 /* ── SUPPORT TYPE CARDS ── */
-.stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0}
-.stype{border-radius:14px;padding:14px 10px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s}
+.stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0;width:100%}
+.stype{border-radius:14px;padding:14px 4px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s;min-width:0;box-sizing:border-box;overflow:hidden}
 .stype:hover{transform:translateY(-2px)}
-.stype-icon{font-size:20px;margin-bottom:4px}
+.stype-icon{font-size:24px;margin-bottom:6px;line-height:1;height:28px;display:flex;align-items:center;justify-content:center}
 .stype-name{font-size:12px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .stype-en{font-family:'Outfit',sans-serif;font-size:9px;font-weight:500;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
 
@@ -577,7 +577,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   .tabs-guide{display:none}
   .top-in,.pn{padding-left:18px;padding-right:18px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
-  .stype{padding:10px 6px}
+  .stype{padding:10px 4px}
   .stype-name{font-size:11px}
   .st{font-size:22px}
   .fb{padding:22px 18px}
@@ -677,13 +677,19 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     </div>
   </div>
 
-  <div class="note fi">
-    <h3>경마를 전혀 몰라도 된다</h3>
-    <p>게임이 하나하나 알려준다. 오히려 모르는 상태에서 시작해야 "이게 실화였어?" 하는 충격이 배가 된다.</p>
-  </div>
+  <div class="dv"><hr></div>
 
-  <div class="sh fi"><div class="sh-title">캐릭터와 원본마</div><div class="sh-sub en">Character × Real Horse</div></div>
-  <p class="bp fi">캐릭터의 외형, 성격, 목표, 좌절, 라이벌 관계 전부 원본마의 실제 기록에서 가져왔다. 원본마의 모색은 머리카락 색이 되고, 마주의 기수복 배색은 레이싱 의상인 승부복에 반영된다. 골드쉽의 게이트 거부, 오구리캡의 왕성한 식욕, 하루우라라의 연패 기록 등 원본마의 실제 기행이 캐릭터에 직접 녹아 있다.</p>
+  <p class="sl fi" style="color:var(--pink)">모티프</p>
+  <h2 class="st fi">경마를 몰라도 된다.<br>하지만 알면 더 재미있다.</h2>
+  <p class="sd fi">게임이 하나하나 알려준다. 오히려 모르는 상태에서 시작해야 "이게 실화였어?" 하는 충격이 배가 된다. 이 게임의 모든 캐릭터는 실존 경주마를 모티프로 삼고 있으며, 마주(말의 소유자)로부터 정식 라이선스를 받아 사용한다.</p>
+
+  <div class="sh fi"><div class="sh-title">원본마가 캐릭터가 되는 방식</div><div class="sh-sub en">How Real Horses Become Characters</div></div>
+  <p class="bp fi">원본마의 모색은 머리카락 색이 되고, 마주의 기수복 배색은 레이싱 의상인 승부복에 반영된다. 성격과 목표, 좌절, 라이벌 관계까지 원본마의 실제 전적에서 가져온다. 골드쉽의 게이트 거부, 오구리캡의 왕성한 식욕, 하루우라라의 113연패 기록 등 원본마의 실제 기행이 캐릭터에 직접 녹아 있다.</p>
+  <p class="bp fi">원본마가 경주 중 골절로 세상을 떠난 사일런스 스즈카의 스토리는, 게임에서 IF 루트로 재구성되었다. 실화를 알고 나면 감정의 무게가 완전히 달라지며, 이런 캐릭터가 100명 넘게 존재한다.</p>
+
+  <div class="sh fi"><div class="sh-title">포에버 영과 브리더즈컵</div><div class="sh-sub en">Forever Young × Breeders' Cup</div></div>
+  <p class="bp fi">2025년 11월, 일본 경주마 포에버 영이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. 포에버 영의 마주인 후지타 스스무는 우마무스메 운영사 사이게임즈의 모기업 사이버에이전트의 사장으로, 우마무스메 팬덤에서는 자신들의 가챠 과금이 마주 활동에 기여했다며 '한 입 마주'를 자처하는 밈이 생기기도 했다.</p>
+  <p class="bp fi">포에버 영의 생일은 우마무스메 게임 서비스 개시일(2월 24일)과 같다. 2026년 2월, 게임 5주년 기념 방송에서 포에버 영의 우마무스메 캐릭터와 브리더즈컵 배경의 신규 시나리오(Beyond Dreams)가 동시에 공개되었다. 현역 경주마가 우마무스메로 구현된 사례는 극히 드물며, 원본마의 실제 활약과 게임 콘텐츠가 실시간으로 연동되는 이 게임 특유의 현상이다.</p>
 
   <div class="sh fi"><div class="sh-title">클래식 삼관</div><div class="sh-sub en">Classic Triple Crown</div></div>
   <p class="bp fi">사츠키상(皐月賞), 일본 더비(東京優駿), 국화상(菊花賞). 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다.</p>
@@ -692,7 +698,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <!-- ═══ 특징 ═══ -->
 <div class="pn" id="feat">
   <p class="sl fi" style="color:var(--pink)">특징</p>
-  <h2 class="st fi">이 게임에 사람들이<br>빠지는 이유</h2>
+  <h2 class="st fi">이 게임에 사람들이 빠지는 이유</h2>
 
   <div class="fb fi" style="background:linear-gradient(135deg,rgba(0,169,95,.05),rgba(79,184,230,.04))">
     <div class="fn en">01</div>
