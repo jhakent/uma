@@ -37,18 +37,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
 .top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 2px}
-.top-logo-img{height:40px;display:block}
+.top-logo-img{height:46px;display:block}
 .tabs{display:inline-flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
 .tabs-wrap{position:relative;text-align:center;overflow-x:auto}
 .tabs-wrap::-webkit-scrollbar{display:none}
-.tabs-guide{
-  position:absolute;right:0;bottom:10px;
-  font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:500;
-  letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);
-  pointer-events:none;opacity:.6;
-  padding-right:4px;
-}
 .tabs-wrap::after{
   content:'';position:absolute;right:0;top:0;bottom:0;width:32px;
   background:linear-gradient(to right,transparent,rgba(255,255,255,.94));
@@ -217,7 +210,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .wc.wc-sky::before{background:linear-gradient(135deg,rgba(79,184,230,.08),rgba(0,169,95,.03),transparent 70%)}
 .wc.wc-neutral::before{background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(79,184,230,.02),transparent 70%)}
 .wc-emoji{font-size:32px;margin-bottom:10px;display:block;position:relative;z-index:1}
-.wc h3{font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px;position:relative;z-index:1}
+.wc h3{font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:2px;position:relative;z-index:1}
+.wc .wc-en{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:.5px;color:var(--dim);margin-bottom:6px;position:relative;z-index:1;text-transform:uppercase}
 .wc p{font-size:14px;font-weight:300;color:var(--text);line-height:1.8;position:relative;z-index:1}
 .wc-accent{
   position:absolute;top:-20px;right:-20px;width:100px;height:100px;
@@ -573,9 +567,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 @media(max-width:640px){
   .lg{grid-template-columns:1fr}
   .tb{font-size:11px;padding:9px 8px 10px;letter-spacing:-.03em}
-  .top-logo-img{height:38px}
-  .tabs-guide{display:none}
-  .top-in,.pn{padding-left:18px;padding-right:18px}
+  .top-logo-img{height:42px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
   .stype{padding:10px 4px}
   .stype-name{font-size:11px}
@@ -603,7 +595,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
       <button class="tb" data-t="start">시작</button>
       <button class="tb" data-t="tips">공략</button>
     </nav>
-    <span class="tabs-guide en">Beginner Guide</span>
     </div>
   </div>
 </header>
@@ -645,33 +636,39 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <!-- ═══ 세계관 ═══ -->
 <div class="pn on" id="world">
   <p class="sl fi" style="color:var(--green)">세계관</p>
-  <h2 class="st fi">경마 × 아이돌,<br>그 기묘한 조합</h2>
+  <h2 class="st fi">경마 × 아이돌, 그 기묘한 조합</h2>
   <p class="sd fi">이 세계에는 말의 이름과 혼을 이어받은 소녀 종족 &lsquo;우마무스메&rsquo;가 존재한다. 머리에 말귀, 허리에 말꼬리를 가진 소녀들이 도쿄의 트레센 학원에 입학해 훈련하고, 실제 일본 경마 일정을 따르는 레이스에 출전한다.</p>
 
   <div class="wc-stack fi">
-    <div class="wc wc-green">
-      <div class="wc-accent" style="background:radial-gradient(circle,rgba(0,169,95,.15),transparent)"></div>
-      <span class="wc-emoji">🏇</span>
-      <h3>레이스</h3>
-      <p>실제 경마장 코스를 재현한 잔디 위를 달린다. 코너 각도, 잔디 질감, 실황 아나운서의 호흡까지 — 경마 중계 그 자체다.</p>
-    </div>
-    <div class="wc wc-pink">
-      <div class="wc-accent" style="background:radial-gradient(circle,rgba(233,80,152,.12),transparent)"></div>
-      <span class="wc-emoji">🎤</span>
-      <h3>위닝 라이브</h3>
-      <p>레이스에서 이기면 관객 앞에서 3D 라이브 공연을 한다. 승리한 우마무스메가 센터에 서는, 이 게임만의 독특한 승리 의식이다.</p>
+    <div class="wc-row">
+      <div class="wc wc-green">
+        <div class="wc-accent" style="background:radial-gradient(circle,rgba(0,169,95,.15),transparent)"></div>
+        <span class="wc-emoji">🏇</span>
+        <h3>레이스</h3>
+        <p class="wc-en en">Race</p>
+        <p>실제 경마장 코스를 재현한 잔디 위를 달린다. 실황 아나운서의 중계까지 경마 그 자체다.</p>
+      </div>
+      <div class="wc wc-pink">
+        <div class="wc-accent" style="background:radial-gradient(circle,rgba(233,80,152,.12),transparent)"></div>
+        <span class="wc-emoji">🎤</span>
+        <h3>위닝 라이브</h3>
+        <p class="wc-en en">Winning Live</p>
+        <p>레이스에서 이기면 3D 라이브 공연을 한다. 이 게임만의 독특한 승리 의식이다.</p>
+      </div>
     </div>
     <div class="wc-row">
       <div class="wc wc-sky">
         <div class="wc-accent" style="background:radial-gradient(circle,rgba(79,184,230,.12),transparent)"></div>
         <span class="wc-emoji">🐴</span>
         <h3>실존 경주마</h3>
+        <p class="wc-en en">Real Horse Motif</p>
         <p>100명 넘는 캐릭터 전원이 실존 경주마의 이름을 지녔다. 마주에게 정식 라이선스를 받았다.</p>
       </div>
       <div class="wc wc-neutral">
         <div class="wc-accent" style="background:radial-gradient(circle,rgba(0,0,0,.04),transparent)"></div>
         <span class="wc-emoji">🎓</span>
         <h3>트레센 학원</h3>
+        <p class="wc-en en">Tracen Academy</p>
         <p>우마무스메들의 훈련 기관. 플레이어는 이 학원의 &lsquo;트레이너&rsquo;가 되어 우마무스메를 키운다.</p>
       </div>
     </div>
@@ -680,19 +677,40 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="dv"><hr></div>
 
   <p class="sl fi" style="color:var(--pink)">모티프</p>
-  <h2 class="st fi">경마를 몰라도 된다.<br>하지만 알면 더 재미있다.</h2>
-  <p class="sd fi">게임이 하나하나 알려준다. 오히려 모르는 상태에서 시작해야 "이게 실화였어?" 하는 충격이 배가 된다. 이 게임의 모든 캐릭터는 실존 경주마를 모티프로 삼고 있으며, 마주(말의 소유자)로부터 정식 라이선스를 받아 사용한다.</p>
+  <h2 class="st fi">경마를 몰라도 되지만, 알면 더 재밌다</h2>
+  <p class="sd fi">게임이 하나하나 알려준다. 오히려 모르는 상태에서 시작해야 "이게 실화였어?" 하는 충격이 배가 된다. 이 게임의 모든 캐릭터는 실존 경주마를 모티프로 삼고 있으며, 마주로부터 정식 라이선스를 받아 사용한다.</p>
 
-  <div class="sh fi"><div class="sh-title">원본마가 캐릭터가 되는 방식</div><div class="sh-sub en">How Real Horses Become Characters</div></div>
-  <p class="bp fi">원본마의 모색은 머리카락 색이 되고, 마주의 기수복 배색은 레이싱 의상인 승부복에 반영된다. 성격과 목표, 좌절, 라이벌 관계까지 원본마의 실제 전적에서 가져온다. 골드쉽의 게이트 거부, 오구리캡의 왕성한 식욕, 하루우라라의 113연패 기록 등 원본마의 실제 기행이 캐릭터에 직접 녹아 있다.</p>
-  <p class="bp fi">원본마가 경주 중 골절로 세상을 떠난 사일런스 스즈카의 스토리는, 게임에서 IF 루트로 재구성되었다. 실화를 알고 나면 감정의 무게가 완전히 달라지며, 이런 캐릭터가 100명 넘게 존재한다.</p>
+  <div class="wc-stack fi">
+    <div class="wc wc-green">
+      <div class="wc-accent" style="background:radial-gradient(circle,rgba(0,169,95,.15),transparent)"></div>
+      <span class="wc-emoji">🎨</span>
+      <h3>원본마가 캐릭터가 되는 방식</h3>
+      <p class="wc-en en">How Real Horses Become Characters</p>
+      <p>원본마의 모색은 머리카락 색이 되고, 마주의 기수복 배색은 레이싱 의상인 승부복에 반영된다. 성격과 목표, 좌절, 라이벌 관계까지 원본마의 실제 전적에서 가져온다. 골드쉽의 게이트 거부, 오구리캡의 왕성한 식욕, 하루우라라의 113연패 기록 등 원본마의 실제 기행이 캐릭터에 직접 녹아 있다.</p>
+    </div>
+    <div class="wc wc-pink">
+      <div class="wc-accent" style="background:radial-gradient(circle,rgba(233,80,152,.12),transparent)"></div>
+      <span class="wc-emoji">⚧️</span>
+      <h3>숫말과 암말의 디자인 구분</h3>
+      <p class="wc-en en">Stallion vs Mare Design</p>
+      <p>숫말 모티프 캐릭터는 왼쪽 귀 장식 + 체육복 반바지를 착용하고, 암말 모티프 캐릭터는 오른쪽 귀 장식 + 체육복 블루머를 착용한다. 파인 모션의 경우, 원본마가 인터섹스로 알려져 의도적으로 양쪽 귀에 장식을 단 디자인이 적용되었다.</p>
+    </div>
+    <div class="wc wc-sky">
+      <div class="wc-accent" style="background:radial-gradient(circle,rgba(79,184,230,.12),transparent)"></div>
+      <span class="wc-emoji">⚰️</span>
+      <h3>실화가 주는 감정의 무게</h3>
+      <p class="wc-en en">Based on True Stories</p>
+      <p>사일런스 스즈카의 원본마는 1998년 경주 중 골절로 세상을 떠났다. 게임에서는 그 비극을 IF 루트로 재구성했다. 실화를 알고 나면 감정의 무게가 완전히 달라지며, 이런 캐릭터가 100명 넘게 존재한다.</p>
+    </div>
+  </div>
+
+  <div class="sh fi"><div class="sh-title">클래식 삼관과 트리플 티아라</div><div class="sh-sub en">Classic Triple Crown &amp; Triple Tiara</div></div>
+  <p class="bp fi">클래식 삼관은 사츠키상(4월 전반), 일본 더비(5월 후반), 국화상(10월 후반). 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다.</p>
+  <p class="bp fi">트리플 티아라는 벚꽃상(4월 전반), 오크스(5월 후반), 추화상(10월 후반). 원래 암말만 출전할 수 있는 레이스지만, 우마무스메 세계에서는 전원 여성이므로 숫말 모티프 캐릭터도 출전이 가능하다. 12세대 젠틸돈나(G1 7승, 재팬컵 2연패), G1 9승의 아몬드 아이(역대 최다) 등 최근 암말 모티프 우마무스메가 잇달아 출시되면서, 티아라 노선의 스토리 라인이 크게 확장되고 있다.</p>
 
   <div class="sh fi"><div class="sh-title">포에버 영과 브리더즈컵</div><div class="sh-sub en">Forever Young × Breeders' Cup</div></div>
-  <p class="bp fi">2025년 11월, 일본 경주마 포에버 영이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. 포에버 영의 마주인 후지타 스스무는 우마무스메 운영사 사이게임즈의 모기업 사이버에이전트의 사장으로, 우마무스메 팬덤에서는 자신들의 가챠 과금이 마주 활동에 기여했다며 '한 입 마주'를 자처하는 밈이 생기기도 했다.</p>
+  <p class="bp fi">2025년 11월, 일본 경주마 포에버 영이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. 포에버 영의 마주인 후지타 스스무는 우마무스메 운영사 사이게임즈의 모기업 사이버에이전트의 사장으로, 팬덤에서는 가챠 과금이 마주 활동에 기여했다며 '한 입 마주'를 자처하는 밈이 생기기도 했다.</p>
   <p class="bp fi">포에버 영의 생일은 우마무스메 게임 서비스 개시일(2월 24일)과 같다. 2026년 2월, 게임 5주년 기념 방송에서 포에버 영의 우마무스메 캐릭터와 브리더즈컵 배경의 신규 시나리오(Beyond Dreams)가 동시에 공개되었다. 현역 경주마가 우마무스메로 구현된 사례는 극히 드물며, 원본마의 실제 활약과 게임 콘텐츠가 실시간으로 연동되는 이 게임 특유의 현상이다.</p>
-
-  <div class="sh fi"><div class="sh-title">클래식 삼관</div><div class="sh-sub en">Classic Triple Crown</div></div>
-  <p class="bp fi">사츠키상(皐月賞), 일본 더비(東京優駿), 국화상(菊花賞). 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다.</p>
 </div>
 
 <!-- ═══ 특징 ═══ -->
