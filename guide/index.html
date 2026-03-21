@@ -36,16 +36,27 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 /* ── TOP BAR ── */
 .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
-.top-row{display:flex;align-items:center;justify-content:center;padding:12px 0 0}
-.top-logo-img{height:28px;display:block}
-.tabs{display:inline-flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;padding-right:28px;max-width:100%}
+.top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 0}
+.top-logo-img{height:36px;display:block}
+.tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;justify-content:center;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
 .tabs-wrap{position:relative;text-align:center}
+.tabs-guide{
+  position:absolute;right:0;bottom:10px;
+  font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);
+  pointer-events:none;opacity:.6;
+  padding-right:4px;
+}
 .tabs-wrap::after{
   content:'';position:absolute;right:0;top:0;bottom:0;width:32px;
   background:linear-gradient(to right,transparent,rgba(255,255,255,.94));
   pointer-events:none;z-index:1;
   opacity:var(--fade-op,1);transition:opacity .2s;
+  display:none;
+}
+@media(max-width:640px){
+  .tabs-wrap::after{display:block}
 }
 .tb{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:500;color:var(--dim);background:none;border:none;padding:10px 14px 11px;cursor:pointer;white-space:nowrap;position:relative;transition:color .25s}
 .tb::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--green);transform:scaleX(0);transition:transform .25s}
@@ -469,11 +480,13 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
              radial-gradient(circle at 80% 20%,rgba(255,255,255,.1),transparent 40%);
   pointer-events:none;
 }
-.f-cta-logo{
-  height:48px;display:block;margin:0 auto 14px;
+.f-cta-icon{
+  width:72px;height:72px;border-radius:16px;
+  box-shadow:0 4px 20px rgba(0,0,0,.15);
+  overflow:hidden;margin:0 auto 16px;
   position:relative;z-index:1;
-  filter:brightness(0) invert(1);opacity:.9;
 }
+.f-cta-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .f-cta-title{
   font-size:20px;font-weight:800;letter-spacing:-.04em;
   color:#fff;margin-bottom:4px;position:relative;z-index:1;
@@ -504,15 +517,27 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   max-width:720px;margin:0 auto;
 }
 .footer-links{
-  display:flex;gap:16px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px;
 }
 .footer-links a{
-  font-size:11px;font-weight:500;color:var(--dim);text-decoration:none;
-  transition:color .2s;
+  font-size:11px;font-weight:500;color:var(--text);text-decoration:none;
+  padding:8px 6px;border-radius:10px;text-align:center;
+  background:rgba(255,255,255,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:0 1px 4px rgba(0,0,0,.03);
+  transition:transform .15s,box-shadow .15s,background .15s;
+  letter-spacing:-.01em;white-space:nowrap;
 }
-.footer-links a:hover{color:var(--bright)}
-.footer a{color:inherit;text-decoration:underline}
-.footer-logo{display:block;height:32px;margin:0 auto 12px;opacity:.15}
+.footer-links a:hover{
+  transform:translateY(-1px);
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  background:rgba(255,255,255,.8);
+}
+@media(max-width:420px){
+  .footer-links{grid-template-columns:repeat(2,1fr)}
+}
+.footer a{color:inherit;text-decoration:none}
+.footer-logo{display:block;height:36px;margin:0 auto 14px;opacity:.25}
 .footer .copy{opacity:.5;margin-top:10px}
 
 /* ── ANIMATION ── */
@@ -524,7 +549,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 @media(max-width:640px){
   .lg{grid-template-columns:1fr}
   .tb{font-size:11px;padding:9px 8px 10px;letter-spacing:-.03em}
-  .top-logo-img{height:24px}
+  .top-logo-img{height:30px}
+  .tabs-guide{display:none}
+  .tabs .tb:last-child{margin-right:0}
+  .tabs::after{content:'';min-width:24px;flex-shrink:0}
+  .tabs{justify-content:flex-start}
   .top-in,.pn{padding-left:18px;padding-right:18px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
   .stype{padding:10px 6px}
@@ -553,6 +582,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
       <button class="tb" data-t="start">시작</button>
       <button class="tb" data-t="tips">공략</button>
     </nav>
+    <span class="tabs-guide en">Beginner Guide</span>
     </div>
   </div>
 </header>
@@ -993,7 +1023,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <!-- FOOTER CTA -->
 <section class="f-cta">
   <div class="f-cta-box">
-    <img class="f-cta-logo" src="images/uma-logo.png" alt="우마무스메 프리티 더비">
+    <div class="f-cta-icon"><img src="images/uma.webp" alt="우마무스메"></div>
     <div class="f-cta-title">지금 시작하기</div>
     <div class="f-cta-sub">누구보다 빠르게 달리고 싶어!</div>
     <div class="f-cta-dl">
