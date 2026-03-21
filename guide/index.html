@@ -38,9 +38,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
 .top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 2px}
 .top-logo-img{height:40px;display:block}
-.tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;justify-content:center;max-width:100%}
+.tabs{display:inline-flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
-.tabs-wrap{position:relative;text-align:center}
+.tabs-wrap{position:relative;text-align:center;overflow-x:auto}
+.tabs-wrap::-webkit-scrollbar{display:none}
 .tabs-guide{
   position:absolute;right:0;bottom:10px;
   font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:500;
@@ -559,7 +560,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   .tabs-guide{display:none}
   .tabs .tb:last-child{margin-right:0}
   .tabs::after{content:'';min-width:24px;flex-shrink:0}
-  .tabs{justify-content:flex-start}
   .top-in,.pn{padding-left:18px;padding-right:18px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
   .stype{padding:10px 6px}
@@ -1099,10 +1099,11 @@ obsPn(document.getElementById('world'));
 const tabsNav=document.querySelector('.tabs');
 const tabsWrap=document.querySelector('.tabs-wrap');
 function checkTabFade(){
-  const atEnd=tabsNav.scrollLeft+tabsNav.clientWidth>=tabsNav.scrollWidth-4;
+  const el=tabsWrap;
+  const atEnd=el.scrollLeft+el.clientWidth>=el.scrollWidth-4;
   tabsWrap.style.setProperty('--fade-op',atEnd?'0':'1');
 }
-tabsNav.addEventListener('scroll',checkTabFade);
+tabsWrap.addEventListener('scroll',checkTabFade);
 checkTabFade();
 </script>
 </body>
