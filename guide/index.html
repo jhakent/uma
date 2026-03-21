@@ -85,7 +85,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .hero-body{flex:1;min-width:0}
 .hero-name{font-size:21px;font-weight:800;letter-spacing:-.04em;color:var(--bright);line-height:1.2}
 .hero-slogan{font-size:13px;font-weight:400;color:var(--dim);margin-top:4px;line-height:1.4}
-.hero-dev{font-size:11.5px;font-weight:400;color:var(--sky);margin-top:6px}
+.hero-dev{font-size:11.5px;font-weight:400;color:var(--dim);margin-top:6px}
 .hero-dl{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .hero-btn{
   display:inline-flex;align-items:center;gap:6px;
@@ -155,7 +155,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .sh-hero{
   margin-top:36px;margin-bottom:14px;
   padding:22px 22px;border-radius:14px;
-  background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
   position:relative;overflow:hidden;
@@ -175,7 +175,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   margin-top:32px;margin-bottom:14px;
   padding:24px 24px 22px;border-radius:16px;
   position:relative;overflow:hidden;
-  background:rgba(255,255,255,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 3px 14px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
 }
@@ -206,8 +206,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   border-radius:16px;padding:28px 24px;
   position:relative;overflow:hidden;
   transition:transform .25s,box-shadow .25s;
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02),inset 0 1px 0 rgba(255,255,255,.8);
 }
@@ -235,7 +234,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 /* ── SIMPLE PAIR CARDS (start tab etc) ── */
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.pair-card{background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,.04);border-radius:16px;padding:22px 18px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
+.pair-card{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-radius:16px;padding:22px 18px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .pair-card:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
 .pair-card .pc-emoji{font-size:22px;margin-bottom:6px;display:block}
 .pair-card h3{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:4px}
@@ -249,12 +248,12 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 }
 
 /* ── NOTE ── */
-.note{background:rgba(255,255,255,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(0,0,0,.05);box-shadow:0 3px 14px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);border-radius:16px;padding:22px;margin:24px 0}
+.note{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.05);box-shadow:0 3px 14px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);border-radius:16px;padding:22px;margin:24px 0}
 .note h3{font-size:14.5px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:5px}
 .note p{font-size:13.5px;font-weight:300;color:var(--dim);line-height:1.8}
 
 /* ── INFO BOX ── */
-.ib{background:rgba(255,255,255,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,.04);border-left:3px solid var(--green);border-radius:0 16px 16px 0;padding:18px 20px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
+.ib{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-left:3px solid var(--green);border-radius:0 16px 16px 0;padding:18px 20px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .ib.pk{border-left-color:var(--pink)}.ib.sk{border-left-color:var(--sky)}
 .ib-l{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;margin-bottom:4px}
 .ib-l.en{letter-spacing:2px}
@@ -262,7 +261,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ib p{font-size:13px;font-weight:300;color:var(--text);line-height:1.8}
 
 /* ── FEAT BANNER ── */
-.fb{border:1px solid rgba(0,0,0,.04);border-radius:20px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden;background:rgba(255,255,255,.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 3px 18px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
+.fb{border:1px solid rgba(0,0,0,.04);border-radius:20px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden;background:rgba(255,255,255,.97);box-shadow:0 3px 18px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .fb::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;pointer-events:none}
 .fb .fn{font-family:'Outfit',sans-serif;font-size:42px;font-weight:900;color:rgba(0,0,0,.04);line-height:1;margin-bottom:6px}
 .fb h3{font-size:15px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px}
@@ -270,7 +269,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 /* ── SUPPORT TYPE CARDS ── */
 .stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0;width:100%}
-.stype{border-radius:14px;padding:14px 4px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s;min-width:0;box-sizing:border-box;overflow:hidden}
+.stype{border-radius:14px;padding:14px 4px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s;min-width:0;box-sizing:border-box;overflow:hidden}
 .stype:hover{transform:translateY(-2px)}
 .stype-icon{font-size:24px;margin-bottom:6px;line-height:1;height:28px;display:flex;align-items:center;justify-content:center}
 .stype-name{font-size:12px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
@@ -294,7 +293,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 }
 .ssr-duo-card{
   padding:16px;border-radius:16px;text-align:center;
-  background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 3px 14px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02);
   transition:transform .2s,box-shadow .2s;
@@ -314,7 +313,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 }
 
 /* compact SSR row */
-.ssr{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,.04);border-radius:14px;margin-bottom:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
+.ssr{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-radius:14px;margin-bottom:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .ssr:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
 .ssr-icon{width:44px;height:auto;flex-shrink:0;overflow:visible}
 .ssr-icon img{width:100%;height:auto;display:block}
@@ -339,7 +338,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 /* ── SCENARIO LIST ── */
 .sc-list{margin:20px 0}
-.sc-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;margin-bottom:6px;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s,box-shadow .2s}
+.sc-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;margin-bottom:6px;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s,box-shadow .2s}
 .sc-item:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.05)}
 .sc-bar{width:4px;height:36px;border-radius:2px;flex-shrink:0}
 .sc-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--dim);width:20px;flex-shrink:0;text-align:center}
@@ -349,7 +348,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .sc-tag{font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0;letter-spacing:.5px}
 
 /* ── SCENARIO DETAIL CARD ── */
-.sc-detail{border:1px solid rgba(0,0,0,.04);border-radius:20px;overflow:hidden;margin:20px 0;background:rgba(255,255,255,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02)}
+.sc-detail{border:1px solid rgba(0,0,0,.04);border-radius:20px;overflow:hidden;margin:20px 0;background:rgba(255,255,255,.97);box-shadow:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02)}
 .sc-detail-head{padding:24px 22px 18px;position:relative}
 .sc-detail-head h3{font-size:17px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:4px}
 .sc-detail-head .sc-en{font-family:'Outfit',sans-serif;font-size:11px;font-weight:400;letter-spacing:.01em;color:var(--dim);text-transform:uppercase}
@@ -369,7 +368,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 /* ── LINK GRID ── */
 .lg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
-.lk{display:block;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,.04);border-radius:14px;padding:16px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
+.lk{display:block;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-radius:14px;padding:16px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .lk:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
 .lk-l{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:2px}
 .lk-t{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
@@ -379,7 +378,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .mt{width:100%;margin:14px 0;border-collapse:collapse;font-size:12.5px}
 .mt th{font-weight:600;font-size:11px;text-align:left;padding:8px 10px;background:rgba(255,255,255,.5);border:1px solid var(--border);color:var(--bright)}
 .mt td{padding:8px 10px;border:1px solid var(--border);font-weight:300;color:var(--text);line-height:1.6;vertical-align:top}
-.mt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border-radius:14px;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.4);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.mt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border-radius:14px;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97)}
 .mt-wrap .mt{margin:0}
 .mt-wrap .mt th,.mt-wrap .mt td{white-space:nowrap;border-color:var(--border)}
 .mt-season{font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 7px;border-radius:100px;display:inline-block}
@@ -394,7 +393,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .rc-group{
   margin-bottom:12px;border-radius:0 14px 14px 14px;overflow:hidden;
   border:1px solid rgba(0,0,0,.04);
-  background:rgba(255,255,255,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.97);
 }
 .rc{
   display:flex;align-items:center;gap:10px;
@@ -428,7 +427,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ach-list{margin:16px 0;display:flex;flex-direction:column;gap:8px}
 .ach{
   padding:16px 18px;border-radius:14px;
-  background:rgba(255,255,255,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.05);
   box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
   transition:transform .15s;
@@ -442,7 +441,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ref-link{
   display:flex;align-items:center;gap:8px;
   padding:9px 14px;border-radius:10px;flex:1;
-  background:rgba(255,255,255,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);
   text-decoration:none;color:var(--text);
@@ -452,7 +451,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ref-emoji{font-size:16px;flex-shrink:0}
 .ref-text{font-size:12.5px;font-weight:600;letter-spacing:-.02em;flex:1}
 .ref-arrow{font-size:14px;color:var(--dim);opacity:.4;flex-shrink:0}
-@media(max-width:640px){.ref-links{flex-direction:row}}
+@media(max-width:640px){.ref-links{flex-direction:column}}
 
 /* ── CHIPS ── */
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
@@ -466,7 +465,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .qa-btn{
   display:flex;align-items:center;gap:14px;
   padding:16px 18px;border-radius:14px;
-  background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
   text-decoration:none;color:var(--text);
@@ -544,7 +543,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .footer-links a{
   font-size:11px;font-weight:500;color:var(--text);text-decoration:none;
   padding:8px 6px;border-radius:10px;text-align:center;
-  background:rgba(255,255,255,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 2px 8px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);
   transition:transform .15s,box-shadow .15s,background .15s;
@@ -571,6 +570,14 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 }
 .footer-logo{display:block;height:36px;margin:0 auto 14px;opacity:.25}
 .footer .copy{opacity:.5;margin-top:10px}
+
+/* ── EVENT BANNERS ── */
+.ev-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.ev-card{display:block;position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s,box-shadow .2s;text-decoration:none}
+.ev-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.ev-card img{width:100%;height:auto;display:block}
+.ev-label{position:absolute;bottom:8px;left:8px;font-size:10px;font-weight:600;color:#fff;padding:3px 10px;border-radius:6px;letter-spacing:-.01em}
+@media(max-width:640px){.ev-row{grid-template-columns:1fr}}
 
 /* ── ANIMATION ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -620,7 +627,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     <div class="hero-body">
       <div class="hero-name">우마무스메 프리티 더비</div>
       <div class="hero-slogan">누구보다 빠르게 달리고 싶어!</div>
-      <div class="hero-dev">Cygames / Kakao Games · 무료 · 인앱 구매</div>
+      <div class="hero-dev"><span class="en">Cygames / Kakao Games</span> · 무료 · 인앱 구매</div>
       <div class="hero-dl">
         <a class="hero-btn g" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener noreferrer">App Store</a>
         <a class="hero-btn w" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener noreferrer">Google Play</a>
@@ -750,7 +757,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <div class="fb fi" style="background:linear-gradient(135deg,rgba(0,169,95,.04),rgba(233,80,152,.03))">
     <div class="fn en">04</div>
     <h3>2025 The Game Awards 최우수 모바일 게임</h3>
-    <p>2025년 글로벌 영어 버전 출시 후 TGA Best Mobile Game 수상. 누적 매출 약 25억 달러(3.4조 원). 일본 로컬 게임이 글로벌 무대에서 인정받은 드문 사례다.</p>
+    <p>2025년 글로벌 영어 버전 출시 후 TGA Best Mobile Game 수상. 누적 매출 약 25억 달러(3.4조 원, 2025년 기준). 일본 로컬 게임이 글로벌 무대에서 인정받은 드문 사례다.</p>
   </div>
 </div>
 
@@ -881,6 +888,9 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <p class="bp fi">모든 우마무스메에게는 거리 적성(단거리·마일·중거리·장거리), 각질 적성(도주·선행·선입·추입), 마장 적성(잔디·더트)이 부여되어 있다. 적성 등급은 G~S로 나뉘며, 등급이 높을수록 레이스에서 스피드·지능에 유리한 보정을 받는다.</p>
   <p class="bp fi">기본 적성이 A인 거리와 작전으로 레이스에 출전하는 것이 정석이다. 애정 캐릭터를 적성 외 거리나 작전으로 운용하고 싶다면, 인자 계승을 통해 적성을 S까지 끌어올려야 한다. S 적성은 인자 계승 이벤트에서 확률적으로 획득되며, 부모 개체의 적성 인자를 미리 준비하는 과정이 필수다.</p>
 
+  <div class="sh fi"><div class="sh-title">캐릭터 각성 레벨</div><div class="sh-sub en">Awakening Level</div></div>
+  <p class="bp fi">캐릭터에는 각성 레벨(Lv.1~5)이 있으며, 각성 레벨을 올리면 초기 보유 스킬이 추가 해방된다. Lv.3과 Lv.5에서 각각 레어 스킬이 해방되며, 이 스킬은 육성 중 특정 조건을 충족하면 더 강력한 진화 스킬로 변환될 수 있다. 각성에는 마니와 전용 재화가 필요하다.</p>
+
   <div class="sys-hero fi" style="border-left:4px solid var(--pink)">
     <span class="sys-hero-num en">02</span>
     <div class="sys-hero-top"><span class="sys-hero-emoji">🃏</span><span class="sys-hero-title">서포트카드</span></div>
@@ -926,12 +936,12 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     </div>
     <div class="ssr">
       <div class="ssr-icon"><img src="images/ssr-rudolf.png" alt="심볼리 루돌프"></div>
-      <div class="ssr-info"><div class="ssr-name">심볼리 루돌프</div><div class="ssr-sub">🎓 지능 · 곧 출시 예정</div></div>
+      <div class="ssr-info"><div class="ssr-name">심볼리 루돌프</div><div class="ssr-sub">🎓 지능 · 2026년 4월 17일 출시</div></div>
       <div class="ssr-badge" style="background:rgba(0,169,95,.08);color:var(--int)">예정</div>
     </div>
     <div class="ssr">
       <div class="ssr-icon"><img src="images/ssr-mejiro.png" alt="메지로 아르당"></div>
-      <div class="ssr-info"><div class="ssr-name">메지로 아르당</div><div class="ssr-sub">💪 파워 · 곧 출시 예정</div></div>
+      <div class="ssr-info"><div class="ssr-name">메지로 아르당</div><div class="ssr-sub">💪 파워 · 2026년 4월 17일 출시</div></div>
       <div class="ssr-badge" style="background:rgba(232,200,66,.1);color:#c5a000">예정</div>
     </div>
   </div>
@@ -959,8 +969,17 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
   <div class="ib fi"><div class="ib-l">핵심 원칙</div><p>캐릭터는 교환권으로 얻을 수 있다. 서포트카드는 가챠 외에 방법이 없다. 따라서 서포트카드 가챠에 주얼을 우선 투자하는 것이 정석이다.</p></div>
 
-  <div class="sh fi"><div class="sh-title">캐릭터 각성 레벨</div><div class="sh-sub en">Awakening Level</div></div>
-  <p class="bp fi">캐릭터에는 각성 레벨(Lv.1~5)이 있으며, 각성 레벨을 올리면 초기 보유 스킬이 추가 해방된다. Lv.3과 Lv.5에서 각각 레어 스킬이 해방되며, 이 스킬은 육성 중 특정 조건을 충족하면 더 강력한 진화 스킬로 변환될 수 있다. 각성에는 마니와 전용 재화가 필요하다.</p>
+  <div class="sh fi"><div class="sh-title">현재 진행 중인 가챠</div><div class="sh-sub en">Now Running</div></div>
+  <div class="ev-row fi">
+    <a class="ev-card" href="https://umamusume.kakao.com/" target="_blank" rel="noopener noreferrer">
+      <img src="images/evkr.webp" alt="한섭 가챠 배너" loading="lazy">
+      <span class="ev-label" style="background:var(--green)">한국 서버</span>
+    </a>
+    <a class="ev-card" href="https://umamusume.jp/" target="_blank" rel="noopener noreferrer">
+      <img src="images/evjp.webp" alt="일섭 가챠 배너" loading="lazy">
+      <span class="ev-label" style="background:var(--pink)">일본 서버</span>
+    </a>
+  </div>
 </div>
 
 <!-- ═══ 시나리오 ═══ -->
@@ -982,7 +1001,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     <div class="sc-item" style="opacity:.7"><div class="sc-bar" style="background:#c9b037"></div><div class="sc-num en">10</div><div class="sc-body"><div class="sc-title">The Twinkle Legends</div><div class="sc-desc">레전드 레이스 모드. 자동육성 지원.</div></div><div class="sc-tag" style="background:rgba(0,0,0,.04);color:var(--dim)">일섭</div></div>
     <div class="sc-item" style="opacity:.7"><div class="sc-bar" style="background:#66bb6a"></div><div class="sc-num en">11</div><div class="sc-body"><div class="sc-title">무인도에 어서오세요 -DESIGN YOUR ISLAND-</div><div class="sc-desc">무인도 테마. 자동육성 지원.</div></div><div class="sc-tag" style="background:rgba(0,0,0,.04);color:var(--dim)">일섭</div></div>
     <div class="sc-item" style="opacity:.7"><div class="sc-bar" style="background:#ef5350"></div><div class="sc-num en">12</div><div class="sc-body"><div class="sc-title">극락♪유코마 온천향</div><div class="sc-desc">온천 테마. SP 9,000+ 달성 가능. 자동육성 지원.</div></div><div class="sc-tag" style="background:rgba(0,0,0,.04);color:var(--dim)">일섭</div></div>
-    <div class="sc-item" style="opacity:.7;border-color:rgba(233,80,152,.15);background:rgba(233,80,152,.015)"><div class="sc-bar" style="background:linear-gradient(to bottom,#1e88e5,#f9a825)"></div><div class="sc-num en">13</div><div class="sc-body"><div class="sc-title">Beyond Dreams 함께 앞으로, 함께 빛을</div><div class="sc-desc">브리더즈컵 미국 원정. 전 거리/잔디·더트 대응.</div></div><div class="sc-tag" style="background:rgba(233,80,152,.08);color:var(--pink)">일섭 최신</div></div>
+    <div class="sc-item" style="opacity:.85;border-color:rgba(233,80,152,.15);background:rgba(233,80,152,.015)"><div class="sc-bar" style="background:linear-gradient(to bottom,#1e88e5,#f9a825)"></div><div class="sc-num en">13</div><div class="sc-body"><div class="sc-title">Beyond Dreams 함께 앞으로, 함께 빛을</div><div class="sc-desc">브리더즈컵 미국 원정. 전 거리/잔디·더트 대응.</div></div><div class="sc-tag" style="background:rgba(233,80,152,.08);color:var(--pink)">일섭 최신</div></div>
   </div>
 
   <div class="dv"><hr></div>
