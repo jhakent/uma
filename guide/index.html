@@ -124,6 +124,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .bp{font-size:14px;font-weight:300;color:var(--text);line-height:1.85}
 .bp+.bp{margin-top:8px}
 
+/* ── SECTION HEADING (subtitle style) ── */
+.sh{margin-top:36px;margin-bottom:12px}
+.sh-title{font-size:17px;font-weight:800;letter-spacing:-.04em;color:var(--bright);line-height:1.3}
+.sh-sub{font-family:'Outfit',sans-serif;font-size:11px;font-weight:400;letter-spacing:.04em;color:var(--dim);margin-top:3px;text-transform:uppercase}
+
 /* ── WORLD CARDS ── */
 .wc-stack{margin:24px 0;display:flex;flex-direction:column;gap:10px}
 .wc{
@@ -202,7 +207,15 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .ssr-list{margin:18px 0}
 .ssr{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.6);border-radius:14px;margin-bottom:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 1px 8px rgba(0,0,0,.03)}
 .ssr:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.ssr-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ssr-tier{
+  width:36px;height:22px;border-radius:6px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;
+  color:#6b4c1e;letter-spacing:.5px;
+}
+.ssr-tier.t-r{background:linear-gradient(135deg,#e8e8e8,#d0d0d0);color:#888}
+.ssr-tier.t-sr{background:linear-gradient(135deg,#f7e07a,#eabc4e);color:#7a5c1a}
+.ssr-tier.t-ssr{background:linear-gradient(135deg,#d88cef,#8dd8f0,#a0e8a0);color:#5a3c14}
 .ssr-info{flex:1}
 .ssr-name{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .ssr-sub{font-size:12px;font-weight:300;color:var(--dim)}
@@ -257,6 +270,32 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 /* ── DIVIDER ── */
 .dv{margin:32px 0}.dv hr{border:none;height:1px;background:linear-gradient(to right,transparent,var(--border-s),transparent)}
+
+/* ── QUICK ACTIONS ── */
+.qa{margin:24px 0;display:flex;flex-direction:column;gap:8px}
+.qa-btn{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;border-radius:14px;
+  background:rgba(255,255,255,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 1px 8px rgba(0,0,0,.03);
+  text-decoration:none;color:var(--text);
+  transition:transform .2s,box-shadow .2s;
+}
+.qa-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.qa-icon{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.qa-body{flex:1;min-width:0}
+.qa-title{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
+.qa-desc{font-size:12px;font-weight:300;color:var(--dim);margin-top:1px;line-height:1.4}
+.qa-arrow{
+  font-size:16px;color:var(--dim);flex-shrink:0;
+  opacity:.4;transition:opacity .2s;
+}
+.qa-btn:hover .qa-arrow{opacity:.7}
 
 /* ── FOOTER CTA ── */
 .f-cta{
@@ -434,10 +473,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <p>게임이 하나하나 알려준다. 오히려 모르는 상태에서 시작해야 "이게 실화였어?" 하는 충격이 배가 된다.</p>
   </div>
 
-  <div class="bt fi">캐릭터와 원본마</div>
-  <p class="bp fi">캐릭터의 외형, 성격, 목표, 좌절, 라이벌 관계 전부 원본마의 실제 기록에서 가져왔다. 원본마의 모색은 머리카락 색이 되고, 마주의 기수복 배색은 승부복(레이싱 의상)에 반영된다. 골드쉽의 게이트 거부, 오구리캡의 왕성한 식욕, 하루우라라의 연패 기록 등 원본마의 실제 기행이 캐릭터에 직접 녹아 있다.</p>
+  <div class="sh fi"><div class="sh-title">캐릭터와 원본마</div><div class="sh-sub en">Character × Real Horse</div></div>
+  <p class="bp fi">캐릭터의 외형, 성격, 목표, 좌절, 라이벌 관계 전부 원본마의 실제 기록에서 가져왔다. 원본마의 모색은 머리카락 색이 되고, 마주의 기수복 배색은 레이싱 의상인 승부복에 반영된다. 골드쉽의 게이트 거부, 오구리캡의 왕성한 식욕, 하루우라라의 연패 기록 등 원본마의 실제 기행이 캐릭터에 직접 녹아 있다.</p>
 
-  <div class="bt fi">클래식 삼관</div>
+  <div class="sh fi"><div class="sh-title">클래식 삼관</div><div class="sh-sub en">Classic Triple Crown</div></div>
   <p class="bp fi">사츠키상(皐月賞), 일본 더비(東京優駿), 국화상(菊花賞). 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다.</p>
 </div>
 
@@ -472,12 +511,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <div class="pn" id="sys">
   <p class="sl fi" style="color:var(--sky)">게임 구조</p>
   <h2 class="st fi">핵심 시스템 해부</h2>
-  <p class="sd fi">게임의 기본 루프는 '육성 → 레이스 → 위닝 라이브'다. 트레이너로서 우마무스메 한 명을 선택하고, 3년간(게임 내 시간) 훈련시켜 레이스에 출전시킨다.</p>
+  <p class="sd fi">게임의 기본 루프는 '육성 → 레이스 → 위닝 라이브'다. 트레이너로서 우마무스메 한 명을 선택하고, 게임 내 시간으로 3년간 훈련시켜 레이스에 출전시킨다.</p>
 
-  <div class="bt fi">훈련 (트레이닝)</div>
-  <p class="bp fi">매 턴(반 달)마다 5개 능력치 중 하나를 훈련한다. 서포트카드 캐릭터와 함께 훈련하면 &lsquo;인연(きずな)&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 크게 오르는 &lsquo;우정 트레이닝&rsquo;이 발동한다. 이것이 고스탯 육성의 핵심이다.</p>
+  <div class="sh fi"><div class="sh-title">훈련</div><div class="sh-sub en">Training</div></div>
+  <p class="bp fi">반 달 단위의 턴마다 5개 능력치 중 하나를 훈련한다. 서포트카드 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 크게 오르는 &lsquo;우정 트레이닝&rsquo;이 발동한다. 이것이 고스탯 육성의 핵심이다.</p>
 
-  <div class="bt fi">서포트카드 — 게임의 시작과 끝</div>
+  <div class="sh fi"><div class="sh-title">서포트카드</div><div class="sh-sub en">Support Card — 게임의 시작과 끝</div></div>
   <p class="bp fi">육성을 보조하는 카드다. 어떤 서포트카드를 편성하느냐에 따라 육성 결과가 완전히 달라진다. 캐릭터보다 서포트카드가 중요하다는 것이 이 게임의 대전제다. 5가지 타입이 있으며, 각각 대응하는 훈련의 효과를 강화한다.</p>
 
   <div class="stype-grid fi">
@@ -488,23 +527,23 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <div class="stype" style="background:rgba(0,169,95,.06)"><div class="stype-icon">🎓</div><div class="stype-name" style="color:var(--int)">지능</div><div class="stype-en en">Intelligence</div></div>
   </div>
 
-  <p class="bp fi">등급은 R → SR → SSR 순으로 올라간다. SSR 카드의 한계돌파(같은 카드 중첩)가 육성 성능을 결정짓기 때문에, 가챠에서 SSR을 여러 장 모으는 것이 핵심이다.</p>
+  <p class="bp fi">등급은 <span class="ssr-tier t-r" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">R</span> → <span class="ssr-tier t-sr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SR</span> → <span class="ssr-tier t-ssr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SSR</span> 순으로 올라간다. SSR 카드는 같은 카드를 겹쳐 한계돌파할수록 성능이 올라가기 때문에, 가챠에서 SSR을 여러 장 모으는 것이 핵심이다.</p>
 
-  <div class="bt fi">한섭 기준 최상위 서포트카드</div>
+  <div class="sh fi"><div class="sh-title">한섭 최상위 서포트카드</div><div class="sh-sub en">Top-tier Support Cards · KR Server</div></div>
   <div class="ssr-list fi">
-    <div class="ssr"><div class="ssr-dot" style="background:var(--spd)"></div><div class="ssr-info"><div class="ssr-name">SSR 스틸 인 러브</div><div class="ssr-sub">스피드 · 현 메타 1순위 스피드 카드</div></div><div class="ssr-badge" style="background:rgba(79,184,230,.1);color:var(--spd)">인권</div></div>
-    <div class="ssr"><div class="ssr-dot" style="background:var(--sta)"></div><div class="ssr-info"><div class="ssr-name">SSR 에어 샤커</div><div class="ssr-sub">스태미나 · 메카 시나리오 링크 0순위</div></div><div class="ssr-badge" style="background:rgba(240,154,62,.1);color:var(--sta)">인권</div></div>
-    <div class="ssr"><div class="ssr-dot" style="background:var(--int)"></div><div class="ssr-info"><div class="ssr-name">SSR 심볼리 루돌프</div><div class="ssr-sub">지능 · 곧 출시 예정</div></div><div class="ssr-badge" style="background:rgba(0,169,95,.1);color:var(--int)">예정</div></div>
-    <div class="ssr"><div class="ssr-dot" style="background:#c5a000"></div><div class="ssr-info"><div class="ssr-name">SSR 메지로 아르당</div><div class="ssr-sub">파워 · 곧 출시 예정</div></div><div class="ssr-badge" style="background:rgba(232,200,66,.1);color:#c5a000">예정</div></div>
+    <div class="ssr"><div class="ssr-tier t-ssr">SSR</div><div class="ssr-info"><div class="ssr-name">스틸 인 러브</div><div class="ssr-sub">👟 스피드 · 현 메타 1순위 스피드 카드</div></div><div class="ssr-badge" style="background:rgba(79,184,230,.1);color:var(--spd)">인권</div></div>
+    <div class="ssr"><div class="ssr-tier t-ssr">SSR</div><div class="ssr-info"><div class="ssr-name">에어 샤커</div><div class="ssr-sub">🧡 스태미나 · 메카 시나리오 링크 0순위</div></div><div class="ssr-badge" style="background:rgba(240,154,62,.1);color:var(--sta)">인권</div></div>
+    <div class="ssr"><div class="ssr-tier t-ssr">SSR</div><div class="ssr-info"><div class="ssr-name">심볼리 루돌프</div><div class="ssr-sub">🎓 지능 · 곧 출시 예정</div></div><div class="ssr-badge" style="background:rgba(0,169,95,.08);color:var(--int)">예정</div></div>
+    <div class="ssr"><div class="ssr-tier t-ssr">SSR</div><div class="ssr-info"><div class="ssr-name">메지로 아르당</div><div class="ssr-sub">💪 파워 · 곧 출시 예정</div></div><div class="ssr-badge" style="background:rgba(232,200,66,.1);color:#c5a000">예정</div></div>
   </div>
 
   <div class="dv"><hr></div>
 
-  <div class="bt fi">인자 계승</div>
+  <div class="sh fi"><div class="sh-title">인자 계승</div><div class="sh-sub en">Factor Inheritance</div></div>
   <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;인자&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
 
-  <div class="bt fi">가챠 시스템</div>
-  <p class="bp fi">캐릭터 가챠와 서포트카드 가챠 두 종류. ★3/SSR 배출률 3%. 천장은 200연(30,000 주얼)이며, 이때 픽업 대상을 확정 교환할 수 있다. 교환 포인트는 배너 종료 시 소멸하므로, 30,000 주얼 미확보 시 뽑지 않는 것이 철칙이다.</p>
+  <div class="sh fi"><div class="sh-title">가챠</div><div class="sh-sub en">Gacha System</div></div>
+  <p class="bp fi">캐릭터 가챠와 서포트카드 가챠, 두 종류가 있다. ★3 및 SSR 배출률은 3%. 천장은 200연차, 주얼 30,000개이며, 이때 픽업 대상을 확정 교환할 수 있다. 교환 포인트는 배너 종료 시 소멸하므로, 주얼 30,000개 미확보 시 뽑지 않는 것이 철칙이다.</p>
 
   <div class="ib fi"><div class="ib-l en">핵심 원칙</div><p>캐릭터는 교환권으로 얻을 수 있다. 서포트카드는 가챠 외에 방법이 없다. 따라서 서포트카드 가챠에 주얼을 우선 투자하는 것이 정석이다.</p></div>
 </div>
@@ -570,7 +609,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
   <div class="dv"><hr></div>
 
-  <p class="bt fi">첫 접속 후 순서</p>
+  <div class="sh fi"><div class="sh-title">첫 접속 후 순서</div><div class="sh-sub en">Step by Step</div></div>
 
   <div class="flow fi">
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>리세마라</h4><p>튜토리얼 완료 → 선물함에서 주얼 수령 → 서포트카드 가챠에 전액 투입. SS 티어 SSR 2장 이상 나올 때까지 반복. 1회 약 1분.</p></div></div>
@@ -590,7 +629,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <h2 class="st fi">무과금 운용과<br>핵심 자원</h2>
   <p class="sd fi">PvP 최상위는 과금 영역이지만, 스토리·육성·이벤트·위닝 라이브 등 핵심 재미는 무과금으로 온전히 즐길 수 있다.</p>
 
-  <div class="bt fi">주얼 운용 철칙</div>
+  <div class="sh fi"><div class="sh-title">주얼 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
   <table class="mt fi">
     <tr><th style="width:50%">원칙</th><th>이유</th></tr>
     <tr><td>30,000 주얼 없으면 뽑지 않는다</td><td>교환 포인트는 배너 종료 시 소멸</td></tr>
@@ -599,15 +638,42 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <tr><td>이벤트 배포 SSR 전부 수집</td><td>매월 무료 SSR 1장 풀돌 가능</td></tr>
   </table>
 
-  <div class="bt fi">미래시 (한섭 유저 전용)</div>
+  <div class="sh fi"><div class="sh-title">미래시</div><div class="sh-sub en">한섭 유저 전용 전략</div></div>
   <p class="bp fi">한섭은 일섭 대비 12~16개월 뒤 콘텐츠를 운영한다. 일섭에서 이미 검증된 인권급 카드, 함정 배너, 메타 변동을 사전에 파악하여 주얼을 비축하고 핵심 배너에 집중하는 전략이다. DC 한섭갤·아카라이브·인벤에서 정기적으로 미래시 가이드가 업데이트된다.</p>
 
-  <div class="bt fi">렌탈덱</div>
+  <div class="sh fi"><div class="sh-title">렌탈덱</div><div class="sh-sub en">Rental Deck</div></div>
   <p class="bp fi">친구의 완성된 서포트카드 덱을 통째로 빌려서 육성할 수 있다. 자신의 카드가 부족해도 고성능 육성이 가능하며, 뉴비에게 가장 유용한 시스템이다.</p>
 
   <div class="dv"><hr></div>
 
-  <p class="bt fi">커뮤니티 &amp; 도구</p>
+  <div class="sh fi"><div class="sh-title">뉴비 필독 공략</div><div class="sh-sub en">Must-read Guides</div></div>
+
+  <div class="qa fi">
+    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/5443583" target="_blank" rel="noopener">
+      <div class="qa-icon" style="background:rgba(0,169,95,.08)">📋</div>
+      <div class="qa-body"><div class="qa-title">뉴비 종합 가이드</div><div class="qa-desc">시작부터 자리 잡기까지, 단계별 필독</div></div>
+      <span class="qa-arrow">›</span>
+    </a>
+    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/1850737" target="_blank" rel="noopener">
+      <div class="qa-icon" style="background:rgba(79,184,230,.08)">📚</div>
+      <div class="qa-body"><div class="qa-title">공략글 모음.ZIP</div><div class="qa-desc">인자작, 서포트카드, 스킬, 팀레 등 총정리</div></div>
+      <span class="qa-arrow">›</span>
+    </a>
+    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/5378403" target="_blank" rel="noopener">
+      <div class="qa-icon" style="background:rgba(233,80,152,.08)">💎</div>
+      <div class="qa-body"><div class="qa-title">과금 규모별 가챠 가이드</div><div class="qa-desc">무과금·소과금·중과금 단계별 운용 전략</div></div>
+      <span class="qa-arrow">›</span>
+    </a>
+    <a class="qa-btn" href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener">
+      <div class="qa-icon" style="background:rgba(240,154,62,.08)">🔄</div>
+      <div class="qa-body"><div class="qa-title">한섭 리세계 매물 목록</div><div class="qa-desc">GachaPlus — 리세마라 계정 검색</div></div>
+      <span class="qa-arrow">›</span>
+    </a>
+  </div>
+
+  <div class="dv"><hr></div>
+
+  <div class="sh fi"><div class="sh-title">커뮤니티 &amp; 도구</div><div class="sh-sub en">Community &amp; Tools</div></div>
   <div class="lg fi">
     <a class="lk" href="https://m.inven.co.kr/uma/" target="_blank" rel="noopener"><div class="lk-l en">Guide</div><div class="lk-t">우마무스메 인벤</div><div class="lk-d">한국어 종합 공략. 뉴비 가이드, 캐릭터·서포트 DB</div></a>
     <a class="lk" href="https://m.dcinside.com/board/umamusu?notice=1" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">DC 한섭갤</div><div class="lk-d">미래시, 뉴비 가이드</div></a>
@@ -617,7 +683,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
   <div class="dv"><hr></div>
 
-  <p class="bt fi">함께 보기</p>
+  <div class="sh fi"><div class="sh-title">함께 보기</div><div class="sh-sub en">Related</div></div>
   <div class="lg fi">
     <a class="lk" href="https://jhakent.github.io/uma-movie-guide/" target="_blank" rel="noopener"><div class="lk-l en">Guide</div><div class="lk-t">극장판 관람 가이드</div><div class="lk-d">ROAD TO THE TOP &amp; 새로운 시대의 문</div></a>
     <a class="lk" href="https://jhakent.github.io/uma-gorumeno/" target="_blank" rel="noopener"><div class="lk-l en">Archive</div><div class="lk-t">골드쉽 × 페노메노</div><div class="lk-d">고루메노 관계성 아카이브</div></a>
@@ -639,6 +705,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 <footer class="footer">
   <div class="footer-links">
+    <a href="https://m.dcinside.com/board/umamusu/5443583" target="_blank">뉴비 가이드</a>
+    <a href="https://m.dcinside.com/board/umamusu/1850737" target="_blank">공략 모음</a>
+    <a href="https://m.dcinside.com/board/umamusu/5378403" target="_blank">가챠 가이드</a>
+    <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank">리세계 매물</a>
+  </div>
+  <div class="footer-links" style="margin-bottom:18px">
     <a href="https://jhakent.github.io/uma-movie-guide/" target="_blank">극장판 가이드</a>
     <a href="https://jhakent.github.io/uma-gorumeno/" target="_blank">골드쉽 × 페노메노</a>
     <a href="https://m.inven.co.kr/uma/" target="_blank">인벤</a>
