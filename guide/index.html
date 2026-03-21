@@ -32,13 +32,15 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 120% 80% at 10% 90%,rgba(0,169,95,.08) 0%,transparent 70%),radial-gradient(ellipse 110% 70% at 95% 5%,rgba(233,80,152,.06) 0%,transparent 70%),radial-gradient(ellipse 100% 80% at 50% 40%,rgba(79,184,230,.05) 0%,transparent 65%),radial-gradient(ellipse 130% 50% at 70% 100%,rgba(79,184,230,.04) 0%,transparent 60%),radial-gradient(ellipse 100% 60% at 0% 30%,rgba(233,80,152,.03) 0%,transparent 55%);pointer-events:none;z-index:-1}
 .en{font-family:'Outfit',sans-serif;letter-spacing:.04em;word-break:normal}
 b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.bp a,.sd a,.fl-c a,.wc a,.note a,.sc-detail-body a{color:var(--bright);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:color .15s,text-decoration-color .15s}
+.bp a:hover,.sd a:hover,.fl-c a:hover,.wc a:hover,.note a:hover,.sc-detail-body a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
 .scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(to right,var(--green),var(--sky),var(--pink));z-index:1001;transition:width .1s linear}
 
 /* ── TOP BAR ── */
 .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
 .top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 2px}
-.top-logo-img{height:46px;display:block;cursor:pointer}
+.top-logo-img{height:52px;display:block;cursor:pointer}
 .tabs{display:inline-flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
 .tabs-wrap{position:relative;text-align:center;overflow-x:auto}
@@ -479,7 +481,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── FOOTER CTA ── */
 .f-cta{
   max-width:720px;margin:0 auto;
-  padding:0 24px 40px;
+  padding:0 24px 20px;
 }
 .f-cta-box{
   border-radius:20px;padding:36px 28px;text-align:center;
@@ -524,7 +526,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 /* ── FOOTER ── */
 .footer{
-  text-align:center;padding:32px 24px 28px;
+  text-align:center;padding:20px 24px 28px;
   font-size:11px;color:var(--dim);font-weight:300;line-height:1.75;
   max-width:720px;margin:0 auto;
 }
@@ -549,7 +551,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   .footer-links{grid-template-columns:repeat(2,1fr)}
 }
 .footer a{color:inherit;text-decoration:none}
-.footer .copy a{text-decoration:underline;text-underline-offset:2px}
+.footer .copy a{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.15);transition:text-decoration-color .15s,color .15s}
+.footer .copy a:hover{text-decoration-color:rgba(0,0,0,.35)}
 .footer-links-own{grid-template-columns:repeat(2,1fr) !important}
 .footer-links-own a{
   background:linear-gradient(135deg,rgba(0,169,95,.06),rgba(79,184,230,.06));
@@ -568,7 +571,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 @media(max-width:640px){
   .lg{grid-template-columns:1fr}
   .tb{font-size:11px;padding:9px 8px 10px;letter-spacing:-.03em}
-  .top-logo-img{height:42px}
+  .top-logo-img{height:46px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
   .stype{padding:10px 4px}
   .stype-name{font-size:11px}
@@ -1014,7 +1017,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <div class="sh fi"><div class="sh-title">첫 접속 후 순서</div><div class="sh-sub en">Step by Step</div></div>
 
   <div class="flow fi">
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>리세마라</h4><p>수동 리세마라: 튜토리얼 완료 → 선물함에서 주얼 수령 → 서포트카드 가챠에 전액 투입. SS 티어 SSR 2장 이상 나올 때까지 반복(1회 약 1분). 다만 시간 대비 효율이 낮으므로, 타오바오 등에서 리세계를 구입해 시작하는 편을 추천한다. <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener" style="text-decoration:underline dotted;text-underline-offset:3px;font-weight:600">매물은 여기서</a> 확인할 수 있다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>리세마라</h4><p>수동 리세마라: 튜토리얼 완료 → 선물함에서 주얼 수령 → 서포트카드 가챠에 전액 투입. SS 티어 SSR 2장 이상 나올 때까지 반복(1회 약 1분). 다만 시간 대비 효율이 낮으므로, 타오바오 등에서 리세계를 구입해 시작하는 편을 추천한다. 매물은 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener">여기</a>서 확인할 수 있다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>★3 교환권 사용</h4><p>좋아하는 캐릭터를 선택. 성능 기준으로는 <b class="ch" style="--ch:rgba(123,143,168,.25)">오구리캡</b>이 범용성이 높다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>서클(길드) 가입</h4><p>가입만 해도 매달 주얼과 서클 포인트 지급. 아무 서클이나 즉시 가입.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>첫 육성: 사쿠라 바쿠신 오 + URA 파이널스</h4><p>단거리 캐릭터. 스피드만 올리면 실패할 일이 거의 없다. 기본 시스템을 익히는 단계.</p></div></div>
@@ -1123,7 +1126,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     <a href="https://jhakent.github.io/uma-movie-guide/" target="_blank">극장판 가이드</a>
     <a href="https://jhakent.github.io/uma-gorumeno/" target="_blank">골드쉽 × 페노메노</a>
   </div>
-  모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank" style="text-decoration:underline dotted;text-underline-offset:3px;opacity:.7">© Cygames, Inc.</a> 에 귀속됩니다.
+  모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank">© Cygames, Inc.</a> 에 귀속됩니다.
   <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em;">Made by <a href="https://jhakentertainment.com/" target="_blank" style="text-decoration:underline dotted;text-underline-offset:3px;opacity:.7">JHAK Entertainment Inc.</a></span></div>
 </footer>
 
