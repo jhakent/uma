@@ -9,7 +9,7 @@
 <meta property="og:description" content="누구보다 빠르게 달리고 싶어! 세계관부터 첫 육성까지 차근차근.">
 <meta property="og:image" content="images/uma.webp">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="우마무스메 프리티 더비 | 입문 가이드">
 <meta name="twitter:image" content="images/uma.webp">
 <link rel="apple-touch-icon" href="images/uma.png">
@@ -34,7 +34,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .bp a,.sd a,.fl-c a,.wc a,.note a,.sc-detail-body a{color:var(--bright);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:color .15s,text-decoration-color .15s}
 .bp a:hover,.sd a:hover,.fl-c a:hover,.wc a:hover,.note a:hover,.sc-detail-body a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
-.scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(to right,var(--green),var(--sky),var(--pink));z-index:1001;transition:width .1s linear}
+.scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(to right,var(--green),var(--sky),var(--pink));z-index:1001;will-change:width}
 
 /* ── TOP BAR ── */
 .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
@@ -49,11 +49,19 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   content:'';position:absolute;right:0;top:0;bottom:0;width:32px;
   background:linear-gradient(to right,transparent,rgba(255,255,255,.94));
   pointer-events:none;z-index:1;
-  opacity:var(--fade-op,1);transition:opacity .2s;
+  opacity:var(--fade-r,1);transition:opacity .2s;
+  display:none;
+}
+.tabs-wrap::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:32px;
+  background:linear-gradient(to left,transparent,rgba(255,255,255,.94));
+  pointer-events:none;z-index:1;
+  opacity:var(--fade-l,0);transition:opacity .2s;
   display:none;
 }
 @media(max-width:640px){
   .tabs-wrap::after{display:block}
+  .tabs-wrap::before{display:block}
 }
 .tb{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:500;color:var(--dim);background:none;border:none;padding:10px 14px 11px;cursor:pointer;white-space:nowrap;position:relative;transition:color .25s}
 .tb::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--green);transform:scaleX(0);transition:transform .25s}
@@ -505,8 +513,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   font-size:20px;font-weight:800;letter-spacing:-.04em;
   color:#fff;margin-bottom:4px;position:relative;z-index:1;
 }
-.f-cta-sub{font-size:14px;
-  font-size:13px;font-weight:400;color:rgba(255,255,255,.8);
+.f-cta-sub{font-size:13px;font-weight:400;color:rgba(255,255,255,.8);
   margin-bottom:20px;position:relative;z-index:1;
 }
 .f-cta-dl{
@@ -589,7 +596,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 <header class="top" id="topBar">
   <div class="top-in">
     <div class="top-row">
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});document.querySelector('.tb').click();return false;" style="display:block"><img class="top-logo-img" src="images/uma-logo.png" alt="우마무스메 프리티 더비"></a>
+      <a href="#" onclick="document.querySelector('.tb').click();return false;" style="display:block"><img class="top-logo-img" src="images/uma-logo.png" alt="우마무스메 프리티 더비"></a>
     </div>
     <div class="tabs-wrap">
     <nav class="tabs">
@@ -614,8 +621,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
       <div class="hero-slogan">누구보다 빠르게 달리고 싶어!</div>
       <div class="hero-dev en">Cygames / Kakao Games · 무료 · 인앱 구매</div>
       <div class="hero-dl">
-        <a class="hero-btn g" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener">App Store</a>
-        <a class="hero-btn w" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener">Google Play</a>
+        <a class="hero-btn g" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener noreferrer">App Store</a>
+        <a class="hero-btn w" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener noreferrer">Google Play</a>
       </div>
     </div>
   </div>
@@ -626,11 +633,11 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     </div>
     <div class="hero-stat">
       <div class="hero-stat-val en">50만+</div>
-      <div class="hero-stat-label">다운로드</div>
+      <div class="hero-stat-label">다운로드 <span class="en" style="font-size:9px;opacity:.6">Android</span></div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-val">🏆</div>
-      <div class="hero-stat-label">TGA 2025</div>
+      <div class="hero-stat-label"><span class="en" style="font-size:9px;letter-spacing:.03em">TGA 2025</span> 최우수 모바일</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-val en">12+</div>
@@ -853,12 +860,12 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, 서포트카드의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다. 지금까지 출시된 육성 우마무스메 및 서포트 카드 정보는 아래에서 확인할 수 있다.</p>
 
   <div class="ref-links fi">
-    <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EB%93%B1%EC%9E%A5%20%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94" target="_blank" rel="noopener">
+    <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EB%93%B1%EC%9E%A5%20%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94" target="_blank" rel="noopener noreferrer">
       <span class="ref-emoji">🥕</span>
       <span class="ref-text">우마무스메 목록</span>
       <span class="ref-arrow">›</span>
     </a>
-    <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EC%9D%B8%EA%B2%8C%EC%9E%84%20%EC%A0%95%EB%B3%B4%20%EB%AA%A8%EC%9D%8C" target="_blank" rel="noopener">
+    <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EC%9D%B8%EA%B2%8C%EC%9E%84%20%EC%A0%95%EB%B3%B4%20%EB%AA%A8%EC%9D%8C" target="_blank" rel="noopener noreferrer">
       <span class="ref-emoji">🎮</span>
       <span class="ref-text">인게임 정보 모음</span>
       <span class="ref-arrow">›</span>
@@ -1019,7 +1026,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <div class="sh fi"><div class="sh-title">첫 접속 후 순서</div><div class="sh-sub en">Step by Step</div></div>
 
   <div class="flow fi">
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>리세마라</h4><p>수동 리세마라: 튜토리얼 완료 → 선물함에서 주얼 수령 → 서포트카드 가챠에 전액 투입. SS 티어 SSR 2장 이상 나올 때까지 반복(1회 약 1분). 다만 시간 대비 효율이 낮으므로, 타오바오 등에서 리세계를 구입해 시작하는 편을 추천한다. 매물은 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener">여기</a>서 확인할 수 있다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>리세마라</h4><p>수동 리세마라: 튜토리얼 완료 → 선물함에서 주얼 수령 → 서포트카드 가챠에 전액 투입. SS 티어 SSR 2장 이상 나올 때까지 반복(1회 약 1분). 다만 시간 대비 효율이 낮으므로, 타오바오 등에서 리세계를 구입해 시작하는 편을 추천한다. 매물은 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">여기</a>서 확인할 수 있다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>★3 교환권 사용</h4><p>좋아하는 캐릭터를 선택. 성능 기준으로는 <b class="ch" style="--ch:rgba(123,143,168,.25)">오구리캡</b>이 범용성이 높다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>서클(길드) 가입</h4><p>가입만 해도 매달 주얼과 서클 포인트 지급. 아무 서클이나 즉시 가입.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>첫 육성: 사쿠라 바쿠신 오 + URA 파이널스</h4><p>단거리 캐릭터. 스피드만 올리면 실패할 일이 거의 없다. 기본 시스템을 익히는 단계.</p></div></div>
@@ -1056,22 +1063,22 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   <div class="sh fi"><div class="sh-title">뉴비 필독 공략</div><div class="sh-sub en">Must-read Guides</div></div>
 
   <div class="qa fi">
-    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/5443583" target="_blank" rel="noopener">
+    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/5443583" target="_blank" rel="noopener noreferrer">
       <div class="qa-icon" style="background:rgba(0,169,95,.08)">📋</div>
       <div class="qa-body"><div class="qa-title">뉴비 종합 가이드</div><div class="qa-desc">시작부터 자리 잡기까지, 단계별 필독</div></div>
       <span class="qa-arrow">›</span>
     </a>
-    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/1850737" target="_blank" rel="noopener">
+    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/1850737" target="_blank" rel="noopener noreferrer">
       <div class="qa-icon" style="background:rgba(79,184,230,.08)">📚</div>
       <div class="qa-body"><div class="qa-title">공략글 모음.ZIP</div><div class="qa-desc">인자작, 서포트카드, 스킬, 팀레 등 총정리</div></div>
       <span class="qa-arrow">›</span>
     </a>
-    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/5378403" target="_blank" rel="noopener">
+    <a class="qa-btn" href="https://m.dcinside.com/board/umamusu/5378403" target="_blank" rel="noopener noreferrer">
       <div class="qa-icon" style="background:rgba(233,80,152,.08)">💎</div>
       <div class="qa-body"><div class="qa-title">과금 규모별 가챠 가이드</div><div class="qa-desc">무과금·소과금·중과금 단계별 운용 전략</div></div>
       <span class="qa-arrow">›</span>
     </a>
-    <a class="qa-btn" href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener">
+    <a class="qa-btn" href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">
       <div class="qa-icon" style="background:rgba(240,154,62,.08)">🔄</div>
       <div class="qa-body"><div class="qa-title">한섭 리세계 매물 목록</div><div class="qa-desc">GachaPlus – 리세마라 계정 검색</div></div>
       <span class="qa-arrow">›</span>
@@ -1082,18 +1089,18 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
   <div class="sh fi"><div class="sh-title">커뮤니티 &amp; 도구</div><div class="sh-sub en">Community &amp; Tools</div></div>
   <div class="lg fi">
-    <a class="lk" href="https://m.inven.co.kr/uma/" target="_blank" rel="noopener"><div class="lk-l en">Guide</div><div class="lk-t">우마무스메 인벤</div><div class="lk-d">한국어 종합 공략. 뉴비 가이드, 캐릭터·서포트 DB</div></a>
-    <a class="lk" href="https://m.dcinside.com/board/umamusu?notice=1" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">DC 한섭갤</div><div class="lk-d">미래시, 뉴비 가이드</div></a>
-    <a class="lk" href="https://namu.wiki/w/%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84" target="_blank" rel="noopener"><div class="lk-l en">Wiki</div><div class="lk-t">나무위키</div><div class="lk-d">한국어 최대 규모 DB</div></a>
-    <a class="lk" href="https://arca.live/b/umamusume?mode=best&amp;category=%EA%B3%B5%EB%9E%B5%2F%EC%A0%95%EB%B3%B4" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">아카라이브</div><div class="lk-d">설치 가이드, 공략</div></a>
+    <a class="lk" href="https://m.inven.co.kr/uma/" target="_blank" rel="noopener noreferrer"><div class="lk-l en">Guide</div><div class="lk-t">우마무스메 인벤</div><div class="lk-d">한국어 종합 공략. 뉴비 가이드, 캐릭터·서포트 DB</div></a>
+    <a class="lk" href="https://m.dcinside.com/board/umamusu?notice=1" target="_blank" rel="noopener noreferrer"><div class="lk-l en">Community</div><div class="lk-t">DC 한섭갤</div><div class="lk-d">미래시, 뉴비 가이드</div></a>
+    <a class="lk" href="https://namu.wiki/w/%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84" target="_blank" rel="noopener noreferrer"><div class="lk-l en">Wiki</div><div class="lk-t">나무위키</div><div class="lk-d">한국어 최대 규모 DB</div></a>
+    <a class="lk" href="https://arca.live/b/umamusume?mode=best&amp;category=%EA%B3%B5%EB%9E%B5%2F%EC%A0%95%EB%B3%B4" target="_blank" rel="noopener noreferrer"><div class="lk-l en">Community</div><div class="lk-t">아카라이브</div><div class="lk-d">설치 가이드, 공략</div></a>
   </div>
 
   <div class="dv"><hr></div>
 
   <div class="sh fi"><div class="sh-title">함께 보기</div><div class="sh-sub en">Related</div></div>
   <div class="lg fi">
-    <a class="lk" href="https://jhakent.github.io/uma-movie-guide/" target="_blank" rel="noopener"><div class="lk-l en">Guide</div><div class="lk-t">극장판 관람 가이드</div><div class="lk-d">ROAD TO THE TOP &amp; 새로운 시대의 문</div></a>
-    <a class="lk" href="https://jhakent.github.io/uma-gorumeno/" target="_blank" rel="noopener"><div class="lk-l en">Archive</div><div class="lk-t">골드쉽 × 페노메노</div><div class="lk-d">고루메노 관계성 아카이브</div></a>
+    <a class="lk" href="https://jhakent.github.io/uma-movie-guide/" target="_blank" rel="noopener noreferrer"><div class="lk-l en">Guide</div><div class="lk-t">극장판 관람 가이드</div><div class="lk-d">ROAD TO THE TOP &amp; 새로운 시대의 문</div></a>
+    <a class="lk" href="https://jhakent.github.io/uma-gorumeno/" target="_blank" rel="noopener noreferrer"><div class="lk-l en">Archive</div><div class="lk-t">골드쉽 × 페노메노</div><div class="lk-d">고루메노 관계성 아카이브</div></a>
   </div>
 </div>
 
@@ -1104,8 +1111,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     <div class="f-cta-title">지금 시작하기</div>
     <div class="f-cta-sub">누구보다 빠르게 달리고 싶어!</div>
     <div class="f-cta-dl">
-      <a class="f-cta-btn wh" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener">App Store</a>
-      <a class="f-cta-btn gl" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener">Google Play</a>
+      <a class="f-cta-btn wh" href="https://apps.apple.com/kr/app/id1616108452" target="_blank" rel="noopener noreferrer">App Store</a>
+      <a class="f-cta-btn gl" href="https://play.google.com/store/apps/details?id=com.kakaogames.umamusume" target="_blank" rel="noopener noreferrer">Google Play</a>
     </div>
   </div>
 </section>
@@ -1136,11 +1143,13 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 window.addEventListener('scroll',()=>{
   const h=document.documentElement;
   document.getElementById('sb').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';
-});
+},{passive:true});
 
 const bts=document.querySelectorAll('.tb');
 const pns=document.querySelectorAll('.pn');
 const topH=document.getElementById('topBar');
+
+let activePn=document.getElementById('world');
 
 bts.forEach(b=>{
   b.addEventListener('click',()=>{
@@ -1148,11 +1157,13 @@ bts.forEach(b=>{
     pns.forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
     b.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    // unobserve previous panel
+    if(activePn) activePn.querySelectorAll('.fi').forEach(el=>obs.unobserve(el));
     const p=document.getElementById(b.dataset.t);
     p.classList.add('on');
     p.querySelectorAll('.fi').forEach(el=>{el.classList.remove('v');void el.offsetWidth;});
     obsPn(p);
-    // scroll so panel content appears right below sticky nav
+    activePn=p;
     requestAnimationFrame(()=>{
       window.scrollTo({top: p.offsetTop - topH.offsetHeight, behavior:'instant'});
     });
@@ -1161,7 +1172,7 @@ bts.forEach(b=>{
 
 const obs=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});
-},{threshold:.08});
+},{threshold:.08,rootMargin:'0px 0px -60px 0px'});
 
 function obsPn(p){p.querySelectorAll('.fi').forEach(el=>obs.observe(el));}
 obsPn(document.getElementById('world'));
@@ -1172,9 +1183,11 @@ const tabsWrap=document.querySelector('.tabs-wrap');
 function checkTabFade(){
   const el=tabsWrap;
   const atEnd=el.scrollLeft+el.clientWidth>=el.scrollWidth-4;
-  tabsWrap.style.setProperty('--fade-op',atEnd?'0':'1');
+  const atStart=el.scrollLeft<=4;
+  tabsWrap.style.setProperty('--fade-r',atEnd?'0':'1');
+  tabsWrap.style.setProperty('--fade-l',atStart?'0':'1');
 }
-tabsWrap.addEventListener('scroll',checkTabFade);
+tabsWrap.addEventListener('scroll',checkTabFade,{passive:true});
 checkTabFade();
 </script>
 </body>
