@@ -431,6 +431,23 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .ach-title{font-size:14px;font-weight:800;color:var(--bright);letter-spacing:-.02em}
 .ach-races{font-size:12.5px;font-weight:300;color:var(--dim);margin-top:4px;line-height:1.6}
 
+/* ── REF LINKS ── */
+.ref-links{display:flex;gap:8px;margin:14px 0 24px}
+.ref-link{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 14px;border-radius:10px;flex:1;
+  background:rgba(255,255,255,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(0,0,0,.04);
+  box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);
+  text-decoration:none;color:var(--text);
+  transition:transform .15s,box-shadow .15s;
+}
+.ref-link:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.ref-emoji{font-size:16px;flex-shrink:0}
+.ref-text{font-size:12.5px;font-weight:600;letter-spacing:-.02em;flex:1}
+.ref-arrow{font-size:14px;color:var(--dim);opacity:.4;flex-shrink:0}
+@media(max-width:640px){.ref-links{flex-direction:row}}
+
 /* ── CHIPS ── */
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
 .chip{font-size:11px;font-weight:500;padding:5px 12px;border-radius:100px;border:1px solid var(--border);background:var(--bg-warm);color:var(--text)}
@@ -802,8 +819,21 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <!-- ═══ 캐릭터·카드 ═══ -->
 <div class="pn" id="card">
   <p class="sl fi" style="color:var(--pink)">캐릭터·카드</p>
-  <h2 class="st fi">키우고, 뽑고,<br>물려받는 구조</h2>
-  <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, 서포트카드의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다.</p>
+  <h2 class="st fi">키우고, 뽑고, 물려받는 구조</h2>
+  <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, 서포트카드의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다. 지금까지 출시된 육성 우마무스메 및 서포트 카드 정보는 아래에서 확인할 수 있다.</p>
+
+  <div class="ref-links fi">
+    <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EB%93%B1%EC%9E%A5%20%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94" target="_blank" rel="noopener">
+      <span class="ref-emoji">🥕</span>
+      <span class="ref-text">우마무스메 목록</span>
+      <span class="ref-arrow">›</span>
+    </a>
+    <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EC%9D%B8%EA%B2%8C%EC%9E%84%20%EC%A0%95%EB%B3%B4%20%EB%AA%A8%EC%9D%8C" target="_blank" rel="noopener">
+      <span class="ref-emoji">🎮</span>
+      <span class="ref-text">인게임 정보 모음</span>
+      <span class="ref-arrow">›</span>
+    </a>
+  </div>
 
   <div class="sys-hero fi" style="border-left:4px solid var(--green)">
     <span class="sys-hero-num en">01</span>
@@ -1025,7 +1055,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <a class="lk" href="https://m.inven.co.kr/uma/" target="_blank" rel="noopener"><div class="lk-l en">Guide</div><div class="lk-t">우마무스메 인벤</div><div class="lk-d">한국어 종합 공략. 뉴비 가이드, 캐릭터·서포트 DB</div></a>
     <a class="lk" href="https://m.dcinside.com/board/umamusu?notice=1" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">DC 한섭갤</div><div class="lk-d">미래시, 뉴비 가이드</div></a>
     <a class="lk" href="https://namu.wiki/w/%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84" target="_blank" rel="noopener"><div class="lk-l en">Wiki</div><div class="lk-t">나무위키</div><div class="lk-d">한국어 최대 규모 DB</div></a>
-    <a class="lk" href="https://arca.live/b/umamusume" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">아카라이브</div><div class="lk-d">설치 가이드, 공략</div></a>
+    <a class="lk" href="https://arca.live/b/umamusume?mode=best&amp;category=%EA%B3%B5%EB%9E%B5%2F%EC%A0%95%EB%B3%B4" target="_blank" rel="noopener"><div class="lk-l en">Community</div><div class="lk-t">아카라이브</div><div class="lk-d">설치 가이드, 공략</div></a>
   </div>
 
   <div class="dv"><hr></div>
@@ -1062,7 +1092,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <a href="https://m.inven.co.kr/uma/" target="_blank">인벤</a>
     <a href="https://namu.wiki/w/%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84" target="_blank">나무위키</a>
     <a href="https://m.dcinside.com/board/umamusu?notice=1" target="_blank">DC 한섭갤</a>
-    <a href="https://arca.live/b/umamusume" target="_blank">아카라이브</a>
+    <a href="https://arca.live/b/umamusume?mode=best&amp;category=%EA%B3%B5%EB%9E%B5%2F%EC%A0%95%EB%B3%B4" target="_blank">아카라이브</a>
   </div>
   <div class="footer-links footer-links-own" style="margin-bottom:18px">
     <a href="https://jhakent.github.io/uma-movie-guide/" target="_blank">극장판 가이드</a>
