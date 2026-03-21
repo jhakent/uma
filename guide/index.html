@@ -36,11 +36,17 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 /* ── TOP BAR ── */
 .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
-.top-row{display:flex;align-items:baseline;gap:10px;padding:12px 0 0}
-.top-logo{font-size:15px;font-weight:800;letter-spacing:-.04em;color:var(--bright)}
-.top-sub{font-family:'Outfit',sans-serif;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
-.tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:2px}
+.top-row{display:flex;align-items:center;justify-content:center;padding:12px 0 0}
+.top-logo-img{height:28px;display:block}
+.tabs{display:inline-flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;padding-right:28px;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
+.tabs-wrap{position:relative;text-align:center}
+.tabs-wrap::after{
+  content:'';position:absolute;right:0;top:0;bottom:0;width:32px;
+  background:linear-gradient(to right,transparent,rgba(255,255,255,.94));
+  pointer-events:none;z-index:1;
+  opacity:var(--fade-op,1);transition:opacity .2s;
+}
 .tb{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:500;color:var(--dim);background:none;border:none;padding:10px 14px 11px;cursor:pointer;white-space:nowrap;position:relative;transition:color .25s}
 .tb::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--green);transform:scaleX(0);transition:transform .25s}
 .tb.on{color:var(--bright);font-weight:700}.tb.on::after{transform:scaleX(1)}.tb:hover{color:var(--bright)}
@@ -463,13 +469,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
              radial-gradient(circle at 80% 20%,rgba(255,255,255,.1),transparent 40%);
   pointer-events:none;
 }
-.f-cta-icon{
-  width:72px;height:72px;border-radius:16px;
-  box-shadow:0 4px 20px rgba(0,0,0,.15);
-  overflow:hidden;margin:0 auto 16px;
+.f-cta-logo{
+  height:48px;display:block;margin:0 auto 14px;
   position:relative;z-index:1;
+  filter:brightness(0) invert(1);opacity:.9;
 }
-.f-cta-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .f-cta-title{
   font-size:20px;font-weight:800;letter-spacing:-.04em;
   color:#fff;margin-bottom:4px;position:relative;z-index:1;
@@ -508,6 +512,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 }
 .footer-links a:hover{color:var(--bright)}
 .footer a{color:inherit;text-decoration:underline}
+.footer-logo{display:block;height:32px;margin:0 auto 12px;opacity:.15}
 .footer .copy{opacity:.5;margin-top:10px}
 
 /* ── ANIMATION ── */
@@ -518,7 +523,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
   .lg{grid-template-columns:1fr}
-  .tb{font-size:11.5px;padding:9px 11px 10px}
+  .tb{font-size:11px;padding:9px 8px 10px;letter-spacing:-.03em}
+  .top-logo-img{height:24px}
   .top-in,.pn{padding-left:18px;padding-right:18px}
   .stype-grid{grid-template-columns:repeat(5,1fr);gap:5px}
   .stype{padding:10px 6px}
@@ -535,18 +541,19 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <header class="top" id="topBar">
   <div class="top-in">
     <div class="top-row">
-      <span class="top-logo">우마무스메 프리티 더비</span>
-      <span class="top-sub en">Beginner Guide</span>
+      <img class="top-logo-img" src="images/uma-logo.png" alt="우마무스메 프리티 더비">
     </div>
+    <div class="tabs-wrap">
     <nav class="tabs">
       <button class="tb on" data-t="world">세계관</button>
       <button class="tb" data-t="feat">특징</button>
-      <button class="tb" data-t="sys">게임 구조</button>
+      <button class="tb" data-t="sys">구조</button>
       <button class="tb" data-t="card">캐릭터·카드</button>
       <button class="tb" data-t="scn">시나리오</button>
-      <button class="tb" data-t="start">시작하기</button>
+      <button class="tb" data-t="start">시작</button>
       <button class="tb" data-t="tips">공략</button>
     </nav>
+    </div>
   </div>
 </header>
 
@@ -681,9 +688,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
   <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, 스킬 포인트, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
 
-  <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. 거리 적성은 단거리(~1400m)·마일(~1800m)·중거리(~2400m)·장거리(2401m~)로 나뉘며, 작전 적성은 선두를 질주하는 도주, 전방에서 기회를 노리는 선행, 중반부터 치고 올라오는 선입, 최후방에서 폭발적으로 추격하는 추입으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 작전을 선택하는 것이 중요하다.</p>
+  <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. 거리 적성은 단거리(~1400m)·마일(~1800m)·중거리(~2400m)·장거리(2401m~)로 나뉘며, 각질 적성은 선두를 질주하는 도주, 전방에서 기회를 노리는 선행, 중반부터 치고 올라오는 선입, 최후방에서 폭발적으로 추격하는 추입으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 각질을 선택하는 것이 중요하다.</p>
 
-  <p class="bp fi">레이스는 서반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. 바닥 적성도 잔디와 더트로 나뉘어, 더트 전용 레이스 역시 존재한다.</p>
+  <p class="bp fi">레이스는 서반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. 마장 적성도 잔디와 더트로 나뉘어, 더트 전용 레이스 역시 존재한다.</p>
 
   <div class="sh fi"><div class="sh-title">G1 레이스 일람</div><div class="sh-sub en">Grade 1 Races</div></div>
 
@@ -754,9 +761,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="sys-hero fi" style="border-left:4px solid var(--green)">
     <span class="sys-hero-num en">01</span>
     <div class="sys-hero-top"><span class="sys-hero-emoji">🐴</span><span class="sys-hero-title">캐릭터 적성</span></div>
-    <div class="sys-hero-sub" style="color:var(--green)">거리·작전·바닥, 세 가지 축</div>
+    <div class="sys-hero-sub" style="color:var(--green)">거리·각질·마장, 세 가지 축</div>
   </div>
-  <p class="bp fi">모든 우마무스메에게는 거리 적성(단거리·마일·중거리·장거리), 작전 적성(도주·선행·선입·추입), 바닥 적성(잔디·더트)이 부여되어 있다. 적성 등급은 G~S로 나뉘며, 등급이 높을수록 레이스에서 스피드·지능에 유리한 보정을 받는다.</p>
+  <p class="bp fi">모든 우마무스메에게는 거리 적성(단거리·마일·중거리·장거리), 각질 적성(도주·선행·선입·추입), 마장 적성(잔디·더트)이 부여되어 있다. 적성 등급은 G~S로 나뉘며, 등급이 높을수록 레이스에서 스피드·지능에 유리한 보정을 받는다.</p>
   <p class="bp fi">기본 적성이 A인 거리와 작전으로 레이스에 출전하는 것이 정석이다. 애정 캐릭터를 적성 외 거리나 작전으로 운용하고 싶다면, 인자 계승을 통해 적성을 S까지 끌어올려야 한다. S 적성은 인자 계승 이벤트에서 확률적으로 획득되며, 부모 개체의 적성 인자를 미리 준비하는 과정이 필수다.</p>
 
   <div class="sys-hero fi" style="border-left:4px solid var(--pink)">
@@ -822,7 +829,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <div class="sys-hero-sub" style="color:var(--int)">부모의 능력을 물려받는 구조</div>
   </div>
   <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;인자&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
-  <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·작전·바닥 적성 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 G1 우승 시 생성) 등이 있다. 인자의 별 수(★1~★3)는 확률적으로 결정되며, ★3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
+  <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·각질·마장 적성 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 G1 우승 시 생성) 등이 있다. 인자의 별 수(★1~★3)는 확률적으로 결정되며, ★3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
 
   <div class="ib fi"><div class="ib-l en">적성 개조 예시</div><p>마일 적성 A인 캐릭터를 중거리에서 운용하고 싶다면, 부모·조부모 개체에 중거리 ★3 적성 인자를 확보하고, 계승 이벤트에서 중거리 적성이 A 이상으로 올라가길 반복 시도한다. S 적성 달성은 계승 이벤트에서의 확률 판정이므로, 수십 회 이상의 반복 육성이 필요할 수 있다.</p></div>
 
@@ -986,7 +993,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <!-- FOOTER CTA -->
 <section class="f-cta">
   <div class="f-cta-box">
-    <div class="f-cta-icon"><img src="images/uma.webp" alt="우마무스메"></div>
+    <img class="f-cta-logo" src="images/uma-logo.png" alt="우마무스메 프리티 더비">
     <div class="f-cta-title">지금 시작하기</div>
     <div class="f-cta-sub">누구보다 빠르게 달리고 싶어!</div>
     <div class="f-cta-dl">
@@ -997,6 +1004,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 </section>
 
 <footer class="footer">
+  <img class="footer-logo" src="images/uma-logo.png" alt="">
   <div class="footer-links">
     <a href="https://m.dcinside.com/board/umamusu/5443583" target="_blank">뉴비 가이드</a>
     <a href="https://m.dcinside.com/board/umamusu/1850737" target="_blank">공략 모음</a>
@@ -1028,6 +1036,7 @@ bts.forEach(b=>{
     bts.forEach(x=>x.classList.remove('on'));
     pns.forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
+    b.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
     const p=document.getElementById(b.dataset.t);
     p.classList.add('on');
     p.querySelectorAll('.fi').forEach(el=>{el.classList.remove('v');void el.offsetWidth;});
@@ -1045,6 +1054,16 @@ const obs=new IntersectionObserver(es=>{
 
 function obsPn(p){p.querySelectorAll('.fi').forEach(el=>obs.observe(el));}
 obsPn(document.getElementById('world'));
+
+// hide tab fade when scrolled to end
+const tabsNav=document.querySelector('.tabs');
+const tabsWrap=document.querySelector('.tabs-wrap');
+function checkTabFade(){
+  const atEnd=tabsNav.scrollLeft+tabsNav.clientWidth>=tabsNav.scrollWidth-4;
+  tabsWrap.style.setProperty('--fade-op',atEnd?'0':'1');
+}
+tabsNav.addEventListener('scroll',checkTabFade);
+checkTabFade();
 </script>
 </body>
 </html>
