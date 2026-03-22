@@ -27,7 +27,7 @@
 :root{
   --bg:#fff;--bg-warm:#fafaf8;--surface:#f4f3f0;--surface-2:#eeedea;
   --border:rgba(0,0,0,.06);--border-s:rgba(0,0,0,.1);
-  --text:#3a3a3a;--dim:#6a6a6a;--bright:#2d2d2d;
+  --text:#484848;--dim:#6a6a6a;--bright:#2d2d2d;
   --green:#00a95f;--sky:#4fb8e6;--pink:#e95098;
   --spd:#4fb8e6;--sta:#f09a3e;--pow:#e8c842;--gut:#e95098;--int:#00a95f;
 }
@@ -241,6 +241,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   .wc{padding:24px 20px}
   .wc h3{font-size:15px}
   .pair{grid-template-columns:1fr 1fr;gap:8px}
+  .pair-stack{grid-template-columns:1fr}
 }
 
 
@@ -765,7 +766,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <p class="bp fi">클래식 삼관(사츠키상 → 일본 더비 → 국화상)은 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다. 트리플 티아라(벚꽃상 → 오크스 → 추화상)는 원래 암말 전용이지만, 우마무스메 세계에서는 전원 여성이므로 숫말 모티프도 출전 가능하다. G1 9승의 <b class="ch" style="--ch:rgba(59,89,152,.22)">아몬드 아이</b>, 재팬컵 2연패의 <b class="ch" style="--ch:rgba(107,47,160,.2)">젠틸돈나</b> 등 암말 모티프 캐릭터가 잇달아 출시되며 티아라 노선도 확장되고 있다. 구체적인 G1 레이스 일람은 <a href="#" onclick="document.getElementById('tab-sys').click();return false;">구조</a> 탭에서 확인할 수 있다.</p>
 
   <div class="sh fi"><div class="sh-title">포에버 영과 브리더즈컵</div><div class="sh-sub en">Forever Young × Breeders’ Cup</div></div>
-  <p class="bp fi">2025년 11월, 일본 경주마 <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>의 마주인 <b>후지타 스스무</b>는 우마무스메 운영사 사이게임즈의 모기업 사이버에이전트의 사장으로, 팬덤에서는 가챠 과금이 마주 활동에 기여했다며 ‘한 입 마주’를 자처하는 밈이 생기기도 했다.</p>
+  <p class="bp fi">2025년 11월, 일본 경주마 <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>의 마주인 <b>후지타 스스무</b>는 사이게임즈 모기업 사이버에이전트의 사장으로, 팬덤에서는 과금이 마주 활동에 기여했다며 ‘한 입 마주’를 자처하는 밈이 생기기도 했다.</p>
   <p class="bp fi"><b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>의 생일은 우마무스메 게임 서비스 개시일(2월 24일)과 같다. 2026년 2월, 게임 5주년 기념 방송에서 <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>의 우마무스메 캐릭터와 브리더즈컵 배경의 신규 시나리오 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(30,136,229,.22),rgba(249,168,37,.22));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">&lsquo;Beyond Dreams&rsquo;</b>가 동시에 공개되었다. 현역 경주마가 우마무스메로 구현된 사례는 극히 드물며, 원본마의 실제 활약과 게임 콘텐츠가 실시간으로 연동되는 이 게임 특유의 현상이다.</p>
 </div>
 
@@ -787,7 +788,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
         <span class="wc-emoji">🎲</span>
         <h3>매번 다른 육성</h3>
         <p class="wc-en en">Simulation</p>
-        <p>한 명을 키우는 데 약 30~40분. 같은 캐릭터도 선택지, 컨디션, 이벤트 분기에 따라 결과가 전혀 다르다. 한 판 끝나면 자연스럽게 다음 육성을 시작하게 되고, 더 나은 결과를 위해 서포트카드 편성과 훈련 루트를 계속 고민하게 된다.</p>
+        <p>한 명을 키우는 데 약 30~40분. 같은 캐릭터도 선택지, 컨디션, 이벤트 분기에 따라 결과가 전혀 다르다. 한 판 끝나면 자연스럽게 다음 판을 시작하게 된다.</p>
       </div>
     </div>
     <div class="wc-row">
@@ -869,20 +870,20 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">훈련</span><div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div></div><span class="sys-hero-emoji">🏋️</span></div>
   </div>
   <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다.</p>
-  <p class="bp fi">서포트카드 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;우정 트레이닝&rsquo;이 발동한다. 이것이 고스탯 육성의 핵심이다. 다만 훈련에는 실패 확률이 존재하며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
+  <p class="bp fi">서포트카드 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">우정 트레이닝</b>&rsquo;이 발동한다. 고스탯 육성의 핵심 메커니즘이다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
 
-  <div class="ib fi"><div class="ib-l">여름 합숙</div><p>2년차·3년차 여름에 진행되는 특별 기간. 모든 트레이닝 레벨이 +5 상승하고 훈련 효율이 극대화된다. 이 기간에는 레이스를 쉬고 훈련에만 집중하는 것이 정석이다.</p></div>
+  <div class="ib sk fi"><div class="ib-l">여름 합숙</div><p>2년차·3년차 여름에 진행되는 특별 기간. 모든 트레이닝 레벨이 +5 상승하고 훈련 효율이 극대화된다. 이 기간에는 레이스를 쉬고 훈련에만 집중하는 것이 정석이다.</p></div>
 
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">레이스</span><div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div></div><span class="sys-hero-emoji">🏇</span></div>
   </div>
-  <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, 스킬 포인트, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
+  <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">스킬 포인트</b>, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
 
-  <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. 거리 적성은 단거리(~1400m)·마일(~1800m)·중거리(~2400m)·장거리(2401m~)로 나뉘며, 각질 적성은 선두를 질주하는 도주, 전방에서 기회를 노리는 선행, 중반부터 치고 올라오는 선입, 최후방에서 폭발적으로 추격하는 추입으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 각질을 선택하는 것이 중요하다.</p>
+  <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">거리 적성</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>(~1400m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>(~1800m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>(~2400m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b>(2401m~)로 나뉘며, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">각질 적성</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">도주</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선행</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선입</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">추입</b>으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 각질을 선택하는 것이 중요하다.</p>
 
-  <p class="bp fi">레이스는 서반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. 마장 적성도 잔디와 더트로 나뉘어, 더트 전용 레이스 역시 존재한다.</p>
+  <p class="bp fi">레이스는 초반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마장 적성</b>도 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>와 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b>로 나뉘어, 더트 전용 레이스 역시 존재한다.</p>
 
-  <div class="pair fi">
+  <div class="pair pair-stack fi">
     <div class="pair-card" style="border-top:3px solid var(--green)">
       <span class="pc-emoji">🌱</span>
       <h3>잔디</h3>
@@ -1100,7 +1101,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">04</span><div class="sys-hero-body"><span class="sys-hero-title">인자 계승</span><div class="sys-hero-sub" style="color:var(--int)">부모의 능력을 물려받는 구조</div></div><span class="sys-hero-emoji">🧬</span></div>
   </div>
-  <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;인자&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
+  <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">인자</b>&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
   <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·각질·마장 적성 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 G1 우승 시 생성) 등이 있다. 인자의 별 수(⭐️1~⭐️3)는 확률적으로 결정되며, ⭐️3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
 
   <div class="ib fi"><div class="ib-l">적성 개조 예시</div><p>마일 적성 A인 캐릭터를 중거리에서 운용하고 싶다면, 부모·조부모 개체에 중거리 ⭐️3 적성 인자를 확보하고, 계승 이벤트에서 중거리 적성이 A 이상으로 올라가길 반복 시도한다. S 적성 달성은 계승 이벤트에서의 확률 판정이므로, 수십 회 이상의 반복 육성이 필요할 수 있다.</p></div>
@@ -1146,7 +1147,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="sc-item" style="opacity:.7"><div class="sc-bar" style="background:#c9b037"></div><div class="sc-num en">10</div><div class="sc-body"><div class="sc-title">The Twinkle Legends</div><div class="sc-desc">레전드 레이스 모드. 자동육성 지원.</div></div><div class="sc-tag" style="background:rgba(201,176,55,.1);color:#c9b037">일섭</div></div>
     <div class="sc-item" style="opacity:.7"><div class="sc-bar" style="background:#66bb6a"></div><div class="sc-num en">11</div><div class="sc-body"><div class="sc-title">무인도에 어서오세요 -DESIGN YOUR ISLAND-</div><div class="sc-desc">무인도 테마. 자동육성 지원.</div></div><div class="sc-tag" style="background:rgba(102,187,106,.1);color:#66bb6a">일섭</div></div>
     <div class="sc-item" style="opacity:.7"><div class="sc-bar" style="background:#ef5350"></div><div class="sc-num en">12</div><div class="sc-body"><div class="sc-title">극락♪유코마 온천향</div><div class="sc-desc">온천 테마. SP 9,000+ 달성 가능. 자동육성 지원.</div></div><div class="sc-tag" style="background:rgba(239,83,80,.1);color:#ef5350">일섭</div></div>
-    <div class="sc-item" style="opacity:.85;border-color:rgba(233,80,152,.2);background:rgba(233,80,152,.04)"><div class="sc-bar" style="background:linear-gradient(to bottom,#1e88e5,#f9a825)"></div><div class="sc-num en">13</div><div class="sc-body"><div class="sc-title">Beyond Dreams 함께 앞으로, 함께 빛을</div><div class="sc-desc">브리더즈컵 미국 원정. 전 거리/잔디·더트 대응.</div></div><div class="sc-tag" style="background:linear-gradient(135deg,rgba(30,136,229,.12),rgba(249,168,37,.12));color:#1e88e5">일섭 최신</div></div>
+    <div class="sc-item" style="opacity:.7;border-color:rgba(233,80,152,.2);background:rgba(233,80,152,.04)"><div class="sc-bar" style="background:linear-gradient(to bottom,#1e88e5,#f9a825)"></div><div class="sc-num en">13</div><div class="sc-body"><div class="sc-title">Beyond Dreams 함께 앞으로, 함께 빛을</div><div class="sc-desc">브리더즈컵 미국 원정. 전 거리/잔디·더트 대응.</div></div><div class="sc-tag" style="background:linear-gradient(135deg,rgba(30,136,229,.12),rgba(249,168,37,.12));color:#1e88e5">일섭 최신</div></div>
   </div>
 
   <div class="dv"><hr></div>
@@ -1236,12 +1237,12 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <div class="ib fi"><div class="ib-l">편성 팁</div><p>단거리·마일은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), 중거리·장거리는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
 
-  <div class="ib fi"><div class="ib-l">핵심</div><p>서포트카드의 인연 게이지를 합숙(시니어 7~8월) 전까지 주황색(80 이상)으로 채워야 우정 트레이닝이 발동한다. 이걸 놓치면 스탯이 크게 떨어지므로, 첫 육성 때부터 반드시 의식할 것.</p></div>
+  <div class="ib sk fi"><div class="ib-l">육성 팁</div><p>서포트카드의 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">인연 게이지</b>를 합숙(시니어 7~8월) 전까지 주황색(80 이상)으로 채워야 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">우정 트레이닝</b>이 발동한다. 이걸 놓치면 스탯이 크게 떨어지므로, 첫 육성 때부터 반드시 의식할 것.</p></div>
 
   <div class="dv"><hr></div>
 
   <div class="sh fi"><div class="sh-title">서클 가입</div><div class="sh-sub en">Circle</div></div>
-  <p class="bp fi">서클(길드)은 팀 점수 E3(20,000) 달성 시 가입할 수 있다. 매달 쥬얼과 서클 포인트가 지급되며, 서클 상점에서 SSR 서포트카드를 교환·돌파할 수 있으므로 가능한 빨리 가입하는 것이 정답이다. 가입 후 14일이 지나야 해당 월 보상을 수령할 수 있다.</p>
+  <p class="bp fi">서클(길드)은 팀 점수 E3(20,000) 달성 시 가입할 수 있다. 매달 쥬얼과 서클 포인트가 지급되며, 서클 상점에서 SSR 서포트카드를 교환·돌파할 수 있다. 가입 후 14일이 지나야 해당 월 보상을 수령하므로 빨리 가입하는 것이 정답이다.</p>
 
   <div class="sh fi"><div class="sh-title">매일 루틴</div><div class="sh-sub en">Daily Routine</div></div>
   <p class="bp fi">시간이 없어도 아래 다섯 가지는 매일 소화하는 것이 좋다. 전부 해도 10~15분이면 끝난다.</p>
