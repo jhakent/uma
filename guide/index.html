@@ -10,6 +10,10 @@
 <meta property="og:image" content="images/key0.webp">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+var __deepHash='';
+if(location.hash){__deepHash=location.hash.replace('#','');try{history.replaceState(null,null,location.pathname);}catch(e){}}
+</script>
 <meta name="twitter:title" content="우마무스메 프리티 더비 | 입문 가이드">
 <meta name="twitter:image" content="images/key0.webp">
 <link rel="apple-touch-icon" href="images/uma.png">
@@ -1493,10 +1497,9 @@ obsPn(document.getElementById('world'));
 /* ── Deep link: open tab from URL hash ── */
 var isDeepLink=false;
 (function(){
-  const hash=location.hash.replace('#','');
-  if(hash){
+  if(__deepHash){
     isDeepLink=true;
-    const tab=document.getElementById('tab-'+hash);
+    const tab=document.getElementById('tab-'+__deepHash);
     if(tab) tab.click();
     setTimeout(()=>{isDeepLink=false;},100);
   }
