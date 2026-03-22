@@ -1462,10 +1462,10 @@ bts.forEach(b=>{
     activePn=p;
     try{history.replaceState(null,null,'#'+b.dataset.t);}catch(e){}
     requestAnimationFrame(()=>{
-      if(isDeepLink) return;
-      const target=p.offsetTop - topH.offsetHeight;
+      const sl=p.querySelector('.sl-wrap')||p.querySelector('.sl');
+      const target=(sl||p).offsetTop - topH.offsetHeight;
       const dist=Math.abs(window.scrollY - target);
-      window.scrollTo({top:target, behavior:dist>1500?'instant':'smooth'});
+      window.scrollTo({top:target, behavior:(isDeepLink||dist>1500)?'instant':'smooth'});
     });
   });
 });
