@@ -15,6 +15,10 @@
 <link rel="apple-touch-icon" href="images/uma.png">
 <link rel="apple-touch-icon-precomposed" href="images/uma.png">
 <link rel="icon" type="image/png" href="images/uma.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" as="image" href="images/uma.webp">
+<link rel="preload" as="image" href="images/key0.webp">
+<link rel="preload" as="image" href="images/uma-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -22,7 +26,7 @@
 :root{
   --bg:#fff;--bg-warm:#fafaf8;--surface:#f4f3f0;--surface-2:#eeedea;
   --border:rgba(0,0,0,.06);--border-s:rgba(0,0,0,.1);
-  --text:#3a3a3a;--dim:#7a7a7a;--bright:#2d2d2d;
+  --text:#3a3a3a;--dim:#6a6a6a;--bright:#2d2d2d;
   --green:#00a95f;--sky:#4fb8e6;--pink:#e95098;
   --spd:#4fb8e6;--sta:#f09a3e;--pow:#e8c842;--gut:#e95098;--int:#00a95f;
 }
@@ -141,14 +145,21 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── TYPOGRAPHY ── */
 .sl{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px}
 .st{font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.3;color:var(--bright);margin-bottom:24px}
-.sd{font-size:14.5px;font-weight:300;color:var(--dim);line-height:1.9;max-width:560px;margin-bottom:8px}
+.sd{font-size:14.5px;font-weight:400;color:var(--dim);line-height:1.9;max-width:560px;margin-bottom:8px}
 .bt{font-size:16px;font-weight:700;letter-spacing:-.03em;color:var(--bright);margin-bottom:8px;margin-top:32px}
-.bp{font-size:14px;font-weight:300;color:var(--text);line-height:1.85}
+.bp{font-size:14px;font-weight:400;color:var(--text);line-height:1.85}
 .bp+.bp{margin-top:8px}
 
 /* ── SECTION HEADING (subtitle style) ── */
 .sh{margin-top:36px;margin-bottom:12px}
 .sh-title{font-size:17px;font-weight:800;letter-spacing:-.04em;color:var(--bright);line-height:1.3;display:inline;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(79,184,230,.22),rgba(233,80,152,.22));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#world .sh-title{background-image:linear-gradient(90deg,rgba(0,169,95,.24),rgba(0,169,95,.12))}
+#feat .sh-title{background-image:linear-gradient(90deg,rgba(233,80,152,.22),rgba(233,80,152,.10))}
+#sys .sh-title{background-image:linear-gradient(90deg,rgba(79,184,230,.24),rgba(79,184,230,.12))}
+#card .sh-title{background-image:linear-gradient(90deg,rgba(233,80,152,.20),rgba(79,184,230,.14))}
+#scn .sh-title{background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.10))}
+#start .sh-title{background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.10))}
+#tips .sh-title{background-image:linear-gradient(90deg,rgba(233,80,152,.22),rgba(233,80,152,.10))}
 .sh-sub{font-family:'Outfit',sans-serif;font-size:11px;font-weight:400;letter-spacing:.04em;color:var(--dim);margin-top:3px;text-transform:uppercase;display:block}
 
 /* ── SECTION HEADING HERO (accent variant) ── */
@@ -211,12 +222,10 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .wc{
   border-radius:16px;padding:28px 24px;
   position:relative;overflow:hidden;
-  transition:transform .25s,box-shadow .25s;
   background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.04);
   box-shadow:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02),inset 0 1px 0 rgba(255,255,255,.8);
 }
-.wc:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,0,0,.11)}
 .wc::before{
   content:'';position:absolute;inset:0;
   pointer-events:none;
@@ -228,7 +237,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .wc-emoji{font-size:32px;margin-bottom:10px;display:block;position:relative;z-index:1}
 .wc h3{font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:2px;position:relative;z-index:1}
 .wc .wc-en{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:.5px;color:var(--dim);margin-bottom:6px;position:relative;z-index:1;text-transform:uppercase}
-.wc p{font-size:14px;font-weight:300;color:var(--text);line-height:1.8;position:relative;z-index:1}
+.wc p{font-size:14px;font-weight:400;color:var(--text);line-height:1.8;position:relative;z-index:1}
 .wc-accent{
   position:absolute;top:-20px;right:-20px;width:100px;height:100px;
   border-radius:50%;pointer-events:none;opacity:.5;
@@ -240,11 +249,10 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 /* ── SIMPLE PAIR CARDS (start tab etc) ── */
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.pair-card{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-radius:16px;padding:22px 18px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
-.pair-card:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.pair-card{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-radius:16px;padding:22px 18px;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .pair-card .pc-emoji{font-size:22px;margin-bottom:6px;display:block}
 .pair-card h3{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:4px}
-.pair-card p{font-size:12.5px;font-weight:300;color:var(--dim);line-height:1.7}
+.pair-card p{font-size:12.5px;font-weight:400;color:var(--dim);line-height:1.7}
 
 @media(max-width:640px){
   .wc-row{grid-template-columns:1fr}
@@ -256,7 +264,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── NOTE ── */
 .note{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.05);box-shadow:0 3px 14px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);border-radius:16px;padding:22px;margin:24px 0}
 .note h3{font-size:14.5px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:5px}
-.note p{font-size:13.5px;font-weight:300;color:var(--dim);line-height:1.8}
+.note p{font-size:13.5px;font-weight:400;color:var(--dim);line-height:1.8}
 
 /* ── INFO BOX ── */
 .ib{background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);border-top:3px solid var(--green);border-radius:16px;padding:20px 20px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
@@ -264,19 +272,18 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ib-l{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;margin-bottom:4px}
 .ib-l.en{letter-spacing:2px}
 .ib .ib-l{color:var(--green)}.ib.pk .ib-l{color:var(--pink)}.ib.sk .ib-l{color:var(--sky)}
-.ib p{font-size:13px;font-weight:300;color:var(--text);line-height:1.8}
+.ib p{font-size:13px;font-weight:400;color:var(--text);line-height:1.8}
 
 /* ── FEAT BANNER ── */
 .fb{border:1px solid rgba(0,0,0,.04);border-radius:20px;padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden;background:rgba(255,255,255,.97);box-shadow:0 3px 18px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02)}
 .fb::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;pointer-events:none}
 .fb .fn{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;line-height:1;margin-bottom:10px;display:inline-block;padding:2px 8px;border-radius:6px;background:rgba(0,0,0,.04);color:var(--dim)}
 .fb h3{font-size:15px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:6px}
-.fb p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.85;position:relative;z-index:1}
+.fb p{font-size:13.5px;font-weight:400;color:var(--text);line-height:1.85;position:relative;z-index:1}
 
 /* ── SUPPORT TYPE CARDS ── */
 .stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0;width:100%}
 .stype{border-radius:14px;padding:14px 4px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s;min-width:0;box-sizing:border-box;overflow:hidden}
-.stype:hover{transform:translateY(-2px)}
 .stype-icon{font-size:24px;margin-bottom:6px;line-height:1;height:28px;display:flex;align-items:center;justify-content:center}
 .stype-name{font-size:12px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .stype-en{font-family:'Outfit',sans-serif;font-size:9px;font-weight:500;color:var(--dim);letter-spacing:.5px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -312,7 +319,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ssr-duo-icon img{width:100%;height:auto;display:block}
 .ssr-duo-name{font-size:14px;font-weight:800;letter-spacing:-.03em;color:var(--bright)}
 .ssr-duo-type{font-size:11.5px;font-weight:500;margin-top:2px}
-.ssr-duo-desc{font-size:11.5px;font-weight:300;color:var(--dim);margin-top:4px;line-height:1.45}
+.ssr-duo-desc{font-size:11.5px;font-weight:400;color:var(--dim);margin-top:4px;line-height:1.45}
 .ssr-duo-badge{
   display:inline-block;font-size:10px;font-weight:600;
   padding:2px 10px;border-radius:100px;margin-top:8px;
@@ -334,7 +341,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .ssr-tier.t-ssr{background:linear-gradient(135deg,#d88cef,#8dd8f0,#a0e8a0);color:#5a3c14}
 .ssr-info{flex:1}
 .ssr-name{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
-.ssr-sub{font-size:12px;font-weight:300;color:var(--dim)}
+.ssr-sub{font-size:12px;font-weight:400;color:var(--dim)}
 .ssr-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0}
 
 @media(max-width:640px){
@@ -350,7 +357,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .sc-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--dim);width:20px;flex-shrink:0;text-align:center}
 .sc-body{flex:1;min-width:0}
 .sc-title{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sc-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.5;margin-top:1px}
+.sc-desc{font-size:12px;font-weight:400;color:var(--dim);line-height:1.5;margin-top:1px}
 .sc-tag{font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0;letter-spacing:.5px}
 
 /* ── SCENARIO DETAIL CARD ── */
@@ -359,7 +366,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .sc-detail-head h3{font-size:17px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-bottom:4px}
 .sc-detail-head .sc-en{font-family:'Outfit',sans-serif;font-size:11px;font-weight:400;letter-spacing:.01em;color:var(--dim);text-transform:uppercase}
 .sc-detail-body{padding:0 22px 22px}
-.sc-detail-body p{font-size:13.5px;font-weight:300;color:var(--text);line-height:1.85}
+.sc-detail-body p{font-size:13.5px;font-weight:400;color:var(--text);line-height:1.85}
 
 /* ── FLOW ── */
 .flow{margin:24px 0}
@@ -370,7 +377,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .fl-dot{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:#fff;position:relative;z-index:1}
 .fl-c{flex:1;padding-top:3px}
 .fl-c h4{font-size:14px;font-weight:700;letter-spacing:-.02em;color:var(--bright);margin-bottom:3px}
-.fl-c p{font-size:13px;font-weight:300;color:var(--dim);line-height:1.75}
+.fl-c p{font-size:13px;font-weight:400;color:var(--dim);line-height:1.75}
 
 /* ── LINK GRID ── */
 .lg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
@@ -378,12 +385,12 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .lk:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
 .lk-l{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:2px}
 .lk-t{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
-.lk-d{font-size:11.5px;font-weight:300;color:var(--dim);margin-top:1px;line-height:1.4}
+.lk-d{font-size:11.5px;font-weight:400;color:var(--dim);margin-top:1px;line-height:1.4}
 
 /* ── TABLE ── */
 .mt{width:100%;margin:14px 0;border-collapse:collapse;font-size:12.5px}
 .mt th{font-weight:600;font-size:11px;text-align:left;padding:8px 10px;background:rgba(255,255,255,.5);border:1px solid var(--border);color:var(--bright)}
-.mt td{padding:8px 10px;border:1px solid var(--border);font-weight:300;color:var(--text);line-height:1.6;vertical-align:top}
+.mt td{padding:8px 10px;border:1px solid var(--border);font-weight:400;color:var(--text);line-height:1.6;vertical-align:top}
 .mt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border-radius:14px;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97)}
 .mt-wrap .mt{margin:0}
 .mt-wrap .mt th,.mt-wrap .mt td{white-space:nowrap;border-color:var(--border)}
@@ -436,11 +443,9 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   background:rgba(255,255,255,.97);
   border:1px solid rgba(0,0,0,.05);
   box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
-  transition:transform .15s;
 }
-.ach:hover{transform:translateY(-1px)}
 .ach-title{font-size:14px;font-weight:800;color:var(--bright);letter-spacing:-.02em}
-.ach-races{font-size:12.5px;font-weight:300;color:var(--dim);margin-top:4px;line-height:1.6}
+.ach-races{font-size:12.5px;font-weight:400;color:var(--dim);margin-top:4px;line-height:1.6}
 
 /* ── REF LINKS ── */
 .ref-links{display:flex;gap:8px;margin:14px 0 24px}
@@ -485,7 +490,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 }
 .qa-body{flex:1;min-width:0}
 .qa-title{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
-.qa-desc{font-size:12px;font-weight:300;color:var(--dim);margin-top:1px;line-height:1.4}
+.qa-desc{font-size:12px;font-weight:400;color:var(--dim);margin-top:1px;line-height:1.4}
 .qa-arrow{
   font-size:16px;color:var(--dim);flex-shrink:0;
   opacity:.4;transition:opacity .2s;
@@ -540,7 +545,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── FOOTER ── */
 .footer{
   text-align:center;padding:20px 24px 28px;
-  font-size:11px;color:var(--dim);font-weight:300;line-height:1.75;
+  font-size:11px;color:var(--dim);font-weight:400;line-height:1.75;
   max-width:720px;margin:0 auto;
 }
 .footer-links{
@@ -578,7 +583,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .footer .copy{opacity:.5;margin-top:10px}
 
 /* ── KEY VISUAL ── */
-.kv{margin:20px 0 28px;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.03);aspect-ratio:3.2/1}
+.kv{margin:20px 0 28px;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.03);aspect-ratio:2.6/1}
 .kv img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
 @media(max-width:640px){.kv{aspect-ratio:2/1;border-radius:14px}}
 
@@ -591,6 +596,13 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 @media(max-width:640px){.ev-row{grid-template-columns:1fr}}
 
 /* ── ANIMATION ── */
+/* ── Twemoji ── */
+img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;display:inline-block}
+.wc-emoji img.emoji{height:1em;width:1em}
+.hero-stat-val img.emoji{height:1em;width:1em}
+.sys-hero-emoji img.emoji{height:1em;width:1em}
+.pc-emoji img.emoji{height:1em;width:1em}
+.qa-icon img.emoji{height:1em;width:1em}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fi{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
 .fi.v{opacity:1;transform:translateY(0)}
@@ -618,14 +630,14 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
       <a href="#" onclick="document.querySelector('.tb').click();return false;" style="display:block"><img class="top-logo-img" src="images/uma-logo.png" alt="우마무스메 프리티 더비"></a>
     </div>
     <div class="tabs-wrap">
-    <nav class="tabs">
-      <button class="tb on" data-t="world">세계관</button>
-      <button class="tb" data-t="feat">특징</button>
-      <button class="tb" data-t="sys">구조</button>
-      <button class="tb" data-t="card">캐릭터·카드</button>
-      <button class="tb" data-t="scn">시나리오</button>
-      <button class="tb" data-t="start">시작</button>
-      <button class="tb" data-t="tips">공략</button>
+    <nav class="tabs" role="tablist" aria-label="입문 가이드 탭">
+      <button class="tb on" data-t="world" role="tab" aria-selected="true" aria-controls="world" id="tab-world">세계관</button>
+      <button class="tb" data-t="feat" role="tab" aria-selected="false" aria-controls="feat" id="tab-feat">특징</button>
+      <button class="tb" data-t="sys" role="tab" aria-selected="false" aria-controls="sys" id="tab-sys">구조</button>
+      <button class="tb" data-t="card" role="tab" aria-selected="false" aria-controls="card" id="tab-card">캐릭터·카드</button>
+      <button class="tb" data-t="scn" role="tab" aria-selected="false" aria-controls="scn" id="tab-scn">시나리오</button>
+      <button class="tb" data-t="start" role="tab" aria-selected="false" aria-controls="start" id="tab-start">시작</button>
+      <button class="tb" data-t="tips" role="tab" aria-selected="false" aria-controls="tips" id="tab-tips">공략</button>
     </nav>
     </div>
   </div>
@@ -656,17 +668,18 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
     </div>
     <div class="hero-stat">
       <div class="hero-stat-val">🏆</div>
-      <div class="hero-stat-label"><span class="en" style="font-size:9px;letter-spacing:.03em">TGA 2025</span> 최우수 모바일</div>
+      <div class="hero-stat-label">최우수 모바일 <span class="en" style="font-size:9px;opacity:.6">TGA 2025</span></div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-val en">12+</div>
       <div class="hero-stat-label">연령</div>
     </div>
   </div>
+  <div style="text-align:center;padding:6px 0 0;font-size:9.5px;font-weight:400;color:var(--dim);letter-spacing:-.01em;opacity:.7">2025년 12월 기준 · 한국 서버</div>
 </section>
 
 <!-- ═══ 세계관 ═══ -->
-<div class="pn on" id="world">
+<div class="pn on" id="world" role="tabpanel" aria-labelledby="tab-world">
   <p class="sl fi" style="color:var(--green)">세계관</p>
   <h2 class="st fi">경마 × 아이돌, 그 기묘한 조합</h2>
   <p class="sd fi">이 세계에는 말의 이름과 혼을 이어받은 소녀 종족 &lsquo;우마무스메&rsquo;가 존재한다. 머리에 말귀, 허리에 말꼬리를 가진 소녀들이 도쿄의 트레센 학원에 입학해 훈련하고, 실제 일본 경마 일정을 따르는 레이스에 출전한다.</p>
@@ -749,7 +762,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </div>
 
 <!-- ═══ 특징 ═══ -->
-<div class="pn" id="feat">
+<div class="pn" id="feat" role="tabpanel" aria-labelledby="tab-feat">
   <p class="sl fi" style="color:var(--pink)">특징</p>
   <h2 class="st fi">이 게임에 사람들이 빠지는 이유</h2>
 
@@ -776,7 +789,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </div>
 
 <!-- ═══ 게임 구조 ═══ -->
-<div class="pn" id="sys">
+<div class="pn" id="sys" role="tabpanel" aria-labelledby="tab-sys">
   <p class="sl fi" style="color:var(--sky)">게임 구조</p>
   <h2 class="st fi">핵심 시스템 해부</h2>
   <p class="sd fi">매 턴 훈련·휴식·외출·레이스 중 하나를 선택하며, 게임 내 시간 3년간 우마무스메를 성장시킨다. 육성이 끝나면 하나의 완성된 개체가 탄생하고, 더 나은 개체를 원한다면 처음부터 다시 키운다. 한 판이 곧 하나의 육성이다.</p>
@@ -872,7 +885,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </div>
 
 <!-- ═══ 캐릭터·카드 ═══ -->
-<div class="pn" id="card">
+<div class="pn" id="card" role="tabpanel" aria-labelledby="tab-card">
   <p class="sl fi" style="color:var(--pink)">캐릭터·카드</p>
   <h2 class="st fi">키우고, 뽑고, 물려받는 구조</h2>
   <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, 서포트카드의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다. 지금까지 출시된 육성 우마무스메 및 서포트 카드 정보는 아래에서 확인할 수 있다.</p>
@@ -983,7 +996,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </div>
 
 <!-- ═══ 시나리오 ═══ -->
-<div class="pn" id="scn">
+<div class="pn" id="scn" role="tabpanel" aria-labelledby="tab-scn">
   <p class="sl fi" style="color:var(--green)">시나리오</p>
   <h2 class="st fi">육성 시나리오 전체 목록</h2>
   <p class="sd fi">우마무스메의 ‘육성 시나리오’는 육성 방식을 결정하는 모드다. 시나리오마다 고유한 시스템과 규칙이 있으며, 최신 시나리오일수록 육성 고점이 높다. 현재까지 총 13개가 출시되었다.</p>
@@ -1032,7 +1045,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </div>
 
 <!-- ═══ 시작하기 ═══ -->
-<div class="pn" id="start">
+<div class="pn" id="start" role="tabpanel" aria-labelledby="tab-start">
   <p class="sl fi" style="color:var(--green)">시작하기</p>
   <h2 class="st fi">설치부터 첫 육성까지</h2>
 
@@ -1058,7 +1071,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </div>
 
 <!-- ═══ 공략 ═══ -->
-<div class="pn" id="tips">
+<div class="pn" id="tips" role="tabpanel" aria-labelledby="tab-tips">
   <p class="sl fi" style="color:var(--pink)">공략</p>
   <h2 class="st fi">무과금 운용과 핵심 자원</h2>
   <p class="sd fi">PvP 최상위는 과금 영역이지만, 스토리·육성·이벤트·위닝 라이브 등 핵심 재미는 무과금으로 온전히 즐길 수 있다.</p>
@@ -1160,9 +1173,11 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 </footer>
 
 <script>
+/* ── scroll progress bar (Tech 3: divide-by-zero guard) ── */
 window.addEventListener('scroll',()=>{
   const h=document.documentElement;
-  document.getElementById('sb').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';
+  const max=Math.max(1,h.scrollHeight-h.clientHeight);
+  document.getElementById('sb').style.width=(h.scrollTop/max)*100+'%';
 },{passive:true});
 
 const bts=document.querySelectorAll('.tb');
@@ -1170,23 +1185,47 @@ const pns=document.querySelectorAll('.pn');
 const topH=document.getElementById('topBar');
 
 let activePn=document.getElementById('world');
+let tabSwitchTimer=null; /* Tech 5: debounce */
 
 bts.forEach(b=>{
   b.addEventListener('click',()=>{
-    bts.forEach(x=>x.classList.remove('on'));
+    /* Tech 5: debounce rapid tab switches */
+    if(tabSwitchTimer){clearTimeout(tabSwitchTimer);tabSwitchTimer=null;}
+
+    /* Tech 4: ARIA sync */
+    bts.forEach(x=>{x.classList.remove('on');x.setAttribute('aria-selected','false');});
     pns.forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
+    b.setAttribute('aria-selected','true');
     b.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+
     // unobserve previous panel
     if(activePn) activePn.querySelectorAll('.fi').forEach(el=>obs.unobserve(el));
     const p=document.getElementById(b.dataset.t);
     p.classList.add('on');
     p.querySelectorAll('.fi').forEach(el=>{el.classList.remove('v');void el.offsetWidth;});
-    obsPn(p);
+
+    /* Tech 5: slight delay before re-observing */
+    tabSwitchTimer=setTimeout(()=>{obsPn(p);tabSwitchTimer=null;},50);
+
     activePn=p;
+    /* Tech 1: smooth scroll with fallback */
     requestAnimationFrame(()=>{
-      window.scrollTo({top: p.offsetTop - topH.offsetHeight, behavior:'instant'});
+      window.scrollTo({top: p.offsetTop - topH.offsetHeight, behavior:'smooth'});
     });
+  });
+});
+
+/* Tech 4: keyboard arrow navigation for tabs */
+const tabArr=Array.from(bts);
+bts.forEach((b,i)=>{
+  b.addEventListener('keydown',e=>{
+    let target=null;
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();target=tabArr[(i+1)%tabArr.length];}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();target=tabArr[(i-1+tabArr.length)%tabArr.length];}
+    if(e.key==='Home'){e.preventDefault();target=tabArr[0];}
+    if(e.key==='End'){e.preventDefault();target=tabArr[tabArr.length-1];}
+    if(target){target.click();target.focus();}
   });
 });
 
@@ -1210,23 +1249,31 @@ function checkTabFade(){
 tabsWrap.addEventListener('scroll',checkTabFade,{passive:true});
 checkTabFade();
 
-// swipe tab navigation
-let touchStartX=0,touchStartY=0;
+/* ── swipe tab navigation (Tech 2: tighter threshold + velocity) ── */
+let touchStartX=0,touchStartY=0,touchStartTime=0;
 const panelWrap=document.querySelector('body');
 panelWrap.addEventListener('touchstart',e=>{
   touchStartX=e.changedTouches[0].clientX;
   touchStartY=e.changedTouches[0].clientY;
+  touchStartTime=Date.now();
 },{passive:true});
 panelWrap.addEventListener('touchend',e=>{
   const dx=e.changedTouches[0].clientX-touchStartX;
   const dy=e.changedTouches[0].clientY-touchStartY;
-  if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)) return;
+  const dt=Date.now()-touchStartTime;
+  const velocity=Math.abs(dx)/Math.max(1,dt);
+  /* require 80px + more horizontal than vertical + minimum velocity */
+  if(Math.abs(dx)<80||Math.abs(dy)>Math.abs(dx)*0.6||velocity<0.3) return;
   const tabs=Array.from(bts);
   const cur=tabs.findIndex(b=>b.classList.contains('on'));
   if(cur<0) return;
   const next=dx<0?cur+1:cur-1;
   if(next>=0&&next<tabs.length) tabs[next].click();
 },{passive:true});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<script>
+twemoji.parse(document.body,{folder:'svg',ext:'.svg'});
 </script>
 </body>
 </html>
