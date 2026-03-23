@@ -221,16 +221,18 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .wc .wc-en{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:.5px;color:var(--dim);margin-bottom:6px;position:relative;z-index:1;text-transform:uppercase}
 .wc p{font-size:14px;font-weight:400;color:var(--text);line-height:1.8;position:relative;z-index:1}
 .wc.wc-warn{border-top:2px solid rgba(229,57,53,.2);padding-top:18px}
-.wc.wc-warn .wc-emoji{position:relative;display:inline-grid;place-items:center;width:40px;height:40px;margin-bottom:16px}
-.wc.wc-warn .wc-emoji>*{grid-area:1/1}
-.wc.wc-warn .wc-emoji .wc-ban{font-size:42px;opacity:.18;z-index:2;pointer-events:none}
+.wc.wc-warn .wc-emoji{position:relative;display:block;width:fit-content;margin-bottom:16px}
+.wc.wc-warn .wc-emoji .wc-ban{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.18;pointer-events:none;z-index:2;font-size:44px;line-height:1}
+.wc.wc-warn .wc-emoji .wc-ban img.emoji{width:44px!important;height:44px!important}
 .wc-accent{
   position:absolute;top:-20px;right:-20px;width:100px;height:100px;
   border-radius:50%;pointer-events:none;opacity:.5;
 }
 .wc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .wc-row .wc{padding:22px 20px}
+.wc-row .wc.wc-warn{padding-top:14px}
 .wc-row .wc-emoji{font-size:26px;margin-bottom:8px}
+.wc-row .wc.wc-warn .wc-emoji{margin-bottom:14px}
 .wc-row .wc h3{font-size:14.5px}
 
 /* ── SIMPLE PAIR CARDS (start tab etc) ── */
