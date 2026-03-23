@@ -362,6 +362,17 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 
 
 /* ── RACE CARDS (Champions Meeting style) ── */
+.rc-toggle{margin-bottom:12px;border:1px solid rgba(0,0,0,.04);border-radius:14px;background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(0,0,0,.04);overflow:hidden}
+.rc-toggle-head{font-size:12px;font-weight:700;letter-spacing:.3px;padding:12px 16px;background:var(--rc-c);color:#fff;cursor:pointer;display:flex;align-items:center;gap:8px;list-style:none;-webkit-tap-highlight-color:transparent;transition:opacity .15s;border-radius:13px}
+.rc-toggle[open] .rc-toggle-head{border-radius:13px 13px 0 0}
+.rc-toggle-head:hover{opacity:.88}
+.rc-toggle-head:active{opacity:.75}
+.rc-toggle-head::-webkit-details-marker{display:none}
+.rc-toggle-head::before{display:none}
+.rc-toggle-head::after{content:'';width:16px;height:16px;margin-left:auto;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .25s;opacity:.7}
+.rc-toggle[open] .rc-toggle-head::after{transform:rotate(180deg)}
+.rc-toggle-count{font-size:10px;font-weight:600;color:#fff;opacity:.65}
+.rc-toggle .rc-group{margin-bottom:0;border:none;border-radius:0;box-shadow:none;border-top:1px solid rgba(0,0,0,.04)}
 .rc-group-label{
   font-size:11px;font-weight:700;letter-spacing:.3px;
   padding:6px 14px;border-radius:10px 10px 0 0;
@@ -763,7 +774,8 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sh fi"><div class="sh-title">클래식 삼관과 트리플 티아라</div><div class="sh-sub en">Classic Triple Crown &amp; Triple Tiara</div></div>
-  <p class="bp fi">클래식 삼관(사츠키상 → 일본 더비 → 국화상)은 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다. 트리플 티아라(벚꽃상 → 오크스 → 추화상)는 원래 암말 전용이지만, 우마무스메 세계에서는 전원 여성이므로 숫말 모티프도 출전 가능하다. G1 9승의 <b class="ch" style="--ch:rgba(59,89,152,.22)">아몬드 아이</b>, 재팬컵 2연패의 <b class="ch" style="--ch:rgba(107,47,160,.2)">젠틸돈나</b> 등 암말 모티프 캐릭터가 잇달아 출시되며 티아라 노선도 확장되고 있다. 구체적인 G1 레이스 일람은 <a href="#" onclick="document.getElementById('tab-sys').click();return false;">구조</a> 탭에서 확인할 수 있다.</p>
+  <p class="bp fi"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">클래식 삼관</b>(사츠키상 → 일본 더비 → 국화상)은 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다. 구체적인 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 레이스 일람은 <a href="#" onclick="document.getElementById('tab-sys').click();return false;">구조</a> 탭에서 확인할 수 있다.</p>
+  <p class="bp fi"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">트리플 티아라</b>(벚꽃상 → 오크스 → 추화상)는 원래 암말 전용이지만, 우마무스메 세계에서는 전원 여성이므로 숫말 모티프도 출전 가능하다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 9승의 <b class="ch" style="--ch:rgba(59,89,152,.22)">아몬드 아이</b>, 재팬컵 2연패의 <b class="ch" style="--ch:rgba(107,47,160,.2)">젠틸돈나</b> 등 암말 모티프 캐릭터가 잇달아 출시되며 티아라 노선도 확장되고 있다.</p>
 
   <div class="sh fi"><div class="sh-title">포에버 영과 브리더즈컵</div><div class="sh-sub en">Forever Young × Breeders’ Cup</div></div>
   <p class="bp fi">2025년 11월, 일본 경주마 <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. <b class="ch" style="--ch:rgba(90,45,130,.22)">포에버 영</b>의 마주인 <b>후지타 스스무</b>는 사이게임즈 모기업 사이버에이전트의 사장으로, 팬덤에서는 과금이 마주 활동에 기여했다며 ‘한 입 마주’를 자처하는 밈이 생기기도 했다.</p>
@@ -877,7 +889,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">레이스</span><div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div></div><span class="sys-hero-emoji">🏇</span></div>
   </div>
-  <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">스킬 포인트</b>, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
+  <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">스킬 포인트</b>, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 등)에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
 
   <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">거리 적성</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>(~1400m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>(~1800m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>(~2400m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b>(2401m~)로 나뉘며, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">각질 적성</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">도주</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선행</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선입</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">추입</b>으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 각질을 선택하는 것이 중요하다.</p>
 
@@ -887,27 +899,31 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="pair-card" style="border-top:3px solid var(--green)">
       <span class="pc-emoji">🌱</span>
       <h3>잔디</h3>
-      <p>천연 잔디가 깔린 코스. 일본 경마의 주류이며, 게임 내 대부분의 G1 레이스가 잔디에서 열린다. 비가 오면 지면이 무르게 변해 스태미나 소모가 커지고 가속이 어려워진다.</p>
+      <p>천연 잔디가 깔린 코스. 일본 경마의 주류이며, 게임 내 대부분의 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 레이스가 잔디에서 열린다. 비가 오면 지면이 무르게 변해 스태미나 소모가 커지고 가속이 어려워진다.</p>
     </div>
     <div class="pair-card" style="border-top:3px solid var(--sta)">
       <span class="pc-emoji">🏜️</span>
       <h3>더트</h3>
-      <p>모래와 흙이 깔린 코스. 미국·한국 경마에서는 주류이지만, 일본에서는 비주류 취급이다. 잔디와 반대로, 비가 오면 지면이 단단해져 오히려 달리기 쉬워진다. 게임 내 더트 G1은 페브러리 S, 챔피언스컵, 도쿄 대상전, 전일본 주니어 우준 네 개다.</p>
+      <p>모래와 흙이 깔린 코스. 미국·한국 경마에서는 주류이지만, 일본에서는 비주류 취급이다. 잔디와 반대로, 비가 오면 지면이 단단해져 오히려 달리기 쉬워진다. 게임 내 더트 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>은 페브러리 S, 챔피언스컵, 도쿄 대상전, 전일본 주니어 우준 네 개다.</p>
     </div>
   </div>
 
   <div class="sh fi"><div class="sh-title">G1 레이스 일람</div><div class="sh-sub en">Grade 1 Races</div></div>
+  <p class="bp fi" style="margin-bottom:20px"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>은 JRA(일본 중앙경마회)가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다. 육성에서 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 승리는 대량의 팬 수·스탯 보너스·스킬 포인트를 획득하는 핵심 수단이며, 캐릭터마다 목표로 지정된 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>이 다르다.</p>
 
   <div class="fi">
-  <span class="rc-group-label" style="background:var(--spd)">주니어 · 1년차</span>
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--spd)">주니어 · 1년차<span class="rc-toggle-count en">4</span></summary>
   <div class="rc-group">
     <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">한신 JF</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
     <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">아사히배 FS</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
     <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">호프풀 S</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
     <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">전일본 주니어 우준</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 가와사키 등</span></div></div>
   </div>
+  </details>
 
-  <span class="rc-group-label" style="background:var(--pink)">클래식 · 2년차</span>
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--pink)">클래식 · 2년차<span class="rc-toggle-count en">7</span></summary>
   <div class="rc-group">
     <div class="rc"><span class="rc-time">4월 전반</span><span class="rc-name">사츠키상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
     <div class="rc"><span class="rc-time">4월 전반</span><span class="rc-name">벚꽃상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
@@ -917,8 +933,10 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">국화상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">3000m 장거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
     <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">추화상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
   </div>
+  </details>
 
-  <span class="rc-group-label" style="background:var(--green)">시니어 · 3년차 및 2~3년차 공통</span>
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--green)">시니어 · 3년차 및 공통<span class="rc-toggle-count en">15</span></summary>
   <div class="rc-group">
     <div class="rc"><span class="rc-time">2월 후반</span><span class="rc-name">페브러리 S</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
     <div class="rc"><span class="rc-time">3월 후반</span><span class="rc-name">타카마츠노미야 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1200m 단거리</span><span class="rc-tag dir">좌 · 츄쿄</span></div></div>
@@ -936,10 +954,11 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">아리마 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2500m 장거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
     <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">도쿄 대상전</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">좌 · 오이</span></div></div>
   </div>
+  </details>
   </div>
 
   <div class="sh fi"><div class="sh-title">주요 우승 경력</div><div class="sh-sub en">Achievement Titles</div></div>
-  <p class="bp fi">특정 G1 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
+  <p class="bp fi">특정 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
 
   <div class="ach-list fi">
     <div class="ach"><div class="ach-title">🏆 클래식 3관</div><div class="ach-races">사츠키상(4월 전반) → 일본 더비(5월 후반) → 국화상(10월 후반)</div></div>
@@ -1102,7 +1121,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="sys-hero-top"><span class="sys-hero-num en">04</span><div class="sys-hero-body"><span class="sys-hero-title">인자 계승</span><div class="sys-hero-sub" style="color:var(--int)">부모의 능력을 물려받는 구조</div></div><span class="sys-hero-emoji">🧬</span></div>
   </div>
   <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">인자</b>&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
-  <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·각질·마장 적성 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 G1 우승 시 생성) 등이 있다. 인자의 별 수(⭐️1~⭐️3)는 확률적으로 결정되며, ⭐️3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
+  <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·각질·마장 적성 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 우승 시 생성) 등이 있다. 인자의 별 수(⭐️1~⭐️3)는 확률적으로 결정되며, ⭐️3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
 
   <div class="ib fi"><div class="ib-l">적성 개조 예시</div><p>마일 적성 A인 캐릭터를 중거리에서 운용하고 싶다면, 부모·조부모 개체에 중거리 ⭐️3 적성 인자를 확보하고, 계승 이벤트에서 중거리 적성이 A 이상으로 올라가길 반복 시도한다. S 적성 달성은 계승 이벤트에서의 확률 판정이므로, 수십 회 이상의 반복 육성이 필요할 수 있다.</p></div>
 
