@@ -221,8 +221,9 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .wc .wc-en{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:.5px;color:var(--dim);margin-bottom:6px;position:relative;z-index:1;text-transform:uppercase}
 .wc p{font-size:14px;font-weight:400;color:var(--text);line-height:1.8;position:relative;z-index:1}
 .wc.wc-warn{border-top:2px solid rgba(229,57,53,.2)}
-.wc.wc-warn .wc-emoji{position:relative;display:inline-block}
-.wc.wc-warn .wc-emoji::after{content:'🚫';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:38px;opacity:.18}
+.wc.wc-warn .wc-emoji{position:relative;display:inline-grid;place-items:center;width:40px;height:40px}
+.wc.wc-warn .wc-emoji>*{grid-area:1/1}
+.wc.wc-warn .wc-emoji .wc-ban{font-size:42px;opacity:.18;z-index:2;pointer-events:none}
 .wc-accent{
   position:absolute;top:-20px;right:-20px;width:100px;height:100px;
   border-radius:50%;pointer-events:none;opacity:.5;
@@ -1290,13 +1291,13 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="wc-stack fi">
     <div class="wc-row">
       <div class="wc wc-warn wc-pink">
-        <span class="wc-emoji"><img src="images/jewel.webp" alt="쥬얼" style="width:24px;height:24px;object-fit:contain"></span>
+        <span class="wc-emoji"><img src="images/jewel.webp" alt="쥬얼" style="width:24px;height:24px;object-fit:contain"><span class="wc-ban">🚫</span></span>
         <h3>캐릭터 가챠에 쥬얼 투입</h3>
         <p class="wc-en en">Character Gacha</p>
         <p>캐릭터는 명함 1장이면 충분하다. 1성도 여신상으로 3성 각성하면 고유 스킬이 강화되어 실전 투입 가능. 쥬얼은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드 가챠에만</b> 쓸 것.</p>
       </div>
       <div class="wc wc-warn wc-sky">
-        <span class="wc-emoji">📊</span>
+        <span class="wc-emoji">📊<span class="wc-ban">🚫</span></span>
         <h3>SSR이라고 무조건 편성</h3>
         <p class="wc-en en">SSR ≠ Best</p>
         <p><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">SSR 0~1돌보다 SR 풀돌이 대부분 강하다.</b> 인벤 카드 비교에서 트레이닝 상승치를 확인하는 습관을 들이면 실수를 피할 수 있다.</p>
@@ -1304,13 +1305,13 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     </div>
     <div class="wc-row">
       <div class="wc wc-warn wc-green">
-        <span class="wc-emoji">🤝</span>
+        <span class="wc-emoji">🤝<span class="wc-ban">🚫</span></span>
         <h3>서클 가입을 미루는 것</h3>
         <p class="wc-en en">Join a Circle ASAP</p>
         <p>미가입 상태는 매달 쥬얼, 서클 포인트, SSR 교환 기회를 모두 날리는 것과 같다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">E3 달성 즉시 가입.</b></p>
       </div>
       <div class="wc wc-warn wc-neutral">
-        <span class="wc-emoji">🏪</span>
+        <span class="wc-emoji">🏪<span class="wc-ban">🚫</span></span>
         <h3>비밀상점에서 캐릭터 조각 구매</h3>
         <p class="wc-en en">Secret Shop Trap</p>
         <p>3성 우마무스메 조각을 비밀상점에서 사는 건 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">자산 탈탈.</b> 쥬얼과 머니 모두 다른 곳에 쓰는 편이 훨씬 효율적이다.</p>
