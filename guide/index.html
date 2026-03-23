@@ -1620,16 +1620,27 @@ const obs=new IntersectionObserver(es=>{
 function obsPn(p){p.querySelectorAll('.fi').forEach(el=>obs.observe(el));}
 obsPn(document.getElementById('pn-world'));
 
-/* ── Deep link: open tab from URL hash ── */
+/* ── Deep link: open tab (or section) from URL hash ── */
 var isDeepLink=false;
 (function(){
   const hash=location.hash.replace('#','');
-  if(hash){
-    isDeepLink=true;
-    const tab=document.getElementById('tab-'+hash);
-    if(tab) tab.click();
-    setTimeout(()=>{isDeepLink=false;},100);
+  if(!hash) return;
+  isDeepLink=true;
+  /* section→tab mapping */
+  const secMap={'s-install':'start','s-reroll':'start','s-first':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','c-awaken':'card','c-level':'card','c-limit':'card','c-gacha':'card','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+  const tabId=secMap[hash]||hash;
+  const tab=document.getElementById('tab-'+tabId);
+  if(tab) tab.click();
+  /* scroll to section after tab renders */
+  const sec=document.getElementById(hash);
+  if(sec&&secMap[hash]){
+    setTimeout(()=>{
+      const topH=document.getElementById('topBar')?.offsetHeight||0;
+      const subH=document.querySelector('.sub-nav')?.offsetHeight||0;
+      window.scrollTo({top:sec.getBoundingClientRect().top+window.scrollY-topH-subH-8,behavior:'smooth'});
+    },150);
   }
+  setTimeout(()=>{isDeepLink=false;},300);
 })();
 
 // hide tab fade when scrolled to end
