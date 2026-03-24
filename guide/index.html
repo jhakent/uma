@@ -401,8 +401,6 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .tr-list{padding:12px 16px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,.04)}
 .tr-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
 .tr-tag{font-size:9px;font-weight:600;letter-spacing:.5px;padding:1px 6px;border-radius:4px}
-.tr-strat{font-size:10px;font-weight:700;letter-spacing:.3px;color:var(--dim);opacity:.5;padding:4px 0 2px;margin-top:4px;border-top:1px solid rgba(0,0,0,.04)}
-.tr-strat:first-child{border-top:none;margin-top:0;padding-top:0}
 [id^="s-"],[id^="t-"],[id^="c-"]{scroll-margin-top:140px}
 .sh-link{background:none;border:none;padding:4px;cursor:pointer;opacity:0;transition:opacity .2s;color:var(--dim);flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .sh:hover .sh-link,.sh-link:focus{opacity:.35}
@@ -617,7 +615,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .fi{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
 .fi.v{opacity:1;transform:translateY(0)}
 
-/* ── RULE CARDS (<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 철칙 등) ── */
+/* ── RULE CARDS (<b class="hl-o">쥬얼</b> 철칙 등) ── */
 .rule-list{margin:18px 0;display:flex;flex-direction:column;gap:8px}
 .rule-card{
   display:flex;align-items:flex-start;gap:14px;
@@ -636,7 +634,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .rule-title{font-size:14px;font-weight:700;color:var(--bright);letter-spacing:-.02em;line-height:1.3}
 .rule-reason{font-size:12.5px;font-weight:400;color:var(--dim);margin-top:3px;line-height:1.5}
 
-/* ── UNLOCK (<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b>) ── */
+/* ── UNLOCK (<b class="hl-o">상한 해방</b>) ── */
 .unlock{border:1px solid rgba(0,0,0,.04);border-radius:20px;overflow:hidden;margin:20px 0;background:rgba(255,255,255,.97);box-shadow:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02)}
 .unlock-head{padding:20px 22px 14px;border-bottom:1px solid var(--border)}
 .unlock-head-title{font-size:15px;font-weight:800;letter-spacing:-.03em;color:var(--bright)}
@@ -678,6 +676,11 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   .stype-name{font-size:11px}
   .st{font-size:22px}
 }
+.hl-g{font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl-p{font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl-c{font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl-o{font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl-r{font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 </style>
 </head>
 <body>
@@ -753,7 +756,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
         <span class="wc-emoji">🏇</span>
         <h3>레이스</h3>
         <p class="wc-en en">Race</p>
-        <p>실제 경마장 코스를 재현한 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b> 위를 달린다. 실황 아나운서의 중계까지 경마 그 자체다.</p>
+        <p>실제 경마장 코스를 재현한 <b class="hl-c">잔디</b> 위를 달린다. 실황 아나운서의 중계까지 경마 그 자체다.</p>
       </div>
       <div class="wc wc-pink">
         <div class="wc-accent" style="background:radial-gradient(circle,rgba(233,80,152,.12),transparent)"></div>
@@ -812,8 +815,8 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sh fi"><div class="sh-title">클래식 삼관과 트리플 티아라</div><div class="sh-sub en">Classic Triple Crown &amp; Triple Tiara</div></div>
-  <p class="bp fi"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">클래식 삼관</b>(사츠키상 → 일본 더비 → 국화상)은 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다. 구체적인 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 레이스 일람은 <a href="#" onclick="document.getElementById('tab-sys').click();return false;">구조</a> 탭에서 확인할 수 있다.</p>
-  <p class="bp fi"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">트리플 티아라</b>(벚꽃상 → 오크스 → 추화상)는 원래 암말 전용이지만, 우마무스메 세계에서는 전원 여성이므로 숫말 모티프도 출전 가능하다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 9승의 <b class="ch" style="--ch:rgba(105,169,233,.22)">아몬드 아이</b>, 재팬컵 2연패의 <b class="ch" style="--ch:rgba(207,47,43,.2)">젠틸돈나</b> 등 암말 모티프 캐릭터가 잇달아 출시되며 티아라 노선도 확장되고 있다.</p>
+  <p class="bp fi"><b class="hl-g">클래식 삼관</b>(사츠키상 → 일본 더비 → 국화상)은 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주이며, 대부분의 시나리오가 이 삼관을 축으로 전개된다. 구체적인 <b class="hl-r">G1</b> 레이스 일람은 <a href="#" onclick="document.getElementById('tab-sys').click();return false;">구조</a> 탭에서 확인할 수 있다.</p>
+  <p class="bp fi"><b class="hl-p">트리플 티아라</b>(벚꽃상 → 오크스 → 추화상)는 원래 암말 전용이지만, 우마무스메 세계에서는 전원 여성이므로 숫말 모티프도 출전 가능하다. <b class="hl-r">G1</b> 9승의 <b class="ch" style="--ch:rgba(105,169,233,.22)">아몬드 아이</b>, 재팬컵 2연패의 <b class="ch" style="--ch:rgba(207,47,43,.2)">젠틸돈나</b> 등 암말 모티프 캐릭터가 잇달아 출시되며 티아라 노선도 확장되고 있다.</p>
 
   <div class="sh fi"><div class="sh-title">포에버 영과 브리더즈컵</div><div class="sh-sub en">Forever Young × Breeders’ Cup</div></div>
   <p class="bp fi">2025년 11월, 일본 경주마 <b class="ch" style="--ch:rgba(130,43,74,.22)">포에버 영</b>이 미국 브리더즈컵 클래식에서 우승했다. 일본 태생 경주마로서는 사상 최초다. <b class="ch" style="--ch:rgba(130,43,74,.22)">포에버 영</b>의 마주인 <b>후지타 스스무</b>는 사이게임즈 모기업 사이버에이전트의 사장으로, 팬덤에서는 과금이 마주 활동에 기여했다며 ‘한 입 마주’를 자처하는 밈이 생기기도 했다.</p>
@@ -846,7 +849,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
         <span class="wc-emoji">🏇</span>
         <h3>실감 나는 레이스 연출</h3>
         <p class="wc-en en">Race</p>
-        <p>실제 경마장 코스, 코너 각도, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b> 질감까지 재현했다. 아나운서의 실시간 중계가 경기 시작부터 끝까지 호흡을 따라가며, 마지막 직선의 데드히트 연출은 매번 손에 땀이 찬다. 비 오는 날에는 지면 상태가 바뀌어 레이스 전략까지 달라진다.</p>
+        <p>실제 경마장 코스, 코너 각도, <b class="hl-c">잔디</b> 질감까지 재현했다. 아나운서의 실시간 중계가 경기 시작부터 끝까지 호흡을 따라가며, 마지막 직선의 데드히트 연출은 매번 손에 땀이 찬다. 비 오는 날에는 지면 상태가 바뀌어 레이스 전략까지 달라진다.</p>
       </div>
       <div class="wc wc-neutral">
         <span class="wc-emoji">📜</span>
@@ -920,34 +923,34 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">훈련</span><div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div></div><span class="sys-hero-emoji">🏋️</span></div>
   </div>
   <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다.</p>
-  <p class="bp fi"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">우정 트레이닝</b>&rsquo;이 발동한다. 고스탯 육성의 핵심 메커니즘이다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
+  <p class="bp fi"><b class="hl-o">서포트카드</b> 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;<b class="hl-o">우정 트레이닝</b>&rsquo;이 발동한다. 고스탯 육성의 핵심 메커니즘이다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
 
   <div class="ib sk fi"><div class="ib-l">여름 합숙</div><p>2년차·3년차 여름에 진행되는 특별 기간. 모든 트레이닝 레벨이 +5 상승하고 훈련 효율이 극대화된다. 이 기간에는 레이스를 쉬고 훈련에만 집중하는 것이 정석이다.</p></div>
 
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">레이스</span><div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div></div><span class="sys-hero-emoji">🏇</span></div>
   </div>
-  <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">스킬 포인트</b>, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 등)에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
+  <p class="bp fi">실제 일본 경마장을 재현한 코스에서 최대 18명이 경주한다. 레이스 결과에 따라 팬 수, <b class="hl-o">스킬 포인트</b>, 스탯 보너스를 획득하며, 캐릭터별로 지정된 목표 레이스(<b class="hl-r">G1</b> 등)에서 승리해야 육성이 계속 진행된다. 상위 입상 시 3D 위닝 라이브가 펼쳐진다.</p>
 
-  <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">거리 적성</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>(~1400m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>(~1800m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>(~2400m)·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b>(2401m~)로 나뉘며, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">작전 적성</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">도주</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선행</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선입</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">추입</b>으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 작전을 선택하는 것이 중요하다.</p>
+  <p class="bp fi" style="margin-top:14px">레이스에는 두 가지 적성이 관여한다. <b class="hl-g">거리 적성</b>은 <b class="hl-g">단거리</b>(~1400m)·<b class="hl-g">마일</b>(~1800m)·<b class="hl-g">중거리</b>(~2400m)·<b class="hl-g">장거리</b>(2401m~)로 나뉘며, <b class="hl-p">작전 적성</b>은 <b class="hl-p">도주</b>·<b class="hl-p">선행</b>·<b class="hl-p">선입</b>·<b class="hl-p">추입</b>으로 나뉜다. 각 적성 등급에 따라 스피드와 지능에 보정이 걸리므로, 캐릭터에 맞는 거리와 작전을 선택하는 것이 중요하다.</p>
 
-  <p class="bp fi">레이스는 초반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마장 적성</b>도 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>와 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b>로 나뉘어, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b> 전용 레이스 역시 존재한다.</p>
+  <p class="bp fi">레이스는 초반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. <b class="hl-c">마장 적성</b>도 <b class="hl-c">잔디</b>와 <b class="hl-c">더트</b>로 나뉘어, <b class="hl-c">더트</b> 전용 레이스 역시 존재한다.</p>
 
   <div class="pair pair-stack fi">
     <div class="pair-card" style="border-top:3px solid var(--green)">
       <span class="pc-emoji">🌱</span>
-      <h3><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b></h3>
-      <p>천연 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>가 깔린 코스. 일본 경마의 주류이며, 게임 내 대부분의 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 레이스가 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>에서 열린다. 비가 오면 지면이 무르게 변해 스태미나 소모가 커지고 가속이 어려워진다.</p>
+      <h3><b class="hl-c">잔디</b></h3>
+      <p>천연 <b class="hl-c">잔디</b>가 깔린 코스. 일본 경마의 주류이며, 게임 내 대부분의 <b class="hl-r">G1</b> 레이스가 <b class="hl-c">잔디</b>에서 열린다. 비가 오면 지면이 무르게 변해 스태미나 소모가 커지고 가속이 어려워진다.</p>
     </div>
     <div class="pair-card" style="border-top:3px solid var(--sta)">
       <span class="pc-emoji">🏜️</span>
-      <h3><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b></h3>
-      <p>모래와 흙이 깔린 코스. 미국·한국 경마에서는 주류이지만, 일본에서는 비주류 취급이다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>와 반대로, 비가 오면 지면이 단단해져 오히려 달리기 쉬워진다. 게임 내 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b> <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>은 페브러리 S, 챔피언스컵, 도쿄 대상전, 전일본 주니어 우준 네 개다.</p>
+      <h3><b class="hl-c">더트</b></h3>
+      <p>모래와 흙이 깔린 코스. 미국·한국 경마에서는 주류이지만, 일본에서는 비주류 취급이다. <b class="hl-c">잔디</b>와 반대로, 비가 오면 지면이 단단해져 오히려 달리기 쉬워진다. 게임 내 <b class="hl-c">더트</b> <b class="hl-r">G1</b>은 페브러리 S, 챔피언스컵, 도쿄 대상전, 전일본 주니어 우준 네 개다.</p>
     </div>
   </div>
 
   <div class="sh fi"><div class="sh-title">G1 레이스 일람</div><div class="sh-sub en">Grade 1 Races</div></div>
-  <p class="bp fi" style="margin-bottom:20px"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>은 JRA(일본 중앙경마회)가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다. 육성에서 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 승리는 대량의 팬 수·스탯 보너스·스킬 포인트를 획득하는 핵심 수단이며, 캐릭터마다 목표로 지정된 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b>이 다르다.</p>
+  <p class="bp fi" style="margin-bottom:20px"><b class="hl-r">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b class="hl-r">G1</b>은 JRA(일본 중앙경마회)가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다. 육성에서 <b class="hl-r">G1</b> 승리는 대량의 팬 수·스탯 보너스·스킬 포인트를 획득하는 핵심 수단이며, 캐릭터마다 목표로 지정된 <b class="hl-r">G1</b>이 다르다.</p>
 
   <div class="fi">
   <details class="rc-toggle fi">
@@ -996,7 +999,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sh fi"><div class="sh-title">주요 우승 경력</div><div class="sh-sub en">Achievement Titles</div></div>
-  <p class="bp fi">특정 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
+  <p class="bp fi">특정 <b class="hl-r">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
 
   <div class="ach-list fi">
     <div class="ach"><div class="ach-title">🏆 클래식 3관</div><div class="ach-races">사츠키상(4월 전반) → 일본 더비(5월 후반) → 국화상(10월 후반)</div></div>
@@ -1006,8 +1009,8 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="ach"><div class="ach-title">👑 봄가을 텐노상 제패</div><div class="ach-races">텐노상 봄(4월 후반) + 텐노상 가을(10월 후반)</div></div>
     <div class="ach"><div class="ach-title">🎪 봄가을 그랑프리 제패</div><div class="ach-races">타카라즈카 기념(6월 후반) + 아리마 기념(12월 후반)</div></div>
     <div class="ach"><div class="ach-title">⚡ 봄가을 스프린트 제패</div><div class="ach-races">타카마츠노미야 기념(3월 후반) + 스프린터스 S(9월 후반)</div></div>
-    <div class="ach"><div class="ach-title">💨 봄가을 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b> 제패</div><div class="ach-races">야스다 기념(6월 전반) + <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b> CS(11월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🏴 봄가을 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b> 제패</div><div class="ach-races">페브러리 S(2월 후반) + 챔피언스컵(12월 전반)</div></div>
+    <div class="ach"><div class="ach-title">💨 봄가을 <b class="hl-g">마일</b> 제패</div><div class="ach-races">야스다 기념(6월 전반) + <b class="hl-g">마일</b> CS(11월 후반)</div></div>
+    <div class="ach"><div class="ach-title">🏴 봄가을 <b class="hl-c">더트</b> 제패</div><div class="ach-races">페브러리 S(2월 후반) + 챔피언스컵(12월 전반)</div></div>
   </div>
 
 </div>
@@ -1016,7 +1019,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 <div class="pn" id="pn-card" role="tabpanel" aria-labelledby="tab-card">
   <div class="sl-wrap fi"><p class="sl" style="color:var(--pink)">캐릭터·카드</p><button class="sl-act" onclick="slCopy('card',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
   <h2 class="st fi">키우고, 뽑고, 물려받는 구조</h2>
-  <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다. 지금까지 출시된 육성 우마무스메 및 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 정보는 아래에서 확인할 수 있다.</p>
+  <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, <b class="hl-o">서포트카드</b>의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다. 지금까지 출시된 육성 우마무스메 및 <b class="hl-o">서포트카드</b> 정보는 아래에서 확인할 수 있다.</p>
   <nav class="sub-nav" id="subNavCard">
     <button class="sn on" data-s="c-awaken">각성 레벨</button>
     <button class="sn" data-s="c-level">레벨업</button>
@@ -1040,16 +1043,16 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">캐릭터 적성</span><div class="sys-hero-sub" style="color:var(--green)">거리·작전·마장, 세 가지 축</div></div><span class="sys-hero-emoji">🐴</span></div>
   </div>
-  <p class="bp fi">모든 우마무스메에게는 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">거리 적성</b>(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b>), <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">작전 적성</b>(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">도주</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선행</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선입</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">추입</b>), <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마장 적성</b>(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b>)이 부여되어 있다. 적성 등급은 G~S로 나뉘며, 등급이 높을수록 레이스에서 스피드·지능에 유리한 보정을 받는다.</p>
+  <p class="bp fi">모든 우마무스메에게는 <b class="hl-g">거리 적성</b>(<b class="hl-g">단거리</b>·<b class="hl-g">마일</b>·<b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>), <b class="hl-p">작전 적성</b>(<b class="hl-p">도주</b>·<b class="hl-p">선행</b>·<b class="hl-p">선입</b>·<b class="hl-p">추입</b>), <b class="hl-c">마장 적성</b>(<b class="hl-c">잔디</b>·<b class="hl-c">더트</b>)이 부여되어 있다. 적성 등급은 G~S로 나뉘며, 등급이 높을수록 레이스에서 스피드·지능에 유리한 보정을 받는다.</p>
   <p class="bp fi">기본 적성이 A인 거리와 작전으로 레이스에 출전하는 것이 정석이다. 애정 캐릭터를 적성 외 거리나 작전으로 운용하고 싶다면, 인자 계승을 통해 적성을 S까지 끌어올려야 한다. S 적성은 인자 계승 이벤트에서 확률적으로 획득되며, 부모 개체의 적성 인자를 미리 준비하는 과정이 필수다.</p>
 
   <div class="sh fi" id="c-awaken"><div class="sh-title">캐릭터 각성 레벨</div><div class="sh-sub en">Awakening Level</div></div>
   <p class="bp fi">캐릭터에는 각성 레벨(Lv.1~5)이 있으며, 각성 레벨을 올리면 초기 보유 스킬이 추가 해방된다. Lv.3과 Lv.5에서 각각 레어 스킬이 해방되며, 이 스킬은 육성 중 특정 조건을 충족하면 더 강력한 진화 스킬로 변환될 수 있다. 각성에는 머니와 전용 재화가 필요하다.</p>
 
   <div class="sys-hero fi" style="--sc:233,80,152">
-    <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b></span><div class="sys-hero-sub" style="color:var(--pink)">게임의 시작과 끝</div></div><span class="sys-hero-emoji">🃏</span></div>
+    <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title"><b class="hl-o">서포트카드</b></span><div class="sys-hero-sub" style="color:var(--pink)">게임의 시작과 끝</div></div><span class="sys-hero-emoji">🃏</span></div>
   </div>
-  <p class="bp fi">육성을 보조하는 카드다. 어떤 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>를 편성하느냐에 따라 육성 결과가 완전히 달라진다. 캐릭터보다 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>가 중요하다는 것이 이 게임의 대전제다. 5가지 타입이 있으며, 각각 대응하는 훈련의 효과를 강화한다.</p>
+  <p class="bp fi">육성을 보조하는 카드다. 어떤 <b class="hl-o">서포트카드</b>를 편성하느냐에 따라 육성 결과가 완전히 달라진다. 캐릭터보다 <b class="hl-o">서포트카드</b>가 중요하다는 것이 이 게임의 대전제다. 5가지 타입이 있으며, 각각 대응하는 훈련의 효과를 강화한다.</p>
 
   <div class="stype-grid fi">
     <div class="stype" style="background:rgba(79,184,230,.06)"><div class="stype-icon">👟</div><div class="stype-name" style="color:var(--spd)">스피드</div><div class="stype-en en">SPD</div></div>
@@ -1059,17 +1062,17 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="stype" style="background:rgba(0,169,95,.06)"><div class="stype-icon">🎓</div><div class="stype-name" style="color:var(--int)">지능</div><div class="stype-en en">INT</div></div>
   </div>
 
-  <p class="bp fi">등급은 <span class="ssr-tier t-r" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">R</span> → <span class="ssr-tier t-sr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SR</span> → <span class="ssr-tier t-ssr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SSR</span> 순으로 올라간다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>의 레벨을 올리면 지원 효과가 개방되고, 같은 카드를 겹쳐 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b>(최대 4회)하면 레벨 상한이 5씩 올라간다. 완전 해방에는 동일 카드가 총 5장(원본 1장 + 돌파 4회분) 필요하다.</p>
+  <p class="bp fi">등급은 <span class="ssr-tier t-r" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">R</span> → <span class="ssr-tier t-sr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SR</span> → <span class="ssr-tier t-ssr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SSR</span> 순으로 올라간다. <b class="hl-o">서포트카드</b>의 레벨을 올리면 지원 효과가 개방되고, 같은 카드를 겹쳐 <b class="hl-o">상한 해방</b>(최대 4회)하면 레벨 상한이 5씩 올라간다. 완전 해방에는 동일 카드가 총 5장(원본 1장 + 돌파 4회분) 필요하다.</p>
 
   <div class="sh fi" id="c-level"><div class="sh-title">레벨 올리기</div><div class="sh-sub en">Level Up</div></div>
-  <p class="bp fi"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 머니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b> 없이도 레벨 30까지는 올릴 수 있지만, 풀돌 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
+  <p class="bp fi"><b class="hl-o">서포트카드</b> 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 머니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. <b class="hl-o">상한 해방</b> 없이도 레벨 30까지는 올릴 수 있지만, 풀돌 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
 
-  <div class="sh fi" id="c-limit"><div class="sh-title"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b></div><div class="sh-sub en">Limit Break</div></div>
-  <p class="bp fi">동일한 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>를 중복 획득할 때마다 자동으로 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b>이 이루어지며, 카드의 스펙이 비약적으로 상승한다. 최대 4회까지 가능하고, 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
+  <div class="sh fi" id="c-limit"><div class="sh-title"><b class="hl-o">상한 해방</b></div><div class="sh-sub en">Limit Break</div></div>
+  <p class="bp fi">동일한 <b class="hl-o">서포트카드</b>를 중복 획득할 때마다 자동으로 <b class="hl-o">상한 해방</b>이 이루어지며, 카드의 스펙이 비약적으로 상승한다. 최대 4회까지 가능하고, 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
   <div class="unlock fi">
     <div class="unlock-head">
-      <div class="unlock-head-title"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b> 단계</div>
-      <div class="unlock-head-sub">동일 카드 1장 획득 시마다 1단계 해방. 최대 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">상한 해방</b>까지 총 5장 필요.</div>
+      <div class="unlock-head-title"><b class="hl-o">상한 해방</b> 단계</div>
+      <div class="unlock-head-sub">동일 카드 1장 획득 시마다 1단계 해방. 최대 <b class="hl-o">상한 해방</b>까지 총 5장 필요.</div>
     </div>
     <div class="unlock-stages">
       <div class="unlock-stage">
@@ -1126,7 +1129,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sys-hero fi" style="--sc:240,154,62">
-    <div class="sys-hero-top"><span class="sys-hero-num en">03</span><div class="sys-hero-body"><span class="sys-hero-title">한섭 최상위 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b></span><div class="sys-hero-sub" style="color:var(--sta)">지금 뽑아야 하는 카드</div></div><span class="sys-hero-emoji">⭐</span></div>
+    <div class="sys-hero-top"><span class="sys-hero-num en">03</span><div class="sys-hero-body"><span class="sys-hero-title">한섭 최상위 <b class="hl-o">서포트카드</b></span><div class="sys-hero-sub" style="color:var(--sta)">지금 뽑아야 하는 카드</div></div><span class="sys-hero-emoji">⭐</span></div>
   </div>
   <div class="ssr-list fi">
     <div class="ssr-duo-label"><span>현재 한섭 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 시나리오</b> 인권 카드</span></div>
@@ -1163,19 +1166,19 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">04</span><div class="sys-hero-body"><span class="sys-hero-title">인자 계승</span><div class="sys-hero-sub" style="color:var(--int)">부모의 능력을 물려받는 구조</div></div><span class="sys-hero-emoji">🧬</span></div>
   </div>
-  <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">인자</b>&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
-  <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·작전·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마장 적성</b> 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">G1</b> 우승 시 생성) 등이 있다. 인자의 별 수(⭐️1~⭐️3)는 확률적으로 결정되며, ⭐️3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
+  <p class="bp fi">육성이 끝난 우마무스메는 &lsquo;<b class="hl-o">인자</b>&rsquo;를 남긴다. 다음 육성 때 부모 2명을 선택해 인자를 계승받으며, 부모의 능력치·적성·스킬을 일부 물려받는 구조다. 좋은 인자를 가진 우마무스메를 반복 육성하는 것을 &lsquo;인자작&rsquo;이라 부르며, 육성 효율의 뿌리에 해당한다.</p>
+  <p class="bp fi">인자에는 스탯 인자(능력치 상승), 적성 인자(거리·작전·<b class="hl-c">마장 적성</b> 상승), 스킬 인자(스킬 힌트 획득), 레이스 인자(특정 <b class="hl-r">G1</b> 우승 시 생성) 등이 있다. 인자의 별 수(⭐️1~⭐️3)는 확률적으로 결정되며, ⭐️3 적성 인자가 발동하면 한 단계 적성이 오른다. 이것이 적성 개조의 핵심 메커니즘이다.</p>
 
-  <div class="ib fi"><div class="ib-l">적성 개조 예시</div><p><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b> 적성 A인 캐릭터를 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>에서 운용하고 싶다면, 부모·조부모 개체에 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b> ⭐️3 적성 인자를 확보하고, 계승 이벤트에서 중<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">거리 적성</b>이 A 이상으로 올라가길 반복 시도한다. S 적성 달성은 계승 이벤트에서의 확률 판정이므로, 수십 회 이상의 반복 육성이 필요할 수 있다.</p></div>
+  <div class="ib fi"><div class="ib-l">적성 개조 예시</div><p><b class="hl-g">마일</b> 적성 A인 캐릭터를 <b class="hl-g">중거리</b>에서 운용하고 싶다면, 부모·조부모 개체에 <b class="hl-g">중거리</b> ⭐️3 적성 인자를 확보하고, 계승 이벤트에서 중<b class="hl-g">거리 적성</b>이 A 이상으로 올라가길 반복 시도한다. S 적성 달성은 계승 이벤트에서의 확률 판정이므로, 수십 회 이상의 반복 육성이 필요할 수 있다.</p></div>
 
   <div class="dv"><hr></div>
 
   <div class="sys-hero fi" style="--sc:233,80,152">
-    <div class="sys-hero-top"><span class="sys-hero-num en">05</span><div class="sys-hero-body"><span class="sys-hero-title">가챠</span><div class="sys-hero-sub" style="color:var(--gut)"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>로 뽑는 캐릭터와 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b></div></div><span class="sys-hero-emoji"><img src="images/jewel.webp" alt="쥬얼" style="width:32px;height:32px;object-fit:contain"></span></div>
+    <div class="sys-hero-top"><span class="sys-hero-num en">05</span><div class="sys-hero-body"><span class="sys-hero-title">가챠</span><div class="sys-hero-sub" style="color:var(--gut)"><b class="hl-o">쥬얼</b>로 뽑는 캐릭터와 <b class="hl-o">서포트카드</b></div></div><span class="sys-hero-emoji"><img src="images/jewel.webp" alt="쥬얼" style="width:32px;height:32px;object-fit:contain"></span></div>
   </div>
-  <p class="bp fi">캐릭터 가챠와 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 가챠, 두 종류가 있다. ⭐️3 및 SSR 배출률은 3%. 천장은 200연차, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 30,000개이며, 이때 픽업 대상을 확정 교환할 수 있다. 교환 포인트는 배너 종료 시 소멸하므로, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 30,000개 미확보 시 뽑지 않는 것이 철칙이다.</p>
+  <p class="bp fi">캐릭터 가챠와 <b class="hl-o">서포트카드</b> 가챠, 두 종류가 있다. ⭐️3 및 SSR 배출률은 3%. 천장은 200연차, <b class="hl-o">쥬얼</b> 30,000개이며, 이때 픽업 대상을 확정 교환할 수 있다. 교환 포인트는 배너 종료 시 소멸하므로, <b class="hl-o">쥬얼</b> 30,000개 미확보 시 뽑지 않는 것이 철칙이다.</p>
 
-  <div class="ib fi"><div class="ib-l">핵심 원칙</div><p>캐릭터는 교환권으로 얻을 수 있다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>는 가챠 외에 방법이 없다. 따라서 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 가챠에 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>을 우선 투자하는 것이 정석이다.</p></div>
+  <div class="ib fi"><div class="ib-l">핵심 원칙</div><p>캐릭터는 교환권으로 얻을 수 있다. <b class="hl-o">서포트카드</b>는 가챠 외에 방법이 없다. 따라서 <b class="hl-o">서포트카드</b> 가챠에 <b class="hl-o">쥬얼</b>을 우선 투자하는 것이 정석이다.</p></div>
 
   <div class="sh fi" id="c-gacha"><div class="sh-title">현재 진행 중인 가챠</div><div class="sh-sub en">Now Running</div></div>
   <div class="ev-row fi">
@@ -1218,7 +1221,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="sc-detail-head" style="background:linear-gradient(135deg,rgba(0,188,212,.06),rgba(0,169,95,.03))">
       <p class="sl" style="color:#00838f">한섭 최신 시나리오</p>
       <h3>달려라! 메카 우마무스메 -꿈을 잇는 발명-</h3>
-      <p class="sc-en">2026.2.17 업데이트 · 중<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b> 특화</p>
+      <p class="sc-en">2026.2.17 업데이트 · 중<b class="hl-g">장거리</b> 특화</p>
     </div>
     <div class="sc-detail-body">
       <p>천재 박사 <b class="ch" style="--ch:rgba(92,192,173,.2)">슈가 라이츠</b>가 개발한 로봇 &lsquo;메카 우마무스메 ST-2(새티)&rsquo;를 튜닝하며 육성하는 시나리오다. 메카 에너지를 칩에 할당해 성능을 강화하고, 오버드라이브를 발동해 훈련 효과를 폭발적으로 높이는 것이 핵심이다.</p>
@@ -1230,10 +1233,10 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="sc-detail-head" style="background:linear-gradient(135deg,rgba(30,136,229,.06),rgba(249,168,37,.04))">
       <p class="sl" style="color:#1e88e5">일섭 최신 시나리오</p>
       <h3>Beyond Dreams 함께 앞으로, 함께 빛을</h3>
-      <p class="sc-en">2026.2.24 · 5주년 시나리오 · 전 거리 · <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>+<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b> 대응</p>
+      <p class="sc-en">2026.2.24 · 5주년 시나리오 · 전 거리 · <b class="hl-c">잔디</b>+<b class="hl-c">더트</b> 대응</p>
     </div>
     <div class="sc-detail-body">
-      <p>미국 브리더즈컵(Breeders&rsquo; Cup) 제패를 목표로 원정 팀 &lsquo;DREAMS&rsquo;를 결성하는 시나리오다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">잔디</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b>에서 자유롭게 목표 레이스를 선택할 수 있어 역대 가장 높은 범용성을 지닌다.</p>
+      <p>미국 브리더즈컵(Breeders&rsquo; Cup) 제패를 목표로 원정 팀 &lsquo;DREAMS&rsquo;를 결성하는 시나리오다. <b class="hl-g">단거리</b>·<b class="hl-g">마일</b>·<b class="hl-g">중거리</b>, <b class="hl-c">잔디</b>·<b class="hl-c">더트</b>에서 자유롭게 목표 레이스를 선택할 수 있어 역대 가장 높은 범용성을 지닌다.</p>
       <p style="margin-top:8px">핵심 캐릭터는 <b class="ch" style="--ch:rgba(81,152,176,.2)">카지노 드라이브</b>(친구 서포트). 팀 랭크를 올려 DREAMS 트레이닝을 발동하면 최대 8인 합동 훈련이 가능하며, 스피드 스탯이 상한 2,100까지 돌파할 수 있다. 시나리오 링크: <b class="ch" style="--ch:rgba(66,72,64,.22)">러브즈 온리 유</b>, <b class="ch" style="--ch:rgba(139,21,56,.22)">마르슈 로렌</b>, <b class="ch" style="--ch:rgba(203,58,67,.2)">레드 디자이어</b>, <b class="ch" style="--ch:rgba(217,56,66,.2)">에스푸아르 시티</b>, <b class="ch" style="--ch:rgba(130,43,74,.22)">포에버 영</b>.</p>
     </div>
   </div>
@@ -1263,32 +1266,32 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="ib pk fi"><div class="ib-l">주의</div><p>전체 데이터 약 20GB 이상. Wi-Fi 환경에서 설치할 것.</p></div>
 
   <div class="sh fi" id="s-reroll"><div class="sh-title">리세마라</div><div class="sh-sub en">Re-roll</div></div>
-  <p class="bp fi">이 게임에서 육성의 질을 결정하는 건 캐릭터의 레어도가 아니라 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>의 돌파 수다. 캐릭터는 명함(1장)만 있으면 충분하지만, <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>는 풀돌(4돌파)이 되어야 제 성능이 나온다. 리세마라는 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 가챠에 전액 투입하는 것이 정석이다.</p>
-  <p class="bp fi">튜토리얼 완료 → 선물함 보상 수령 → <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 가챠 40연차. 불만족 시 카카오톡 설정에서 연결 서비스 삭제 후 재접속(2회차부터 약 1분). 시간이 부담된다면 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">GachaPlus</a>에서 리세계를 구입하는 방법도 있다.</p>
+  <p class="bp fi">이 게임에서 육성의 질을 결정하는 건 캐릭터의 레어도가 아니라 <b class="hl-o">서포트카드</b>의 돌파 수다. 캐릭터는 명함(1장)만 있으면 충분하지만, <b class="hl-o">서포트카드</b>는 풀돌(4돌파)이 되어야 제 성능이 나온다. 리세마라는 <b class="hl-o">서포트카드</b> 가챠에 전액 투입하는 것이 정석이다.</p>
+  <p class="bp fi">튜토리얼 완료 → 선물함 보상 수령 → <b class="hl-o">서포트카드</b> 가챠 40연차. 불만족 시 카카오톡 설정에서 연결 서비스 삭제 후 재접속(2회차부터 약 1분). 시간이 부담된다면 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">GachaPlus</a>에서 리세계를 구입하는 방법도 있다.</p>
 
   <div class="dv"><hr></div>
 
   <div class="sh fi" id="s-first"><div class="sh-title">첫 접속 후 할 일</div><div class="sh-sub en">First 10 Minutes</div></div>
-  <p class="bp fi">튜토리얼(약 5분)을 끝내면 홈 화면에 진입한다. 아래 네 가지를 먼저 처리하면 초반 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 확보가 매끄럽다.</p>
+  <p class="bp fi">튜토리얼(약 5분)을 끝내면 홈 화면에 진입한다. 아래 네 가지를 먼저 처리하면 초반 <b class="hl-o">쥬얼</b> 확보가 매끄럽다.</p>
 
   <div class="wc-stack fi">
     <div class="wc-row">
       <div class="wc wc-green">
         <span class="wc-emoji">📬</span>
         <h3>선물함 전부 수령</h3>
-        <p>뉴비·접속 보상으로 수십 연차 분량의 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>을 즉시 확보할 수 있다. 반드시 첫 번째로 확인.</p>
+        <p>뉴비·접속 보상으로 수십 연차 분량의 <b class="hl-o">쥬얼</b>을 즉시 확보할 수 있다. 반드시 첫 번째로 확인.</p>
       </div>
       <div class="wc wc-pink">
         <span class="wc-emoji">📚</span>
         <h3>도감 진입</h3>
-        <p>메뉴 → 도감에 한 번 들어가기만 하면 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>이 추가 지급된다. NEW 표시가 뜰 때마다 방문하면 50개씩 누적되는 숨은 광산.</p>
+        <p>메뉴 → 도감에 한 번 들어가기만 하면 <b class="hl-o">쥬얼</b>이 추가 지급된다. NEW 표시가 뜰 때마다 방문하면 50개씩 누적되는 숨은 광산.</p>
       </div>
     </div>
     <div class="wc-row">
       <div class="wc wc-sky">
         <span class="wc-emoji">🎬</span>
         <h3>스토리 시청</h3>
-        <p>메인 스토리·캐릭터 스토리를 시청(스킵 가능)할 때마다 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>이 지급된다.</p>
+        <p>메인 스토리·캐릭터 스토리를 시청(스킵 가능)할 때마다 <b class="hl-o">쥬얼</b>이 지급된다.</p>
       </div>
       <div class="wc wc-neutral">
         <span class="wc-emoji">⭐</span>
@@ -1303,21 +1306,21 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sh fi" id="s-train"><div class="sh-title">첫 육성</div><div class="sh-sub en">First Training</div></div>
 
   <div class="flow fi">
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b> + <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b></h4><p><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b> <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">도주</b> 캐릭터. 스피드만 올리면 대부분 레이스에서 승리한다. 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히는 단계.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 덱 편성</h4><p>본인 소유 5장 + 친구에게 렌탈 1장 = 총 6장. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하면 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b> + <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b></h4><p><b class="hl-g">단거리</b> <b class="hl-p">도주</b> 캐릭터. 스피드만 올리면 대부분 레이스에서 승리한다. 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히는 단계.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="hl-o">서포트카드</b> 덱 편성</h4><p>본인 소유 5장 + 친구에게 렌탈 1장 = 총 6장. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b class="hl-o">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하면 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-c"><h4><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b>(최신 시나리오)로 전환</h4><p>URA가 익숙해지면 현재 메타 시나리오로 이동. <b class="ch" style="--ch:rgba(36,89,180,.22)">에어 샤커</b> 편성이 핵심. 육성 고점이 훨씬 높다.</p></div></div>
   </div>
 
-  <div class="ib pk fi"><div class="ib-l">카드 편성 팁</div><p><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b>는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
+  <div class="ib pk fi"><div class="ib-l">카드 편성 팁</div><p><b class="hl-g">단거리</b>·<b class="hl-g">마일</b>은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), <b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
 
-  <div class="ib sk fi"><div class="ib-l">육성 팁</div><p><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>의 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">인연 게이지</b>를 합숙(시니어 7~8월) 전까지 주황색(80 이상)으로 채워야 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">우정 트레이닝</b>이 발동한다. 이걸 놓치면 스탯이 크게 떨어지므로, 첫 육성 때부터 반드시 의식할 것.</p></div>
+  <div class="ib sk fi"><div class="ib-l">육성 팁</div><p><b class="hl-o">서포트카드</b>의 <b class="hl-o">인연 게이지</b>를 합숙(시니어 7~8월) 전까지 주황색(80 이상)으로 채워야 <b class="hl-o">우정 트레이닝</b>이 발동한다. 이걸 놓치면 스탯이 크게 떨어지므로, 첫 육성 때부터 반드시 의식할 것.</p></div>
 
   <div class="dv"><hr></div>
 
 
   <div class="tr-feature fi" id="s-teamrace"><div class="sh"><div class="sh-title">팀 레이스 구성</div><span class="tr-badge en">CORE</span><div class="sh-sub en">Team Race Roster</div></div>
-  <p class="bp">팀 레이스는 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">단거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">마일</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">중거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.2),rgba(0,169,95,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">장거리</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.2),rgba(0,188,212,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">더트</b> 5개 코스별로 3명씩, 총 15명의 육성 완료 개체를 편성해야 한다. 뉴비의 1차 목표는 15자리를 전부 채우는 것이다. 빈자리가 있으면 해당 코스에서 자동 패배하므로, 완성도보다 자리 수를 먼저 확보할 것. 팀 랭크가 올라갈수록 주간 보상(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>·코인)이 늘어나며, E 달성 시 데일리 레이스가, E2 달성 시 챔피언스 미팅과 리그 오브 히어로스가 해방된다.</p>
-  <div class="ib"><div class="ib-l">레이스 편성 팁</div><p>코스당 3명의 작전(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">도주</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선행</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">선입</b>·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(233,80,152,.2),rgba(233,80,152,.2));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">추입</b>)이 겹치지 않아야 나이스 포지션 보너스(최대 6,000pt)를 받을 수 있다. 보유 캐릭터의 적성을 확인하고, 코스별로 작전이 겹치지 않게 배분하는 것이 핵심이다.</p></div>
+  <p class="bp">팀 레이스는 <b class="hl-g">단거리</b>·<b class="hl-g">마일</b>·<b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>·<b class="hl-c">더트</b> 5개 코스별로 3명씩, 총 15명의 육성 완료 개체를 편성해야 한다. 뉴비의 1차 목표는 15자리를 전부 채우는 것이다. 빈자리가 있으면 해당 코스에서 자동 패배하므로, 완성도보다 자리 수를 먼저 확보할 것. 팀 랭크가 올라갈수록 주간 보상(<b class="hl-o">쥬얼</b>·코인)이 늘어나며, E 달성 시 데일리 레이스가, E2 달성 시 챔피언스 미팅과 리그 오브 히어로스가 해방된다.</p>
+  <div class="ib"><div class="ib-l">레이스 편성 팁</div><p>코스당 3명의 작전(<b class="hl-p">도주</b>·<b class="hl-p">선행</b>·<b class="hl-p">선입</b>·<b class="hl-p">추입</b>)이 겹치지 않아야 나이스 포지션 보너스(최대 6,000pt)를 받을 수 있다. 보유 캐릭터의 적성을 확인하고, 코스별로 작전이 겹치지 않게 배분하는 것이 핵심이다.</p></div>
 
   <div class="tr-picks">
   <details class="rc-toggle"><summary class="rc-toggle-head" style="--rc-c:#d4568a;--rc-t:rgba(212,86,138,.06);--rc-b2:rgba(212,86,138,.1)"><img src="images/short.webp" alt="" style="width:24px;height:24px;object-fit:contain;vertical-align:-3px;margin-right:4px;opacity:.85">단거리 추천 캐릭터</summary><div class="tr-list">
@@ -1380,36 +1383,36 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sh fi" id="s-circle"><div class="sh-title">서클 가입</div><div class="sh-sub en">Circle</div></div>
-  <p class="bp fi">서클(길드)은 팀 랭크 E3 달성 시 가입할 수 있다. 매달 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>과 서클 포인트가 지급되며, 서클 상점에서 SSR <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>를 교환·돌파할 수 있다. 가입 후 14일이 지나야 해당 월 보상을 수령하므로 빨리 가입하는 것이 정답이다.</p>
+  <p class="bp fi">서클(길드)은 팀 랭크 E3 달성 시 가입할 수 있다. 매달 <b class="hl-o">쥬얼</b>과 서클 포인트가 지급되며, 서클 상점에서 SSR <b class="hl-o">서포트카드</b>를 교환·돌파할 수 있다. 가입 후 14일이 지나야 해당 월 보상을 수령하므로 빨리 가입하는 것이 정답이다.</p>
 
   <div class="sh fi" id="s-daily"><div class="sh-title">매일 루틴</div><div class="sh-sub en">Daily Routine</div></div>
   <p class="bp fi">시간이 없어도 아래 다섯 가지는 매일 소화하는 것이 좋다. 전부 해도 10~15분이면 끝난다.</p>
 
   <div class="flow fi">
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>데일리 레이스 3회</h4><p>홈 → 레이스 → 데일리 레이스. 머니·강화 포인트·캐릭터 피스 등 핵심 재화를 획득한다. 하루 3회 제한이며, 미소화분은 소멸.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>팀 레이스 5회</h4><p>홈 → 레이스 → 팀 경기장. RP(레이스 포인트)가 2시간마다 1씩 충전되며, 최대 5까지 쌓인다. 순위에 따라 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>과 코인이 지급되므로 RP가 넘치지 않게 매일 소진.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>팀 레이스 5회</h4><p>홈 → 레이스 → 팀 경기장. RP(레이스 포인트)가 2시간마다 1씩 충전되며, 최대 5까지 쌓인다. 순위에 따라 <b class="hl-o">쥬얼</b>과 코인이 지급되므로 RP가 넘치지 않게 매일 소진.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>레전드 레이스</h4><p>상시 운영되는 데일리 레전드 레이스(하루 1회)와, 특정 기간에만 열리는 이벤트 레전드 레이스(하루 3회)가 있다. 둘 다 보상이 넉넉하므로 매일 횟수를 채우는 것이 좋다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>서클 확인 · 아이템 요청</h4><p>서클 화면에서 서클원에게 아이템(신발 등)을 요청하고, 다른 서클원의 요청도 수락. 서클 포인트 누적에 기여하며, 매달 SSR 서포트 교환의 기반이 된다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">5</span></div><div class="fl-c"><h4>육성 1회 완료</h4><p>여유가 있을 때 하루 1회 육성을 돌리면 이벤트 Pt, 인자, 팀 레이스용 개체가 쌓인다. 번 머니는 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 레벨업에 최우선 투자.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">5</span></div><div class="fl-c"><h4>육성 1회 완료</h4><p>여유가 있을 때 하루 1회 육성을 돌리면 이벤트 Pt, 인자, 팀 레이스용 개체가 쌓인다. 번 머니는 <b class="hl-o">서포트카드</b> 레벨업에 최우선 투자.</p></div></div>
   </div>
 
   <div class="sh fi" id="s-factor"><div class="sh-title">인자 기초</div><div class="sh-sub en">Factor System</div></div>
-  <p class="bp fi">인자(因子)는 육성 완료 시 랜덤 생성되는 유전 요소로, 다음 육성에서 부모말을 통해 자식에게 계승된다. 인자 하나로 스탯이 100~200 이상 차이날 수 있지만, 인자 농사는 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 풀이 갖춰진 뒤에 시작해도 늦지 않다. 초기에는 <a href="https://uma.inven.co.kr/dataninfo/friends/" target="_blank" rel="noopener noreferrer">인벤 친구찾기</a>에서 좋은 인자를 가진 유저를 빌려 쓰는 것이 효율적이다.</p>
+  <p class="bp fi">인자(因子)는 육성 완료 시 랜덤 생성되는 유전 요소로, 다음 육성에서 부모말을 통해 자식에게 계승된다. 인자 하나로 스탯이 100~200 이상 차이날 수 있지만, 인자 농사는 <b class="hl-o">서포트카드</b> 풀이 갖춰진 뒤에 시작해도 늦지 않다. 초기에는 <a href="https://uma.inven.co.kr/dataninfo/friends/" target="_blank" rel="noopener noreferrer">인벤 친구찾기</a>에서 좋은 인자를 가진 유저를 빌려 쓰는 것이 효율적이다.</p>
 
   <div class="sh fi" id="s-mistakes"><div class="sh-title" style="background-image:linear-gradient(90deg,rgba(229,57,53,.12),rgba(233,80,152,.10));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat">뉴비가 자주 하는 실수</div><div class="sh-sub en" style="color:rgba(229,57,53,.45)">Common Mistakes</div></div>
   <div class="wc-stack fi">
     <div class="wc-row">
       <div class="wc wc-warn wc-pink">
         <span class="wc-emoji"><img src="images/jewel.webp" alt="쥬얼" style="width:24px;height:24px;object-fit:contain;margin-left:4px;margin-top:7px"><span class="wc-ban">🚫</span></span>
-        <h3>캐릭터 가챠에 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 투입</h3>
+        <h3>캐릭터 가챠에 <b class="hl-o">쥬얼</b> 투입</h3>
         <p class="wc-en en">Character Gacha</p>
-        <p>캐릭터는 명함 1장이면 충분하다. 1성도 여신상으로 3성 각성하면 고유 스킬이 강화되어 실전 투입 가능. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>은 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">가챠에만</b> 쓸 것. 그래도 애정캐를 뽑겠다면 말리진 않겠다.</p>
+        <p>캐릭터는 명함 1장이면 충분하다. 1성도 여신상으로 3성 각성하면 고유 스킬이 강화되어 실전 투입 가능. <b class="hl-o">쥬얼</b>은 <b class="hl-o">서포트카드</b> <b class="hl-r">가챠에만</b> 쓸 것. 그래도 애정캐를 뽑겠다면 말리진 않겠다.</p>
       </div>
       <div class="wc wc-warn wc-sky">
         <span class="wc-emoji">📊<span class="wc-ban">🚫</span></span>
         <h3>SSR이라고 무조건 편성</h3>
         <p class="wc-en en">SSR ≠ Best</p>
-        <p><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">SSR 0~1돌보다 SR 풀돌이 대부분 강하다.</b> <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하는 습관을 들이면 실수를 피할 수 있다.</p>
+        <p><b class="hl-r">SSR 0~1돌보다 SR 풀돌이 대부분 강하다.</b> <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하는 습관을 들이면 실수를 피할 수 있다.</p>
       </div>
     </div>
     <div class="wc-row">
@@ -1417,13 +1420,13 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
         <span class="wc-emoji">🤝<span class="wc-ban">🚫</span></span>
         <h3>서클 가입을 미루는 것</h3>
         <p class="wc-en en">Join a Circle ASAP</p>
-        <p>미가입 상태는 매달 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>, 서클 포인트, SSR 교환 기회를 모두 날리는 것과 같다. <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">E3 달성 즉시 가입.</b></p>
+        <p>미가입 상태는 매달 <b class="hl-o">쥬얼</b>, 서클 포인트, SSR 교환 기회를 모두 날리는 것과 같다. <b class="hl-r">E3 달성 즉시 가입.</b></p>
       </div>
       <div class="wc wc-warn wc-neutral">
         <span class="wc-emoji">🏪<span class="wc-ban">🚫</span></span>
         <h3>비밀상점에서 캐릭터 조각 구매</h3>
         <p class="wc-en en">Secret Shop Trap</p>
-        <p>3성 우마무스메 조각을 비밀상점에서 사는 건 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">자산 탈탈.</b> <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>과 머니 모두 다른 곳에 쓰는 편이 훨씬 효율적이다.</p>
+        <p>3성 우마무스메 조각을 비밀상점에서 사는 건 <b class="hl-r">자산 탈탈.</b> <b class="hl-o">쥬얼</b>과 머니 모두 다른 곳에 쓰는 편이 훨씬 효율적이다.</p>
       </div>
     </div>
   </div>
@@ -1451,12 +1454,12 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <button class="sn" data-s="t-community">커뮤니티</button>
   </nav>
 
-  <div class="sh fi" id="t-jewel"><div class="sh-title"><img src="images/jewel.webp" alt="쥬얼" style="width:28px;height:28px;object-fit:contain;vertical-align:-4px;margin-right:6px"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
+  <div class="sh fi" id="t-jewel"><div class="sh-title"><img src="images/jewel.webp" alt="쥬얼" style="width:28px;height:28px;object-fit:contain;vertical-align:-4px;margin-right:6px"><b class="hl-o">쥬얼</b> 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
   <div class="rule-list fi">
     <div class="rule-card">
       <div class="rule-num en">01</div>
       <div class="rule-body">
-        <div class="rule-title">30,000 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b> 없으면 뽑지 않는다</div>
+        <div class="rule-title">30,000 <b class="hl-o">쥬얼</b> 없으면 뽑지 않는다</div>
         <div class="rule-reason">교환 포인트는 배너 종료 시 소멸</div>
       </div>
     </div>
@@ -1470,7 +1473,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="rule-card">
       <div class="rule-num en">03</div>
       <div class="rule-body">
-        <div class="rule-title"><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>을 가챠 외에 쓰지 않는다</div>
+        <div class="rule-title"><b class="hl-o">쥬얼</b>을 가챠 외에 쓰지 않는다</div>
         <div class="rule-reason">TP 회복 등은 극히 비효율</div>
       </div>
     </div>
@@ -1484,7 +1487,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sh fi" id="t-future"><div class="sh-title">미래시</div><div class="sh-sub">한섭 유저 전용 전략</div></div>
-  <p class="bp fi">한섭은 일섭보다 약 1년 반 뒤에 콘텐츠가 업데이트된다. 이 시차를 이용하면 앞으로 출시될 캐릭터·<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b>·PvP 일정을 미리 파악할 수 있고, 일섭에서 평가가 좋은 카드에 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">쥬얼</b>을 비축하고 별로인 카드는 패스하는 전략이 가능하다. 아래 가이드에서 현재 미래시 일정을 확인할 수 있다.</p>
+  <p class="bp fi">한섭은 일섭보다 약 1년 반 뒤에 콘텐츠가 업데이트된다. 이 시차를 이용하면 앞으로 출시될 캐릭터·<b class="hl-o">서포트카드</b>·PvP 일정을 미리 파악할 수 있고, 일섭에서 평가가 좋은 카드에 <b class="hl-o">쥬얼</b>을 비축하고 별로인 카드는 패스하는 전략이 가능하다. 아래 가이드에서 현재 미래시 일정을 확인할 수 있다.</p>
   <div class="ref-links fi">
     <a class="ref-link" href="https://m.dcinside.com/board/umamusu/1850737" target="_blank" rel="noopener noreferrer">
       <span class="ref-emoji">📋</span><span class="ref-text">미래시 가이드</span><span class="ref-arrow">›</span>
@@ -1495,7 +1498,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 
   <div class="sh fi" id="t-rental"><div class="sh-title">렌탈덱</div><div class="sh-sub en">Rental Deck</div></div>
-  <p class="bp fi">게임에서 제공하는 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">서포트카드</b> 5장 세트를 통째로 빌려서 육성할 수 있다. 자체 카드가 부족한 뉴비도 SSR 저돌파 이상의 성능으로 바로 육성을 시작할 수 있으며, 개별 카드를 구매해 풀돌파로 강화하는 것도 가능하다.</p>
+  <p class="bp fi">게임에서 제공하는 <b class="hl-o">서포트카드</b> 5장 세트를 통째로 빌려서 육성할 수 있다. 자체 카드가 부족한 뉴비도 SSR 저돌파 이상의 성능으로 바로 육성을 시작할 수 있으며, 개별 카드를 구매해 풀돌파로 강화하는 것도 가능하다.</p>
 
   <div class="dv"><hr></div>
 
@@ -1814,7 +1817,7 @@ document.querySelectorAll('.rc').forEach(rc=>{
   const img=document.createElement('img');
   img.src='images/'+f+'.webp';
   img.alt='';
-  img.style.cssText='width:22px;height:22px;object-fit:contain;opacity:.7;flex-shrink:0;position:absolute;right:16px;top:50%;transform:translateY(-50%)';
+  img.style.cssText='width:28px;height:28px;object-fit:contain;opacity:.85;flex-shrink:0;position:absolute;right:16px;top:50%;transform:translateY(-50%)';
   rc.style.position='relative';
   rc.style.paddingRight='36px';
   rc.appendChild(img);
