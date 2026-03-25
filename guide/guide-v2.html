@@ -920,6 +920,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <p class="sd fi">매 턴 훈련·휴식·외출·레이스 중 하나를 선택하며, 게임 내 시간 3년간 우마무스메를 성장시킨다. 육성이 끝나면 하나의 완성된 개체가 탄생하고, 더 나은 개체를 원한다면 처음부터 다시 키운다. 한 판이 곧 하나의 육성이다.</p>
   <nav class="sub-nav" id="subNavSys">
     <button class="sn on" data-s="sy-train">훈련·레이스</button>
+    <button class="sn" data-s="sy-friend">우정 트레이닝</button>
     <button class="sn" data-s="c-awaken">각성</button>
     <button class="sn" data-s="c-level">레벨업</button>
     <button class="sn" data-s="c-limit">상한 해방</button>
@@ -931,10 +932,15 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sys-hero fi" id="sy-train" style="--sc:79,184,230">
     <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">훈련</span><div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div></div><span class="sys-hero-emoji">🏋️</span></div>
   </div>
-  <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다.</p>
-  <p class="bp fi"><b class="hl-o">서포트카드</b> 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;<b class="hl-o">우정 트레이닝</b>&rsquo;이 발동한다. 고스탯 육성의 핵심 메커니즘이다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
+  <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
 
   <div class="ib sk fi"><div class="ib-l">여름 합숙</div><p>2년차·3년차 여름에 진행되는 특별 기간. 모든 트레이닝 레벨이 +5 상승하고 훈련 효율이 극대화된다. 이 기간에는 레이스를 쉬고 훈련에만 집중하는 것이 정석이다.</p></div>
+
+  <div class="sh fi" id="sy-friend"><div class="sh-title">우정 트레이닝이란?</div><div class="sh-sub en">Friendship Training</div></div>
+  <p class="bp fi">이 게임의 스탯 성장을 좌우하는 가장 핵심적인 메커니즘이다. 육성 중 <b class="hl-o">서포트카드</b> 캐릭터와 함께 훈련하면 해당 카드의 <b class="hl-o">인연 게이지</b>가 쌓인다. 게이지가 <b class="hl-o">80 이상</b>(아이콘이 주황색으로 반짝반짝 빛남)이 되면, 그 카드가 배치된 훈련에서 <b class="hl-o">우정 트레이닝</b>이 발동한다. 우정 트레이닝이 발동하면 통상 훈련 대비 스탯 상승량이 2~3배로 뛰어오른다.</p>
+  <p class="bp fi">우정 트레이닝을 많이, 빠르게 발동시키는 것이 고스탯 육성의 핵심이다. 그래서 <b class="hl-c">주니어</b> 시기(1년차)에는 스탯 올리기보다 <b class="hl-o">인연 게이지</b>를 80까지 채우는 것을 우선해야 한다. <b class="hl-o">서포트카드</b> 캐릭터가 많이 모여 있는 훈련을 골라서 함께 훈련하면 인연이 빠르게 쌓인다. 느낌표(힌트) 표시가 뜬 카드가 있는 훈련도 인연 보너스가 있으므로 우선 선택하면 좋다.</p>
+
+  <div class="ib fi"><div class="ib-l">조건 정리</div><p><b class="hl-o">인연 게이지</b> 80 이상 + 해당 카드가 훈련에 배치 + 카드의 득의 훈련과 실제 훈련이 일치 → <b class="hl-o">우정 트레이닝</b> 발동. 여름 합숙 때 트레이닝 레벨 +5와 겹치면 스탯이 폭발적으로 상승한다.</p></div>
 
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">레이스</span><div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div></div><span class="sys-hero-emoji">🏇</span></div>
@@ -1002,11 +1008,13 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <p class="bp fi">등급은 <span class="ssr-tier t-r" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">R</span> → <span class="ssr-tier t-sr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SR</span> → <span class="ssr-tier t-ssr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SSR</span> 순으로 올라간다. <b class="hl-o">서포트카드</b>의 레벨을 올리면 지원 효과가 개방되고, 같은 카드를 겹쳐 <b class="hl-o">상한 해방</b>(최대 4회)하면 레벨 상한이 5씩 올라간다. 완전 해방에는 동일 카드가 총 5장(원본 1장 + 돌파 4회분) 필요하다.</p>
 
+  <div class="ib fi"><div class="ib-l">강화 방법</div><p><b class="hl-o">서포트카드</b>의 강화는 <a href="#c-level" style="color:var(--green);text-decoration:underline;text-underline-offset:3px">레벨 올리기</a>와 <a href="#c-limit" style="color:var(--green);text-decoration:underline;text-underline-offset:3px">상한 해방</a>에서 자세히 다룬다. 육성 전에 반드시 확인할 것.</p></div>
+
   <div class="sh fi" id="c-level"><div class="sh-title">레벨 올리기</div><div class="sh-sub en">Level Up</div></div>
   <p class="bp fi"><b class="hl-o">서포트카드</b> 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 머니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. <b class="hl-o">상한 해방</b> 없이도 레벨 30까지는 올릴 수 있지만, 풀돌 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
 
   <div class="sh fi" id="c-limit"><div class="sh-title">상한 해방</div><div class="sh-sub en">Limit Break</div></div>
-  <p class="bp fi">동일한 <b class="hl-o">서포트카드</b>를 중복 획득할 때마다 자동으로 <b class="hl-o">상한 해방</b>이 이루어지며, 카드의 스펙이 비약적으로 상승한다. 최대 4회까지 가능하고, 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
+  <p class="bp fi">동일한 <b class="hl-o">서포트카드</b>를 여러 장 보유하고 있다면, <b class="hl-o">상한 해방</b> 메뉴에서 직접 돌파해야 한다. 자동으로 되지 않으므로 반드시 확인할 것. 1회 해방마다 카드의 스펙이 비약적으로 상승하며, 최대 4회까지 가능하다. 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
   <div class="unlock fi">
     <div class="unlock-head">
       <div class="unlock-head-title"><b class="hl-o">상한 해방</b> 단계</div>
@@ -1327,28 +1335,18 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <div class="dv"><hr></div>
 
-  <div class="sh fi" id="s-flow"><div class="sh-title">육성 플로우</div><div class="sh-sub en">Training Flow</div></div>
-  <p class="bp fi">홈 화면 우측 하단의 <b class="hl-o">육성</b> 버튼을 누르면 아래 순서대로 화면이 진행된다. 게임 내 화면 순서 그대로 따라가면 된다.</p>
+  <div class="sh fi" id="s-train"><div class="sh-title">첫 육성</div><div class="sh-sub en">First Training</div></div>
+  <p class="bp fi">서포트카드 준비가 끝났다면, 홈 화면 우측 하단의 <b class="hl-o">육성</b> 버튼을 누른다. 아래 순서대로 화면이 진행되며, 각 단계에서 추천 선택지를 함께 표기했다.</p>
 
   <div class="flow fi">
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>시나리오 선택</h4><p>처음이라면 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b>를 추천한다. 시스템이 가장 단순하다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>육성할 캐릭터 선택</h4><p>첫 육성은 <b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b>(<b class="hl-g">단거리</b> <b class="hl-p">도주</b>)를 추천. 스피드만 올리면 대부분 레이스에서 승리한다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>인자 부모 2명 선택</h4><p>자기 개체 1명 + <b class="hl-o">렌탈</b>(친구 개체) 1명. 처음에는 아무나 골라도 된다. 나중에 인자를 이해하면 전략적으로 선택하게 된다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>서포트카드 6장 편성</h4><p>본인 소유 5장 + 친구에게 <b class="hl-o">렌탈</b> 1장 = 총 6장. 풀돌 친구 카드 1장이 핵심 전력이다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>시나리오 선택</h4><p>처음이라면 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b>를 추천한다. 시스템이 가장 단순하다. 익숙해지면 메카 우마무스메(최신 시나리오)로 전환하면 육성 고점이 훨씬 높아진다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>캐릭터 선택</h4><p>첫 육성은 <b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b>(<b class="hl-g">단거리</b> <b class="hl-p">도주</b>)를 추천. 스피드만 올리면 대부분 레이스에서 승리하므로, 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히기에 적합하다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>인자 부모 2명 선택</h4><p>자기 개체 1명 + <b class="hl-o">렌탈</b>(친구 개체) 1명. 처음에는 아무나 골라도 된다. 나중에 <b class="hl-o">인자</b>를 이해하면 전략적으로 선택하게 된다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>서포트카드 6장 편성</h4><p>본인 소유 5장 + 친구에게 <b class="hl-o">렌탈</b> 1장 = 총 6장. 풀돌 친구 카드 1장이 핵심 전력이다. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b class="hl-o">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">5</span></div><div class="fl-c"><h4>육성 시작</h4><p><b class="hl-c">주니어</b>(1년) → <b class="hl-p">클래식</b>(2년) → <b class="hl-g">시니어</b>(3년), 총 72턴 동안 매턴 훈련·레이스·휴식·외출 중 하나를 선택한다. 육성이 끝나면 <b class="hl-o">인자</b>를 획득하고, 완성된 개체를 <b class="hl-o">팀 레이스</b>에 배치할 수 있다.</p></div></div>
   </div>
 
   <div class="ib pk fi"><div class="ib-l">핵심</div><p>육성을 완료한 개체만 팀 레이스에 편성할 수 있다. 육성 없이 팀 레이스에 직접 참가하는 것은 불가능하다.</p></div>
-
-  <div class="dv"><hr></div>
-
-  <div class="sh fi" id="s-train"><div class="sh-title">첫 육성</div><div class="sh-sub en">First Training</div></div>
-
-  <div class="flow fi">
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b> + <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b></h4><p><b class="hl-g">단거리</b> <b class="hl-p">도주</b> 캐릭터. 스피드만 올리면 대부분 레이스에서 승리한다. 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히는 단계.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="hl-o">서포트카드</b> 덱 편성</h4><p>본인 소유 5장 + 친구에게 렌탈 1장 = 총 6장. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b class="hl-o">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하면 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-c"><h4>메카 우마무스메(최신 시나리오)로 전환</h4><p>URA가 익숙해지면 현재 메타 시나리오로 이동. <b class="ch" style="--ch:rgba(36,89,180,.22)">에어 샤커</b> 편성이 핵심. 육성 고점이 훨씬 높다.</p></div></div>
-  </div>
 
   <div class="ib pk fi"><div class="ib-l">카드 편성 팁</div><p><b class="hl-g">단거리</b>·<b class="hl-g">마일</b>은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), <b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
 
@@ -1701,10 +1699,10 @@ var isDeepLink=false;
   if(!hash) return;
   isDeepLink=true;
   /* legacy hash redirects */
-  const legacy={'card':'sy-card','sys':'sy-train'};
+  const legacy={'card':'sy-card','sys':'sy-train','s-flow':'s-train'};
   const resolved=legacy[hash]||hash;
   /* section→tab mapping */
-  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-flow':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-card':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-friend':'sys','sy-card':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
   const tabId=secMap[resolved]||resolved;
   const tab=document.getElementById('tab-'+tabId);
   if(tab) tab.click();
@@ -1801,8 +1799,8 @@ function initSubNavObserver(navId,sectionIds){
   sectionIds.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
 }
 initSubNavObserver('subNavPrep',['s-install','s-reroll','s-first']);
-initSubNavObserver('subNavStart',['s-card-prep','s-flow','s-train','s-teamrace','s-circle','s-daily','s-factor','s-mistakes']);
-initSubNavObserver('subNavSys',['sy-train','c-awaken','c-level','c-limit','c-gacha','sy-g1','sy-ach']);
+initSubNavObserver('subNavStart',['s-card-prep','s-train','s-teamrace','s-circle','s-daily','s-factor','s-mistakes']);
+initSubNavObserver('subNavSys',['sy-train','sy-friend','c-awaken','c-level','c-limit','c-gacha','sy-g1','sy-ach']);
 initSubNavObserver('subNavTips',['t-jewel','t-future','t-rental','t-guides','t-community']);
 
 /* ── Section deep link copy buttons ── */
