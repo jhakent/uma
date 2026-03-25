@@ -703,12 +703,12 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 @media(max-width:768px){.dot-nav{display:none}}
 
 /* ── TIMELINE ── */
-/* 슬롯 변수: --tl-color (페이지별 또는 .timeline에 선언) */
+/* 슬롯 변수: --tl-c (페이지별 또는 .timeline에 선언) */
 .timeline{max-width:920px;margin:0 auto;padding:48px 24px;position:relative}
 .timeline-line{position:absolute;top:53px;left:15%;right:15%;height:1px;background:var(--border-s)}
 .timeline-dots{display:flex;justify-content:space-between;max-width:480px;margin:0 auto;position:relative}
 .timeline-item{display:flex;flex-direction:column;align-items:center;gap:6px}
-.timeline-dot{width:10px;height:10px;border-radius:50%;background:var(--tl-color,var(--green));box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--border);position:relative;z-index:1}
+.timeline-dot{width:10px;height:10px;border-radius:50%;background:var(--tl-c,var(--green));box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--border);position:relative;z-index:1}
 .timeline-year{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--bright);line-height:1}
 .timeline-text{font-size:11px;font-weight:400;color:var(--dim);letter-spacing:-.01em;line-height:1}
 @media(max-width:640px){.timeline{padding:36px 18px}.timeline-line{left:10%;right:10%;top:41px}}
@@ -736,3 +736,40 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .note{background:linear-gradient(135deg,rgba(0,169,95,.05),rgba(79,184,230,.04),rgba(233,80,152,.03));border:1px solid var(--border);border-radius:14px;padding:26px;margin-top:40px;text-align:center}
 .note h3{font-size:16px;font-weight:700;letter-spacing:-.03em;color:var(--bright);margin-bottom:8px}
 .note p{font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:440px;margin:0 auto}
+
+/* ── VERTICAL TIMELINE ── */
+/* 슬롯 변수: --tl-c (각 .tl-year에 선언), --chip-c (각 .result-chip에 선언) */
+.tl-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;position:relative}
+.tl-row::after{content:'';position:absolute;left:25px;top:80px;bottom:-10px;width:1px;background:rgba(0,0,0,.08);z-index:0}
+.tl-row:last-of-type::after{display:none}
+.tl-year{display:flex;flex-direction:column;align-items:center;gap:4px;padding:18px 0 0;font-family:'Outfit',sans-serif;position:relative;z-index:1;width:52px}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--tl-c,var(--green));box-shadow:0 0 0 4px var(--bg),0 0 0 5px color-mix(in srgb,var(--tl-c,var(--green)) 15%,transparent);position:relative;z-index:2}
+.tl-y{font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--bright);line-height:1;margin-top:6px}
+.tl-date{font-size:10px;font-weight:500;letter-spacing:.08em;color:var(--dim);line-height:1}
+.tl-year-line{width:52px;position:relative;flex-shrink:0}
+.tl-year-line::after{content:'';position:absolute;left:25px;top:0;bottom:0;width:1px;background:rgba(0,0,0,.08)}
+.tl-interlude{align-items:stretch}
+.tl-interlude::after{display:none}
+.tl-card{border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.94);padding:22px 24px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.tl-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.tl-name{font-size:20px;font-weight:800;letter-spacing:-.04em;line-height:1.2}
+.tl-sub{margin-top:6px;font-size:12px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.tl-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.result-chip{padding:8px 10px;border-radius:999px;font-size:11px;font-weight:800;color:#fff;white-space:nowrap;background:var(--chip-c,var(--green))}
+.tl-copy{margin-top:14px;font-size:15px;line-height:1.8;color:var(--dim)}
+.note-box{background:var(--bg-warm);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-top:10px}
+.note-box p{font-size:13px;font-weight:400;line-height:1.8;color:var(--dim)}
+.note-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+@media(max-width:640px){
+  .tl-row{grid-template-columns:auto minmax(0,1fr);gap:14px}
+  .tl-year{padding:16px 0 0;width:44px;gap:3px}
+  .tl-dot{width:10px;height:10px}
+  .tl-y{font-size:14px;margin-top:5px}
+  .tl-date{font-size:9px}
+  .tl-row::after{left:21px;top:68px}
+  .tl-year-line{width:44px}
+  .tl-year-line::after{left:21px}
+  .tl-name{font-size:18px;line-height:1.3}
+  .tl-head{flex-direction:column}
+  .tl-tags{justify-content:flex-start}
+}
