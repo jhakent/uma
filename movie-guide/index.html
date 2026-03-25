@@ -42,8 +42,6 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
   .mv-hero-title{font-size:32px;line-height:1.12;letter-spacing:-.06em}
   .mv-section{padding:52px 18px}
 }
-.mv-footer{text-align:center;padding:52px 24px 32px;font-size:11px;color:var(--dim);font-weight:400;line-height:1.75}
-.mv-footer .ico{font-size:20px;display:block;margin-bottom:8px;opacity:.3}
 </style>
 </head>
 <body>
@@ -451,16 +449,15 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
   </div>
 </section>
 
-<footer class="mv-footer">
-  <span class="ico">🐎</span>
-  이 페이지는 극장 관람 전 참고용으로 제작되었습니다.
-  <div style="display:flex;gap:8px;justify-content:center;margin:16px 0">
-    <a href="../guide/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">입문 가이드</a>
-    <a href="../gorumeno/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">골드 쉽 × 페노메노</a>
+<footer class="footer">
+  <div class="footer-links" style="grid-template-columns:repeat(2,1fr)">
+    <a href="../guide/">입문 가이드</a>
+    <a href="../gorumeno/">골드 쉽 × 페노메노</a>
   </div>
-  모든 캐릭터와 작품은 © Cygames, Inc. 에 귀속됩니다.
-  <br><span class="en" style="font-size:10px;letter-spacing:.06em;opacity:.6">Made by <a href="https://jhakentertainment.com" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">JHAK Entertainment Inc.</a></span>
-  <div style="opacity:.4;margin-top:10px"><span class="en" style="font-size:9px;letter-spacing:.06em">Last updated Mar 25, 2026</span></div>
+  이 페이지는 극장 관람 전 참고용으로 제작되었습니다.
+  <br>모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank" rel="noopener noreferrer"><span class="en">© Cygames, Inc.</span></a> 에 귀속됩니다.
+  <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em">Made by <a href="https://jhakentertainment.com/" target="_blank" rel="noopener noreferrer">JHAK Entertainment Inc.</a></span></div>
+  <div class="copy"><span class="en" style="font-size:9px;opacity:.4;letter-spacing:.06em">Last updated Mar 25, 2026</span></div>
 </footer>
 
 <script>
