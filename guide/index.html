@@ -37,8 +37,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 120% 80% at 10% 90%,rgba(0,169,95,.06) 0%,transparent 70%),radial-gradient(ellipse 110% 70% at 95% 5%,rgba(233,80,152,.04) 0%,transparent 70%);pointer-events:none;z-index:-1}
 .en{font-family:'Outfit',sans-serif;letter-spacing:.04em;word-break:normal}
 b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.bp a,.sd a,.fl-c a,.wc a,.sc-detail-body a{color:var(--bright);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:color .15s,text-decoration-color .15s}
-.bp a:hover,.sd a:hover,.fl-c a:hover,.wc a:hover,.sc-detail-body a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
+.bp a,.sd a,.fl-c a,.wc a,.sc-detail-body a,.ib a{color:var(--bright);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:color .15s,text-decoration-color .15s}
+.bp a:hover,.sd a:hover,.fl-c a:hover,.wc a:hover,.sc-detail-body a:hover,.ib a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
 .scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(to right,var(--green),var(--sky),var(--pink));z-index:1001;will-change:width}
 
 /* ── TOP BAR ── */
@@ -386,6 +386,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .rc-toggle .rc-group{margin-bottom:0;border:none;border-radius:0;box-shadow:none;border-top:1px solid rgba(0,0,0,.04)}
 
 .sub-nav{display:flex;flex-wrap:wrap;gap:5px 6px;padding:8px 24px 10px;position:sticky;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.04);margin:0 -24px}
+.sn-break{display:none}
+@media(max-width:640px){.sn-break{display:block;flex-basis:100%;height:0}}
 .sub-nav .sn{font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:600;color:var(--dim);background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.04);border-radius:20px;padding:5px 12px;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent;letter-spacing:-.02em}
 .sub-nav .sn:hover{background:rgba(0,0,0,.06)}
 .sub-nav .sn.on{background:rgba(0,169,95,.08);color:#00a95f;border-color:rgba(0,169,95,.15)}
@@ -401,7 +403,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .tr-list{padding:12px 16px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,.04)}
 .tr-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
 .tr-tag{font-size:9px;font-weight:600;letter-spacing:.5px;padding:1px 6px;border-radius:4px}
-[id^="s-"],[id^="t-"],[id^="c-"]{scroll-margin-top:140px}
+[id^="s-"],[id^="t-"],[id^="c-"],[id^="sy-"]{scroll-margin-top:140px}
 .sh-link{background:none;border:none;padding:4px;cursor:pointer;opacity:0;transition:opacity .2s;color:var(--dim);flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .sh:hover .sh-link,.sh-link:focus{opacity:.35}
 .sh-link:active{opacity:.6}
@@ -412,7 +414,9 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .tr-var{font-size:8.5px;font-weight:600;letter-spacing:.3px;color:var(--dim);opacity:.45;background:rgba(0,0,0,.04);padding:1px 5px;border-radius:3px;margin-left:3px;vertical-align:middle;position:relative;top:1px}
 .tr-tag.pk{background:rgba(233,80,152,.1);color:#c2185b}
 .tb[data-t="start"]{position:relative}
-.tb[data-t="start"]::before{content:'';position:absolute;inset:2px -4px -2px;background:rgba(0,169,95,.06);border-radius:16px;filter:blur(4px);z-index:-1}
+.tb[data-t="start"]::before{content:'';position:absolute;inset:4px 0 0;background:rgba(0,169,95,.09);border-radius:12px;filter:blur(6px);z-index:-1}
+.tb[data-t="sys"]{position:relative}
+.tb[data-t="sys"]::before{content:'';position:absolute;inset:4px 0 0;background:rgba(79,184,230,.12);border-radius:12px;filter:blur(6px);z-index:-1}
 
 .rc-group{
   margin-bottom:12px;border-radius:0 14px 14px 14px;overflow:hidden;
@@ -695,9 +699,9 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <nav class="tabs" role="tablist" aria-label="입문 가이드 탭">
       <button class="tb on" data-t="world" role="tab" aria-selected="true" aria-controls="pn-world" id="tab-world">세계관</button>
       <button class="tb" data-t="feat" role="tab" aria-selected="false" aria-controls="pn-feat" id="tab-feat">특징</button>
-      <button class="tb" data-t="sys" role="tab" aria-selected="false" aria-controls="pn-sys" id="tab-sys">구조</button>
-      <button class="tb" data-t="card" role="tab" aria-selected="false" aria-controls="pn-card" id="tab-card">캐릭터·카드</button>
+      <button class="tb" data-t="sys" role="tab" aria-selected="false" aria-controls="pn-sys" id="tab-sys">시스템</button>
       <button class="tb" data-t="scn" role="tab" aria-selected="false" aria-controls="pn-scn" id="tab-scn">시나리오</button>
+      <button class="tb" data-t="prep" role="tab" aria-selected="false" aria-controls="pn-prep" id="tab-prep">준비하기</button>
       <button class="tb" data-t="start" role="tab" aria-selected="false" aria-controls="pn-start" id="tab-start">시작하기</button>
       <button class="tb" data-t="tips" role="tab" aria-selected="false" aria-controls="pn-tips" id="tab-tips">공략</button>
     </nav>
@@ -913,19 +917,34 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 </div>
 
-<!-- ═══ 게임 구조 ═══ -->
+<!-- ═══ 시스템 ═══ -->
 <div class="pn" id="pn-sys" role="tabpanel" aria-labelledby="tab-sys">
-  <div class="sl-wrap fi"><p class="sl" style="color:var(--sky)">게임 구조</p><button class="sl-act" onclick="slCopy('sys',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
+  <div class="sl-wrap fi"><p class="sl" style="color:var(--sky)">시스템</p><button class="sl-act" onclick="slCopy('sys',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
   <h2 class="st fi">핵심 시스템 해부</h2>
   <p class="sd fi">매 턴 훈련·휴식·외출·레이스 중 하나를 선택하며, 게임 내 시간 3년간 우마무스메를 성장시킨다. 육성이 끝나면 하나의 완성된 개체가 탄생하고, 더 나은 개체를 원한다면 처음부터 다시 키운다. 한 판이 곧 하나의 육성이다.</p>
+  <nav class="sub-nav" id="subNavSys">
+    <button class="sn on" data-s="sy-train">훈련·레이스</button>
+    <button class="sn" data-s="sy-friend">우정 트레이닝</button>
+    <button class="sn" data-s="c-awaken">각성</button>
+    <button class="sn" data-s="c-level">레벨업</button>
+    <button class="sn" data-s="c-limit">상한 해방</button>
+    <button class="sn" data-s="c-gacha">가챠</button>
+    <button class="sn" data-s="sy-g1">G1 레이스</button>
+    <button class="sn" data-s="sy-ach">우승 경력</button>
+  </nav>
 
-  <div class="sys-hero fi" style="--sc:79,184,230">
+  <div class="sys-hero fi" id="sy-train" style="--sc:79,184,230">
     <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">훈련</span><div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div></div><span class="sys-hero-emoji">🏋️</span></div>
   </div>
-  <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다.</p>
-  <p class="bp fi"><b class="hl-o">서포트카드</b> 캐릭터와 함께 훈련하면 &lsquo;인연&rsquo;이 쌓이고, 인연이 80 이상이 되면 스탯이 폭발적으로 오르는 &lsquo;<b class="hl-o">우정 트레이닝</b>&rsquo;이 발동한다. 고스탯 육성의 핵심 메커니즘이다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
+  <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다. 훈련에는 실패 확률이 있으며, 실패 시 체력이 급감하고 상태 이상에 걸릴 수 있다.</p>
 
   <div class="ib sk fi"><div class="ib-l">여름 합숙</div><p>2년차·3년차 여름에 진행되는 특별 기간. 모든 트레이닝 레벨이 +5 상승하고 훈련 효율이 극대화된다. 이 기간에는 레이스를 쉬고 훈련에만 집중하는 것이 정석이다.</p></div>
+
+  <div class="sh fi" id="sy-friend"><div class="sh-title">우정 트레이닝이란?</div><div class="sh-sub en">Friendship Training</div></div>
+  <p class="bp fi">이 게임의 스탯 성장을 좌우하는 가장 핵심적인 메커니즘이다. 육성 중 <b class="hl-o">서포트카드</b> 캐릭터와 함께 훈련하면 해당 카드의 <b class="hl-o">인연 게이지</b>가 쌓인다. 게이지가 <b class="hl-o">80 이상</b>(아이콘이 주황색으로 반짝반짝 빛남)이 되면, 그 카드가 배치된 훈련에서 <b class="hl-o">우정 트레이닝</b>이 발동한다. 우정 트레이닝이 발동하면 통상 훈련 대비 스탯 상승량이 2~3배로 뛰어오른다.</p>
+  <p class="bp fi">우정 트레이닝을 많이, 빠르게 발동시키는 것이 고스탯 육성의 핵심이다. 그래서 <b class="hl-c">주니어</b> 시기(1년차)에는 스탯 올리기보다 <b class="hl-o">인연 게이지</b>를 80까지 채우는 것을 우선해야 한다. <b class="hl-o">서포트카드</b> 캐릭터가 많이 모여 있는 훈련을 골라서 함께 훈련하면 인연이 빠르게 쌓인다. 느낌표(힌트) 표시가 뜬 카드가 있는 훈련도 인연 보너스가 있으므로 우선 선택하면 좋다.</p>
+
+  <div class="ib fi"><div class="ib-l">조건 정리</div><p><b class="hl-o">인연 게이지</b> 80 이상 + 해당 카드가 훈련에 배치 + 카드의 득의 훈련과 실제 훈련이 일치 → <b class="hl-o">우정 트레이닝</b> 발동. 여름 합숙 때 트레이닝 레벨 +5와 겹치면 스탯이 폭발적으로 상승한다.</p></div>
 
   <div class="sys-hero fi" style="--sc:0,169,95">
     <div class="sys-hero-top"><span class="sys-hero-num en">02</span><div class="sys-hero-body"><span class="sys-hero-title">레이스</span><div class="sys-hero-sub" style="color:var(--green)">달려서 증명하는 순간</div></div><span class="sys-hero-emoji">🏇</span></div>
@@ -949,83 +968,12 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     </div>
   </div>
 
-  <div class="sh fi"><div class="sh-title">G1 레이스 일람</div><div class="sh-sub en">Grade 1 Races</div></div>
-  <p class="bp fi" style="margin-bottom:20px"><b class="hl-r">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b class="hl-r">G1</b>은 JRA(일본 중앙경마회)가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다. 육성에서 <b class="hl-r">G1</b> 승리는 대량의 팬 수·스탯 보너스·스킬 포인트를 획득하는 핵심 수단이며, 캐릭터마다 목표로 지정된 <b class="hl-r">G1</b>이 다르다.</p>
+  <div class="dv"><hr></div>
 
-  <div class="fi">
-  <details class="rc-toggle fi">
-  <summary class="rc-toggle-head" style="--rc-c:var(--spd)">주니어 · 1년차<span class="rc-toggle-count en">4</span></summary>
-  <div class="rc-group">
-    <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">한신 JF</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
-    <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">아사히배 FS</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
-    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">호프풀 S</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
-    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">전일본 주니어 우준</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 가와사키 등</span></div></div>
-  </div>
-  </details>
-
-  <details class="rc-toggle fi">
-  <summary class="rc-toggle-head" style="--rc-c:var(--pink)">클래식 · 2년차<span class="rc-toggle-count en">7</span></summary>
-  <div class="rc-group">
-    <div class="rc"><span class="rc-time">4월 전반</span><span class="rc-name">사츠키상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
-    <div class="rc"><span class="rc-time">4월 전반</span><span class="rc-name">벚꽃상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
-    <div class="rc"><span class="rc-time">5월 전반</span><span class="rc-name">NHK 마일컵</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">5월 후반</span><span class="rc-name">일본 더비</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2400m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">5월 후반</span><span class="rc-name">오크스</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2400m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">국화상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">3000m 장거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
-    <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">추화상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
-  </div>
-  </details>
-
-  <details class="rc-toggle fi">
-  <summary class="rc-toggle-head" style="--rc-c:var(--green)">시니어 · 3년차 및 공통<span class="rc-toggle-count en">15</span></summary>
-  <div class="rc-group">
-    <div class="rc"><span class="rc-time">2월 후반</span><span class="rc-name">페브러리 S</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">3월 후반</span><span class="rc-name">타카마츠노미야 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1200m 단거리</span><span class="rc-tag dir">좌 · 츄쿄</span></div></div>
-    <div class="rc"><span class="rc-time">3월 후반</span><span class="rc-name">오사카배</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 한신</span></div></div>
-    <div class="rc"><span class="rc-time">4월 후반</span><span class="rc-name">텐노상(봄)</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">3200m 장거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
-    <div class="rc"><span class="rc-time">5월 전반</span><span class="rc-name">빅토리아 마일</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">6월 전반</span><span class="rc-name">야스다 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">6월 후반</span><span class="rc-name">타카라즈카 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2200m 중거리</span><span class="rc-tag dir">우 · 한신</span></div></div>
-    <div class="rc"><span class="rc-time">9월 후반</span><span class="rc-name">스프린터스 S</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1200m 단거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
-    <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">텐노상(가을)</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">11월 전반</span><span class="rc-name">엘리자베스 여왕배</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2200m 중거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
-    <div class="rc"><span class="rc-time">11월 후반</span><span class="rc-name">마일 CS</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
-    <div class="rc"><span class="rc-time">11월 후반</span><span class="rc-name">재팬컵</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2400m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
-    <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">챔피언스컵</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1800m 마일</span><span class="rc-tag dir">좌 · 츄쿄</span></div></div>
-    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">아리마 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2500m 장거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
-    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">도쿄 대상전</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">좌 · 오이</span></div></div>
-  </div>
-  </details>
-  </div>
-
-  <div class="sh fi"><div class="sh-title">주요 우승 경력</div><div class="sh-sub en">Achievement Titles</div></div>
-  <p class="bp fi">특정 <b class="hl-r">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
-
-  <div class="ach-list fi">
-    <div class="ach"><div class="ach-title">🏆 클래식 3관</div><div class="ach-races">사츠키상(4월 전반) → 일본 더비(5월 후반) → 국화상(10월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🏆 트리플 티아라</div><div class="ach-races">벚꽃상(4월 전반) → 오크스(5월 후반) → 추화상(10월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🌸 봄 시니어 3관</div><div class="ach-races">오사카배(3월 후반) → 텐노상 봄(4월 후반) → 타카라즈카 기념(6월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🍂 가을 시니어 3관</div><div class="ach-races">텐노상 가을(10월 후반) → 재팬컵(11월 후반) → 아리마 기념(12월 후반)</div></div>
-    <div class="ach"><div class="ach-title">👑 봄가을 텐노상 제패</div><div class="ach-races">텐노상 봄(4월 후반) + 텐노상 가을(10월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🎪 봄가을 그랑프리 제패</div><div class="ach-races">타카라즈카 기념(6월 후반) + 아리마 기념(12월 후반)</div></div>
-    <div class="ach"><div class="ach-title">⚡ 봄가을 스프린트 제패</div><div class="ach-races">타카마츠노미야 기념(3월 후반) + 스프린터스 S(9월 후반)</div></div>
-    <div class="ach"><div class="ach-title">💨 봄가을 <b class="hl-g">마일</b> 제패</div><div class="ach-races">야스다 기념(6월 전반) + <b class="hl-g">마일</b> CS(11월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🏴 봄가을 <b class="hl-c">더트</b> 제패</div><div class="ach-races">페브러리 S(2월 후반) + 챔피언스컵(12월 전반)</div></div>
-  </div>
-
-</div>
-
-<!-- ═══ 캐릭터·카드 ═══ -->
-<div class="pn" id="pn-card" role="tabpanel" aria-labelledby="tab-card">
-  <div class="sl-wrap fi"><p class="sl" style="color:var(--pink)">캐릭터·카드</p><button class="sl-act" onclick="slCopy('card',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
+  <div class="sl-wrap fi" id="sy-card"><p class="sl" style="color:var(--pink)">캐릭터·카드</p><button class="sl-act" onclick="const u=location.origin+location.pathname+'#sy-card';navigator.clipboard&amp;&amp;navigator.clipboard.writeText(u).then(()=>{this.style.opacity='.6';setTimeout(()=>this.style.opacity='',1200)})" aria-label="이 섹션 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
   <h2 class="st fi">키우고, 뽑고, 물려받는 구조</h2>
-  <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, <b class="hl-o">서포트카드</b>의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다. 지금까지 출시된 육성 우마무스메 및 <b class="hl-o">서포트카드</b> 정보는 아래에서 확인할 수 있다.</p>
-  <nav class="sub-nav" id="subNavCard">
-    <button class="sn on" data-s="c-awaken">각성 레벨</button>
-    <button class="sn" data-s="c-level">레벨업</button>
-    <button class="sn" data-s="c-limit">상한 해방</button>
-    <button class="sn" data-s="c-gacha">가챠</button>
-  </nav>
+  <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, <b class="hl-o">서포트카드</b>의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다.</p>
+
 
   <div class="ref-links fi">
     <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EB%93%B1%EC%9E%A5%20%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94" target="_blank" rel="noopener noreferrer">
@@ -1064,11 +1012,13 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <p class="bp fi">등급은 <span class="ssr-tier t-r" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">R</span> → <span class="ssr-tier t-sr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SR</span> → <span class="ssr-tier t-ssr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SSR</span> 순으로 올라간다. <b class="hl-o">서포트카드</b>의 레벨을 올리면 지원 효과가 개방되고, 같은 카드를 겹쳐 <b class="hl-o">상한 해방</b>(최대 4회)하면 레벨 상한이 5씩 올라간다. 완전 해방에는 동일 카드가 총 5장(원본 1장 + 돌파 4회분) 필요하다.</p>
 
+  <div class="ib fi"><div class="ib-l">강화 방법</div><p><b class="hl-o">서포트카드</b>의 강화는 <a href="#c-level">레벨 올리기</a>와 <a href="#c-limit">상한 해방</a>에서 자세히 다룬다. 육성 전에 반드시 확인할 것.</p></div>
+
   <div class="sh fi" id="c-level"><div class="sh-title">레벨 올리기</div><div class="sh-sub en">Level Up</div></div>
   <p class="bp fi"><b class="hl-o">서포트카드</b> 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 머니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. <b class="hl-o">상한 해방</b> 없이도 레벨 30까지는 올릴 수 있지만, 풀돌 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
 
-  <div class="sh fi" id="c-limit"><div class="sh-title"><b class="hl-o">상한 해방</b></div><div class="sh-sub en">Limit Break</div></div>
-  <p class="bp fi">동일한 <b class="hl-o">서포트카드</b>를 중복 획득할 때마다 자동으로 <b class="hl-o">상한 해방</b>이 이루어지며, 카드의 스펙이 비약적으로 상승한다. 최대 4회까지 가능하고, 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
+  <div class="sh fi" id="c-limit"><div class="sh-title">상한 해방</div><div class="sh-sub en">Limit Break</div></div>
+  <p class="bp fi">동일한 <b class="hl-o">서포트카드</b>를 여러 장 보유하고 있다면, <b class="hl-o">상한 해방</b> 메뉴에서 직접 돌파해야 한다. 자동으로 되지 않으므로 반드시 확인할 것. 1회 해방마다 카드의 스펙이 비약적으로 상승하며, 최대 4회까지 가능하다. 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
   <div class="unlock fi">
     <div class="unlock-head">
       <div class="unlock-head-title"><b class="hl-o">상한 해방</b> 단계</div>
@@ -1191,8 +1141,79 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
       <span class="ev-label" style="background:var(--pink)">일본 서버</span>
     </a>
   </div>
-</div>
 
+
+
+  <div class="dv"><hr></div>
+
+  <div class="sh fi" id="sy-g1"><div class="sh-title">G1 레이스 일람</div><div class="sh-sub en">Grade 1 Races</div></div>
+  <p class="bp fi" style="margin-bottom:20px"><b class="hl-r">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b class="hl-r">G1</b>은 JRA가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다.</p>
+<div class="fi">
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--spd)">주니어 · 1년차<span class="rc-toggle-count en">4</span></summary>
+  <div class="rc-group">
+    <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">한신 JF</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
+    <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">아사히배 FS</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
+    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">호프풀 S</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
+    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">전일본 주니어 우준</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 가와사키 등</span></div></div>
+  </div>
+  </details>
+
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--pink)">클래식 · 2년차<span class="rc-toggle-count en">7</span></summary>
+  <div class="rc-group">
+    <div class="rc"><span class="rc-time">4월 전반</span><span class="rc-name">사츠키상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
+    <div class="rc"><span class="rc-time">4월 전반</span><span class="rc-name">벚꽃상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
+    <div class="rc"><span class="rc-time">5월 전반</span><span class="rc-name">NHK 마일컵</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">5월 후반</span><span class="rc-name">일본 더비</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2400m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">5월 후반</span><span class="rc-name">오크스</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2400m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">국화상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">3000m 장거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
+    <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">추화상</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
+  </div>
+  </details>
+
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--green)">시니어 · 3년차 및 공통<span class="rc-toggle-count en">15</span></summary>
+  <div class="rc-group">
+    <div class="rc"><span class="rc-time">2월 후반</span><span class="rc-name">페브러리 S</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">3월 후반</span><span class="rc-name">타카마츠노미야 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1200m 단거리</span><span class="rc-tag dir">좌 · 츄쿄</span></div></div>
+    <div class="rc"><span class="rc-time">3월 후반</span><span class="rc-name">오사카배</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">우 · 한신</span></div></div>
+    <div class="rc"><span class="rc-time">4월 후반</span><span class="rc-name">텐노상(봄)</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">3200m 장거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
+    <div class="rc"><span class="rc-time">5월 전반</span><span class="rc-name">빅토리아 마일</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">6월 전반</span><span class="rc-name">야스다 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">6월 후반</span><span class="rc-name">타카라즈카 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2200m 중거리</span><span class="rc-tag dir">우 · 한신</span></div></div>
+    <div class="rc"><span class="rc-time">9월 후반</span><span class="rc-name">스프린터스 S</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1200m 단거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
+    <div class="rc"><span class="rc-time">10월 후반</span><span class="rc-name">텐노상(가을)</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">11월 전반</span><span class="rc-name">엘리자베스 여왕배</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2200m 중거리</span><span class="rc-tag dir">우 · 교토</span></div></div>
+    <div class="rc"><span class="rc-time">11월 후반</span><span class="rc-name">마일 CS</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">1600m 마일</span><span class="rc-tag dir">우 · 한신</span></div></div>
+    <div class="rc"><span class="rc-time">11월 후반</span><span class="rc-name">재팬컵</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2400m 중거리</span><span class="rc-tag dir">좌 · 도쿄</span></div></div>
+    <div class="rc"><span class="rc-time">12월 전반</span><span class="rc-name">챔피언스컵</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">1800m 마일</span><span class="rc-tag dir">좌 · 츄쿄</span></div></div>
+    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">아리마 기념</span><div class="rc-tags"><span class="rc-tag turf">잔디</span><span class="rc-tag dist">2500m 장거리</span><span class="rc-tag dir">우 · 나카야마</span></div></div>
+    <div class="rc"><span class="rc-time">12월 후반</span><span class="rc-name">도쿄 대상전</span><div class="rc-tags"><span class="rc-tag dirt">더트</span><span class="rc-tag dist">2000m 중거리</span><span class="rc-tag dir">좌 · 오이</span></div></div>
+  </div>
+  </details>
+  
+  </div>
+
+  <div class="sh fi" id="sy-ach"><div class="sh-title">주요 우승 경력</div><div class="sh-sub en">Achievement Titles</div></div>
+  <p class="bp fi" style="margin-bottom:20px">특정 <b class="hl-r">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
+
+  <details class="rc-toggle fi">
+  <summary class="rc-toggle-head" style="--rc-c:var(--bright);--rc-t:rgba(212,175,55,.06);--rc-b2:rgba(180,150,60,.1);background:linear-gradient(160deg,rgba(255,255,255,.85) 30%,rgba(240,220,160,.15))">클래식 제패 · 시니어 제패 일람<span class="rc-toggle-count en">9</span></summary>
+  <div class="rc-group">
+    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">클래식 3관</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(196,160,0,.08);color:#b8960a">사츠키상 → 일본 더비 → 국화상</span></div></div>
+    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">트리플 티아라</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(200,60,80,.08);color:#c0445a">벚꽃상 → 오크스 → 추화상</span></div></div>
+    <div class="rc"><span class="rc-time">🌸</span><span class="rc-name">봄 시니어 3관</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(233,80,152,.08);color:#d4568a">오사카배 → 텐노상 봄 → 타카라즈카 기념</span></div></div>
+    <div class="rc"><span class="rc-time">🍂</span><span class="rc-name">가을 시니어 3관</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(160,110,60,.08);color:#9a7040">텐노상 가을 → 재팬컵 → 아리마 기념</span></div></div>
+    <div class="rc"><span class="rc-time">👑</span><span class="rc-name">봄가을 텐노상 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(40,60,120,.08);color:#3a5090">텐노상 봄 + 텐노상 가을</span></div></div>
+    <div class="rc"><span class="rc-time">🎪</span><span class="rc-name">봄가을 그랑프리 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(128,30,50,.08);color:#8c2840">타카라즈카 기념 + 아리마 기념</span></div></div>
+    <div class="rc"><span class="rc-time">⚡</span><span class="rc-name">봄가을 스프린트 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(212,86,138,.08);color:#d4568a">타카마츠노미야 기념 + 스프린터스 S</span></div></div>
+    <div class="rc"><span class="rc-time">💨</span><span class="rc-name">봄가을 마일 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(90,158,47,.08);color:#5a9e2f">야스다 기념 + 마일 CS</span></div></div>
+    <div class="rc"><span class="rc-time">🏴</span><span class="rc-name">봄가을 더트 제패</span><div class="rc-tags"><span class="rc-tag dirt">페브러리 S + 챔피언스컵</span></div></div>
+  </div>
+  </details>
+
+</div>
 <!-- ═══ 시나리오 ═══ -->
 <div class="pn" id="pn-scn" role="tabpanel" aria-labelledby="tab-scn">
   <div class="sl-wrap fi"><p class="sl" style="color:var(--green)">시나리오</p><button class="sl-act" onclick="slCopy('scn',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
@@ -1242,21 +1263,15 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 </div>
 
-<!-- ═══ 시작하기 ═══ -->
-<div class="pn" id="pn-start" role="tabpanel" aria-labelledby="tab-start">
-  <div class="sl-wrap fi"><p class="sl" style="color:var(--green)">시작하기</p><button class="sl-act" onclick="slCopy('start',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
-  <h2 class="st fi">설치부터 첫 육성까지</h2>
-  <p class="sd fi">완전 뉴비 기준으로, 설치 직후부터 안정적인 운영까지의 순서를 정리했다.</p>
-  <nav class="sub-nav" id="subNavStart">
+<!-- ═══ 준비하기 ═══ -->
+<div class="pn" id="pn-prep" role="tabpanel" aria-labelledby="tab-prep">
+  <div class="sl-wrap fi"><p class="sl" style="color:var(--green)">준비하기</p><button class="sl-act" onclick="slCopy('prep',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
+  <h2 class="st fi">설치부터 첫 접속까지</h2>
+  <p class="sd fi">게임에 들어가기 전, 설치와 초기 세팅을 마치는 단계다.</p>
+  <nav class="sub-nav" id="subNavPrep">
     <button class="sn on" data-s="s-install">설치</button>
     <button class="sn" data-s="s-reroll">리세마라</button>
     <button class="sn" data-s="s-first">첫 접속</button>
-    <button class="sn" data-s="s-train">첫 육성</button>
-    <button class="sn" data-s="s-teamrace">팀 레이스</button>
-    <button class="sn" data-s="s-circle">서클</button>
-    <button class="sn" data-s="s-daily">매일 루틴</button>
-    <button class="sn" data-s="s-factor">인자</button>
-    <button class="sn" data-s="s-mistakes">뉴비 실수</button>
   </nav>
 
   <div class="pair fi" id="s-install">
@@ -1264,10 +1279,9 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="pair-card"><span class="pc-emoji">🇯🇵</span><h3>일섭</h3><p>앱스토어·구글 플레이·Steam·DMM. VPN 필수. 한글패치 가능.</p></div>
   </div>
   <div class="ib pk fi"><div class="ib-l">주의</div><p>전체 데이터 약 20GB 이상. Wi-Fi 환경에서 설치할 것.</p></div>
-
-  <div class="sh fi" id="s-reroll"><div class="sh-title">리세마라</div><div class="sh-sub en">Re-roll</div></div>
+<div class="sh fi" id="s-reroll"><div class="sh-title">리세마라</div><div class="sh-sub en">Re-roll</div></div>
   <p class="bp fi">이 게임에서 육성의 질을 결정하는 건 캐릭터의 레어도가 아니라 <b class="hl-o">서포트카드</b>의 돌파 수다. 캐릭터는 명함(1장)만 있으면 충분하지만, <b class="hl-o">서포트카드</b>는 풀돌(4돌파)이 되어야 제 성능이 나온다. 리세마라는 <b class="hl-o">서포트카드</b> 가챠에 전액 투입하는 것이 정석이다.</p>
-  <p class="bp fi">튜토리얼 완료 → 선물함 보상 수령 → <b class="hl-o">서포트카드</b> 가챠 40연차. 불만족 시 카카오톡 설정에서 연결 서비스 삭제 후 재접속(2회차부터 약 1분). 시간이 부담된다면 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">GachaPlus</a>에서 리세계를 구입하는 방법도 있다.</p>
+  <p class="bp fi">튜토리얼 완료 → 선물함 보상 수령 → <b class="hl-o">서포트카드</b> 가챠 40연차. 불만족 시 카카오톡 설정에서 연결 서비스 삭제 후 재접속(2회차부터 약 1분). 시간이 부담된다면 타오바오 등 거래 사이트에서 리세계를 구입하는 방법도 있다. 매물은 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">GachaPlus</a>에서 볼 수 있다.</p>
 
   <div class="dv"><hr></div>
 
@@ -1301,19 +1315,47 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     </div>
   </div>
 
+  
+</div>
+
+<!-- ═══ 시작하기 ═══ -->
+<div class="pn" id="pn-start" role="tabpanel" aria-labelledby="tab-start">
+  <div class="sl-wrap fi"><p class="sl" style="color:var(--green)">시작하기</p><button class="sl-act" onclick="slCopy('start',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
+  <h2 class="st fi">여기서부터 진짜 시작이다</h2>
+  <p class="sd fi">설치와 리세마라를 끝냈다면, 이제 실제 육성에 돌입한다. 이 게임의 핵심은 육성 → 팀 레이스 배치의 순환이다.</p>
+  <nav class="sub-nav" id="subNavStart">
+    <button class="sn on" data-s="s-card-prep">카드 준비</button>
+    <button class="sn" data-s="s-train">첫 육성</button>
+    <button class="sn" data-s="s-teamrace">팀 레이스</button>
+    <button class="sn" data-s="s-circle">서클 가입</button>
+    <div class="sn-break"></div>
+    <button class="sn" data-s="s-daily">매일 루틴</button>
+    <button class="sn" data-s="s-factor">인자 기초</button>
+    <button class="sn" data-s="s-mistakes">뉴비 실수</button>
+  </nav>
+
+  <div class="sh fi" id="s-card-prep"><div class="sh-title">서포트카드 준비</div><div class="sh-sub en">Card Preparation</div></div>
+  <p class="bp fi">육성에 들어가기 전에 반드시 해야 할 일이 있다. 동일 <b class="hl-o">서포트카드</b>를 여러 장 보유하고 있다면 <b class="hl-o">상한 해방</b> 메뉴에서 직접 돌파해야 한다. 자동으로 되지 않으므로 빠뜨리기 쉽다. 돌파 후에는 <b class="hl-o">레벨</b>도 최대한 올려야 한다. 서포트카드 레벨이 낮으면 트레이닝 보너스가 약해서 육성 결과가 크게 떨어진다.</p>
+  <div class="ib fi"><div class="ib-l">우선순위</div><p>SSR보다 SR이라도 돌파 수가 높은 카드가 더 강하다. 0돌 SSR < 풀돌 SR인 경우가 대부분이므로, 돌파 수 기준으로 먼저 레벨을 올릴 것.</p></div>
+
   <div class="dv"><hr></div>
 
   <div class="sh fi" id="s-train"><div class="sh-title">첫 육성</div><div class="sh-sub en">First Training</div></div>
+  <p class="bp fi">서포트카드 준비가 끝났다면, 홈 화면 우측 하단의 <b class="hl-o">육성</b> 버튼을 누른다. 아래 순서대로 화면이 진행되며, 각 단계에서 추천 선택지를 함께 표기했다.</p>
 
   <div class="flow fi">
-    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b> + <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b></h4><p><b class="hl-g">단거리</b> <b class="hl-p">도주</b> 캐릭터. 스피드만 올리면 대부분 레이스에서 승리한다. 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히는 단계.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="hl-o">서포트카드</b> 덱 편성</h4><p>본인 소유 5장 + 친구에게 렌탈 1장 = 총 6장. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b class="hl-o">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하면 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-c"><h4><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b>(최신 시나리오)로 전환</h4><p>URA가 익숙해지면 현재 메타 시나리오로 이동. <b class="ch" style="--ch:rgba(36,89,180,.22)">에어 샤커</b> 편성이 핵심. 육성 고점이 훨씬 높다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>시나리오 선택</h4><p>처음이라면 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b>를 추천한다. 시스템이 가장 단순하다. 익숙해지면 메카 우마무스메(최신 시나리오)로 전환하면 육성 고점이 훨씬 높아진다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>캐릭터 선택</h4><p>첫 육성은 <b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b>(<b class="hl-g">단거리</b> <b class="hl-p">도주</b>)를 추천. 스피드만 올리면 대부분 레이스에서 승리하므로, 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히기에 적합하다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>인자 부모 2명 선택</h4><p>자기 개체 1명 + <b class="hl-o">렌탈</b>(친구 개체) 1명. 처음에는 아무나 골라도 된다. 나중에 <b class="hl-o">인자</b>를 이해하면 전략적으로 선택하게 된다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>서포트카드 6장 편성</h4><p>본인 소유 5장 + 친구에게 <b class="hl-o">렌탈</b> 1장 = 총 6장. 풀돌 친구 카드 1장이 핵심 전력이다. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b class="hl-o">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">5</span></div><div class="fl-c"><h4>육성 시작</h4><p><b class="hl-c">주니어</b>(1년) → <b class="hl-p">클래식</b>(2년) → <b class="hl-g">시니어</b>(3년), 총 72턴 동안 매턴 훈련·레이스·휴식·외출 중 하나를 선택한다. 육성이 끝나면 <b class="hl-o">인자</b>를 획득하고, 완성된 개체를 <b class="hl-o">팀 레이스</b>에 배치할 수 있다.</p></div></div>
   </div>
+
+  <div class="ib pk fi"><div class="ib-l">팀 레이스 조건</div><p>육성을 완료한 개체만 팀 레이스에 편성할 수 있다. 육성 없이 팀 레이스에 직접 참가하는 것은 불가능하다.</p></div>
 
   <div class="ib pk fi"><div class="ib-l">카드 편성 팁</div><p><b class="hl-g">단거리</b>·<b class="hl-g">마일</b>은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), <b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
 
-  <div class="ib sk fi"><div class="ib-l">육성 팁</div><p><b class="hl-o">서포트카드</b>의 <b class="hl-o">인연 게이지</b>를 합숙(시니어 7~8월) 전까지 주황색(80 이상)으로 채워야 <b class="hl-o">우정 트레이닝</b>이 발동한다. 이걸 놓치면 스탯이 크게 떨어지므로, 첫 육성 때부터 반드시 의식할 것.</p></div>
+  <div class="ib fi"><div class="ib-l">육성 팁</div><p>육성 중 스탯을 크게 올리려면 <b class="hl-o">우정 트레이닝</b>을 빠르게 발동시키는 것이 핵심이다. 개념과 발동 조건은 <a href="#sy-friend">시스템 → 우정 트레이닝이란?</a>에서 확인할 수 있다.</p></div>
 
   <div class="dv"><hr></div>
 
@@ -1441,11 +1483,12 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </div>
 </div>
 
+
 <!-- ═══ 공략 ═══ -->
 <div class="pn" id="pn-tips" role="tabpanel" aria-labelledby="tab-tips">
   <div class="sl-wrap fi"><p class="sl" style="color:var(--pink)">공략</p><button class="sl-act" onclick="slCopy('tips',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
   <h2 class="st fi">무과금 운용과 핵심 자원</h2>
-  <p class="sd fi">PvP 최상위는 과금 영역이지만, 스토리·육성·이벤트·위닝 라이브 등 핵심 재미는 무과금으로 온전히 즐길 수 있다.</p>
+  <p class="sd fi">PvP 최상위는 핵과금 유저들의 영역이지만, 스토리·육성·위닝 라이브·이벤트 등 게임의 핵심 재미 요소는 무과금으로도 충분히 누릴 수 있다.</p>
   <nav class="sub-nav" id="subNavTips">
     <button class="sn on" data-s="t-jewel">쥬얼 운용</button>
     <button class="sn" data-s="t-future">미래시</button>
@@ -1454,7 +1497,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <button class="sn" data-s="t-community">커뮤니티</button>
   </nav>
 
-  <div class="sh fi" id="t-jewel"><div class="sh-title"><img src="images/jewel.webp" alt="쥬얼" style="width:28px;height:28px;object-fit:contain;vertical-align:-4px;margin-right:6px"><b class="hl-o">쥬얼</b> 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
+  <div class="sh fi" id="t-jewel"><div class="sh-title"><img src="images/jewel.webp" alt="쥬얼" style="width:28px;height:28px;object-fit:contain;vertical-align:-4px;margin-right:6px">쥬얼 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
   <div class="rule-list fi">
     <div class="rule-card">
       <div class="rule-num en">01</div>
@@ -1660,14 +1703,17 @@ var isDeepLink=false;
   const hash=location.hash.replace('#','');
   if(!hash) return;
   isDeepLink=true;
+  /* legacy hash redirects */
+  const legacy={'card':'sy-card','sys':'sy-train','s-flow':'s-train'};
+  const resolved=legacy[hash]||hash;
   /* section→tab mapping */
-  const secMap={'s-install':'start','s-reroll':'start','s-first':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','c-awaken':'card','c-level':'card','c-limit':'card','c-gacha':'card','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
-  const tabId=secMap[hash]||hash;
+  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-friend':'sys','sy-card':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+  const tabId=secMap[resolved]||resolved;
   const tab=document.getElementById('tab-'+tabId);
   if(tab) tab.click();
   /* scroll to section after tab renders */
-  const sec=document.getElementById(hash);
-  if(sec&&secMap[hash]){
+  const sec=document.getElementById(resolved);
+  if(sec&&secMap[resolved]){
     setTimeout(()=>{
       const topH=document.getElementById('topBar')?.offsetHeight||0;
       const subNav=document.querySelector('#pn-'+tabId+' .sub-nav');
@@ -1757,8 +1803,9 @@ function initSubNavObserver(navId,sectionIds){
   },{rootMargin:'-'+(topBar?topBar.offsetHeight+80:140)+'px 0px -50% 0px',threshold:0});
   sectionIds.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
 }
-initSubNavObserver('subNavStart',['s-install','s-reroll','s-first','s-train','s-teamrace','s-circle','s-daily','s-factor','s-mistakes']);
-initSubNavObserver('subNavCard',['c-awaken','c-level','c-limit','c-gacha']);
+initSubNavObserver('subNavPrep',['s-install','s-reroll','s-first']);
+initSubNavObserver('subNavStart',['s-card-prep','s-train','s-teamrace','s-circle','s-daily','s-factor','s-mistakes']);
+initSubNavObserver('subNavSys',['sy-train','sy-friend','c-awaken','c-level','c-limit','c-gacha','sy-g1','sy-ach']);
 initSubNavObserver('subNavTips',['t-jewel','t-future','t-rental','t-guides','t-community']);
 
 /* ── Section deep link copy buttons ── */
@@ -1799,8 +1846,14 @@ if(trF){
   }
 }
 
-/* ── G1 race shoe icons ── */
-document.querySelectorAll('.rc').forEach(rc=>{
+/* ── G1 race shoe icons (only inside G1 toggles, not achievements) ── */
+(function(){
+  const g1=document.getElementById('sy-g1');
+  if(!g1) return;
+  let el=g1.nextElementSibling;
+  while(el && !el.id){
+    if(el.classList.contains('rc-toggle')||el.classList.contains('fi')){
+      el.querySelectorAll('.rc').forEach(rc=>{
   const dist=rc.querySelector('.rc-tag.dist');
   if(!dist) return;
   const isDirt=rc.querySelector('.rc-tag.dirt');
@@ -1821,7 +1874,11 @@ document.querySelectorAll('.rc').forEach(rc=>{
   rc.style.position='relative';
   rc.style.paddingRight='36px';
   rc.appendChild(img);
-});
+      });
+    }
+    el=el.nextElementSibling;
+  }
+})();
 /* set sticky top dynamically */
 function setSubNavTop(){
   const h=document.getElementById('topBar');
