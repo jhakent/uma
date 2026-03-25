@@ -14,33 +14,35 @@
 <meta name="twitter:title" content="우마무스메 프리티 더비 | 극장판 관람 가이드">
 <meta name="twitter:description" content="ROAD TO THE TOP &amp; 새로운 시대의 문. 스포일러 없는 캐릭터·시놉시스 소개.">
 <meta name="twitter:image" content="https://jhakent.github.io/uma/images/rttt-poster.jpg">
+<meta name="theme-color" content="#ffffff">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <link rel="icon" type="image/svg+xml" href="../images/ura.svg">
 <link rel="apple-touch-icon" href="../images/ura.png">
 <link rel="apple-touch-icon-precomposed" href="../images/ura.png">
+<link rel="preload" as="image" href="../images/rttt-poster.jpg">
 <style>
 /* ── 극장판 가이드 전용 ── */
 :root{--dot-active:var(--green)}
 body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95,.1) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 75% 15%,rgba(233,80,152,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(79,184,230,.06) 0%,transparent 50%)}
-.mv-hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:160px 24px 80px;position:relative;overflow:hidden}
+.mv-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
 .mv-hero-title{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.06em;line-height:1.1;color:var(--bright);animation:fadeUp .8s ease .15s both}
 .mv-hero-title .sub{display:block;font-family:'Outfit',sans-serif;font-size:clamp(12px,2vw,18px);font-weight:400;letter-spacing:.06em;line-height:2;color:var(--dim);margin-top:20px;text-transform:uppercase}
-.mv-hero-desc{max-width:520px;font-size:14px;font-weight:300;color:var(--dim);line-height:1.85;margin-top:32px;animation:fadeUp .8s ease .3s both}
+.mv-hero-desc{max-width:520px;font-size:14px;font-weight:400;color:var(--dim);line-height:1.85;margin-top:32px;animation:fadeUp .8s ease .3s both}
 .mv-hero-line{width:1px;height:72px;background:linear-gradient(to bottom,transparent,var(--border-s),transparent);margin-top:48px;animation:fadeUp .8s ease .45s both}
 .mv-section{padding:96px 24px;max-width:920px;margin:0 auto}
 .mv-label{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
 .mv-title{font-size:clamp(27px,5vw,44px);font-weight:800;letter-spacing:-.055em;line-height:1.15;color:var(--bright);margin-bottom:18px}
-.mv-desc{font-size:14px;font-weight:300;color:var(--dim);line-height:1.85;max-width:560px}
+.mv-desc{font-size:14px;font-weight:400;color:var(--dim);line-height:1.85;max-width:560px}
 .mv-concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
 .mv-concept-card{background:var(--bg-warm);border:1px solid var(--border);border-radius:14px;padding:26px 22px;transition:border-color .3s,box-shadow .3s}
 .mv-concept-card:hover{border-color:var(--border-s);box-shadow:0 2px 20px rgba(0,0,0,.04)}
 .mv-concept-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:12px}
 .mv-concept-card h3{font-size:14px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:6px}
-.mv-concept-card p{font-size:12.5px;font-weight:300;color:var(--dim);line-height:1.75}
+.mv-concept-card p{font-size:12.5px;font-weight:400;color:var(--dim);line-height:1.75}
 
 @media(max-width:640px){
   .mv-concept-grid{grid-template-columns:1fr}
@@ -50,7 +52,7 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
   .mv-title{letter-spacing:-.055em}
   .mv-section{padding:52px 18px}
 }
-.mv-footer{text-align:center;padding:52px 24px 32px;font-size:11px;color:var(--dim);font-weight:300;line-height:1.75}
+.mv-footer{text-align:center;padding:52px 24px 32px;font-size:11px;color:var(--dim);font-weight:400;line-height:1.75}
 .mv-footer .ico{font-size:20px;display:block;margin-bottom:8px;opacity:.3}
 </style>
 </head>
@@ -58,11 +60,11 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
 
 <div class="scroll-bar" id="sb"></div>
 
-<nav class="dot-nav" id="nav">
-  <button class="dot on" data-t="hero"></button>
-  <button class="dot" data-t="concept"></button>
-  <button class="dot" data-t="rttt"></button>
-  <button class="dot" data-t="newera"></button>
+<nav class="dot-nav" id="nav" aria-label="섹션 내비게이션">
+  <button class="dot on" data-t="hero" aria-label="히어로"></button>
+  <button class="dot" data-t="concept" aria-label="세계관"></button>
+  <button class="dot" data-t="rttt" aria-label="ROAD TO THE TOP"></button>
+  <button class="dot" data-t="newera" aria-label="새로운 시대의 문"></button>
 </nav>
 
 <section class="mv-hero" id="hero">
@@ -79,33 +81,37 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
 
 <section class="mv-section" id="concept">
   <div class="fi">
-    <p class="mv-label" style="color:var(--green)">세계관</p>
-    <h2 class="mv-title">경마 × 아이돌,<br>그 기묘한 조합</h2>
-    <p class="mv-desc">
+    <p class="sl" style="color:var(--green)">세계관</p>
+    <h2 class="st">경마 × 아이돌,<br>그 기묘한 조합</h2>
+    <p class="sd">
       이 세계에는 말의 이름과 혼을 이어받은 소녀 종족 '우마무스메'가 살고 있습니다.
       도쿄 소재의 트레센 학원에서 훈련하며, 실제 일본중앙경마회(JRA) 일정을 따르는 '트윙클 시리즈' 레이스에 출전합니다.
     </p>
   </div>
-  <div class="mv-concept-grid fi">
-    <div class="mv-concept-card">
-      <div class="mv-concept-icon" style="background:rgba(0,169,95,.1)">🏇</div>
-      <h3>클래식 삼관 레이스</h3>
-      <p>사츠키상, 일본 더비, 국화상. 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주입니다. 두 작품 모두 이 삼관을 중심으로 이야기가 전개됩니다.</p>
+  <div class="wc-stack fi">
+    <div class="wc-row">
+      <div class="wc wc-green">
+        <span class="wc-emoji">🏇</span>
+        <h3>클래식 삼관 레이스</h3>
+        <p>사츠키상, 일본 더비, 국화상. 우마무스메가 평생 단 한 번만 도전할 수 있는 세 경주입니다. 두 작품 모두 이 삼관을 중심으로 이야기가 전개됩니다.</p>
+      </div>
+      <div class="wc wc-pink">
+        <span class="wc-emoji">🎤</span>
+        <h3>위닝 라이브</h3>
+        <p>레이스가 끝나면 상위 입상자가 관중 앞에서 라이브 무대를 선보입니다. 프랜차이즈를 대표하는 고유한 설정이자, 승리의 기쁨을 나누는 축제 같은 의식입니다.</p>
+      </div>
     </div>
-    <div class="mv-concept-card">
-      <div class="mv-concept-icon" style="background:rgba(233,80,152,.1)">🎤</div>
-      <h3>위닝 라이브</h3>
-      <p>레이스가 끝나면 상위 입상자가 관중 앞에서 라이브 무대를 선보입니다. 프랜차이즈를 대표하는 고유한 설정이자, 승리의 기쁨을 나누는 축제 같은 의식입니다.</p>
-    </div>
-    <div class="mv-concept-card">
-      <div class="mv-concept-icon" style="background:rgba(79,184,230,.1)">🐴</div>
-      <h3>실존 경주마 모티프</h3>
-      <p>모든 캐릭터의 이름은 실제 마주로부터 정식 라이선스를 받아 사용합니다. 모색은 머리카락 색이 되고, 마주의 기수복 배색이 레이싱 의상에 반영됩니다.</p>
-    </div>
-    <div class="mv-concept-card">
-      <div class="mv-concept-icon" style="background:rgba(212,42,42,.08)">🎓</div>
-      <h3>트레센 학원</h3>
-      <p>우마무스메들의 교육·훈련 기관. 세일러복 교복과 빨간 트레이닝 저지가 상징입니다. 각 우마무스메는 담당 트레이너와 팀을 이뤄 레이스를 준비합니다.</p>
+    <div class="wc-row">
+      <div class="wc wc-sky">
+        <span class="wc-emoji">🐴</span>
+        <h3>실존 경주마 모티프</h3>
+        <p>모든 캐릭터의 이름은 실제 마주로부터 정식 라이선스를 받아 사용합니다. 모색은 머리카락 색이 되고, 마주의 기수복 배색이 레이싱 의상에 반영됩니다.</p>
+      </div>
+      <div class="wc wc-neutral">
+        <span class="wc-emoji">🎓</span>
+        <h3>트레센 학원</h3>
+        <p>우마무스메들의 교육·훈련 기관. 세일러복 교복과 빨간 트레이닝 저지가 상징입니다. 각 우마무스메는 담당 트레이너와 팀을 이뤄 레이스를 준비합니다.</p>
+      </div>
     </div>
   </div>
   <div class="note fi">
@@ -121,7 +127,7 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
   <div class="film-header fi">
     <div class="film-number en">01</div>
     <div class="film-info">
-      <span class="tag"><span class="en">ONA 4EP → THEATRICAL CUT</span></span>
+      <span class="tag" style="background:rgba(232,75,138,.08);color:#e84b8a"><span class="en">ONA 4EP → THEATRICAL CUT</span></span>
       <h2 class="en">ROAD TO THE TOP</h2>
       <p class="en-title en">Uma Musume Pretty Derby: Road to the Top</p>
       <p class="meta">2023 · 전4화 (각 24분) · 극장판 98분 · CygamesPictures 제작</p>
@@ -290,7 +296,7 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
   <div class="film-header fi">
     <div class="film-number en">02</div>
     <div class="film-info">
-      <span class="tag"><span class="en">THEATRICAL FEATURE</span></span>
+      <span class="tag" style="background:rgba(67,160,71,.08);color:#43a047"><span class="en">THEATRICAL FEATURE</span></span>
       <h2>새로운 시대의 문</h2>
       <p class="en-title en">Beginning of a New Era</p>
       <p class="meta">2024 · 108분 · 시네마스코프(2.39:1) · CygamesPictures 제작 · 토호 배급</p>
@@ -457,35 +463,47 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
 <footer class="mv-footer">
   <span class="ico">🐎</span>
   이 페이지는 극장 관람 전 참고용으로 제작되었습니다.
-  <br>모든 캐릭터와 작품은 © Cygames, Inc. 에 귀속됩니다.
-  <br><span class="en" style="font-size:10px; letter-spacing:0.06em; opacity:0.6;">Made by <a href="https://jhakentertainment.com" target="_blank" style="color:inherit; text-decoration:underline;">JHAK Entertainment Inc.</a></span>
+  <div style="display:flex;gap:8px;justify-content:center;margin:16px 0">
+    <a href="../guide/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">입문 가이드</a>
+    <a href="../gorumeno/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">골드 쉽 × 페노메노</a>
+  </div>
+  모든 캐릭터와 작품은 © Cygames, Inc. 에 귀속됩니다.
+  <br><span class="en" style="font-size:10px;letter-spacing:.06em;opacity:.6">Made by <a href="https://jhakentertainment.com" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">JHAK Entertainment Inc.</a></span>
+  <div style="opacity:.4;margin-top:10px"><span class="en" style="font-size:9px;letter-spacing:.06em">Last updated Mar 25, 2026</span></div>
 </footer>
 
 <script>
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  document.getElementById('sb').style.width =
-    (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
-});
-const obs = new IntersectionObserver(es => {
-  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fi').forEach(el => obs.observe(el));
-const ids = ['hero','concept','rttt','newera'];
-const dots = document.querySelectorAll('.dot');
-dots.forEach(d => {
-  d.addEventListener('click', () =>
-    document.getElementById(d.dataset.t).scrollIntoView({ behavior: 'smooth' })
+/* scroll progress bar (divide-by-zero guard) */
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const max=Math.max(1,h.scrollHeight-h.clientHeight);
+  document.getElementById('sb').style.width=(h.scrollTop/max)*100+'%';
+},{passive:true});
+
+/* fade-in observer */
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});
+},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+/* dot navigation */
+const ids=['hero','concept','rttt','newera'];
+const dots=document.querySelectorAll('.dot');
+dots.forEach(d=>{
+  d.addEventListener('click',()=>
+    document.getElementById(d.dataset.t).scrollIntoView({behavior:'smooth'})
   );
 });
-window.addEventListener('scroll', () => {
-  let c = '';
-  ids.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && el.getBoundingClientRect().top < innerHeight * 0.5) c = id;
+window.addEventListener('scroll',()=>{
+  let c='';
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&el.getBoundingClientRect().top<innerHeight*0.5) c=id;
   });
-  dots.forEach(d => d.classList.toggle('on', d.dataset.t === c));
-});
+  dots.forEach(d=>d.classList.toggle('on',d.dataset.t===c));
+},{passive:true});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@17.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<script>if(typeof twemoji!=='undefined') twemoji.parse(document.body,{folder:'svg',ext:'.svg'});</script>
 </body>
 </html>
