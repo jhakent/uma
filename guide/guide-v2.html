@@ -37,8 +37,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 120% 80% at 10% 90%,rgba(0,169,95,.06) 0%,transparent 70%),radial-gradient(ellipse 110% 70% at 95% 5%,rgba(233,80,152,.04) 0%,transparent 70%);pointer-events:none;z-index:-1}
 .en{font-family:'Outfit',sans-serif;letter-spacing:.04em;word-break:normal}
 b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.bp a,.sd a,.fl-c a,.wc a,.sc-detail-body a{color:var(--bright);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:color .15s,text-decoration-color .15s}
-.bp a:hover,.sd a:hover,.fl-c a:hover,.wc a:hover,.sc-detail-body a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
+.bp a,.sd a,.fl-c a,.wc a,.sc-detail-body a,.ib a{color:var(--bright);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.12);transition:color .15s,text-decoration-color .15s}
+.bp a:hover,.sd a:hover,.fl-c a:hover,.wc a:hover,.sc-detail-body a:hover,.ib a:hover{color:var(--green);text-decoration-color:rgba(0,169,95,.5)}
 .scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(to right,var(--green),var(--sky),var(--pink));z-index:1001;will-change:width}
 
 /* ── TOP BAR ── */
@@ -413,6 +413,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .tr-tag.pk{background:rgba(233,80,152,.1);color:#c2185b}
 .tb[data-t="start"]{position:relative}
 .tb[data-t="start"]::before{content:'';position:absolute;inset:2px -4px -2px;background:rgba(0,169,95,.06);border-radius:16px;filter:blur(4px);z-index:-1}
+.tb[data-t="sys"]{position:relative}
+.tb[data-t="sys"]::before{content:'';position:absolute;inset:2px -4px -2px;background:rgba(79,184,230,.06);border-radius:16px;filter:blur(4px);z-index:-1}
 
 .rc-group{
   margin-bottom:12px;border-radius:0 14px 14px 14px;overflow:hidden;
@@ -1008,7 +1010,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <p class="bp fi">등급은 <span class="ssr-tier t-r" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">R</span> → <span class="ssr-tier t-sr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SR</span> → <span class="ssr-tier t-ssr" style="display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:18px">SSR</span> 순으로 올라간다. <b class="hl-o">서포트카드</b>의 레벨을 올리면 지원 효과가 개방되고, 같은 카드를 겹쳐 <b class="hl-o">상한 해방</b>(최대 4회)하면 레벨 상한이 5씩 올라간다. 완전 해방에는 동일 카드가 총 5장(원본 1장 + 돌파 4회분) 필요하다.</p>
 
-  <div class="ib fi"><div class="ib-l">강화 방법</div><p><b class="hl-o">서포트카드</b>의 강화는 <a href="#c-level" style="color:var(--green);text-decoration:underline;text-underline-offset:3px">레벨 올리기</a>와 <a href="#c-limit" style="color:var(--green);text-decoration:underline;text-underline-offset:3px">상한 해방</a>에서 자세히 다룬다. 육성 전에 반드시 확인할 것.</p></div>
+  <div class="ib fi"><div class="ib-l">강화 방법</div><p><b class="hl-o">서포트카드</b>의 강화는 <a href="#c-level">레벨 올리기</a>와 <a href="#c-limit">상한 해방</a>에서 자세히 다룬다. 육성 전에 반드시 확인할 것.</p></div>
 
   <div class="sh fi" id="c-level"><div class="sh-title">레벨 올리기</div><div class="sh-sub en">Level Up</div></div>
   <p class="bp fi"><b class="hl-o">서포트카드</b> 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 머니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. <b class="hl-o">상한 해방</b> 없이도 레벨 30까지는 올릴 수 있지만, 풀돌 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
@@ -1346,11 +1348,11 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">5</span></div><div class="fl-c"><h4>육성 시작</h4><p><b class="hl-c">주니어</b>(1년) → <b class="hl-p">클래식</b>(2년) → <b class="hl-g">시니어</b>(3년), 총 72턴 동안 매턴 훈련·레이스·휴식·외출 중 하나를 선택한다. 육성이 끝나면 <b class="hl-o">인자</b>를 획득하고, 완성된 개체를 <b class="hl-o">팀 레이스</b>에 배치할 수 있다.</p></div></div>
   </div>
 
-  <div class="ib pk fi"><div class="ib-l">핵심</div><p>육성을 완료한 개체만 팀 레이스에 편성할 수 있다. 육성 없이 팀 레이스에 직접 참가하는 것은 불가능하다.</p></div>
+  <div class="ib pk fi"><div class="ib-l">팀 레이스 조건</div><p>육성을 완료한 개체만 팀 레이스에 편성할 수 있다. 육성 없이 팀 레이스에 직접 참가하는 것은 불가능하다.</p></div>
 
   <div class="ib pk fi"><div class="ib-l">카드 편성 팁</div><p><b class="hl-g">단거리</b>·<b class="hl-g">마일</b>은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), <b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
 
-  <div class="ib sk fi"><div class="ib-l">육성 팁</div><p><b class="hl-o">서포트카드</b>의 <b class="hl-o">인연 게이지</b>를 합숙(시니어 7~8월) 전까지 주황색(80 이상)으로 채워야 <b class="hl-o">우정 트레이닝</b>이 발동한다. 이걸 놓치면 스탯이 크게 떨어지므로, 첫 육성 때부터 반드시 의식할 것.</p></div>
+  <div class="ib fi"><div class="ib-l">육성 팁</div><p>육성 중 스탯을 크게 올리려면 <b class="hl-o">우정 트레이닝</b>을 빠르게 발동시키는 것이 핵심이다. 개념과 발동 조건은 <a href="#sy-friend">시스템 → 우정 트레이닝이란?</a>에서 확인할 수 있다.</p></div>
 
   <div class="dv"><hr></div>
 
