@@ -918,8 +918,17 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sl-wrap fi"><p class="sl" style="color:var(--sky)">시스템</p><button class="sl-act" onclick="slCopy('sys',this)" aria-label="이 탭 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
   <h2 class="st fi">핵심 시스템 해부</h2>
   <p class="sd fi">매 턴 훈련·휴식·외출·레이스 중 하나를 선택하며, 게임 내 시간 3년간 우마무스메를 성장시킨다. 육성이 끝나면 하나의 완성된 개체가 탄생하고, 더 나은 개체를 원한다면 처음부터 다시 키운다. 한 판이 곧 하나의 육성이다.</p>
+  <nav class="sub-nav" id="subNavSys">
+    <button class="sn on" data-s="sy-train">훈련·레이스</button>
+    <button class="sn" data-s="c-awaken">각성</button>
+    <button class="sn" data-s="c-level">레벨업</button>
+    <button class="sn" data-s="c-limit">상한 해방</button>
+    <button class="sn" data-s="c-gacha">가챠</button>
+    <button class="sn" data-s="sy-g1">G1 레이스</button>
+    <button class="sn" data-s="sy-ach">우승 경력</button>
+  </nav>
 
-  <div class="sys-hero fi" style="--sc:79,184,230">
+  <div class="sys-hero fi" id="sy-train" style="--sc:79,184,230">
     <div class="sys-hero-top"><span class="sys-hero-num en">01</span><div class="sys-hero-body"><span class="sys-hero-title">훈련</span><div class="sys-hero-sub" style="color:var(--spd)">능력치를 키우는 유일한 방법</div></div><span class="sys-hero-emoji">🏋️</span></div>
   </div>
   <p class="bp fi">반 달 단위의 턴마다 스피드·스태미나·파워·근성·지능 중 하나를 훈련한다. 각 훈련은 주 능력치 외에 보조 능력치도 소폭 올려주며, 훈련을 반복할수록 트레이닝 레벨이 올라 효율이 높아진다.</p>
@@ -954,12 +963,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sl-wrap fi"><p class="sl" style="color:var(--pink)">캐릭터·카드</p></div>
   <h2 class="st fi">키우고, 뽑고, 물려받는 구조</h2>
   <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, <b class="hl-o">서포트카드</b>의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다.</p>
-  <nav class="sub-nav" id="subNavCard">
-    <button class="sn on" data-s="c-awaken">각성 레벨</button>
-    <button class="sn" data-s="c-level">레벨업</button>
-    <button class="sn" data-s="c-limit">상한 해방</button>
-    <button class="sn" data-s="c-gacha">가챠</button>
-  </nav>
+
 
   <div class="ref-links fi">
     <a class="ref-link" href="https://namu.wiki/w/%ED%8B%80:%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94%20%ED%94%84%EB%A6%AC%ED%8B%B0%20%EB%8D%94%EB%B9%84%EC%9D%98%20%EB%93%B1%EC%9E%A5%20%EC%9A%B0%EB%A7%88%EB%AC%B4%EC%8A%A4%EB%A9%94" target="_blank" rel="noopener noreferrer">
@@ -1001,7 +1005,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="sh fi" id="c-level"><div class="sh-title">레벨 올리기</div><div class="sh-sub en">Level Up</div></div>
   <p class="bp fi"><b class="hl-o">서포트카드</b> 레벨을 올리면 트레이닝 효과 증가, 우정 보너스, 힌트 발생률 등 지원 효과 슬롯이 하나씩 해방된다. 레벨업에는 서포트 포인트(SP)와 머니가 필요하며, 데일리 레이스에서 매일 파밍할 수 있다. <b class="hl-o">상한 해방</b> 없이도 레벨 30까지는 올릴 수 있지만, 풀돌 + 최대 레벨(Lv.50)에서 카드의 진가가 드러난다.</p>
 
-  <div class="sh fi" id="c-limit"><div class="sh-title"><b class="hl-o">상한 해방</b></div><div class="sh-sub en">Limit Break</div></div>
+  <div class="sh fi" id="c-limit"><div class="sh-title">상한 해방</div><div class="sh-sub en">Limit Break</div></div>
   <p class="bp fi">동일한 <b class="hl-o">서포트카드</b>를 중복 획득할 때마다 자동으로 <b class="hl-o">상한 해방</b>이 이루어지며, 카드의 스펙이 비약적으로 상승한다. 최대 4회까지 가능하고, 4회 완료 시 풀돌(풀 해방)이라 부른다. SSR·SR 등급은 무지개/황금 해방 결정을 사용해 동일 카드 없이도 해방할 수 있다.</p>
   <div class="unlock fi">
     <div class="unlock-head">
@@ -1130,11 +1134,8 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <div class="dv"><hr></div>
 
-  <p class="sl fi" style="color:var(--dim);font-size:10px;letter-spacing:3px;margin-bottom:12px">부록</p>
-
-  <details class="rc-toggle fi">
-  <summary class="rc-toggle-head" style="--rc-c:var(--dim)">G1 레이스 일람<span class="rc-toggle-count en">26</span></summary>
-  <p class="bp" style="margin:12px 14px 16px;font-size:12px"><b class="hl-r">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b class="hl-r">G1</b>은 JRA가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다.</p>
+  <div class="sh fi" id="sy-g1"><div class="sh-title">G1 레이스 일람</div><div class="sh-sub en">Grade 1 Races</div></div>
+  <p class="bp fi" style="margin-bottom:20px"><b class="hl-r">G1</b>은 경마 레이스의 최상위 등급이다. 게임에 등장하는 모든 <b class="hl-r">G1</b>은 JRA가 실제로 운영하는 레이스와 이름·거리·경마장·개최 시기가 동일하며, 코스 형태와 고저차까지 재현되어 있다.</p>
 <div class="fi">
   <details class="rc-toggle fi">
   <summary class="rc-toggle-head" style="--rc-c:var(--spd)">주니어 · 1년차<span class="rc-toggle-count en">4</span></summary>
@@ -1181,23 +1182,22 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   </details>
   
   </div>
-  </details>
+
+  <div class="sh fi" id="sy-ach"><div class="sh-title">주요 우승 경력</div><div class="sh-sub en">Achievement Titles</div></div>
+  <p class="bp fi" style="margin-bottom:20px">특정 <b class="hl-r">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
 
   <details class="rc-toggle fi">
-  <summary class="rc-toggle-head" style="--rc-c:var(--dim)">주요 우승 경력<span class="rc-toggle-count en">9</span></summary>
-  <div style="padding:12px 14px">
-  <p class="bp" style="margin-bottom:14px;font-size:12px">특정 <b class="hl-r">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다.</p>
-<div class="ach-list fi">
-    <div class="ach"><div class="ach-title">🏆 클래식 3관</div><div class="ach-races">사츠키상(4월 전반) → 일본 더비(5월 후반) → 국화상(10월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🏆 트리플 티아라</div><div class="ach-races">벚꽃상(4월 전반) → 오크스(5월 후반) → 추화상(10월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🌸 봄 시니어 3관</div><div class="ach-races">오사카배(3월 후반) → 텐노상 봄(4월 후반) → 타카라즈카 기념(6월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🍂 가을 시니어 3관</div><div class="ach-races">텐노상 가을(10월 후반) → 재팬컵(11월 후반) → 아리마 기념(12월 후반)</div></div>
-    <div class="ach"><div class="ach-title">👑 봄가을 텐노상 제패</div><div class="ach-races">텐노상 봄(4월 후반) + 텐노상 가을(10월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🎪 봄가을 그랑프리 제패</div><div class="ach-races">타카라즈카 기념(6월 후반) + 아리마 기념(12월 후반)</div></div>
-    <div class="ach"><div class="ach-title">⚡ 봄가을 스프린트 제패</div><div class="ach-races">타카마츠노미야 기념(3월 후반) + 스프린터스 S(9월 후반)</div></div>
-    <div class="ach"><div class="ach-title">💨 봄가을 <b class="hl-g">마일</b> 제패</div><div class="ach-races">야스다 기념(6월 전반) + <b class="hl-g">마일</b> CS(11월 후반)</div></div>
-    <div class="ach"><div class="ach-title">🏴 봄가을 <b class="hl-c">더트</b> 제패</div><div class="ach-races">페브러리 S(2월 후반) + 챔피언스컵(12월 전반)</div></div>
-  </div>
+  <summary class="rc-toggle-head" style="--rc-c:#8b7355;--rc-t:rgba(212,175,55,.08);--rc-b2:rgba(180,150,60,.12);background:linear-gradient(160deg,rgba(255,255,255,.85) 30%,rgba(240,220,160,.18))">클래식 제패 · 시니어 제패 일람<span class="rc-toggle-count en">9</span></summary>
+  <div class="rc-group">
+    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">클래식 3관</span><div class="rc-tags"><span class="rc-tag dist">사츠키상 → 일본 더비 → 국화상</span></div></div>
+    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">트리플 티아라</span><div class="rc-tags"><span class="rc-tag dist">벚꽃상 → 오크스 → 추화상</span></div></div>
+    <div class="rc"><span class="rc-time">🌸</span><span class="rc-name">봄 시니어 3관</span><div class="rc-tags"><span class="rc-tag dist">오사카배 → 텐노상 봄 → 타카라즈카 기념</span></div></div>
+    <div class="rc"><span class="rc-time">🍂</span><span class="rc-name">가을 시니어 3관</span><div class="rc-tags"><span class="rc-tag dist">텐노상 가을 → 재팬컵 → 아리마 기념</span></div></div>
+    <div class="rc"><span class="rc-time">👑</span><span class="rc-name">봄가을 텐노상 제패</span><div class="rc-tags"><span class="rc-tag dist">텐노상 봄 + 텐노상 가을</span></div></div>
+    <div class="rc"><span class="rc-time">🎪</span><span class="rc-name">봄가을 그랑프리 제패</span><div class="rc-tags"><span class="rc-tag dist">타카라즈카 기념 + 아리마 기념</span></div></div>
+    <div class="rc"><span class="rc-time">⚡</span><span class="rc-name">봄가을 스프린트 제패</span><div class="rc-tags"><span class="rc-tag dist">타카마츠노미야 기념 + 스프린터스 S</span></div></div>
+    <div class="rc"><span class="rc-time">💨</span><span class="rc-name">봄가을 마일 제패</span><div class="rc-tags"><span class="rc-tag dist">야스다 기념 + 마일 CS</span></div></div>
+    <div class="rc"><span class="rc-time">🏴</span><span class="rc-name">봄가을 더트 제패</span><div class="rc-tags"><span class="rc-tag dirt">페브러리 S + 챔피언스컵</span></div></div>
   </div>
   </details>
 
@@ -1328,14 +1328,14 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="dv"><hr></div>
 
   <div class="sh fi" id="s-flow"><div class="sh-title">육성 플로우</div><div class="sh-sub en">Training Flow</div></div>
-  <p class="bp fi">홈 화면 우측 하단의 "육성" 버튼을 누르면 아래 순서대로 화면이 진행된다. 게임 내 화면 순서 그대로 따라가면 된다.</p>
+  <p class="bp fi">홈 화면 우측 하단의 <b class="hl-o">육성</b> 버튼을 누르면 아래 순서대로 화면이 진행된다. 게임 내 화면 순서 그대로 따라가면 된다.</p>
 
   <div class="flow fi">
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4>시나리오 선택</h4><p>처음이라면 <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b>를 추천한다. 시스템이 가장 단순하다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4>육성할 캐릭터 선택</h4><p>첫 육성은 <b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b>(<b class="hl-g">단거리</b> <b class="hl-p">도주</b>)를 추천. 스피드만 올리면 대부분 레이스에서 승리한다.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">3</span></div><div class="fl-line"></div><div class="fl-c"><h4>인자 부모 2명 선택</h4><p>자기 개체 1명 + <b class="hl-o">렌탈</b>(친구 개체) 1명. 처음에는 아무나 골라도 된다. 나중에 인자를 이해하면 전략적으로 선택하게 된다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--sta)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>서포트카드 6장 편성</h4><p>본인 소유 5장 + 친구에게 <b class="hl-o">렌탈</b> 1장 = 총 6장. 풀돌 친구 카드 1장이 핵심 전력이다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:#9c27b0"><span class="en">5</span></div><div class="fl-c"><h4>72턴 육성 시작</h4><p>주니어(1년) → 클래식(2년) → 시니어(3년), 매턴 훈련·레이스·휴식·외출 중 하나를 선택한다. 육성이 끝나면 인자를 획득하고, 완성된 개체를 팀 레이스에 배치할 수 있다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">4</span></div><div class="fl-line"></div><div class="fl-c"><h4>서포트카드 6장 편성</h4><p>본인 소유 5장 + 친구에게 <b class="hl-o">렌탈</b> 1장 = 총 6장. 풀돌 친구 카드 1장이 핵심 전력이다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">5</span></div><div class="fl-c"><h4>육성 시작</h4><p><b class="hl-c">주니어</b>(1년) → <b class="hl-p">클래식</b>(2년) → <b class="hl-g">시니어</b>(3년), 총 72턴 동안 매턴 훈련·레이스·휴식·외출 중 하나를 선택한다. 육성이 끝나면 <b class="hl-o">인자</b>를 획득하고, 완성된 개체를 <b class="hl-o">팀 레이스</b>에 배치할 수 있다.</p></div></div>
   </div>
 
   <div class="ib pk fi"><div class="ib-l">핵심</div><p>육성을 완료한 개체만 팀 레이스에 편성할 수 있다. 육성 없이 팀 레이스에 직접 참가하는 것은 불가능하다.</p></div>
@@ -1347,7 +1347,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="flow fi">
     <div class="fl"><div class="fl-dot" style="background:var(--green)"><span class="en">1</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="ch" style="--ch:rgba(238,111,171,.2)">사쿠라 바쿠신 오</b> + <b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,169,95,.22),rgba(0,169,95,.12));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">URA 파이널스</b></h4><p><b class="hl-g">단거리</b> <b class="hl-p">도주</b> 캐릭터. 스피드만 올리면 대부분 레이스에서 승리한다. 게임의 기본 흐름(훈련 → 레이스 → 이벤트 선택지)을 익히는 단계.</p></div></div>
     <div class="fl"><div class="fl-dot" style="background:var(--pink)"><span class="en">2</span></div><div class="fl-line"></div><div class="fl-c"><h4><b class="hl-o">서포트카드</b> 덱 편성</h4><p>본인 소유 5장 + 친구에게 렌탈 1장 = 총 6장. SSR 0~1돌보다 SR 풀돌이 대부분 더 강하므로, 레어도보다 <b class="hl-o">돌파 수</b>를 기준으로 선택. <a href="https://m.inven.co.kr/uma/compare/" target="_blank" rel="noopener noreferrer">인벤 카드 비교</a>에서 트레이닝 상승치를 확인하면 카드 간 우열을 숫자로 판단할 수 있다.</p></div></div>
-    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-c"><h4><b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b>(최신 시나리오)로 전환</h4><p>URA가 익숙해지면 현재 메타 시나리오로 이동. <b class="ch" style="--ch:rgba(36,89,180,.22)">에어 샤커</b> 편성이 핵심. 육성 고점이 훨씬 높다.</p></div></div>
+    <div class="fl"><div class="fl-dot" style="background:var(--sky)"><span class="en">3</span></div><div class="fl-c"><h4>메카 우마무스메(최신 시나리오)로 전환</h4><p>URA가 익숙해지면 현재 메타 시나리오로 이동. <b class="ch" style="--ch:rgba(36,89,180,.22)">에어 샤커</b> 편성이 핵심. 육성 고점이 훨씬 높다.</p></div></div>
   </div>
 
   <div class="ib pk fi"><div class="ib-l">카드 편성 팁</div><p><b class="hl-g">단거리</b>·<b class="hl-g">마일</b>은 스피드 2 + 파워 1 + 근성 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(255,143,0,.22),rgba(255,193,7,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">대풍식제</b> 추천), <b class="hl-g">중거리</b>·<b class="hl-g">장거리</b>는 스피드 2 + 스태미나 1 + 파워 1 + 지능 1(<b style="font-weight:700;background-image:linear-gradient(90deg,rgba(0,188,212,.22),rgba(0,169,95,.15));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone">메카 우마무스메</b> 추천)이 기본 틀이다. 나머지 1장은 캐릭터의 성장 포인트가 낮은 영역을 보강하는 카드로 채우면 균형이 맞는다.</p></div>
@@ -1494,7 +1494,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <button class="sn" data-s="t-community">커뮤니티</button>
   </nav>
 
-  <div class="sh fi" id="t-jewel"><div class="sh-title"><img src="images/jewel.webp" alt="쥬얼" style="width:28px;height:28px;object-fit:contain;vertical-align:-4px;margin-right:6px"><b class="hl-o">쥬얼</b> 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
+  <div class="sh fi" id="t-jewel"><div class="sh-title"><img src="images/jewel.webp" alt="쥬얼" style="width:28px;height:28px;object-fit:contain;vertical-align:-4px;margin-right:6px">쥬얼 운용 철칙</div><div class="sh-sub en">Jewel Management</div></div>
   <div class="rule-list fi">
     <div class="rule-card">
       <div class="rule-num en">01</div>
@@ -1701,7 +1701,7 @@ var isDeepLink=false;
   if(!hash) return;
   isDeepLink=true;
   /* section→tab mapping */
-  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-flow':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-flow':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
   const tabId=secMap[hash]||hash;
   const tab=document.getElementById('tab-'+tabId);
   if(tab) tab.click();
@@ -1799,7 +1799,7 @@ function initSubNavObserver(navId,sectionIds){
 }
 initSubNavObserver('subNavPrep',['s-install','s-reroll','s-first']);
 initSubNavObserver('subNavStart',['s-card-prep','s-flow','s-train','s-teamrace','s-circle','s-daily','s-factor','s-mistakes']);
-initSubNavObserver('subNavCard',['c-awaken','c-level','c-limit','c-gacha']);
+initSubNavObserver('subNavSys',['sy-train','c-awaken','c-level','c-limit','c-gacha','sy-g1','sy-ach']);
 initSubNavObserver('subNavTips',['t-jewel','t-future','t-rental','t-guides','t-community']);
 
 /* ── Section deep link copy buttons ── */
