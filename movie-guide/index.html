@@ -24,32 +24,22 @@
 <link rel="apple-touch-icon" href="../images/ura.png">
 <link rel="apple-touch-icon-precomposed" href="../images/ura.png">
 <link rel="preload" as="image" href="../images/rttt-poster.jpg">
+<link rel="preload" as="image" href="../images/uma.webp">
 <style>
 /* ── 극장판 가이드 전용 ── */
 :root{--dot-active:var(--green)}
 body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95,.1) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 75% 15%,rgba(233,80,152,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(79,184,230,.06) 0%,transparent 50%)}
 .mv-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
-.mv-hero-title{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.06em;line-height:1.1;color:var(--bright);animation:fadeUp .8s ease .15s both}
+.mv-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 70%,rgba(0,169,95,.06) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 30% 40%,rgba(233,80,152,.04) 0%,transparent 60%);pointer-events:none}
+.mv-hero-title{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.06em;line-height:1.1;color:var(--bright);position:relative;z-index:1;animation:fadeUp .8s ease .1s both}
 .mv-hero-title .sub{display:block;font-family:'Outfit',sans-serif;font-size:clamp(12px,2vw,18px);font-weight:400;letter-spacing:.06em;line-height:2;color:var(--dim);margin-top:20px;text-transform:uppercase}
-.mv-hero-desc{max-width:520px;font-size:14px;font-weight:400;color:var(--dim);line-height:1.85;margin-top:32px;animation:fadeUp .8s ease .3s both}
-.mv-hero-line{width:1px;height:72px;background:linear-gradient(to bottom,transparent,var(--border-s),transparent);margin-top:48px;animation:fadeUp .8s ease .45s both}
+.mv-hero-desc{max-width:520px;font-size:14px;font-weight:400;color:var(--dim);line-height:1.85;margin-top:32px;position:relative;z-index:1;animation:fadeUp .8s ease .3s both}
+.mv-hero-line{width:1px;height:72px;background:linear-gradient(to bottom,transparent,var(--green),transparent);margin-top:48px;position:relative;z-index:1;animation:fadeUp .8s ease .5s both;opacity:.35}
 .mv-section{padding:96px 24px;max-width:920px;margin:0 auto}
-.mv-label{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
-.mv-title{font-size:clamp(27px,5vw,44px);font-weight:800;letter-spacing:-.055em;line-height:1.15;color:var(--bright);margin-bottom:18px}
-.mv-desc{font-size:14px;font-weight:400;color:var(--dim);line-height:1.85;max-width:560px}
-.mv-concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
-.mv-concept-card{background:var(--bg-warm);border:1px solid var(--border);border-radius:14px;padding:26px 22px;transition:border-color .3s,box-shadow .3s}
-.mv-concept-card:hover{border-color:var(--border-s);box-shadow:0 2px 20px rgba(0,0,0,.04)}
-.mv-concept-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:12px}
-.mv-concept-card h3{font-size:14px;font-weight:700;color:var(--bright);letter-spacing:-.03em;margin-bottom:6px}
-.mv-concept-card p{font-size:12.5px;font-weight:400;color:var(--dim);line-height:1.75}
 
 @media(max-width:640px){
-  .mv-concept-grid{grid-template-columns:1fr}
   .mv-hero{padding:48px 20px}
-  .mv-hero-title,.mv-title{font-size:32px;line-height:1.12}
-  .mv-hero-title{letter-spacing:-.06em}
-  .mv-title{letter-spacing:-.055em}
+  .mv-hero-title{font-size:32px;line-height:1.12;letter-spacing:-.06em}
   .mv-section{padding:52px 18px}
 }
 .mv-footer{text-align:center;padding:52px 24px 32px;font-size:11px;color:var(--dim);font-weight:400;line-height:1.75}
@@ -68,6 +58,7 @@ body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95
 </nav>
 
 <section class="mv-hero" id="hero">
+  <img src="../images/uma.webp" alt="" style="width:64px;height:64px;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-bottom:28px;animation:fadeUp .8s ease both;position:relative;z-index:1">
   <h1 class="mv-hero-title">
     우마무스메 프리티 더비<br>극장판 관람 가이드
     <span class="sub en">Uma Musume Pretty Derby<br>A spoiler-free companion</span>
