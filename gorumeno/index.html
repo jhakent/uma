@@ -10,1723 +10,626 @@
   <meta property="og:url" content="https://jhakent.github.io/uma/gorumeno/"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="theme-color" content="#1a1620"/>
+  <meta name="theme-color" content="#ffffff"/>
   <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 <style>
-/* ══════════════════════════════════════
-   CONFLICT RESETS — ../style.css 충돌 해소
-   ══════════════════════════════════════ */
-
-/* body::before: 공용 CSS의 초록/핑크 오버레이 무효화 */
-body::before { display: none !important; }
-
-/* .pill: 공용 CSS의 16×16 컬러 스와치 → 고루메노의 텍스트 배지로 복원 */
-.page .pill {
-  width: auto; height: auto;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(255,255,255,0.14);
+/* ══ CONFLICT RESETS — ../style.css 오버라이드 ══ */
+body::before { background:
+  radial-gradient(ellipse 80% 60% at 12% 80%, rgba(218,60,87,.05) 0%, transparent 60%),
+  radial-gradient(ellipse 70% 50% at 88% 20%, rgba(87,74,119,.06) 0%, transparent 55%),
+  radial-gradient(ellipse 60% 40% at 50% 50%, rgba(224,210,61,.03) 0%, transparent 50%) !important;
 }
+.goru .pill { width:auto; height:auto; border-radius:999px; background:rgba(255,255,255,.97); border:1px solid rgba(0,0,0,.04); }
+.goru .timeline { max-width:none; padding:0; }
+.goru .note-box { background:linear-gradient(135deg,rgba(224,210,61,.06),rgba(87,74,119,.04)); border:1px solid var(--border); border-radius:14px; }
+.goru .result-chip { background:none; }
+.goru .footer { max-width:none; }
+.goru .sh, .goru .sh-title, .goru .sh-sub { all:unset; }
 
-/* .timeline: 공용 CSS의 padding/max-width 제거 */
-.page .timeline { max-width: none; padding: 0; position: relative; }
-
-/* .note-box: 공용 CSS의 bg-warm 변수 충돌 */
-.page .note-box { background: linear-gradient(135deg, rgba(224,210,61,0.08), rgba(87,74,119,0.05)); }
-
-/* .result-chip: 공용 CSS의 --chip-c 변수 대신 직접 지정 */
-.page .result-chip { background: none; }
-
-/* .footer: 공용 CSS의 max-width 충돌 */
-.footer { max-width: none; }
-
-/* .sh, .sh-title 등 공용 서브헤딩 스타일 무효화 */
-.page .sh, .page .sh-title { all: unset; }
-
-
-/* ══════════════════════════════════════
-   GORUMENO — DESIGN SYSTEM
-   ══════════════════════════════════════ */
-
+/* ══ COLOR SYSTEM ══ */
 :root {
-  --bg: #fbfaf7;
-  --bg-soft: #f4f1eb;
-  --surface: rgba(255,255,255,0.84);
-  --surface-strong: #ffffff;
-  --border: rgba(0,0,0,0.08);
-  --border-strong: rgba(0,0,0,0.12);
-  --text: #232323;
-  --text-dim: #656565;
-  --text-soft: #878787;
-  --gold-main: #da3c57;
-  --gold-sub: #e0d23d;
-  --feno-main: #574a77;
-  --feno-sub: #eadc68;
-  --shadow: 0 4px 16px rgba(0,0,0,0.04);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.05);
-
-  /* 히어로 다크 팔레트 */
-  --hero-bg: #16121e;
-  --hero-surface: rgba(255,255,255,0.06);
-  --hero-border: rgba(255,255,255,0.08);
-  --hero-text: #f0eee8;
-  --hero-dim: rgba(255,255,255,0.55);
-  --hero-soft: rgba(255,255,255,0.35);
+  --gold-main:#da3c57; --gold-sub:#e0d23d;
+  --feno-main:#574a77; --feno-sub:#eadc68;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  min-width: 320px;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Noto Sans KR', sans-serif;
-  line-height: 1.72;
-  letter-spacing: -0.01em;
-  word-break: keep-all;
-  overflow-wrap: break-word;
+/* ══ HERO ══ */
+.hero-section { max-width:720px; margin:0 auto; padding:48px 24px 0; text-align:center; }
+.hero-kicker {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:8px 16px; border-radius:999px;
+  background:rgba(255,255,255,.97); border:1px solid rgba(0,0,0,.04);
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+  font-family:'Outfit',sans-serif; font-size:10px; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--dim);
 }
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-
-
-/* ══════════════════════════════════════
-   HERO — 시네마틱 다크 히어로
-   ══════════════════════════════════════ */
-
-.hero-wrap {
-  position: relative;
-  background: var(--hero-bg);
-  overflow: hidden;
+.hero-kicker-dot { width:7px; height:7px; border-radius:50%; background:linear-gradient(135deg,var(--gold-main),var(--feno-main)); }
+.hero-portraits {
+  display:flex; align-items:flex-end; justify-content:center; gap:clamp(24px,6vw,60px);
+  margin-top:32px; position:relative;
 }
-
-/* 배경 분위기 — 골드/퍼플 대각선 블룸 */
-.hero-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 8% 70%, rgba(218,60,87,0.14), transparent 60%),
-    radial-gradient(ellipse 50% 70% at 92% 60%, rgba(87,74,119,0.18), transparent 55%),
-    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(224,210,61,0.06), transparent 50%);
-  pointer-events: none;
+.hero-portrait-wrap { position:relative; }
+.hero-portrait-wrap img { width:clamp(100px,18vw,160px); height:auto; filter:drop-shadow(0 16px 32px rgba(0,0,0,.10)); position:relative; z-index:1; }
+.hero-portrait-wrap::after {
+  content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:120px; height:120px; border-radius:50%; filter:blur(28px); opacity:.18; pointer-events:none;
 }
-
-/* 하단 페이드 — 다크→라이트 전환 */
-.hero-wrap::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  pointer-events: none;
-  z-index: 2;
+.hero-portrait-wrap.gold::after { background:radial-gradient(circle,rgba(224,210,61,.9),rgba(218,60,87,.3) 55%,transparent 72%); }
+.hero-portrait-wrap.feno::after { background:radial-gradient(circle,rgba(234,220,104,.85),rgba(87,74,119,.3) 55%,transparent 72%); }
+.hero-copy { margin-top:28px; }
+.hero-title { font-size:clamp(28px,5vw,44px); font-weight:900; letter-spacing:-.06em; line-height:1.05; color:var(--bright); }
+.hero-jp { margin-top:10px; font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--dim); }
+.hero-en { font-family:'Outfit',sans-serif; font-size:11px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.6; margin-top:4px; }
+.hero-cp {
+  margin:14px auto 0; display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.04);
+  background:linear-gradient(90deg,rgba(218,60,87,.06),rgba(255,255,255,.97) 42%,rgba(87,74,119,.08));
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  font-size:11px; font-weight:700; color:var(--dim); white-space:nowrap;
 }
+.hero-cp .sep { opacity:.35; }
+.hero-desc { max-width:520px; margin:20px auto 0; font-size:14px; font-weight:400; color:var(--dim); line-height:1.85; }
+.hero-pills { display:flex; justify-content:center; flex-wrap:wrap; gap:6px; margin-top:20px; }
+.hero-pills .pill { padding:8px 13px; font-size:11px; font-weight:600; color:var(--dim); box-shadow:0 2px 10px rgba(0,0,0,.05); }
+.hero-foot { max-width:520px; margin:8px auto 0; font-size:11px; color:var(--dim); opacity:.6; line-height:1.7; }
+.mo-br { display:none; }
 
-.hero {
-  position: relative;
-  z-index: 1;
-  width: min(920px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 72px 0 80px;
-}
-
-/* 히어로 상단: 킥커 */
-.hero-top {
-  text-align: center;
-  margin-bottom: 36px;
-}
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 16px;
-  background: var(--hero-surface);
-  border: 1px solid var(--hero-border);
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--hero-dim);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.kicker-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-main), var(--feno-main));
-}
-
-/* 히어로 메인 그리드: 인물 + 카피 */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) 200px;
-  grid-template-areas: "gold copy feno";
-  align-items: end;
-  gap: 28px;
-}
-
-.hero-figure { grid-area: gold; }
-.hero-figure + .hero-copy + .hero-figure { grid-area: feno; }
-.hero-copy { grid-area: copy; text-align: center; }
-
-.hero-figure {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  min-height: 200px;
-}
-
-/* 인물 아래 글로우 */
-.hero-figure::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  opacity: 0.28;
-  filter: blur(40px);
-  pointer-events: none;
-}
-
-.hero-figure.gold::before {
-  background: radial-gradient(circle, rgba(224,210,61,0.9), rgba(218,60,87,0.4) 50%, transparent 72%);
-}
-
-.hero-figure.feno::before {
-  background: radial-gradient(circle, rgba(234,220,104,0.8), rgba(87,74,119,0.4) 50%, transparent 72%);
-}
-
-.hero-figure img {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 200px);
-  height: auto;
-  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.4));
-}
-
-/* 히어로 타이틀 */
-.hero-title {
-  margin-top: 8px;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 900;
-  letter-spacing: -0.06em;
-  line-height: 1.0;
-  color: var(--hero-text);
-  text-wrap: balance;
-}
-
-.hero-sub {
-  color: var(--hero-dim);
-  text-align: center;
-}
-
-.hero-sub.jp {
-  margin-top: 14px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.hero-sub.en-line {
-  margin-top: 6px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--hero-soft);
-}
-
-.cp-note {
-  margin: 16px auto 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(90deg, rgba(218,60,87,0.12), rgba(255,255,255,0.04) 42%, rgba(87,74,119,0.14));
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--hero-dim);
-  white-space: nowrap;
-}
-
-.cp-note .sep { opacity: 0.35; }
-
-.hero-desc {
-  width: min(100%, 520px);
-  margin: 24px auto 0;
-  font-size: 14.5px;
-  font-weight: 400;
-  color: var(--hero-dim);
-  line-height: 1.82;
-}
-
-.hero-meta {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.hero-meta .pill {
-  padding: 9px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.06);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--hero-dim);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.hero-footnote {
-  width: min(100%, 520px);
-  margin: 10px auto 0;
-  font-size: 11px;
-  color: var(--hero-soft);
-  line-height: 1.7;
-  text-align: center;
-}
-
-.mobile-only-break { display: none; }
-
-
-/* ══════════════════════════════════════
-   HOOK CARDS — 히어로 직후 3열 카드
-   ══════════════════════════════════════ */
-
-.hero-hook-section {
-  position: relative;
-  z-index: 3;
-  margin-top: -40px;
-}
-
-.hero-hook {
-  width: min(920px, calc(100% - 48px));
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
+/* ══ HOOK CARDS (3열) ══ */
+.hook-row { max-width:720px; margin:32px auto 0; padding:0 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
 .hook-card {
-  position: relative;
-  padding: 20px 20px 22px;
-  border-radius: 18px;
-  border: 1px solid rgba(0,0,0,0.06);
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-  overflow: hidden;
+  position:relative; padding:18px 18px 20px; border-radius:16px;
+  background:rgba(255,255,255,.97); border:1px solid rgba(0,0,0,.04);
+  box-shadow:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02),inset 0 1px 0 rgba(255,255,255,.8);
+  overflow:hidden;
 }
+.hook-card::before { content:''; position:absolute; inset:0 0 auto 0; height:2px; }
+.hook-card.gold::before { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
+.hook-card.mix::before { background:linear-gradient(90deg,var(--gold-main),var(--feno-main)); }
+.hook-card.feno::before { background:linear-gradient(90deg,var(--feno-sub),var(--feno-main)); }
+.hook-kicker { font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:400; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.hook-card h3 { margin-top:8px; font-size:15px; font-weight:800; letter-spacing:-.04em; line-height:1.24; color:var(--bright); }
+.hook-card p { margin-top:6px; font-size:12.5px; line-height:1.72; color:var(--dim); }
 
-.hook-card::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 2px;
+/* ══ CONTENT WRAPPER ══ */
+.content { max-width:720px; margin:0 auto; padding:0 24px; }
+
+/* ══ SECTION DIVIDER (공용 .dv 활용) ══ */
+.section-head { margin-top:48px; margin-bottom:16px; }
+.section-num { font-family:'Cormorant Garamond',serif; font-size:64px; font-weight:400; font-style:italic; line-height:.8; color:var(--bright); opacity:.06; letter-spacing:-.04em; }
+.section-kicker { display:block; margin-top:8px; font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
+.section-title { margin-top:6px; font-size:clamp(22px,4.2vw,32px); font-weight:800; letter-spacing:-.055em; line-height:1.3; color:var(--bright); }
+.section-lead { margin-top:8px; font-size:14.5px; font-weight:400; color:var(--dim); line-height:1.9; max-width:560px; }
+
+/* ══ 01 CORE READ — wc 카드 패턴 ══ */
+.core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+.core-card { position:relative; overflow:hidden; }
+.core-card::before { content:''; position:absolute; inset:0; pointer-events:none; }
+.core-card.gold::before { background:linear-gradient(135deg,rgba(218,60,87,.06),transparent 70%); }
+.core-card.feno::before { background:linear-gradient(135deg,rgba(87,74,119,.07),transparent 70%); }
+.core-card.mix-gf::before { background:linear-gradient(135deg,rgba(218,60,87,.04),rgba(87,74,119,.04),transparent 70%); }
+.core-card.mix-fg::before { background:linear-gradient(135deg,rgba(87,74,119,.04),rgba(218,60,87,.04),transparent 70%); }
+.core-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; margin-bottom:4px; position:relative; z-index:1; }
+.core-card h3 { font-size:15px; position:relative; z-index:1; }
+.core-card p { font-size:13px; position:relative; z-index:1; }
+
+/* 원컷 만화 */
+.onecut { margin-top:20px; padding:22px; border-radius:16px; border:1px solid rgba(87,74,119,.08); background:rgba(255,255,255,.97); box-shadow:0 3px 18px rgba(0,0,0,.07); }
+.onecut-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
+.onecut-title { font-size:17px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-bottom:12px; }
+.onecut-media { width:100%; max-width:560px; margin:0 auto; border-radius:14px; overflow:hidden; border:1px solid rgba(87,74,119,.10); }
+.onecut-media img { display:block; width:100%; height:auto; }
+.feno-quote {
+  max-width:560px; margin:14px auto 0; padding:16px 18px; border-radius:14px;
+  background:linear-gradient(180deg,rgba(87,74,119,.05),rgba(255,255,255,.97));
+  border:1px solid rgba(87,74,119,.12); color:var(--feno-main);
+  display:grid; gap:8px;
 }
+.feno-quote .q-main { margin:0; font-size:18px; line-height:1.5; font-weight:900; }
+.feno-quote .q-sfx { font-size:13px; font-style:italic; }
+.feno-quote .q-sfx.top { justify-self:start; }
+.feno-quote .q-sfx.bottom { justify-self:end; }
 
-.hook-card.gold::before { background: linear-gradient(90deg, var(--gold-main), var(--gold-sub)); }
-.hook-card.mix::before { background: linear-gradient(90deg, var(--gold-main), var(--feno-main)); }
-.hook-card.feno::before { background: linear-gradient(90deg, var(--feno-sub), var(--feno-main)); }
-
-.hook-kicker {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-soft);
+/* ══ 02 PROFILE — char-card 패턴 응용 ══ */
+.profile-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
+.profile-card {
+  background:var(--bg); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
 }
-
-.hook-card h3 {
-  margin-top: 10px;
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 1.24;
+.profile-card:hover { border-color:var(--border-s); box-shadow:0 4px 24px rgba(0,0,0,.05); }
+.profile-bar { width:100%; height:3px; }
+.profile-card.gold .profile-bar { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
+.profile-card.feno .profile-bar { background:linear-gradient(90deg,var(--feno-main),var(--feno-sub)); }
+.profile-inner { padding:20px; }
+.profile-quote-text {
+  text-align:center; font-size:12.5px; font-weight:800; line-height:1.6; letter-spacing:-.02em;
+  white-space:pre-line; margin-bottom:14px;
 }
-
-.hook-card p {
-  margin-top: 8px;
-  font-size: 13px;
-  line-height: 1.72;
-  color: var(--text-dim);
-}
-
-
-/* ══════════════════════════════════════
-   PAGE CONTAINER
-   ══════════════════════════════════════ */
-
-.page {
-  width: min(860px, calc(100% - 48px));
-  margin: 0 auto;
-}
-
-
-/* ══════════════════════════════════════
-   SECTIONS — 공통 레이아웃
-   ══════════════════════════════════════ */
-
-.section {
-  position: relative;
-  padding: 68px 0;
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-
-.section::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: 0;
-  width: 36px; height: 1px;
-  background: linear-gradient(90deg, var(--gold-main), var(--feno-main));
-  opacity: 0.3;
-}
-
-.section-head {
-  position: relative;
-  margin-bottom: 28px;
-  padding-left: 72px;
-}
-
-.section-no {
-  position: absolute;
-  left: 0; top: -14px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 72px;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: -0.04em;
-  line-height: 0.8;
-  color: var(--text);
-  opacity: 0.06;
-}
-
-.section-kicker {
-  display: inline-block;
-  margin-bottom: 8px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-}
-
-.section-title {
-  font-size: clamp(24px, 2.8vw, 34px);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 1.15;
-  text-wrap: balance;
-}
-
-.section-title .keep { white-space: nowrap; }
-.section-title .mobile-break { display: inline; margin-left: 0.28em; }
-
-.section-lead {
-  width: 100%;
-  max-width: 62ch;
-  margin-top: 14px;
-  font-size: 15px;
-  color: var(--text-dim);
-}
-
-
-/* ══════════════════════════════════════
-   CARDS — 공통
-   ══════════════════════════════════════ */
-
-.card {
-  background: rgba(255,255,255,0.94);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.card h3 {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-}
-
-.card p {
-  margin-top: 12px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-dim);
-}
-
-.card small {
-  display: block;
-  margin-top: 12px;
-  font-size: 11px;
-  color: var(--text-soft);
-}
-
-
-/* ══════════════════════════════════════
-   01 — CORE READ (핵심 요약)
-   ══════════════════════════════════════ */
-
-.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.core-read-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-
-.tone-card { min-height: 188px; position: relative; overflow: hidden; }
-
-.tone-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  pointer-events: none;
-}
-
-.tone-card.gold { border-color: rgba(218,60,87,0.14); }
-.tone-card.gold::before { background: radial-gradient(circle at 20% 10%, var(--gold-sub), transparent 30%), linear-gradient(135deg, var(--gold-main), transparent 60%); }
-.tone-card.feno { border-color: rgba(87,74,119,0.16); }
-.tone-card.feno::before { background: radial-gradient(circle at 80% 10%, var(--feno-sub), transparent 30%), linear-gradient(225deg, var(--feno-main), transparent 60%); }
-.tone-card.mix::before { background: radial-gradient(circle at 18% 20%, var(--gold-sub), transparent 28%), radial-gradient(circle at 82% 18%, var(--feno-sub), transparent 28%), linear-gradient(135deg, var(--gold-main), transparent 55%), linear-gradient(225deg, var(--feno-main), transparent 55%); }
-
-.tone-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-soft);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.tone-label::before {
-  content: '';
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.35;
-}
-
-
-/* ══════════════════════════════════════
-   02 — PROFILE (프로필 카드)
-   ══════════════════════════════════════ */
-
-.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-
-.profile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 28px;
-  overflow: hidden;
-}
-
-.profile::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 3px;
-}
-
-.profile.gold {
-  border-color: rgba(218,60,87,0.12);
-  background: linear-gradient(180deg, rgba(218,60,87,0.06) 0%, rgba(255,255,255,0.98) 18%, rgba(255,255,255,0.96) 100%);
-  box-shadow: var(--shadow-lg);
-}
-.profile.gold::before { background: linear-gradient(90deg, var(--gold-main), var(--gold-sub)); }
-
-.profile.feno {
-  border-color: rgba(87,74,119,0.16);
-  background: linear-gradient(180deg, rgba(87,74,119,0.08) 0%, rgba(255,255,255,0.98) 18%, rgba(255,255,255,0.96) 100%);
-  box-shadow: var(--shadow-lg);
-}
-.profile.feno::before { background: linear-gradient(90deg, var(--feno-main), var(--feno-sub)); }
-
-.profile-quote {
-  display: block;
-  margin-bottom: 16px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.62;
-  letter-spacing: -0.02em;
-  white-space: pre-line;
-}
-.profile-quote::before { content: none; }
-.profile.gold .profile-quote { color: #b72f48; }
-.profile.feno .profile-quote { color: #4d416c; }
-
-.profile-top {
-  display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  align-items: center;
-  gap: 18px;
-}
-
+.profile-card.gold .profile-quote-text { color:var(--gold-main); }
+.profile-card.feno .profile-quote-text { color:var(--feno-main); }
+.profile-top { display:flex; align-items:center; gap:14px; }
 .profile-portrait {
-  width: 88px;
-  aspect-ratio: 1;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
-  flex-shrink: 0;
+  width:72px; height:72px; border-radius:12px; overflow:hidden; flex-shrink:0;
+  border:1.5px solid var(--border);
 }
-
-.profile.gold .profile-portrait {
-  border-color: rgba(218,60,87,0.16);
-  background: radial-gradient(circle at 20% 16%, rgba(224,210,61,0.24), transparent 48%), linear-gradient(180deg, rgba(255,255,255,0.96), rgba(218,60,87,0.04));
-  box-shadow: 0 12px 24px rgba(218,60,87,0.1);
-}
-
-.profile.feno .profile-portrait {
-  border-color: rgba(87,74,119,0.2);
-  background: radial-gradient(circle at 20% 16%, rgba(234,220,104,0.2), transparent 48%), linear-gradient(180deg, rgba(255,255,255,0.96), rgba(87,74,119,0.05));
-  box-shadow: 0 12px 24px rgba(87,74,119,0.12);
-}
-
-.profile-portrait img { width: 100%; height: 100%; object-fit: cover; }
-
-.profile-side { min-width: 0; }
-.profile-side h3 {
-  margin-top: 4px;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 1.06;
-}
-.profile.gold .profile-side h3 { color: #b72f48; }
-.profile.feno .profile-side h3 { color: #4d416c; }
-
-.profile-side .en-name {
-  margin-top: 8px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-}
-.profile.gold .profile-side .en-name { color: var(--gold-main); }
-.profile.feno .profile-side .en-name { color: var(--feno-main); }
-
-.profile-side .jp-name {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
-.profile.gold .profile-side .jp-name { color: #b72f48; }
-.profile.feno .profile-side .jp-name { color: #4d416c; }
-
-.profile-copy {
-  margin-top: 18px;
-  font-size: 14.5px;
-  line-height: 1.82;
-  color: var(--text-dim);
-}
-
-.keyword-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
-.keyword {
-  padding: 7px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.82);
-  color: var(--text-dim);
-}
-.profile.gold .keyword { border-color: rgba(218,60,87,0.18); background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(218,60,87,0.06)); color: #9e3045; }
-.profile.feno .keyword { border-color: rgba(87,74,119,0.2); background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(87,74,119,0.07)); color: #56497a; }
-
+.profile-card.gold .profile-portrait { border-color:rgba(218,60,87,.14); }
+.profile-card.feno .profile-portrait { border-color:rgba(87,74,119,.16); }
+.profile-portrait img { width:100%; height:100%; object-fit:cover; }
+.profile-id { flex:1; min-width:0; }
+.profile-jp { font-size:11px; font-weight:700; letter-spacing:.06em; }
+.profile-card.gold .profile-jp { color:var(--gold-main); }
+.profile-card.feno .profile-jp { color:var(--feno-main); }
+.profile-ko { font-size:22px; font-weight:900; letter-spacing:-.05em; line-height:1.1; margin-top:2px; }
+.profile-card.gold .profile-ko { color:#b72f48; }
+.profile-card.feno .profile-ko { color:#4d416c; }
+.profile-en { font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.18em; text-transform:uppercase; margin-top:4px; }
+.profile-card.gold .profile-en { color:var(--gold-main); }
+.profile-card.feno .profile-en { color:var(--feno-main); }
 .profile-facts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 18px;
-  margin-top: 18px;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:14px;
+  border-top:1px solid var(--border);
 }
-
-.fact {
-  display: grid;
-  grid-template-columns: 72px minmax(0,1fr);
-  gap: 10px;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+.fact { display:flex; flex-direction:column; gap:1px; padding:8px 0; border-bottom:1px solid var(--border); }
+.fact-label { font-size:9px; font-weight:700; color:var(--dim); text-transform:uppercase; letter-spacing:.02em; }
+.fact-value { font-size:12px; font-weight:700; color:var(--bright); }
+.profile-desc { margin-top:14px; font-size:13px; font-weight:400; color:var(--text); line-height:1.8; }
+.profile-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:12px; }
+.profile-tag {
+  padding:5px 9px; border-radius:999px; font-size:10px; font-weight:700;
+  border:1px solid var(--border); background:rgba(255,255,255,.82); color:var(--dim);
 }
+.profile-card.gold .profile-tag { border-color:rgba(218,60,87,.16); color:#9e3045; background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(218,60,87,.05)); }
+.profile-card.feno .profile-tag { border-color:rgba(87,74,119,.18); color:#56497a; background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(87,74,119,.06)); }
 
-.profile.gold .fact { border-bottom-color: rgba(218,60,87,0.10); }
-.profile.feno .fact { border-bottom-color: rgba(87,74,119,0.12); }
-
-.fact-label {
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--text-soft);
+/* ══ 02 COMPARE ══ */
+.compare-section { margin-top:24px; }
+.compare-header { margin-bottom:20px; }
+.compare-header h3 { font-size:clamp(22px,4vw,32px); font-weight:800; letter-spacing:-.055em; line-height:1.15; color:var(--bright); }
+.compare-header p { margin-top:8px; font-size:14px; color:var(--dim); line-height:1.8; max-width:520px; }
+.compare-showcase { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:end; margin-bottom:24px; }
+.showcase-fig { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; min-height:280px; }
+.showcase-fig::before { content:''; position:absolute; bottom:48px; left:50%; transform:translateX(-50%); width:160px; height:160px; border-radius:50%; filter:blur(24px); opacity:.15; pointer-events:none; }
+.showcase-fig.gold::before { background:radial-gradient(circle,rgba(224,210,61,.9),rgba(218,60,87,.2) 55%,transparent 74%); }
+.showcase-fig.feno::before { background:radial-gradient(circle,rgba(234,220,104,.85),rgba(87,74,119,.25) 55%,transparent 74%); }
+.showcase-fig img { position:relative; z-index:1; max-width:100%; max-height:400px; object-fit:contain; filter:drop-shadow(0 18px 28px rgba(0,0,0,.10)); }
+.showcase-fig figcaption {
+  position:relative; z-index:2; margin-top:10px;
+  padding:7px 12px; border-radius:999px;
+  background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04);
+  font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:400; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);
 }
-
-.fact-value {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--text);
-}
-
-.profile-facts .fact:nth-child(5) .fact-value {
-  white-space: nowrap;
-  font-size: 12px;
-  letter-spacing: -0.02em;
-}
-
-
-/* ══════════════════════════════════════
-   02 — COMPARE (비교표)
-   ══════════════════════════════════════ */
-
-.compare-block {
-  margin-top: 28px;
-  padding: 32px;
-  border-radius: 22px;
-}
-
-.compare-head h3 {
-  font-size: 36px;
-  line-height: 1.08;
-  letter-spacing: -0.06em;
-  text-wrap: balance;
-}
-
-.compare-head p {
-  margin-top: 10px;
-  max-width: 560px;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.compare-label {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
-.compare-showcase {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: end;
-}
-
-.showcase-figure {
-  position: relative;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.showcase-figure::before {
-  content: '';
-  position: absolute;
-  inset: auto 50% 52px;
-  transform: translateX(-50%);
-  width: 200px; height: 200px;
-  border-radius: 50%;
-  filter: blur(24px);
-  opacity: 0.18;
-  pointer-events: none;
-}
-
-.showcase-figure.gold::before { background: radial-gradient(circle, rgba(224,210,61,0.9), rgba(218,60,87,0.2) 55%, transparent 74%); }
-.showcase-figure.feno::before { background: radial-gradient(circle, rgba(234,220,104,0.85), rgba(87,74,119,0.25) 55%, transparent 74%); }
-
-.showcase-image {
-  position: relative;
-  z-index: 1;
-  width: auto;
-  max-width: 100%;
-  max-height: 480px;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 20px 32px rgba(0,0,0,0.12));
-}
-
-.showcase-name {
-  position: relative;
-  z-index: 2;
-  margin-top: 12px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.06);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-}
-
-/* 비교 카드 데크 */
-.compare-deck {
-  margin-top: 24px;
-  display: grid;
-  gap: 14px;
-}
-
+.compare-deck { display:grid; gap:10px; }
 .compare-topic {
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  overflow:hidden; border:1px solid rgba(0,0,0,.04); border-radius:14px;
+  background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
 }
-
 .compare-topic-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 20px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #fff;
+  display:flex; align-items:center; justify-content:center;
+  min-height:44px; padding:10px 16px;
+  font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#fff;
 }
-
 .compare-topic.appearance .compare-topic-head,
 .compare-topic.naming .compare-topic-head,
 .compare-topic.core .compare-topic-head,
-.compare-topic.common .compare-topic-head { background: linear-gradient(90deg, var(--gold-main), var(--gold-sub)); }
+.compare-topic.common .compare-topic-head { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
 .compare-topic.personality .compare-topic-head,
-.compare-topic.role .compare-topic-head { background: linear-gradient(90deg, var(--feno-main), var(--feno-sub)); }
-
-.compare-topic-body {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 72px minmax(0,1fr);
-  align-items: stretch;
-}
-
+.compare-topic.role .compare-topic-head { background:linear-gradient(90deg,var(--feno-main),var(--feno-sub)); }
+.compare-topic-body { display:grid; grid-template-columns:1fr 60px 1fr; align-items:stretch; }
 .compare-topic-vs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.02);
-  border-left: 1px solid rgba(0,0,0,0.05);
-  border-right: 1px solid rgba(0,0,0,0.05);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-weight: 400;
-  font-style: italic;
-  color: rgba(0,0,0,0.12);
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.02); border-left:1px solid rgba(0,0,0,.04); border-right:1px solid rgba(0,0,0,.04);
+  font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; font-style:italic; color:rgba(0,0,0,.10);
 }
-
-.compare-topic-side { padding: 22px 24px; }
-.compare-topic-side.gold { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(218,60,87,0.04)); }
-.compare-topic-side.feno { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(87,74,119,0.05)); }
-
-.compare-topic-name {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 12px;
-  font-weight: 900;
-  color: var(--text-soft);
-}
-
-.compare-topic-copy {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.68;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-
-.compare-bullets {
-  margin: 0;
-  padding-left: 1rem;
-  display: grid;
-  gap: 0.3rem;
-  font-size: 14px;
-  line-height: 1.68;
-  font-weight: 400;
-  list-style: none;
-  color: var(--text);
-}
-
-.compare-bullets li {
-  position: relative;
-  padding-left: 1.1rem;
-}
-
-.compare-bullets li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0.78em;
-  width: 0.4rem; height: 0.4rem;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  background: var(--gold-main);
-  box-shadow: 0 0 0 3px rgba(218,60,87,0.08);
-}
-
-.compare-topic-side.feno .compare-bullets li::before {
-  background: var(--feno-main);
-  box-shadow: 0 0 0 3px rgba(87,74,119,0.10);
-}
-
-/* 공통점 토픽 */
+.compare-topic-side { padding:18px 20px; }
+.compare-topic-side.gold { background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(218,60,87,.03)); }
+.compare-topic-side.feno { background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(87,74,119,.04)); }
+.compare-topic-name { display:block; margin-bottom:6px; font-size:11px; font-weight:900; color:var(--dim); }
+.compare-topic-copy { font-size:13px; font-weight:400; line-height:1.68; color:var(--text); }
+.compare-bullets { margin:0; padding:0; display:grid; gap:.25rem; font-size:13px; line-height:1.68; list-style:none; color:var(--text); }
+.compare-bullets li { position:relative; padding-left:1rem; }
+.compare-bullets li::before { content:''; position:absolute; left:0; top:.72em; width:.36rem; height:.36rem; border-radius:50%; transform:translateY(-50%); background:var(--gold-main); }
+.compare-topic-side.feno .compare-bullets li::before { background:var(--feno-main); }
 .compare-topic.common .compare-topic-name {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #6b6471;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(43,41,48,0.10);
-  box-shadow: 0 3px 12px rgba(25,18,22,0.04);
-  margin-bottom: 12px;
+  display:inline-flex; padding:4px 10px; border-radius:999px; font-size:11px;
+  background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.06); color:var(--dim); margin-bottom:10px;
 }
+.compare-topic.common .compare-topic-side.feno .compare-bullets li::before { background:var(--feno-sub); }
 
-.compare-topic.common .compare-topic-side { padding-top: 20px; }
-.compare-topic.common .compare-topic-vs { font-size: 20px; }
-
-.compare-topic.common .compare-topic-side.gold .compare-bullets li::before { background: var(--gold-main); }
-.compare-topic.common .compare-topic-side.feno .compare-bullets li::before { background: var(--feno-sub); box-shadow: 0 0 0 3px rgba(234,220,104,0.12); }
-
-
-/* ══════════════════════════════════════
-   03 — IN GAME STORY (스토리)
-   ══════════════════════════════════════ */
-
-.story-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-
-.story-card { position: relative; min-height: 220px; overflow: hidden; }
-.story-card::after {
-  content: '';
-  position: absolute;
-  inset: auto 24px 24px auto;
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  opacity: 0.06;
-  background: linear-gradient(135deg, var(--gold-main), var(--feno-main));
-}
-
+/* ══ 03 STORY ══ */
+.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+.story-card { position:relative; overflow:hidden; }
+.story-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(218,60,87,.03),rgba(87,74,119,.03),transparent 70%); pointer-events:none; }
 .story-step {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.03);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  color: var(--text-soft);
-  text-transform: uppercase;
+  display:inline-block; padding:4px 10px; border-radius:999px; background:rgba(0,0,0,.03);
+  font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);
+  position:relative; z-index:1;
 }
+.story-card h3 { margin-top:8px; font-size:15px; position:relative; z-index:1; }
+.story-card p { font-size:13px; position:relative; z-index:1; }
+.story-card small { display:block; margin-top:8px; font-size:10px; color:var(--dim); opacity:.6; position:relative; z-index:1; }
 
-.story-card h3 { margin-top: 14px; }
-
-
-/* ══════════════════════════════════════
-   04 — TIMELINE (원본마 대결 기록)
-   ══════════════════════════════════════ */
-
-.timeline { display: grid; gap: 10px; position: relative; }
-
-.race {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-  position: relative;
-}
-
-.race-year {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 18px 0 0;
-  font-family: 'Outfit', sans-serif;
-  position: relative;
-  z-index: 1;
-  width: 52px;
-}
-
-.race-dot {
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px rgba(0,0,0,0.08);
-  position: relative;
-  z-index: 2;
-}
-
-.race-year.gold .race-dot { background: linear-gradient(135deg, var(--gold-main), #e85f6a); box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px rgba(218,60,87,0.15); }
-.race-year.feno .race-dot { background: linear-gradient(135deg, var(--feno-main), #7a68a6); box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px rgba(87,74,119,0.15); }
-
-.race-y { font-size: 16px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); line-height: 1; margin-top: 6px; }
-.race-date { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; color: var(--text-soft); line-height: 1; }
-
-.race::after {
-  content: '';
-  position: absolute;
-  left: 25px; top: 80px; bottom: -10px;
-  width: 1px;
-  background: rgba(0,0,0,0.08);
-  z-index: 0;
-}
-
-.race:last-of-type::after { display: none; }
-
-.race-interlude { align-items: stretch; }
-.race-year-line { width: 52px; position: relative; flex-shrink: 0; }
-.race-year-line::after { content: ''; position: absolute; left: 25px; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,0.08); }
-.race-interlude::after { display: none; }
-.race-interlude .note-box { margin-top: 0; }
-.race-interlude .haruten-spotlight { margin-top: 0; }
-
+/* ══ 04 TIMELINE ══ */
+.timeline { display:grid; gap:8px; position:relative; margin-top:20px; }
+.race { display:grid; grid-template-columns:auto minmax(0,1fr); gap:14px; align-items:start; position:relative; }
+.race-year { display:flex; flex-direction:column; align-items:center; gap:3px; padding:16px 0 0; font-family:'Outfit',sans-serif; width:48px; position:relative; z-index:1; }
+.race-dot { width:10px; height:10px; border-radius:50%; position:relative; z-index:2; }
+.race-year.gold .race-dot { background:linear-gradient(135deg,var(--gold-main),#e85f6a); box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(218,60,87,.12); }
+.race-year.feno .race-dot { background:linear-gradient(135deg,var(--feno-main),#7a68a6); box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(87,74,119,.12); }
+.race-y { font-size:14px; font-weight:800; letter-spacing:-.02em; color:var(--bright); line-height:1; margin-top:4px; }
+.race-date { font-size:9px; font-weight:500; letter-spacing:.08em; color:var(--dim); }
+.race::after { content:''; position:absolute; left:23px; top:68px; bottom:-8px; width:1px; background:rgba(0,0,0,.06); z-index:0; }
+.race:last-of-type::after { display:none; }
+.race-interlude { align-items:stretch; }
+.race-year-line { width:48px; position:relative; flex-shrink:0; }
+.race-year-line::after { content:''; position:absolute; left:23px; top:0; bottom:0; width:1px; background:rgba(0,0,0,.06); }
+.race-interlude::after { display:none; }
 .race-card {
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.94);
-  padding: 22px 24px;
-  box-shadow: var(--shadow);
+  border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97);
+  padding:18px 20px; box-shadow:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
 }
+.race-head { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
+.race-name { font-size:17px; font-weight:800; letter-spacing:-.04em; line-height:1.2; color:var(--bright); }
+.race-sub { margin-top:4px; font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }
+.race-tags { display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; }
+.result-chip { padding:6px 10px; border-radius:999px; font-size:10px; font-weight:800; color:#fff; white-space:nowrap; }
+.result-chip.gold { background:linear-gradient(135deg,var(--gold-main),#f06f60); }
+.result-chip.feno { background:linear-gradient(135deg,var(--feno-main),#78609f); }
+.race-copy { margin-top:10px; font-size:13px; line-height:1.8; color:var(--dim); }
+.note-box { margin-top:10px; padding:16px 18px; border-radius:14px; }
+.note-box p { margin:0; font-size:13px; line-height:1.8; color:var(--dim); }
+.note-label { display:block; margin-bottom:4px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 
-.race-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
-.race-name { font-size: 20px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.2; text-wrap: balance; }
-.race-sub { margin-top: 6px; font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft); }
-.race-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-
-.result-chip { padding: 8px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; color: #fff; white-space: nowrap; }
-.result-chip.gold { background: linear-gradient(135deg, var(--gold-main), #f06f60); }
-.result-chip.feno { background: linear-gradient(135deg, var(--feno-main), #78609f); }
-
-.race-copy { margin-top: 14px; font-size: 15px; line-height: 1.8; color: var(--text-dim); }
-
-.note-box {
-  margin-top: 16px;
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(224,210,61,0.08), rgba(87,74,119,0.05));
-  border: 1px solid rgba(0,0,0,0.06);
+/* 하루텐 */
+.haruten {
+  padding:20px; border-radius:14px; border:1px solid rgba(0,0,0,.04);
+  background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.06);
 }
+.haruten-media { width:100%; max-width:560px; margin:0 auto; aspect-ratio:3/4; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,.04); }
+.haruten-media img { display:block; width:100%; height:100%; object-fit:cover; }
+.haruten-label { font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); margin-bottom:4px; }
+.haruten h3 { font-size:17px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-top:2px; }
+.haruten p { margin-top:10px; font-size:13px; line-height:1.78; color:var(--dim); }
 
-.note-box p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+/* ══ EX — EXTRA ══ */
+.extra-stack { display:grid; gap:10px; margin-top:20px; }
+.extra-card { position:relative; overflow:hidden; }
+.extra-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(224,210,61,.04),rgba(87,74,119,.03),transparent 70%); pointer-events:none; }
+.extra-card h3 { position:relative; z-index:1; }
+.extra-card p { position:relative; z-index:1; }
 
-.note-label {
-  display: block;
-  margin-bottom: 6px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  color: var(--text-soft);
-  text-transform: uppercase;
-}
-
-
-/* ══════════════════════════════════════
-   1컷 만화
-   ══════════════════════════════════════ */
-
-.onecut-block { margin-top: 26px; display: grid; gap: 14px; }
-.core-onecut-block { margin-top: 20px; }
-
-.onecut-card {
-  padding: 22px;
-  border: 1px solid rgba(87,74,119,0.10);
-  border-radius: 22px;
-  background:
-    radial-gradient(circle at 14% 16%, rgba(87,74,119,0.03), transparent 26%),
-    radial-gradient(circle at 86% 14%, rgba(234,220,104,0.05), transparent 22%),
-    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,252,255,0.96));
-  box-shadow: var(--shadow);
-  max-width: 960px;
-  margin-inline: auto;
-}
-
-.onecut-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.onecut-kicker::before {
-  content: '';
-  width: 9px; height: 9px;
-  border-radius: 999px;
-  background: currentColor;
-  opacity: 0.35;
-}
-
-.onecut-title { font-size: 20px; line-height: 1.2; font-weight: 800; letter-spacing: -0.04em; margin: 0 0 12px; }
-
-.onecut-media {
-  width: 100%;
-  max-width: 640px;
-  margin-inline: auto;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(87,74,119,0.12);
-  background: #fff;
-}
-.onecut-media img { display: block; width: 100%; height: auto; }
-
-.fenomeno-quote {
-  position: relative;
-  display: grid;
-  gap: 10px;
-  margin: 14px auto 0;
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(87,74,119,0.06), rgba(255,255,255,0.96));
-  border: 1px solid rgba(87,74,119,0.14);
-  color: var(--feno-main);
-  max-width: 680px;
-}
-
-.fenomeno-quote .quote-main { margin: 0; font-size: 20px; line-height: 1.5; font-weight: 900; }
-.fenomeno-quote .quote-sfx.top { font-size: 15px; justify-self: start; font-style: italic; }
-.fenomeno-quote .quote-sfx.bottom { font-size: 14px; justify-self: end; font-style: italic; }
-
-
-/* ══════════════════════════════════════
-   하루텐 스포트라이트
-   ══════════════════════════════════════ */
-
-.haruten-spotlight { margin-top: 16px; padding: 26px; }
-
-.haruten-media {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-  aspect-ratio: 3 / 4;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-.haruten-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-.haruten-copy h3 { margin-top: 4px; font-size: 22px; font-weight: 900; line-height: 1.2; letter-spacing: -0.04em; }
-.haruten-copy .compare-label { margin-bottom: 4px; }
-.haruten-copy p { margin-top: 12px; font-size: 15px; line-height: 1.78; color: var(--text-dim); }
-
-
-/* ══════════════════════════════════════
-   EX — 황금일족 / EXTRA
-   ══════════════════════════════════════ */
-
-.reason-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-
-.extra-box { display: grid; gap: 18px; }
-
-.extra-card { position: relative; overflow: hidden; }
-.extra-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  background: radial-gradient(circle at 14% 18%, rgba(224,210,61,0.85), transparent 22%), radial-gradient(circle at 85% 16%, rgba(87,74,119,0.4), transparent 20%);
-  pointer-events: none;
-}
-
-.clan-box { margin-top: 22px; padding: 28px; }
-.clan-box h3 { font-size: 22px; font-weight: 900; letter-spacing: -0.045em; line-height: 1.18; text-wrap: balance; }
-.clan-box > p { margin-top: 12px; font-size: 15px; color: var(--text-dim); }
-
-.clan-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-
+.clan-box { margin-top:20px; padding:22px; border-radius:16px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); box-shadow:0 3px 18px rgba(0,0,0,.07); }
+.clan-box h3 { font-size:17px; font-weight:800; letter-spacing:-.04em; color:var(--bright); }
+.clan-box > p { margin-top:8px; font-size:13px; color:var(--dim); line-height:1.8; }
+.clan-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
 .clan-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-  overflow: hidden;
-  padding: 18px;
-  border-radius: 18px;
-  border: 1px solid color-mix(in srgb, var(--main) 20%, rgba(0,0,0,0.04));
-  background: linear-gradient(180deg, color-mix(in srgb, var(--main) 8%, white) 0%, rgba(255,255,255,0.96) 58%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72), 0 6px 20px rgba(0,0,0,0.04);
+  display:grid; grid-template-columns:80px 1fr; gap:12px; align-items:start;
+  padding:14px; border-radius:14px; overflow:hidden; position:relative;
+  border:1px solid color-mix(in srgb,var(--main) 16%,rgba(0,0,0,.04));
+  background:linear-gradient(180deg,color-mix(in srgb,var(--main) 6%,white) 0%,rgba(255,255,255,.97) 50%);
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
 }
+.clan-item::before { content:''; position:absolute; inset:0 0 auto 0; height:2px; background:linear-gradient(90deg,var(--main),var(--sub)); }
+.clan-thumb { width:80px; aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid color-mix(in srgb,var(--main) 16%,rgba(0,0,0,.04)); }
+.clan-thumb img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top; }
+.clan-body { min-width:0; }
+.clan-item h4 { font-size:15px; font-weight:900; letter-spacing:-.03em; line-height:1.25; color:var(--main); }
+.clan-item p { margin-top:4px; font-size:12px; line-height:1.6; color:var(--dim); }
+.clan-sub { display:inline-block; margin-top:6px; padding:4px 8px; border-radius:999px; font-size:10px; font-weight:800; background:color-mix(in srgb,var(--main) 10%,white); color:var(--main); border:1px solid color-mix(in srgb,var(--main) 16%,white); }
+.clan-item.staygold .clan-sub { color:#576898; border-color:color-mix(in srgb,#576898 16%,white); }
+.clan-item.donna { background:linear-gradient(180deg,rgba(207,47,43,.06) 0%,rgba(255,255,255,.97) 50%); }
 
-.clan-item::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--main), var(--sub));
-}
-
-.clan-thumb {
-  position: relative;
-  width: 100px;
-  aspect-ratio: 1;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--main) 20%, rgba(0,0,0,0.05));
-  background:
-    radial-gradient(circle at 22% 18%, color-mix(in srgb, var(--sub) 28%, white), transparent 42%),
-    linear-gradient(180deg, rgba(255,255,255,0.96), color-mix(in srgb, var(--main) 6%, white));
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-}
-
-.clan-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-
-.clan-body { min-width: 0; }
-.clan-item h4 { font-size: 17px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.25; color: var(--main); }
-.clan-item p { margin-top: 8px; font-size: 13px; line-height: 1.64; color: var(--text-dim); }
-
-.clan-item .clan-sub {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--main) 22%, white), color-mix(in srgb, var(--sub) 46%, white));
-  color: color-mix(in srgb, var(--main) 96%, black);
-  border: 1px solid color-mix(in srgb, var(--main) 26%, white);
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.clan-item.staygold .clan-sub { color: #576898; border-color: color-mix(in srgb, #576898 18%, white); }
-
-.clan-item.donna { background: linear-gradient(180deg, rgba(207,47,43,0.10) 0%, rgba(255,255,255,0.96) 58%); }
-
-
-/* ══════════════════════════════════════
-   FOOTER
-   ══════════════════════════════════════ */
-
-.footer {
-  width: min(860px, calc(100% - 48px));
-  margin: 0 auto;
-  text-align: center;
-  padding: 40px 0 34px;
-  font-size: 11px;
-  color: var(--text-dim);
-  font-weight: 400;
-  line-height: 1.8;
-}
-
-.footer .ico { font-size: 20px; display: block; margin-bottom: 8px; opacity: 0.3; }
-.footer a { color: inherit; text-decoration: none; }
-.footer .copy a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.12); }
-.footer-links { display: grid; grid-template-columns: repeat(2,1fr); max-width: 320px; margin: 0 auto 12px; gap: 8px; }
-.footer-links a {
-  font-size: 11px; font-weight: 500; color: var(--text); text-decoration: none;
-  padding: 8px 6px; border-radius: 10px; text-align: center;
-  background: rgba(255,255,255,0.97);
-  border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.footer-links a:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.09); }
-
-
-/* ══════════════════════════════════════
-   SIDE NAV
-   ══════════════════════════════════════ */
-
-.side-nav {
-  position: fixed;
-  top: 50%; right: 14px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 120;
-}
-
-.side-dot {
-  position: relative;
-  width: 6px; height: 6px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.18);
-  padding: 0;
-  cursor: pointer;
-  transition: transform 0.28s ease, background 0.28s ease;
-}
-
+/* ══ SIDE NAV ══ */
+.side-nav { position:fixed; top:50%; right:14px; transform:translateY(-50%); display:flex; flex-direction:column; gap:8px; z-index:100; }
+.side-dot { position:relative; width:6px; height:6px; border:none; border-radius:50%; background:rgba(0,0,0,.12); padding:0; cursor:pointer; transition:all .3s; }
+.side-dot:hover,.side-dot.on { background:linear-gradient(135deg,var(--gold-main),var(--gold-sub)); transform:scale(1.6); }
 .side-dot .side-tip {
-  position: absolute;
-  right: 18px; top: 50%;
-  transform: translateY(-50%) translateX(6px);
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  color: var(--text-dim);
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 1;
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  position:absolute; right:18px; top:50%; transform:translateY(-50%) translateX(6px); opacity:0; pointer-events:none;
+  white-space:nowrap; padding:5px 9px; border-radius:999px;
+  background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04); box-shadow:0 4px 16px rgba(0,0,0,.08);
+  color:var(--dim); font-size:10px; font-weight:600; transition:opacity .2s,transform .2s;
 }
+.side-dot:hover .side-tip { opacity:1; transform:translateY(-50%) translateX(0); }
 
-.side-dot:hover .side-tip,
-.side-dot:focus-visible .side-tip { opacity: 1; transform: translateY(-50%) translateX(0); }
+/* ══ FOOTER ══ */
+.goru .footer { text-align:center; padding:28px 24px; font-size:11px; color:var(--dim); line-height:1.75; max-width:720px; margin:0 auto; }
 
-.side-dot:hover,
-.side-dot.on {
-  background: linear-gradient(135deg, var(--gold-main), var(--gold-sub));
-  transform: scale(1.7);
-  box-shadow: 0 0 0 6px rgba(224,210,61,0.10);
+/* ══ RESPONSIVE ══ */
+@media(min-width:901px){
+  .haruten { display:grid; grid-template-columns:320px 1fr; gap:24px; align-items:start; }
+  .haruten-media { max-width:320px; margin:0; }
 }
-
-
-/* ══════════════════════════════════════
-   RESPONSIVE
-   ══════════════════════════════════════ */
-
-@media (min-width: 901px) {
-  .haruten-spotlight {
-    display: grid;
-    grid-template-columns: 380px minmax(0, 1fr);
-    gap: 32px;
-    align-items: start;
-  }
-  .haruten-media { max-width: 380px; margin: 0; }
-  .haruten-copy { min-width: 0; padding-top: 0; }
-  .haruten-copy h3 { margin-top: 2px; }
+@media(max-width:900px){
+  .hook-row,.core-grid,.story-grid,.profile-grid,.clan-grid { grid-template-columns:1fr; }
+  .hero-portraits { gap:20px; }
+  .compare-topic-body { grid-template-columns:1fr; }
+  .compare-topic-vs { min-height:36px; border-left:0; border-right:0; border-top:1px solid rgba(0,0,0,.04); border-bottom:1px solid rgba(0,0,0,.04); }
 }
-
-@media (max-width: 900px) {
-  .page { width: min(100%, calc(100% - 28px)); }
-  .hero { width: min(100%, calc(100% - 28px)); }
-  .hero-hook { width: min(100%, calc(100% - 28px)); }
-  .hero-hook, .duo, .story-grid, .reason-grid, .core-read-grid, .extra-box, .clan-grid { grid-template-columns: 1fr; }
-  .hero { padding: 52px 0 64px; }
-  .hero-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    grid-template-areas: "copy copy" "gold feno";
-    gap: 18px 14px;
-  }
-  .hero-figure { min-height: 160px; }
-  .hero-figure::before { width: 120px; height: 120px; }
-  .hero-figure img { width: min(100%, 160px); }
-  .hero-title { font-size: clamp(30px, 8vw, 46px); }
-  .section { padding: 54px 0; }
-  .section-head { padding-left: 56px; }
-  .section-no { font-size: 56px; top: -10px; }
-  .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+@media(max-width:768px){ .side-nav{display:none!important} }
+@media(max-width:640px){
+  .hero-section{padding:36px 18px 0} .content{padding:0 18px} .hook-row{padding:0 18px}
+  .hero-title{font-size:28px} .hero-desc{font-size:13px}
+  .section-num{font-size:48px} .section-title{font-size:22px}
+  .compare-header h3{font-size:20px}
+  .profile-top{gap:10px} .profile-portrait{width:60px;height:60px;border-radius:10px} .profile-ko{font-size:18px}
+  .profile-facts{grid-template-columns:1fr}
+  .mo-br{display:block}
+  .race{gap:10px} .race-year{width:40px;padding:12px 0 0} .race-dot{width:8px;height:8px}
+  .race-y{font-size:12px} .race::after{left:19px;top:56px} .race-year-line{width:40px} .race-year-line::after{left:19px}
+  .race-name{font-size:15px} .race-head{flex-direction:column} .race-tags{justify-content:flex-start}
+  .clan-item{grid-template-columns:64px 1fr;gap:10px;padding:12px} .clan-thumb{width:64px;border-radius:10px}
+  .clan-item h4{font-size:14px}
+  .showcase-fig{min-height:180px} .showcase-fig img{max-height:200px} .showcase-fig::before{width:100px;height:100px}
 }
-
-@media (max-width: 768px) {
-  .side-nav { display: none !important; }
-  .core-read-grid { grid-template-columns: 1fr; }
-
-  .onecut-card { padding: 18px; border-radius: 20px; }
-  .onecut-kicker { font-size: 10px; gap: 7px; margin-bottom: 7px; }
-  .onecut-title { font-size: 18px; margin: 0 0 10px; }
-  .onecut-media, .fenomeno-quote { max-width: none; }
-  .fenomeno-quote { padding: 14px 15px; gap: 8px; }
-  .fenomeno-quote .quote-main { font-size: 16px; line-height: 1.58; }
-  .fenomeno-quote .quote-sfx.top { font-size: 13px; }
-  .fenomeno-quote .quote-sfx.bottom { font-size: 12px; }
-
-  .haruten-spotlight { padding: 18px; }
-  .grid-4 { grid-template-columns: 1fr; }
-  .compare-block { padding: 24px; }
-  .compare-head h3 { font-size: 26px; line-height: 1.15; }
-  .compare-head p { font-size: 15px; }
-  .compare-showcase { gap: 12px; margin-top: 22px; }
-  .showcase-figure { min-height: 200px; }
-  .showcase-figure::before { width: 120px; height: 120px; bottom: 44px; filter: blur(16px); }
-  .showcase-image { max-height: 220px; }
-  .showcase-name { margin-top: 10px; padding: 7px 12px; font-size: 10px; }
-  .compare-deck { margin-top: 20px; gap: 12px; }
-  .compare-topic { border-radius: 16px; }
-  .compare-topic-head { min-height: 44px; padding: 10px 16px; font-size: 11px; }
-  .compare-topic-body { grid-template-columns: 1fr; }
-  .compare-topic-vs {
-    min-height: 40px;
-    border-left: 0; border-right: 0;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    font-size: 20px;
-  }
-  .compare-topic-side { padding: 16px 18px; }
-  .compare-topic-copy { font-size: 13px; }
-  .compare-topic.common .compare-topic-vs { font-size: 18px; }
-}
-
-@media (max-width: 640px) {
-  .profile-facts { grid-template-columns: 1fr; margin-top: 16px; }
-  .hero-desc, .section-lead, .card p, .profile-copy, .race-copy, .haruten-copy p, .clan-item p { font-size: 14px; line-height: 1.78; }
-  .hero-sub.jp { font-size: 13px; }
-  .hero-sub.en-line { font-size: 10px; letter-spacing: 0.18em; }
-  .cp-note { padding: 8px 12px; gap: 6px; font-size: 10px; }
-  .mobile-only-break { display: block; }
-  .hero-footnote { font-size: 11px; }
-  .profile-quote { font-size: 12px; margin-bottom: 10px; }
-  .compare-bullets { font-size: 13px; gap: 0.24rem; }
-  .footer { width: min(100%, calc(100% - 28px)); padding: 34px 0 28px; }
-  .section-title { font-size: 26px; line-height: 1.16; }
-  .section-title .mobile-break { display: block; margin-left: 0; margin-top: 0.08em; }
-  .hero-meta { gap: 6px; }
-  .hero-meta .pill { font-size: 10px; padding: 7px 10px; }
-  .profile-top { grid-template-columns: 74px minmax(0,1fr); gap: 14px; }
-  .profile { padding: 22px 20px; }
-  .profile-portrait { width: 74px; border-radius: 14px; }
-  .profile-side h3 { font-size: 22px; }
-  .fact { grid-template-columns: 72px minmax(0,1fr); gap: 8px; }
-  .compare-block, .clan-box { padding: 20px; }
-  .compare-head h3, .clan-box h3 { font-size: 20px; }
-  .compare-label, .note-label { font-size: 10px; }
-  .clan-grid { grid-template-columns: 1fr; }
-  .race { grid-template-columns: auto minmax(0,1fr); gap: 14px; }
-  .race-year { padding: 16px 0 0; width: 44px; gap: 3px; }
-  .race-dot { width: 10px; height: 10px; }
-  .race-y { font-size: 14px; margin-top: 5px; }
-  .race-date { font-size: 9px; }
-  .race::after { left: 21px; top: 68px; }
-  .race-year-line { width: 44px; }
-  .race-year-line::after { left: 21px; }
-  .race-interlude .haruten-spotlight { padding: 18px; }
-  .race-interlude .haruten-copy h3 { font-size: 18px; }
-  .race-name { font-size: 18px; line-height: 1.3; }
-  .race-head { flex-direction: column; }
-  .race-tags { justify-content: flex-start; }
-  .clan-item { grid-template-columns: 80px minmax(0, 1fr); gap: 14px; padding: 16px; border-radius: 18px; }
-  .clan-thumb { width: 80px; border-radius: 14px; }
-  .clan-item h4 { font-size: 16px; }
-  .clan-item p { font-size: 12px; line-height: 1.6; }
-}
-
-
-/* ══════════════════════════════════════
-   ANIMATION
-   ══════════════════════════════════════ */
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.js .hero-load {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.hero-load-1 { animation-delay: 0.02s; }
-.hero-load-2 { animation-delay: 0.12s; }
-.hero-load-3 { animation-delay: 0.22s; }
-.hero-load-4 { animation-delay: 0.30s; }
-.hero-load-5 { animation-delay: 0.38s; }
-.hero-load-6 { animation-delay: 0.46s; }
-.hero-load-7 { animation-delay: 0.56s; }
-.hero-load-8 { animation-delay: 0.64s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .js .fi, .js .fi.v, .hero-load {
-    opacity: 1; transform: none;
-    transition: none; animation: none;
-  }
-}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.js .hero-load{opacity:0;transform:translateY(14px);animation:fadeUp .8s ease forwards}
+.hero-load-1{animation-delay:.02s}.hero-load-2{animation-delay:.1s}.hero-load-3{animation-delay:.18s}
+.hero-load-4{animation-delay:.26s}.hero-load-5{animation-delay:.34s}.hero-load-6{animation-delay:.42s}
+.hero-load-7{animation-delay:.50s}
+@media(prefers-reduced-motion:reduce){.js .fi,.js .fi.v,.hero-load{opacity:1;transform:none;transition:none;animation:none}}
 </style>
-  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap"/>
 </head>
-<body>
-  <div class="scroll-bar" id="sb"></div>
+<body class="goru">
+<div class="scroll-bar" id="sb"></div>
 
-  <!-- ═══ HERO (다크) ═══ -->
-  <div class="hero-wrap">
-    <section class="hero" id="intro">
-      <div class="hero-top">
-        <span class="kicker hero-load hero-load-1"><span class="kicker-dot"></span><span class="en">RELATION ARCHIVE</span></span>
-      </div>
-      <div class="hero-grid">
-        <figure class="hero-figure gold hero-load hero-load-1">
-          <img alt="골드쉽" src="../images/goru-portrait.webp"/>
-        </figure>
-        <div class="hero-copy">
-          <h1 class="hero-title hero-load hero-load-2">골드쉽 × 페노메노</h1>
-          <p class="hero-sub jp hero-load hero-load-3">ゴールドシップ × フェノーメノ</p>
-          <p class="hero-sub en-line en hero-load hero-load-4">GOLD SHIP × FENOMENO</p>
-          <p class="cp-note hero-load hero-load-5"><span>ゴルメノ</span><span class="sep">|</span><span>고루메노</span><span class="sep">|</span><span class="en">Gorumeno</span></p>
-          <p class="hero-desc hero-load hero-load-6">어디로 튈지 모르는 괴짜 골드쉽, 그 장난을 매번 진지하게 받아치는 페노메노. 한쪽은 끝없이 놀리고, 한쪽은 끝없이 뒤쫓는다. 맞붙을 때마다 으르렁대지만, 결국 서로만이 상대를 진정으로 알아보는, 혐관의 교과서.</p>
-          <div class="hero-meta hero-load hero-load-7"><span class="pill">경찰과 도둑</span><span class="pill">톰과 제리</span><span class="pill">보케와 츳코미</span></div>
-          <p class="hero-footnote hero-load hero-load-8">* 보케와 츳코미: 일본 만담에서 헛소리·폭주를 치는 쪽과, <span class="mobile-only-break"></span>그걸 받아치며 태클 거는 쪽을 가리키는 말.</p>
-        </div>
-        <figure class="hero-figure feno hero-load hero-load-2">
-          <img alt="페노메노" src="../images/meno-portrait.webp"/>
-        </figure>
-      </div>
-    </section>
+<!-- ═══ HERO ═══ -->
+<section class="hero-section" id="intro">
+  <div class="hero-load hero-load-1"><span class="hero-kicker"><span class="hero-kicker-dot"></span><span class="en">RELATION ARCHIVE</span></span></div>
+  <div class="hero-portraits hero-load hero-load-2">
+    <figure class="hero-portrait-wrap gold"><img alt="골드쉽" src="../images/goru-portrait.webp"/></figure>
+    <figure class="hero-portrait-wrap feno"><img alt="페노메노" src="../images/meno-portrait.webp"/></figure>
   </div>
+  <div class="hero-copy">
+    <h1 class="hero-title hero-load hero-load-3">골드쉽 × 페노메노</h1>
+    <p class="hero-jp hero-load hero-load-4">ゴールドシップ × フェノーメノ</p>
+    <p class="hero-en hero-load hero-load-4 en">GOLD SHIP × FENOMENO</p>
+    <div class="hero-cp hero-load hero-load-5"><span>ゴルメノ</span><span class="sep">|</span><span>고루메노</span><span class="sep">|</span><span class="en">Gorumeno</span></div>
+    <p class="hero-desc hero-load hero-load-6">어디로 튈지 모르는 괴짜 골드쉽, 그 장난을 매번 진지하게 받아치는 페노메노. 한쪽은 끝없이 놀리고, 한쪽은 끝없이 뒤쫓는다. 맞붙을 때마다 으르렁대지만, 결국 서로만이 상대를 진정으로 알아보는, 혐관의 교과서.</p>
+    <div class="hero-pills hero-load hero-load-7"><span class="pill">경찰과 도둑</span><span class="pill">톰과 제리</span><span class="pill">보케와 츳코미</span></div>
+    <p class="hero-foot hero-load hero-load-7">* 보케와 츳코미: 일본 만담에서 헛소리·폭주를 치는 쪽과, <span class="mo-br"></span>그걸 받아치며 태클 거는 쪽을 가리키는 말.</p>
+  </div>
+</section>
 
-  <!-- ═══ HOOK CARDS ═══ -->
-  <section class="hero-hook-section fi">
-    <div class="hero-hook">
-      <article class="hook-card gold">
-        <div class="hook-kicker">nickname</div>
-        <h3>호칭부터 이미 맛도리</h3>
-        <p>골드쉽은 거침없이 '마메찡'이라 부르며 들이대고, 페노메노는 끝까지 '고루시 상'이라 부르며 선을 지킨다. 창과 방패 같은 둘의 관계성이 호칭부터 선명하게 드러난다.</p>
-      </article>
-      <article class="hook-card mix">
-        <div class="hook-kicker">dynamic</div>
-        <h3>상습범과 단속반의 대환장 케미</h3>
-        <p>한쪽은 전력을 다해 장난을 치고, 한쪽은 진심을 다해 반응한다. 눈이 마주치는 순간, 추격전이 벌어진다. 얼핏 반복되는 패턴임에도, 늘 새로운 웃음을 자아내는 독보적인 만담력을 자랑한다.</p>
-      </article>
-      <article class="hook-card feno">
-        <div class="hook-kicker">rival arc</div>
-        <h3>원본마부터 이어지는 촘촘한 서사</h3>
-        <p>인게임에 나타나는 케미스트리는 원본마 대결 역사의 고증을 기반으로 한다. 각자가 지닌 탄탄한 캐릭터성과 성장 서사가 맞물려 시너지를 만든다.</p>
-      </article>
+<!-- ═══ HOOK ═══ -->
+<div class="hook-row fi">
+  <article class="hook-card gold"><div class="hook-kicker">nickname</div><h3>호칭부터 이미 맛도리</h3><p>골드쉽은 거침없이 '마메찡'이라 부르며 들이대고, 페노메노는 끝까지 '고루시 상'이라 부르며 선을 지킨다.</p></article>
+  <article class="hook-card mix"><div class="hook-kicker">dynamic</div><h3>상습범과 단속반의 대환장 케미</h3><p>한쪽은 전력을 다해 장난을 치고, 한쪽은 진심을 다해 반응한다. 눈이 마주치는 순간, 추격전이 벌어진다.</p></article>
+  <article class="hook-card feno"><div class="hook-kicker">rival arc</div><h3>원본마부터 이어지는 촘촘한 서사</h3><p>인게임에 나타나는 케미스트리는 원본마 대결 역사의 고증을 기반으로 한다.</p></article>
+</div>
+
+<div class="content">
+
+<!-- ═══ 01 CORE READ ═══ -->
+<div class="dv"><hr></div>
+<div class="section-head fi" id="topic01">
+  <div class="section-num">01</div>
+  <div class="section-kicker" style="color:var(--gold-main)">핵심 요약</div>
+  <h2 class="section-title">고루메노 관계성 핵심 요약</h2>
+  <p class="section-lead">겉으로는 그냥 개그 콤비 같지만, 이들에게는 한마디로 정의할 수 없는 입체적인 관계성과 서사가 있다.</p>
+</div>
+<div class="core-grid fi">
+  <div class="wc core-card gold"><span class="core-label" style="color:var(--gold-main)">gold ship</span><h3>종잡을 수 없는 사고뭉치</h3><p>골드쉽은 본래 트레센 학원 내에서 둘째 가라면 서러울 장난꾸러기다. 그런데 페노메노 앞에서는 유독 그 장난의 수위가 한 단계 더 올라간다.</p></div>
+  <div class="wc core-card feno"><span class="core-label" style="color:var(--feno-main)">fenomeno</span><h3>그를 쫓는 정의로운 선도부원</h3><p>페노메노는 책임감 강한 선도부원이자 경찰(지망생)이다. 골드쉽이 일으키는 사건사고는 하루도 그냥 넘어갈 수 없다.</p></div>
+  <div class="wc core-card mix-gf"><span class="core-label" style="color:var(--dim)">in game</span><h3>개그 콤비이자 최광의 라이벌</h3><p>덤앤더머 케미도 일품이지만, 별미는 라이벌 서사에 있다. 골드쉽은 페노메노의 삶에 자꾸만 끼어들고, 자꾸만 신경쓰이게 한다.</p></div>
+  <div class="wc core-card mix-fg"><span class="core-label" style="color:var(--dim)">original horse</span><h3>최광의 세대가 남긴 대결 구도</h3><p>두 원본마는 흔히 '최광(狂)의 세대'라 불리는 12세대, 즉 2009년생 동기다. 봄 천황상에서 페노메노는 골드쉽을 2년 연속으로 꺾었다.</p></div>
+</div>
+<div class="onecut fi">
+  <div class="onecut-kicker">official 1cut</div>
+  <div class="onecut-title">정의의 추격</div>
+  <div class="onecut-media"><img alt="페노메노 공식 1컷 만화 정의의 추격" src="../images/meno-onecut.jpg"/></div>
+  <div class="feno-quote">
+    <div class="q-sfx top">(부릅!)</div>
+    <p class="q-main">"매번매번 규칙을 벗어나기나 하고… <br class="mo-br">오늘은 반드시 잡고야 말겠습니다!!"</p>
+    <div class="q-sfx bottom">(다다다다다다다)</div>
+  </div>
+</div>
+
+<!-- ═══ 02 PROFILE ═══ -->
+<div class="dv"><hr></div>
+<div class="section-head fi" id="topic02">
+  <div class="section-num">02</div>
+  <div class="section-kicker" style="color:var(--feno-main)">프로필</div>
+  <h2 class="section-title">모든 면이 정반대라 더 어울리는 조합</h2>
+  <p class="section-lead">각자의 공식 프로필만 봐도 차이가 확연하다. 문제아와 모범생, 보케와 츳코미의 대비가 선명하게 나타난다.</p>
+</div>
+<div class="profile-grid fi">
+  <article class="profile-card gold">
+    <div class="profile-bar"></div>
+    <div class="profile-inner">
+      <div class="profile-quote-text">"재밌으면 됐지! 되겠냐? 어느 쪽이야, 어엉!?"</div>
+      <div class="profile-top">
+        <div class="profile-portrait"><img alt="골드쉽" src="../images/goru-portrait.webp"/></div>
+        <div class="profile-id">
+          <div class="profile-jp">ゴールドシップ</div>
+          <div class="profile-ko">골드쉽</div>
+          <div class="profile-en en">GOLD SHIP</div>
+        </div>
+      </div>
+      <div class="profile-facts">
+        <div class="fact"><span class="fact-label">성우</span><span class="fact-value">우에다 히토미</span></div>
+        <div class="fact"><span class="fact-label">생일</span><span class="fact-value">3월 6일</span></div>
+        <div class="fact"><span class="fact-label">신장</span><span class="fact-value">170cm</span></div>
+        <div class="fact"><span class="fact-label">체중</span><span class="fact-value">측정 불가</span></div>
+        <div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B88 · W55 · H88</span></div>
+        <div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">고루시 상</span></div>
+      </div>
+      <p class="profile-desc">트레센 학원 제일의 괴짜. 마음 가는 대로 행동하며 재밌고 독특하게 살아가는 자유인. 누구든 가리지 않고 말을 걸며 돌아다니지만, 그것은 모두 골쉽 극장의 번영을 위해서이며, 우정이나 유대감을 어느 정도로 생각하는지는 알 수 없다. 특히 동급생 페노메노를 놀리는 일에 전력을 다 한다.</p>
+      <div class="profile-tags"><span class="profile-tag">4차원</span><span class="profile-tag">트릭스터</span><span class="profile-tag">어그로꾼</span><span class="profile-tag">예측불가</span></div>
     </div>
-  </section>
-
-  <main class="page">
-
-    <!-- ═══ 01 CORE READ ═══ -->
-    <section class="section fi" id="topic01">
-      <div class="section-head">
-        <div class="section-no">01</div>
-        <div class="section-kicker">core read</div>
-        <h2 class="section-title"><span class="keep">고루메노 관계성</span><span class="mobile-break"><span class="keep">핵심 요약</span></span></h2>
-        <p class="section-lead">겉으로는 그냥 개그 콤비 같지만, 이들에게는 한마디로 정의할 수 없는 입체적인 관계성과 서사가 있다. 고루메노는 일상에서도, 진지한 육성 스토리에서도 고유한 매력을 보여주는 앙숙이자 동지, 친구이자 라이벌이다.</p>
-      </div>
-      <div class="grid-4 core-read-grid">
-        <article class="card tone-card gold">
-          <div class="tone-label">gold ship</div>
-          <h3>종잡을 수 없는 사고뭉치</h3>
-          <p>골드쉽은 본래 트레센 학원 내에서 둘째 가라면 서러울 장난꾸러기다. 그런데 페노메노 앞에서는 유독 그 장난의 수위가 한 단계 더 올라간다. 일부러 더 긁고, 반응을 살핀다.</p>
-        </article>
-        <article class="card tone-card feno">
-          <div class="tone-label">fenomeno</div>
-          <h3>그를 쫓는 정의로운 선도부원</h3>
-          <p>페노메노는 책임감 강한 선도부원이자 경찰(지망생)이다. 골드쉽이 일으키는 사건사고는 하루도 그냥 넘어갈 수 없다. 그의 진심어린 대응이 오히려 골드쉽을 더욱 날뛰게 한다.</p>
-        </article>
-        <article class="card tone-card mix">
-          <div class="tone-label">in game</div>
-          <h3>개그 콤비이자 최광(狂)의 라이벌</h3>
-          <p>덤앤더머 케미도 일품이지만, 별미는 라이벌 서사에 있다. 골드쉽은 페노메노의 삶에 자꾸만 끼어들고, 자꾸만 신경쓰이게 한다. 하지만, 그건 골드쉽 쪽도 마찬가지다.</p>
-        </article>
-        <article class="card tone-card mix">
-          <div class="tone-label">original horse</div>
-          <h3>최광(狂)의 세대가 남긴 대결 구도</h3>
-          <p>두 원본마는 흔히 '최광(狂)의 세대'라 불리는 12세대, 즉 2009년생 동기다. 일본 더비, 봄 천황상, 타카라즈카 기념, 아리마 기념까지 큰 무대에서 여러 차례 붙은 전적이 있다. 특히, 봄 천황상에서 페노메노는 골드쉽을 2년 연속으로 꺾었다.</p>
-        </article>
-      </div>
-      <div class="onecut-block core-onecut-block">
-        <article class="onecut-card">
-          <div class="onecut-kicker">official 1cut</div>
-          <h3 class="onecut-title">정의의 추격</h3>
-          <div class="onecut-media"><img alt="페노메노 공식 1컷 만화 정의의 추격" src="../images/meno-onecut.jpg"/></div>
-          <div class="onecut-quote fenomeno-quote">
-            <div class="quote-sfx top">(부릅!)</div>
-            <p class="quote-main">"매번매번 규칙을 벗어나기나 하고… <br class="mobile-break">오늘은 반드시 잡고야 말겠습니다!!"</p>
-            <div class="quote-sfx bottom">(다다다다다다다)</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ═══ 02 PROFILE ═══ -->
-    <section class="section fi" id="topic02">
-      <div class="section-head">
-        <div class="section-no">02</div>
-        <div class="section-kicker">profile</div>
-        <h2 class="section-title"><span class="keep">모든 면이 정반대라</span><span class="mobile-break"><span class="keep">더 어울리는 조합</span></span></h2>
-        <p class="section-lead">각자의 공식 프로필만 봐도 차이가 확연하다. 골드쉽은 속을 알 수 없는 4차원, 페노메노는 속이 훤히 보이는 쑥맥. 문제아와 모범생, 사고치는 쪽과 단속하는 쪽, 보케와 츳코미의 대비가 선명하게 나타난다.</p>
-      </div>
-      <div class="duo">
-        <article class="card profile gold"><p class="profile-quote">"재밌으면 됐지! 되겠냐? 어느 쪽이야, 어엉!?"</p><div class="profile-top"><div class="profile-portrait"><img alt="골드쉽 프로필 이미지" src="../images/goru-portrait.webp"/></div><div class="profile-side"><div class="jp-name">ゴールドシップ</div><h3>골드쉽</h3><div class="en-name en">GOLD SHIP</div></div></div><div class="profile-facts"><div class="fact"><span class="fact-label">성우</span><span class="fact-value">우에다 히토미</span></div><div class="fact"><span class="fact-label">생일</span><span class="fact-value">3월 6일</span></div><div class="fact"><span class="fact-label">신장</span><span class="fact-value">170cm</span></div><div class="fact"><span class="fact-label">체중</span><span class="fact-value">측정 불가</span></div><div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B88 · W55 · H88</span></div><div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">고루시 상</span></div></div><p class="profile-copy">트레센 학원 제일의 괴짜. 마음 가는 대로 행동하며 재밌고 독특하게 살아가는 자유인. 틈만 나면 엉뚱한 소리를 하거나 태클을 걸고, 금방 텐션 업이 되었다가 바로 식는다. 누구든 가리지 않고 말을 걸며 돌아다니지만, 그것은 모두 골쉽 극장의 번영을 위해서이며, 우정이나 유대감을 어느 정도로 생각하는지는 알 수 없다. 특히 동급생 페노메노를 놀리는 일에 전력을 다 한다.</p><div class="keyword-row"><span class="keyword">4차원</span><span class="keyword">트릭스터</span><span class="keyword">어그로꾼</span><span class="keyword">예측불가</span></div></article>
-        <article class="card profile feno"><p class="profile-quote">"외곽 순찰, 이상 없지 말입니다!<br/>지금부터, 교내 경비로 전환하겠습니다!"</p><div class="profile-top"><div class="profile-portrait"><img alt="페노메노 프로필 이미지" src="../images/meno-portrait.webp"/></div><div class="profile-side"><div class="jp-name">フェノーメノ</div><h3>페노메노</h3><div class="en-name en">FENOMENO</div></div></div><div class="profile-facts"><div class="fact"><span class="fact-label">성우</span><span class="fact-value">히비 유리코</span></div><div class="fact"><span class="fact-label">생일</span><span class="fact-value">4월 20일</span></div><div class="fact"><span class="fact-label">신장</span><span class="fact-value">171cm</span></div><div class="fact"><span class="fact-label">체중</span><span class="fact-value">괴물적</span></div><div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B81 · W59 · H82</span></div><div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">마메찡</span></div></div><p class="profile-copy">선도위원회에 소속된 정의감이 강한 우마무스메. 매일 순찰이나 지역 자원봉사 활동에 열심히 임하며, 그 모습은 마치 다정하고 믿음직한 모두의 경찰관… 같다고 말하고 싶지만, 너무 날카로운 눈빛 탓인지 동네 아이들에게는 엄청나게 무서운 존재로 여겨지고 있는 모양이다. 트레센 학원 어디서나 사고를 치는 골칫거리 골드쉽을 그냥 지나치지 못하며, 그녀의 장난에 언제나 진심으로 반응한다.</p><div class="keyword-row"><span class="keyword">경찰 우마무스메</span><span class="keyword">선도위원</span><span class="keyword">안전제일</span><span class="keyword">존댓말</span></div></article>
-      </div>
-
-      <!-- COMPARE -->
-      <div class="card compare-block"><div class="compare-head"><div class="compare-label en">contrast &amp; symmetry</div><h3>한눈에 보아도 강렬한 대비</h3><p>비주얼, 성격, 포지션. 모든 요소가 거울처럼 반대이면서 닮았다. <span class="mobile-break"></span>이미 설정 자체가 커플링 문법에 충실한, 보장된 혐관 맛집.</p></div><div class="compare-showcase"><figure class="showcase-figure gold"><img alt="골드쉽 승부복 전신" class="showcase-image" src="../images/goru-stand.webp"/><figcaption class="showcase-name">gold ship</figcaption></figure><figure class="showcase-figure feno"><img alt="페노메노 승부복 전신" class="showcase-image" src="../images/meno-stand.webp"/><figcaption class="showcase-name">fenomeno</figcaption></figure></div><div class="compare-deck"><article class="compare-topic appearance"><div class="compare-topic-head">외형</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><ul class="compare-bullets"><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>느슨하고 능청스러운 표정</li></ul></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><ul class="compare-bullets"><li>검은 계열 컬러</li><li>치켜뜬 눈매</li><li>뻗친 머리</li><li>각 잡힌 인상과 절도 있는 분위기</li></ul></div></div></article><article class="compare-topic personality"><div class="compare-topic-head">성격</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</span></div></div></article><article class="compare-topic naming"><div class="compare-topic-head">호칭</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">끝까지 '고루시 상'이라고 부르며 선을 지킨다</span></div></div></article><article class="compare-topic role"><div class="compare-topic-head">역할</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">먼저 약올리며 사건을 일으키는 보케</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">진지하게 받아치며 휘말리는 츳코미</span></div></div></article><article class="compare-topic common"><div class="compare-topic-head">공통점</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">외형</span><ul class="compare-bullets common-bullets"><li>가슴 밑을 휘감은 붉은색 벨트</li><li>유사한 형태의 모자 문양</li><li>모자 및 장갑 착용 여부</li></ul></div><div class="compare-topic-vs">&amp;</div><div class="compare-topic-side feno"><span class="compare-topic-name">감정</span><ul class="compare-bullets common-bullets"><li>서로를 강하게 의식하며 적극적으로 상대한다.</li><li>사실은 누구보다 서로를 필요로 하며, 의지하고 있다.</li></ul></div></div></article></div></div>
-    </section>
-
-    <!-- ═══ 03 IN GAME STORY ═══ -->
-    <section class="section fi" id="topic03">
-      <div class="section-head">
-        <div class="section-no">03</div>
-        <div class="section-kicker">in game story</div>
-        <h2 class="section-title"><span class="keep">상대의 서사를 완성하는</span><span class="mobile-break"><span class="keep">고루메노</span></span></h2>
-        <p class="section-lead">초기 캐릭터인 골드쉽의 비어 있던 라이벌 서사를 페노메노가 비로소 완성했으며, 페노메노의 육성 스토리 역시 골드쉽과의 경쟁을 중심으로 이들의 고뇌와 좌절, 성장을 다루고 있다.</p>
-      </div>
-      <div class="story-grid">
-        <article class="card story-card"><span class="story-step">scene 01</span><h3>호칭 차이로 드러나는 온도차</h3><p>골드쉽은 페노메노를 '마메찡'이라 부르고, 페노메노는 끝까지 '고루시 상'이라고 부른다. 무심한 친근함과 단정한 거리감이 이 호칭 차이만으로도 또렷하게 선다.</p><small>마메찡 · 고루시 상</small></article>
-        <article class="card story-card"><span class="story-step">scene 02</span><h3>일상적으로 벌어지는 추격전</h3><p>골드쉽이 말도 안 되는 장난으로 흐름을 틀면, 페노메노는 그것을 하나하나 진지하게 받아친다. 경찰과 도둑, 톰과 제리, 보케와 츳코미라는 말이 자연스럽게 붙는 이유다.</p><small>개그 콤비</small></article>
-        <article class="card story-card"><span class="story-step">scene 03</span><h3>고뇌와 성장을 함께하는 라이벌</h3><p>페노메노의 육성 스토리에서 골드쉽은 누구보다 특별한 존재다. 계속 신경 쓰이고, 자꾸 시야에 밟히며, 결국 넘어서야 할 경쟁 상대로 여기게 된다. 그 과정에서 고뇌와 좌절, 성장도 함께 겪는다.</p><small>경쟁 · 연대 · 성장</small></article>
-        <article class="card story-card"><span class="story-step">scene 04</span><h3>공식이 떠먹이는 관계성</h3><p>페노메노와 트레이너의 히든 이벤트 제목은 'CASE, 마메찡'이며, 골드쉽에게는 오직 페노메노를 놀리기 위한 전용 코믹 모션까지 추가되었다. 고루메노는 공식에서도 꾸준히 일회성 개그와 시리어스를 넘나든다.</p><small>공식의 맛</small></article>
-      </div>
-    </section>
-
-    <!-- ═══ 04 ORIGINAL HORSE ARC ═══ -->
-    <section class="section fi" id="topic04">
-      <div class="section-head">
-        <div class="section-no">04</div>
-        <div class="section-kicker">original horse arc</div>
-        <h2 class="section-title"><span class="keep">원본마의 대결 역사</span></h2>
-        <p class="section-lead">인게임의 케미는 동세대인 원본마들의 실제 관계성에서 출발한다. 큰 무대에서 여러 차례 맞붙은 기록을 바탕으로, 두 캐릭터의 라이벌 구도와 서사는 더욱 탄탄하게 구축되었다.</p>
-      </div>
-      <div class="timeline">
-        <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2012</span><span class="race-date en">MAY 27</span></div><article class="race-card"><div class="race-head"><div><div class="race-name">일본 더비</div><div class="race-sub">Tokyo Yushun / first major crossing</div></div><div class="race-tags"><span class="result-chip feno">페노메노 2착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">역사의 시작. 페노메노가 골드쉽보다 한발 앞서 들어왔다. 이때부터 동세대 라이벌 구도가 본격적으로 펼쳐지기 시작한다.</p></article></div>
-        <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">APR 28</span></div><article class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">Kyoto 3200m / fenomeno takes the spring crown</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">페노메노가 골드쉽을 제치고 봄 천황상을 거머쥐며 '괴물 스테이어'로서의 저력을 증명한 순간. 골드쉽은 이때, 페노메노를 강력한 적으로 인지한다.</p></article></div>
-        <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">JUN 23</span></div><article class="race-card"><div class="race-head"><div><div class="race-name">타카라즈카 기념</div><div class="race-sub">Hanshin 2200m / gold ship answers back</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 1착</span><span class="result-chip feno">페노메노 4착</span></div></div><p class="race-copy">같은 해 여름에는 골드쉽이 되받아쳤다. 주도권이 한 명에게 고정되지 않고 엎치락뒤치락했다는 점이 또한 이들의 매력이다.</p></article></div>
-        <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">MAY 4</span></div><article class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">back to kyoto / fenomeno goes back-to-back</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 7착</span></div></div><p class="race-copy">페노메노가 골드쉽을 또 한번 제치고 봄 천황상 2연패를 달성한 하이라이트 무대. 시작 전부터 골드쉽이 페노메노를 향해 유독 날을 세우며 의식했던 경기로 경마 팬들 사이에서 자주 회자된다.</p></article></div>
-        <div class="race race-interlude"><div class="race-year-line"></div><div class="note-box"><p><span class="note-label en">extra episode</span> 2014년 봄 천황상 중계 영상을 보면, 골드쉽이 바로 옆 칸의 페노메노를 향해 '개처럼 짖으며' 노골적인 경계를 드러내는 장면이 포착된다. 한쪽이 으르렁대고, 한쪽이 받아치는 구도는 원본마 시절부터 이미 강하게 각인돼 있었다.</p></div></div>
-        <div class="race race-interlude"><div class="race-year-line"></div><article class="card haruten-spotlight"><div class="haruten-media"><img alt="2025년 천황상(봄) 기념 고루메노 축전" src="../images/haruten.jpeg"/></div><div class="haruten-copy"><div class="compare-label en">spring tenno sho 2025</div><h3>공식 축전으로 되살아난 하루텐 구도</h3><p>2025년, 천황상(봄)을 기념해 공식 계정에 올라온 축전. 흡사 래퍼들의 디스전처럼 마이크를 든 채 서로를 노려보는 연출은 2014년 하루텐 당시 고루시가 페노메노를 향해 으르렁대던 장면의 고증이다. 공식에서도 고루메노를 단발성 개그 콤비가 아니라, 전면에 내세우는 라이벌 관계로 다루고 있다는 점이 흥미롭다.</p></div></article></div>
-        <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">DEC 28</span></div><article class="race-card"><div class="race-head"><div><div class="race-name">아리마 기념</div><div class="race-sub">Nakayama / final major crossing</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 3착</span><span class="result-chip feno">페노메노 10착</span></div></div><p class="race-copy">마지막 교차점. 여기까지 살펴보면, 인게임에서의 집요한 신경전은 두 원본마의 치열한 대결 역사를 바탕에 둔 묘사임을 알 수 있다.</p></article></div>
-      </div>
-    </section>
-
-    <!-- ═══ EX — EXTRA ═══ -->
-    <section class="section fi" id="topicex">
-      <div class="section-head">
-        <div class="section-no">EX</div>
-        <div class="section-kicker">extra</div>
-        <h2 class="section-title"><span class="keep">우마무스메에서</span><span class="mobile-break"><span class="keep">황금일족이 갖는 의미</span></span></h2>
-        <p class="section-lead">개개인으로도 독보적인 캐릭터성을 자랑하는 이들은 붙였을 때 더욱 환장의 케미를 만들어내며, 그중에서도 고루메노는 유난히 눈에 띄는 동세대 라이벌 조합이다.</p>
-      </div>
-      <div class="extra-box">
-        <article class="card extra-card"><h3>골드쉽 서사의 빈칸을 메운 상대</h3><p>초기 골드쉽은 또렷한 동세대 라이벌 축이 비어 있는 편이었다. 페노메노가 등장하면서 비로소 제대로 긁히고 끝까지 신경 쓰는 상대가 생겼고, 골드쉽 쪽 서사도 훨씬 또렷해졌다.</p></article>
-        <article class="card extra-card"><h3>황금일족 안의 정상인 포지션</h3><p>제멋대로인 멤버들 사이에서 페노메노는 늘 단속하고 태클 거는 쪽이다. 그래서 어떤 조합에 붙여도 곧바로 츳코미와 긴장이 생기고, 팬들은 그 반응을 계속 보게 된다.</p></article>
-        <article class="card extra-card"><h3>젠틸돈나까지 이어지는 12세대 관계도</h3><p>고루메노는 둘만 떼어 놓고 봐도 선명하지만, 젠틸돈나까지 얽히는 12세대 관계도 안에 놓였을 때 더 재미있어진다. 각자 워낙 캐릭터가 세서, 같은 화면에 세울수록 환장의 합이 더 커진다.</p></article>
-      </div>
-      <div class="card clan-box">
-        <div class="compare-label en">golden family</div>
-        <h3>지금까지 출시한 황금일족</h3>
-        <p>'황금일족'은 원본마 스테이 골드의 자마들 가운데서도 특히 기행, 승부근성, 실력으로 강한 인상을 남긴 주자들을 가리키는 별칭이다. 우마무스메에서도 각자의 캐릭터성이 워낙 강해, 한데 모였을 때 관계의 재미와 조합의 판이 자연스럽게 커진다.</p>
-        <div class="clan-grid">
-          <article class="clan-item staygold" style="--main:#bfb33e; --sub:#576898;"><div class="clan-thumb"><img src="../images/stego.webp" alt="스테이 골드 프로필 이미지"/></div><div class="clan-body"><h4>스테이 골드</h4><p>호기심이 많고, 여행을 무엇보다 좋아하는 방랑자 타입. 늘 어딘가 달관한 듯한 태도로 개성 강한 후배들을 자연스럽게 끌어당기는, 황금일족의 중심축 같은 인물이다.</p><span class="clan-sub">방랑벽 · 사랑받는 중심축</span></div></article>
-          <article class="clan-item" style="--main:#332d1f; --sub:#E2E095;"><div class="clan-thumb"><img src="../images/journey.webp" alt="드림 저니 프로필 이미지"/></div><div class="clan-body"><h4>드림 저니</h4><p>작은 체구와 집념으로 기억되는 형 라인. 묵직하게 눌러붙는 승부근성과 동생 오르페브르와의 대비까지 합쳐 늘 회자된다.</p><span class="clan-sub">형 라인 · 집념</span></div></article>
-          <article class="clan-item" style="--main:#c0453f; --sub:#236192;"><div class="clan-thumb"><img src="../images/festa.webp" alt="나카야마 페스타 프로필 이미지"/></div><div class="clan-body"><h4>나카야마 페스타</h4><p>거친 기세와 국제무대 서사로 존재감이 크다. 황금일족 조합을 이야기할 때 빠지지 않는, 불꽃 같은 한 축이다.</p><span class="clan-sub">국제무대 · 불꽃 같은 기세</span></div></article>
-          <article class="clan-item" style="--main:#be4134; --sub:#E5D9A0;"><div class="clan-thumb"><img src="../images/orfe.webp" alt="오르페브르 프로필 이미지"/></div><div class="clan-body"><h4>오르페브르</h4><p>삼관마. 압도적인 재능과 기행으로 황금일족의 대표격으로 꼽힌다. 등장하는 순간 장면을 장악하는 타입이라는 점에서 상징성이 특히 크다.</p><span class="clan-sub">삼관마 · 황금일족의 상징</span></div></article>
-          <article class="clan-item" style="--main:#da3c57; --sub:#e0d23d;"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽 프로필 이미지"/></div><div class="clan-body"><h4>골드쉽</h4><p>'고루시'라는 애칭으로 불리는 예측 불가의 아이콘. 강렬한 기믹과 팬덤 화력이 특히 강하고, 황금일족 서사를 바깥으로 가장 크게 확장시킨 얼굴이기도 하다.</p><span class="clan-sub">예측 불가 · 강한 기믹</span></div></article>
-          <article class="clan-item" style="--main:#574a77; --sub:#EADC68;"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노 프로필 이미지"/></div><div class="clan-body"><h4>페노메노</h4><p>비교적 늦게 합류했지만, 골드쉽과의 라이벌 구도를 선명하게 채운 신흥 핵심 축이다. 유일한 정상인 포지션이라는 점까지 더해져 황금일족 안에서도 존재감이 또렷하다.</p><span class="clan-sub">정상인 포지션 · 신흥 핵심 축</span></div></article>
-        </div>
-        <div style="margin-top:28px;">
-          <div class="compare-label en">12th generation rivals</div>
-          <h3>고루메노의 12세대 동기</h3>
-          <p>젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도와 고루메노 맥락을 읽을 때 함께 두는 편이 훨씬 입체적이다.</p>
-        </div>
-        <div class="clan-grid" style="margin-top:20px;">
-          <article class="clan-item donna" style="--main:#cf2f2b; --sub:#533c3d;"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나 프로필 이미지"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article>
+  </article>
+  <article class="profile-card feno">
+    <div class="profile-bar"></div>
+    <div class="profile-inner">
+      <div class="profile-quote-text">"외곽 순찰, 이상 없지 말입니다!
+지금부터, 교내 경비로 전환하겠습니다!"</div>
+      <div class="profile-top">
+        <div class="profile-portrait"><img alt="페노메노" src="../images/meno-portrait.webp"/></div>
+        <div class="profile-id">
+          <div class="profile-jp">フェノーメノ</div>
+          <div class="profile-ko">페노메노</div>
+          <div class="profile-en en">FENOMENO</div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <nav class="side-nav" aria-label="섹션 이동">
-    <button class="side-dot on" data-t="intro" aria-label="소개"><span class="side-tip">소개</span></button>
-    <button class="side-dot" data-t="topic01" aria-label="요약"><span class="side-tip">요약</span></button>
-    <button class="side-dot" data-t="topic02" aria-label="대비"><span class="side-tip">대비</span></button>
-    <button class="side-dot" data-t="topic03" aria-label="서사"><span class="side-tip">서사</span></button>
-    <button class="side-dot" data-t="topic04" aria-label="역사"><span class="side-tip">역사</span></button>
-    <button class="side-dot" data-t="topicex" aria-label="황금일족"><span class="side-tip">황금일족</span></button>
-  </nav>
-
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="../guide/">입문 가이드</a>
-      <a href="../movie-guide/">극장판 가이드</a>
+      <div class="profile-facts">
+        <div class="fact"><span class="fact-label">성우</span><span class="fact-value">히비 유리코</span></div>
+        <div class="fact"><span class="fact-label">생일</span><span class="fact-value">4월 20일</span></div>
+        <div class="fact"><span class="fact-label">신장</span><span class="fact-value">171cm</span></div>
+        <div class="fact"><span class="fact-label">체중</span><span class="fact-value">괴물적</span></div>
+        <div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B81 · W59 · H82</span></div>
+        <div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">마메찡</span></div>
+      </div>
+      <p class="profile-desc">선도위원회에 소속된 정의감이 강한 우마무스메. 매일 순찰이나 지역 자원봉사 활동에 열심히 임하며, 그 모습은 마치 다정하고 믿음직한 모두의 경찰관… 같다고 말하고 싶지만, 너무 날카로운 눈빛 탓인지 동네 아이들에게는 엄청나게 무서운 존재로 여겨지고 있는 모양이다.</p>
+      <div class="profile-tags"><span class="profile-tag">경찰 우마무스메</span><span class="profile-tag">선도위원</span><span class="profile-tag">안전제일</span><span class="profile-tag">존댓말</span></div>
     </div>
-    이 페이지는 고루메노 관계성 아카이브로 제작되었습니다.
-    <br>모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank" rel="noopener noreferrer"><span class="en">© Cygames, Inc.</span></a> 에 귀속됩니다.
-    <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em">Made by <a href="https://jhakentertainment.com/" target="_blank" rel="noopener noreferrer">JHAK Entertainment Inc.</a></span></div>
-    <div class="copy"><span class="en" style="font-size:9px;opacity:.4;letter-spacing:.06em">Last updated Mar 25, 2026</span></div>
-  </footer>
+  </article>
+</div>
 
-  <script>
-  (function () {
-    const items = document.querySelectorAll('.fi');
-    if (!items.length) return;
+<!-- COMPARE -->
+<div class="compare-section fi">
+  <div class="compare-header">
+    <div class="section-kicker en" style="color:var(--dim);font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.14em;font-size:11px">contrast &amp; symmetry</div>
+    <h3>한눈에 보아도 강렬한 대비</h3>
+    <p>비주얼, 성격, 포지션. 모든 요소가 거울처럼 반대이면서 닮았다. 이미 설정 자체가 커플링 문법에 충실한, 보장된 혐관 맛집.</p>
+  </div>
+  <div class="compare-showcase">
+    <figure class="showcase-fig gold"><img alt="골드쉽 승부복 전신" src="../images/goru-stand.webp"/><figcaption>gold ship</figcaption></figure>
+    <figure class="showcase-fig feno"><img alt="페노메노 승부복 전신" src="../images/meno-stand.webp"/><figcaption>fenomeno</figcaption></figure>
+  </div>
+  <div class="compare-deck">
+    <article class="compare-topic appearance"><div class="compare-topic-head">외형</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><ul class="compare-bullets"><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>느슨하고 능청스러운 표정</li></ul></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><ul class="compare-bullets"><li>검은 계열 컬러</li><li>치켜뜬 눈매</li><li>뻗친 머리</li><li>각 잡힌 인상과 절도 있는 분위기</li></ul></div></div></article>
+    <article class="compare-topic personality"><div class="compare-topic-head">성격</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</span></div></div></article>
+    <article class="compare-topic naming"><div class="compare-topic-head">호칭</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">끝까지 '고루시 상'이라고 부르며 선을 지킨다</span></div></div></article>
+    <article class="compare-topic role"><div class="compare-topic-head">역할</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">먼저 약올리며 사건을 일으키는 보케</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">진지하게 받아치며 휘말리는 츳코미</span></div></div></article>
+    <article class="compare-topic common"><div class="compare-topic-head">공통점</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">외형</span><ul class="compare-bullets"><li>가슴 밑을 휘감은 붉은색 벨트</li><li>유사한 형태의 모자 문양</li><li>모자 및 장갑 착용 여부</li></ul></div><div class="compare-topic-vs">&amp;</div><div class="compare-topic-side feno"><span class="compare-topic-name">감정</span><ul class="compare-bullets"><li>서로를 강하게 의식하며 적극적으로 상대한다.</li><li>사실은 누구보다 서로를 필요로 하며, 의지하고 있다.</li></ul></div></div></article>
+  </div>
+</div>
 
-    if (!('IntersectionObserver' in window)) {
-      items.forEach((el) => el.classList.add('v'));
-    } else {
-      const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('v');
-            fadeObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
-      items.forEach((el) => fadeObserver.observe(el));
-    }
+<!-- ═══ 03 IN GAME STORY ═══ -->
+<div class="dv"><hr></div>
+<div class="section-head fi" id="topic03">
+  <div class="section-num">03</div>
+  <div class="section-kicker" style="color:var(--gold-main)">인게임 서사</div>
+  <h2 class="section-title">상대의 서사를 완성하는 고루메노</h2>
+  <p class="section-lead">초기 캐릭터인 골드쉽의 비어 있던 라이벌 서사를 페노메노가 비로소 완성했다.</p>
+</div>
+<div class="story-grid fi">
+  <div class="wc story-card"><span class="story-step">scene 01</span><h3>호칭 차이로 드러나는 온도차</h3><p>골드쉽은 페노메노를 '마메찡'이라 부르고, 페노메노는 끝까지 '고루시 상'이라고 부른다.</p><small>마메찡 · 고루시 상</small></div>
+  <div class="wc story-card"><span class="story-step">scene 02</span><h3>일상적으로 벌어지는 추격전</h3><p>골드쉽이 말도 안 되는 장난으로 흐름을 틀면, 페노메노는 그것을 하나하나 진지하게 받아친다.</p><small>개그 콤비</small></div>
+  <div class="wc story-card"><span class="story-step">scene 03</span><h3>고뇌와 성장을 함께하는 라이벌</h3><p>페노메노의 육성 스토리에서 골드쉽은 누구보다 특별한 존재다. 결국 넘어서야 할 경쟁 상대로 여기게 된다.</p><small>경쟁 · 연대 · 성장</small></div>
+  <div class="wc story-card"><span class="story-step">scene 04</span><h3>공식이 떠먹이는 관계성</h3><p>골드쉽에게는 오직 페노메노를 놀리기 위한 전용 코믹 모션까지 추가되었다.</p><small>공식의 맛</small></div>
+</div>
 
-    const navIds = ['intro', 'topic01', 'topic02', 'topic03', 'topic04', 'topicex'];
-    const navDots = document.querySelectorAll('.side-dot');
+<!-- ═══ 04 TIMELINE ═══ -->
+<div class="dv"><hr></div>
+<div class="section-head fi" id="topic04">
+  <div class="section-num">04</div>
+  <div class="section-kicker" style="color:var(--feno-main)">원본마 대결 기록</div>
+  <h2 class="section-title">원본마의 대결 역사</h2>
+  <p class="section-lead">인게임의 케미는 동세대인 원본마들의 실제 관계성에서 출발한다.</p>
+</div>
+<div class="timeline fi">
+  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2012</span><span class="race-date en">MAY 27</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">일본 더비</div><div class="race-sub">Tokyo Yushun / first major crossing</div></div><div class="race-tags"><span class="result-chip feno">페노메노 2착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">역사의 시작. 페노메노가 골드쉽보다 한발 앞서 들어왔다.</p></div></div>
+  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">APR 28</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">Kyoto 3200m / fenomeno takes the spring crown</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">페노메노가 골드쉽을 제치고 봄 천황상을 거머쥐며 '괴물 스테이어'로서의 저력을 증명한 순간.</p></div></div>
+  <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">JUN 23</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">타카라즈카 기념</div><div class="race-sub">Hanshin 2200m / gold ship answers back</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 1착</span><span class="result-chip feno">페노메노 4착</span></div></div><p class="race-copy">같은 해 여름에는 골드쉽이 되받아쳤다. 주도권이 엎치락뒤치락했다는 점이 이들의 매력이다.</p></div></div>
+  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">MAY 4</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">back to kyoto / fenomeno goes back-to-back</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 7착</span></div></div><p class="race-copy">페노메노가 봄 천황상 2연패를 달성한 하이라이트 무대. 골드쉽이 유독 날을 세우며 의식했던 경기다.</p></div></div>
+  <div class="race race-interlude"><div class="race-year-line"></div><div class="note-box"><p><span class="note-label en">extra episode</span> 2014년 봄 천황상 중계 영상을 보면, 골드쉽이 바로 옆 칸의 페노메노를 향해 '개처럼 짖으며' 노골적인 경계를 드러내는 장면이 포착된다.</p></div></div>
+  <div class="race race-interlude"><div class="race-year-line"></div><div class="haruten"><div class="haruten-media"><img alt="2025년 천황상(봄) 기념 고루메노 축전" src="../images/haruten.jpeg"/></div><div class="haruten-copy"><div class="haruten-label en">spring tenno sho 2025</div><h3>공식 축전으로 되살아난 하루텐 구도</h3><p>2025년, 천황상(봄)을 기념해 공식 계정에 올라온 축전. 흡사 래퍼들의 디스전처럼 마이크를 든 채 서로를 노려보는 연출은 2014년 하루텐 당시 고루시가 페노메노를 향해 으르렁대던 장면의 고증이다.</p></div></div></div>
+  <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">DEC 28</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">아리마 기념</div><div class="race-sub">Nakayama / final major crossing</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 3착</span><span class="result-chip feno">페노메노 10착</span></div></div><p class="race-copy">마지막 교차점. 인게임에서의 집요한 신경전은 이 대결 역사를 바탕에 둔 묘사다.</p></div></div>
+</div>
 
-    navDots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const target = document.getElementById(dot.dataset.t);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+<!-- ═══ EX ═══ -->
+<div class="dv"><hr></div>
+<div class="section-head fi" id="topicex">
+  <div class="section-num">EX</div>
+  <div class="section-kicker" style="color:var(--gold-main)">황금일족</div>
+  <h2 class="section-title">우마무스메에서 황금일족이 갖는 의미</h2>
+  <p class="section-lead">개개인으로도 독보적인 캐릭터성을 자랑하는 이들은 붙였을 때 더욱 환장의 케미를 만들어낸다.</p>
+</div>
+<div class="extra-stack fi">
+  <div class="wc extra-card"><h3>골드쉽 서사의 빈칸을 메운 상대</h3><p>초기 골드쉽은 또렷한 동세대 라이벌 축이 비어 있는 편이었다. 페노메노가 등장하면서 비로소 제대로 긁히고 끝까지 신경 쓰는 상대가 생겼다.</p></div>
+  <div class="wc extra-card"><h3>황금일족 안의 정상인 포지션</h3><p>제멋대로인 멤버들 사이에서 페노메노는 늘 단속하고 태클 거는 쪽이다. 어떤 조합에 붙여도 곧바로 츳코미와 긴장이 생긴다.</p></div>
+  <div class="wc extra-card"><h3>젠틸돈나까지 이어지는 12세대 관계도</h3><p>고루메노는 둘만 떼어 놓고 봐도 선명하지만, 젠틸돈나까지 얽히는 12세대 관계도 안에 놓였을 때 더 재미있어진다.</p></div>
+</div>
 
-    function updateSideNav() {
-      let current = navIds[0];
-      navIds.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.45) current = id;
-      });
-      navDots.forEach((dot) => dot.classList.toggle('on', dot.dataset.t === current));
-    }
+<div class="clan-box fi">
+  <div class="section-kicker en" style="color:var(--dim);font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.14em;font-size:11px">golden family</div>
+  <h3>지금까지 출시한 황금일족</h3>
+  <p>'황금일족'은 원본마 스테이 골드의 자마들 가운데서도 특히 기행, 승부근성, 실력으로 강한 인상을 남긴 주자들을 가리키는 별칭이다.</p>
+  <div class="clan-grid">
+    <article class="clan-item staygold" style="--main:#bfb33e;--sub:#576898"><div class="clan-thumb"><img src="../images/stego.webp" alt="스테이 골드"/></div><div class="clan-body"><h4>스테이 골드</h4><p>방랑자 타입. 황금일족의 중심축.</p><span class="clan-sub">방랑벽 · 중심축</span></div></article>
+    <article class="clan-item" style="--main:#332d1f;--sub:#E2E095"><div class="clan-thumb"><img src="../images/journey.webp" alt="드림 저니"/></div><div class="clan-body"><h4>드림 저니</h4><p>작은 체구와 집념의 형 라인.</p><span class="clan-sub">형 라인 · 집념</span></div></article>
+    <article class="clan-item" style="--main:#c0453f;--sub:#236192"><div class="clan-thumb"><img src="../images/festa.webp" alt="나카야마 페스타"/></div><div class="clan-body"><h4>나카야마 페스타</h4><p>거친 기세와 국제무대 서사.</p><span class="clan-sub">국제무대 · 불꽃</span></div></article>
+    <article class="clan-item" style="--main:#be4134;--sub:#E5D9A0"><div class="clan-thumb"><img src="../images/orfe.webp" alt="오르페브르"/></div><div class="clan-body"><h4>오르페브르</h4><p>삼관마. 황금일족의 대표격.</p><span class="clan-sub">삼관마 · 상징</span></div></article>
+    <article class="clan-item" style="--main:#da3c57;--sub:#e0d23d"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽"/></div><div class="clan-body"><h4>골드쉽</h4><p>예측 불가의 아이콘. 강렬한 기믹.</p><span class="clan-sub">예측 불가 · 기믹</span></div></article>
+    <article class="clan-item" style="--main:#574a77;--sub:#EADC68"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>유일한 정상인 포지션. 신흥 핵심 축.</p><span class="clan-sub">정상인 · 핵심 축</span></div></article>
+  </div>
+  <div style="margin-top:20px">
+    <div class="section-kicker en" style="color:var(--dim);font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.14em;font-size:11px">12th generation rivals</div>
+    <h3 style="font-size:17px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-top:4px">고루메노의 12세대 동기</h3>
+    <p style="margin-top:6px;font-size:13px;color:var(--dim);line-height:1.8">젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도와 고루메노 맥락을 읽을 때 함께 두는 편이 훨씬 입체적이다.</p>
+  </div>
+  <div class="clan-grid" style="margin-top:12px">
+    <article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>12세대 서사의 핵심 축. 압도적 존재감.</p><span class="clan-sub">12세대 · 존재감</span></div></article>
+  </div>
+</div>
 
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      document.getElementById('sb').style.width =
-        (h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)) * 100 + '%';
-    }, { passive: true });
-    window.addEventListener('scroll', updateSideNav, { passive: true });
-    window.addEventListener('load', updateSideNav);
-    updateSideNav();
-  })();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@17.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
-  <script>if(typeof twemoji!=="undefined") twemoji.parse(document.body,{folder:"svg",ext:".svg"});</script>
+</div><!-- .content -->
+
+<nav class="side-nav" aria-label="섹션 이동">
+  <button class="side-dot on" data-t="intro"><span class="side-tip">소개</span></button>
+  <button class="side-dot" data-t="topic01"><span class="side-tip">요약</span></button>
+  <button class="side-dot" data-t="topic02"><span class="side-tip">대비</span></button>
+  <button class="side-dot" data-t="topic03"><span class="side-tip">서사</span></button>
+  <button class="side-dot" data-t="topic04"><span class="side-tip">역사</span></button>
+  <button class="side-dot" data-t="topicex"><span class="side-tip">황금일족</span></button>
+</nav>
+
+<footer class="footer">
+  <div class="footer-links" style="display:grid;grid-template-columns:1fr 1fr;max-width:320px;margin:0 auto 12px;gap:8px">
+    <a href="../guide/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 6px;border-radius:10px;text-align:center;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">입문 가이드</a>
+    <a href="../movie-guide/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 6px;border-radius:10px;text-align:center;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">극장판 가이드</a>
+  </div>
+  이 페이지는 고루메노 관계성 아카이브로 제작되었습니다.
+  <br>모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank" rel="noopener noreferrer"><span class="en">© Cygames, Inc.</span></a> 에 귀속됩니다.
+  <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em">Made by <a href="https://jhakentertainment.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline dotted;text-underline-offset:3px;opacity:.7">JHAK Entertainment Inc.</a></span></div>
+  <div class="copy"><span class="en" style="font-size:9px;opacity:.4;letter-spacing:.06em">Last updated Mar 25, 2026</span></div>
+</footer>
+
+<script>
+(function(){
+  /* scroll progress */
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement;
+    document.getElementById('sb').style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight))*100+'%';
+  },{passive:true});
+
+  /* fade-in */
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});
+  },{threshold:.05,rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+  /* side nav */
+  const ids=['intro','topic01','topic02','topic03','topic04','topicex'];
+  const dots=document.querySelectorAll('.side-dot');
+  dots.forEach(d=>d.addEventListener('click',()=>{
+    const t=document.getElementById(d.dataset.t);
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+  function updateNav(){
+    let c=ids[0];
+    ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<innerHeight*.45)c=id;});
+    dots.forEach(d=>d.classList.toggle('on',d.dataset.t===c));
+  }
+  window.addEventListener('scroll',updateNav,{passive:true});
+  updateNav();
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@17.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<script>if(typeof twemoji!=="undefined") twemoji.parse(document.body,{folder:"svg",ext:".svg"});</script>
 </body>
 </html>
