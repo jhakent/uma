@@ -24,10 +24,9 @@
 <link rel="apple-touch-icon-precomposed" href="../images/ura.png">
 <style>
 /* ── 극장판 가이드 전용 ── */
-:root{
-  --dot-active:var(--green);
-}
-.mv-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
+:root{--dot-active:var(--green)}
+body::before{background:radial-gradient(ellipse 70% 50% at 30% 90%,rgba(0,169,95,.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 75% 15%,rgba(233,80,152,.05) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(79,184,230,.04) 0%,transparent 50%)}
+.mv-hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 60px;position:relative;overflow:hidden}
 .mv-hero-title{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.06em;line-height:1.1;color:var(--bright);animation:fadeUp .8s ease .15s both}
 .mv-hero-title .sub{display:block;font-family:'Outfit',sans-serif;font-size:clamp(12px,2vw,18px);font-weight:400;letter-spacing:.06em;line-height:2;color:var(--dim);margin-top:20px;text-transform:uppercase}
 .mv-hero-desc{max-width:520px;font-size:14px;font-weight:300;color:var(--dim);line-height:1.85;margin-top:32px;animation:fadeUp .8s ease .3s both}
