@@ -401,7 +401,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .tr-list{padding:12px 16px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,.04)}
 .tr-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
 .tr-tag{font-size:9px;font-weight:600;letter-spacing:.5px;padding:1px 6px;border-radius:4px}
-[id^="s-"],[id^="t-"],[id^="c-"]{scroll-margin-top:140px}
+[id^="s-"],[id^="t-"],[id^="c-"],[id^="sy-"]{scroll-margin-top:140px}
 .sh-link{background:none;border:none;padding:4px;cursor:pointer;opacity:0;transition:opacity .2s;color:var(--dim);flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .sh:hover .sh-link,.sh-link:focus{opacity:.35}
 .sh-link:active{opacity:.6}
@@ -960,7 +960,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
   <div class="dv"><hr></div>
 
-  <div class="sl-wrap fi"><p class="sl" style="color:var(--pink)">캐릭터·카드</p></div>
+  <div class="sl-wrap fi" id="sy-card"><p class="sl" style="color:var(--pink)">캐릭터·카드</p><button class="sl-act" onclick="const u=location.origin+location.pathname+'#sy-card';navigator.clipboard&amp;&amp;navigator.clipboard.writeText(u).then(()=>{this.style.opacity='.6';setTimeout(()=>this.style.opacity='',1200)})" aria-label="이 섹션 공유"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button></div>
   <h2 class="st fi">키우고, 뽑고, 물려받는 구조</h2>
   <p class="sd fi">우마무스메의 성장은 캐릭터의 적성, <b class="hl-o">서포트카드</b>의 편성, 인자의 계승, 그리고 가챠에서 뽑는 자원으로 결정된다.</p>
 
@@ -1269,7 +1269,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <div class="ib pk fi"><div class="ib-l">주의</div><p>전체 데이터 약 20GB 이상. Wi-Fi 환경에서 설치할 것.</p></div>
 <div class="sh fi" id="s-reroll"><div class="sh-title">리세마라</div><div class="sh-sub en">Re-roll</div></div>
   <p class="bp fi">이 게임에서 육성의 질을 결정하는 건 캐릭터의 레어도가 아니라 <b class="hl-o">서포트카드</b>의 돌파 수다. 캐릭터는 명함(1장)만 있으면 충분하지만, <b class="hl-o">서포트카드</b>는 풀돌(4돌파)이 되어야 제 성능이 나온다. 리세마라는 <b class="hl-o">서포트카드</b> 가챠에 전액 투입하는 것이 정석이다.</p>
-  <p class="bp fi">튜토리얼 완료 → 선물함 보상 수령 → <b class="hl-o">서포트카드</b> 가챠 40연차. 불만족 시 카카오톡 설정에서 연결 서비스 삭제 후 재접속(2회차부터 약 1분). 시간이 부담된다면 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">GachaPlus</a>에서 리세계를 구입하는 방법도 있다.</p>
+  <p class="bp fi">튜토리얼 완료 → 선물함 보상 수령 → <b class="hl-o">서포트카드</b> 가챠 40연차. 불만족 시 카카오톡 설정에서 연결 서비스 삭제 후 재접속(2회차부터 약 1분). 시간이 부담된다면 타오바오 등 거래 사이트에서 리세계를 구입하는 방법도 있다. 매물은 <a href="https://gachaplus.com/prettyderby_kr/search?lang=ko_KR" target="_blank" rel="noopener noreferrer">GachaPlus</a>에서 볼 수 있다.</p>
 
   <div class="dv"><hr></div>
 
@@ -1700,14 +1700,17 @@ var isDeepLink=false;
   const hash=location.hash.replace('#','');
   if(!hash) return;
   isDeepLink=true;
+  /* legacy hash redirects */
+  const legacy={'card':'sy-card','sys':'sy-train'};
+  const resolved=legacy[hash]||hash;
   /* section→tab mapping */
-  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-flow':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
-  const tabId=secMap[hash]||hash;
+  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-flow':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-card':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+  const tabId=secMap[resolved]||resolved;
   const tab=document.getElementById('tab-'+tabId);
   if(tab) tab.click();
   /* scroll to section after tab renders */
-  const sec=document.getElementById(hash);
-  if(sec&&secMap[hash]){
+  const sec=document.getElementById(resolved);
+  if(sec&&secMap[resolved]){
     setTimeout(()=>{
       const topH=document.getElementById('topBar')?.offsetHeight||0;
       const subNav=document.querySelector('#pn-'+tabId+' .sub-nav');
