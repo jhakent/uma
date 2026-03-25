@@ -103,28 +103,38 @@ body.goru::before { background:
 .hero-jp { margin-top:10px; font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--dim); }
 .hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
 
-/* CP 노트 */
+/* CP 명칭 — 가벼운 인라인 텍스트 */
 .hero-cp {
-  display:inline-flex; align-items:center; gap:7px;
-  padding:7px 14px; border-radius:999px;
-  border:1px solid rgba(0,0,0,.04);
-  background:linear-gradient(90deg,rgba(218,60,87,.05),rgba(255,255,255,.94) 40%,rgba(87,74,119,.06));
-  box-shadow:0 2px 8px rgba(0,0,0,.03);
-  font-size:11px; font-weight:700; color:var(--dim); white-space:nowrap;
-  margin-top:20px;
-  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  margin-top:18px;
+  font-size:12px; font-weight:500; color:var(--dim); opacity:.55;
+  letter-spacing:.02em;
 }
-.hero-cp .sep { opacity:.3; }
+.hero-cp .sep { margin:0 .4em; opacity:.35; }
+.hero-cp .en { font-family:'Outfit',sans-serif; letter-spacing:.08em; }
 
 /* 설명 텍스트 */
 .hero-desc { max-width:460px; margin:14px auto 0; font-size:14px; color:var(--dim); line-height:1.85; }
-.hero-pills { display:flex; justify-content:center; flex-wrap:wrap; gap:6px; margin-top:16px; }
-.hero-pills .pill {
-  padding:7px 12px; font-size:11px; font-weight:600; color:var(--dim);
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+
+/* 별명 — 반투명 글래스 안 뱃지 */
+.hero-tags {
+  display:inline-flex; align-items:center; gap:6px;
+  margin-top:16px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
 }
+.hero-badge {
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px; font-weight:700; letter-spacing:-.01em;
+  color:var(--dim);
+  background:rgba(255,255,255,.7);
+  border:1px solid rgba(0,0,0,.04);
+}
+
 .hero-foot { max-width:460px; margin:6px auto 0; font-size:10px; color:var(--dim); opacity:.45; line-height:1.7; text-align:center; }
 .mo-br { display:none; }
 
@@ -390,9 +400,9 @@ body.goru::before { background:
       <p class="hero-jp">ゴールドシップ × フェノーメノ</p>
       <p class="hero-en en">GOLD SHIP × FENOMENO</p>
     </div>
-    <div class="hero-cp hero-load hero-load-4"><span>ゴルメノ</span><span class="sep">|</span><span>고루메노</span><span class="sep">|</span><span class="en">Gorumeno</span></div>
+    <p class="hero-cp hero-load hero-load-4">ゴルメノ<span class="sep">·</span>고루메노<span class="sep">·</span><span class="en">Gorumeno</span></p>
     <p class="hero-desc hero-load hero-load-5">어디로 튈지 모르는 괴짜 골드쉽, 그 장난을 매번 진지하게 받아치는 페노메노. 한쪽은 끝없이 놀리고, 한쪽은 끝없이 뒤쫓는다. 맞붙을 때마다 으르렁대지만, 결국 서로만이 상대를 진정으로 알아보는, 혐관의 교과서.</p>
-    <div class="hero-pills hero-load hero-load-6"><span class="pill">경찰과 도둑</span><span class="pill">톰과 제리</span><span class="pill">보케와 츳코미</span></div>
+    <div class="hero-tags hero-load hero-load-6"><span class="hero-badge">경찰과 도둑</span><span class="hero-badge">톰과 제리</span><span class="hero-badge">보케와 츳코미</span></div>
     <p class="hero-foot hero-load hero-load-6">* 보케와 츳코미: 일본 만담에서 헛소리·폭주를 치는 쪽과, <span class="mo-br"></span>그걸 받아치며 태클 거는 쪽을 가리키는 말.</p>
   </div>
   <div class="hero-accent-line"></div>
