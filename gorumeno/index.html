@@ -112,26 +112,21 @@ body.goru::before { background:
 .hero-cp .sep { margin:0 .4em; opacity:.35; }
 .hero-cp .en { font-family:'Outfit',sans-serif; letter-spacing:.08em; }
 
-/* 설명 텍스트 */
-.hero-desc { max-width:460px; margin:14px auto 0; font-size:14px; color:var(--dim); line-height:1.85; }
-
-/* 별명 — 반투명 글래스 안 뱃지 */
-.hero-tags {
-  display:inline-flex; align-items:center; gap:6px;
-  margin-top:16px;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.45);
-  box-shadow:0 2px 12px rgba(0,0,0,.04);
+/* 설명 + 뱃지 글래스 패널 */
+.hero-desc-wrap {
+  max-width:460px; margin:14px auto 0;
+  text-align:center;
 }
+.hero-desc { font-size:14px; color:var(--dim); line-height:1.85; }
+
+/* 뱃지 */
+.hero-badges { display:flex; justify-content:center; flex-wrap:wrap; gap:6px; margin-top:12px; }
 .hero-badge {
-  padding:4px 10px;
+  padding:5px 11px;
   border-radius:999px;
   font-size:11px; font-weight:700; letter-spacing:-.01em;
   color:var(--dim);
-  background:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.65);
   border:1px solid rgba(0,0,0,.04);
 }
 
@@ -346,12 +341,12 @@ body.goru::before { background:
   .hero-char{height:90%;opacity:.20}
   .hero-char.gold{left:-18%}
   .hero-char.feno{right:-18%}
-  /* 서브텍스트에만 반투명 배경 */
-  .hero-desc{
+  /* 설명+뱃지 글래스 패널 */
+  .hero-desc-wrap{
     background:rgba(255,255,255,.68);
     backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-    border-radius:14px;
-    padding:14px 18px;
+    border-radius:24px;
+    padding:18px 22px;
     border:1px solid rgba(255,255,255,.5);
   }
 }
@@ -362,7 +357,7 @@ body.goru::before { background:
   .hero-char{height:95%;opacity:.22}
   .hero-char.gold{left:-28%}
   .hero-char.feno{right:-28%}
-  .hero-desc{padding:12px 16px;border-radius:12px}
+  .hero-desc-wrap{padding:16px 18px;border-radius:22px}
   .section-num{font-size:44px} .section-title{font-size:20px}
   .compare-section>h3{font-size:20px}
   .profile-top{gap:10px} .profile-portrait{width:56px;height:56px;border-radius:10px} .profile-ko{font-size:18px}
@@ -401,8 +396,10 @@ body.goru::before { background:
       <p class="hero-en en">GOLD SHIP × FENOMENO</p>
     </div>
     <p class="hero-cp hero-load hero-load-4">ゴルメノ<span class="sep">·</span>고루메노<span class="sep">·</span><span class="en">Gorumeno</span></p>
-    <p class="hero-desc hero-load hero-load-5">어디로 튈지 모르는 괴짜 골드쉽, 그 장난을 매번 진지하게 받아치는 페노메노. 한쪽은 끝없이 놀리고, 한쪽은 끝없이 뒤쫓는다. 맞붙을 때마다 으르렁대지만, 결국 서로만이 상대를 진정으로 알아보는, 혐관의 교과서.</p>
-    <div class="hero-tags hero-load hero-load-6"><span class="hero-badge">경찰과 도둑</span><span class="hero-badge">톰과 제리</span><span class="hero-badge">보케와 츳코미</span></div>
+    <div class="hero-desc-wrap hero-load hero-load-5">
+      <p class="hero-desc">어디로 튈지 모르는 괴짜 골드쉽, 그 장난을 매번 진지하게 받아치는 페노메노. 한쪽은 끝없이 놀리고, 한쪽은 끝없이 뒤쫓는다. 맞붙을 때마다 으르렁대지만, 결국 서로만이 상대를 진정으로 알아보는, 혐관의 교과서.</p>
+      <div class="hero-badges"><span class="hero-badge">경찰과 도둑</span><span class="hero-badge">톰과 제리</span><span class="hero-badge">보케와 츳코미</span></div>
+    </div>
     <p class="hero-foot hero-load hero-load-6">* 보케와 츳코미: 일본 만담에서 헛소리·폭주를 치는 쪽과, <span class="mo-br"></span>그걸 받아치며 태클 거는 쪽을 가리키는 말.</p>
   </div>
   <div class="hero-accent-line"></div>
