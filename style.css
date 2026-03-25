@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════ */
-/* 우마무스메 공용 디자인 시스템                                     */
-/* ═══════════════════════════════════════════════════════════════ */
+/* ── 공용 ── */
 
 :root{
   --bg:#fff;--bg-warm:#fafaf8;--surface:#f4f3f0;--surface-2:#eeedea;
@@ -273,9 +271,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .hl-o{font-weight:700;background-image:linear-gradient(90deg,rgba(255,152,0,.18),rgba(255,152,0,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .hl-r{font-weight:700;background-image:linear-gradient(90deg,rgba(229,57,53,.18),rgba(229,57,53,.18));background-size:100% 38%;background-position:0 80%;background-repeat:no-repeat;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-/* ═══════════════════════════════════════════════════════════════ */
-/* 입문 가이드 (guide/index.html)                                  */
-/* ═══════════════════════════════════════════════════════════════ */
+/* ── 입문 가이드 ── */
 
 /* ── HERO APP ── */
 .hero-app{
@@ -668,9 +664,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .tb[data-t="sys"]{position:relative}
 .tb[data-t="sys"]::before{content:'';position:absolute;inset:4px 0 0;background:rgba(79,184,230,.12);border-radius:12px;filter:blur(6px);z-index:-1}
 
-/* ═══════════════════════════════════════════════════════════════ */
-/* 극장판 가이드 + 파생 페이지 공용 컴포넌트                          */
-/* ═══════════════════════════════════════════════════════════════ */
+/* ── 극장판 + 파생 ── */
 
 /* ── CHARACTER CARDS ── */
 /* 슬롯 변수: --char-main, --char-sub (각 .char-card에 선언) */
