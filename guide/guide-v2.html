@@ -386,6 +386,8 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .rc-toggle .rc-group{margin-bottom:0;border:none;border-radius:0;box-shadow:none;border-top:1px solid rgba(0,0,0,.04)}
 
 .sub-nav{display:flex;flex-wrap:wrap;gap:5px 6px;padding:8px 24px 10px;position:sticky;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.04);margin:0 -24px}
+.sn-break{display:none}
+@media(max-width:640px){.sn-break{display:block;flex-basis:100%;height:0}}
 .sub-nav .sn{font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:600;color:var(--dim);background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.04);border-radius:20px;padding:5px 12px;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent;letter-spacing:-.02em}
 .sub-nav .sn:hover{background:rgba(0,0,0,.06)}
 .sub-nav .sn.on{background:rgba(0,169,95,.08);color:#00a95f;border-color:rgba(0,169,95,.15)}
@@ -1197,16 +1199,16 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   <p class="bp fi" style="margin-bottom:20px">특정 <b class="hl-r">G1</b> 조합을 같은 해에 모두 우승하면 타이틀이 기록된다. 실제 경마에서 부여되는 타이틀을 기반으로 구성되어 있다.</p>
 
   <details class="rc-toggle fi">
-  <summary class="rc-toggle-head" style="--rc-c:#8b7355;--rc-t:rgba(212,175,55,.08);--rc-b2:rgba(180,150,60,.12);background:linear-gradient(160deg,rgba(255,255,255,.85) 30%,rgba(240,220,160,.18))">클래식 제패 · 시니어 제패 일람<span class="rc-toggle-count en">9</span></summary>
+  <summary class="rc-toggle-head" style="--rc-c:var(--bright);--rc-t:rgba(212,175,55,.06);--rc-b2:rgba(180,150,60,.1);background:linear-gradient(160deg,rgba(255,255,255,.85) 30%,rgba(240,220,160,.15))">클래식 제패 · 시니어 제패 일람<span class="rc-toggle-count en">9</span></summary>
   <div class="rc-group">
-    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">클래식 3관</span><div class="rc-tags"><span class="rc-tag dist">사츠키상 → 일본 더비 → 국화상</span></div></div>
-    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">트리플 티아라</span><div class="rc-tags"><span class="rc-tag dist">벚꽃상 → 오크스 → 추화상</span></div></div>
-    <div class="rc"><span class="rc-time">🌸</span><span class="rc-name">봄 시니어 3관</span><div class="rc-tags"><span class="rc-tag dist">오사카배 → 텐노상 봄 → 타카라즈카 기념</span></div></div>
-    <div class="rc"><span class="rc-time">🍂</span><span class="rc-name">가을 시니어 3관</span><div class="rc-tags"><span class="rc-tag dist">텐노상 가을 → 재팬컵 → 아리마 기념</span></div></div>
-    <div class="rc"><span class="rc-time">👑</span><span class="rc-name">봄가을 텐노상 제패</span><div class="rc-tags"><span class="rc-tag dist">텐노상 봄 + 텐노상 가을</span></div></div>
-    <div class="rc"><span class="rc-time">🎪</span><span class="rc-name">봄가을 그랑프리 제패</span><div class="rc-tags"><span class="rc-tag dist">타카라즈카 기념 + 아리마 기념</span></div></div>
-    <div class="rc"><span class="rc-time">⚡</span><span class="rc-name">봄가을 스프린트 제패</span><div class="rc-tags"><span class="rc-tag dist">타카마츠노미야 기념 + 스프린터스 S</span></div></div>
-    <div class="rc"><span class="rc-time">💨</span><span class="rc-name">봄가을 마일 제패</span><div class="rc-tags"><span class="rc-tag dist">야스다 기념 + 마일 CS</span></div></div>
+    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">클래식 3관</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(196,160,0,.08);color:#b8960a">사츠키상 → 일본 더비 → 국화상</span></div></div>
+    <div class="rc"><span class="rc-time">🏆</span><span class="rc-name">트리플 티아라</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(200,60,80,.08);color:#c0445a">벚꽃상 → 오크스 → 추화상</span></div></div>
+    <div class="rc"><span class="rc-time">🌸</span><span class="rc-name">봄 시니어 3관</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(233,80,152,.08);color:#d4568a">오사카배 → 텐노상 봄 → 타카라즈카 기념</span></div></div>
+    <div class="rc"><span class="rc-time">🍂</span><span class="rc-name">가을 시니어 3관</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(160,110,60,.08);color:#9a7040">텐노상 가을 → 재팬컵 → 아리마 기념</span></div></div>
+    <div class="rc"><span class="rc-time">👑</span><span class="rc-name">봄가을 텐노상 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(40,60,120,.08);color:#3a5090">텐노상 봄 + 텐노상 가을</span></div></div>
+    <div class="rc"><span class="rc-time">🎪</span><span class="rc-name">봄가을 그랑프리 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(128,30,50,.08);color:#8c2840">타카라즈카 기념 + 아리마 기념</span></div></div>
+    <div class="rc"><span class="rc-time">⚡</span><span class="rc-name">봄가을 스프린트 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(212,86,138,.08);color:#d4568a">타카마츠노미야 기념 + 스프린터스 S</span></div></div>
+    <div class="rc"><span class="rc-time">💨</span><span class="rc-name">봄가을 마일 제패</span><div class="rc-tags"><span class="rc-tag" style="background:rgba(90,158,47,.08);color:#5a9e2f">야스다 기념 + 마일 CS</span></div></div>
     <div class="rc"><span class="rc-time">🏴</span><span class="rc-name">봄가을 더트 제패</span><div class="rc-tags"><span class="rc-tag dirt">페브러리 S + 챔피언스컵</span></div></div>
   </div>
   </details>
@@ -1325,9 +1327,10 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
     <button class="sn on" data-s="s-card-prep">카드 준비</button>
     <button class="sn" data-s="s-train">첫 육성</button>
     <button class="sn" data-s="s-teamrace">팀 레이스</button>
-    <button class="sn" data-s="s-circle">서클</button>
+    <button class="sn" data-s="s-circle">서클 가입</button>
+    <div class="sn-break"></div>
     <button class="sn" data-s="s-daily">매일 루틴</button>
-    <button class="sn" data-s="s-factor">인자</button>
+    <button class="sn" data-s="s-factor">인자 기초</button>
     <button class="sn" data-s="s-mistakes">뉴비 실수</button>
   </nav>
 
@@ -1843,8 +1846,14 @@ if(trF){
   }
 }
 
-/* ── G1 race shoe icons ── */
-document.querySelectorAll('.rc').forEach(rc=>{
+/* ── G1 race shoe icons (only inside G1 toggles, not achievements) ── */
+(function(){
+  const g1=document.getElementById('sy-g1');
+  if(!g1) return;
+  let el=g1.nextElementSibling;
+  while(el && !el.id){
+    if(el.classList.contains('rc-toggle')||el.classList.contains('fi')){
+      el.querySelectorAll('.rc').forEach(rc=>{
   const dist=rc.querySelector('.rc-tag.dist');
   if(!dist) return;
   const isDirt=rc.querySelector('.rc-tag.dirt');
@@ -1865,7 +1874,11 @@ document.querySelectorAll('.rc').forEach(rc=>{
   rc.style.position='relative';
   rc.style.paddingRight='36px';
   rc.appendChild(img);
-});
+      });
+    }
+    el=el.nextElementSibling;
+  }
+})();
 /* set sticky top dynamically */
 function setSubNavTop(){
   const h=document.getElementById('topBar');
