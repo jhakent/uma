@@ -906,9 +906,8 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .vc-g { text-align:right; }
 .vc-f { text-align:left; }
 .vc-sep { width:1px; height:13px; flex-shrink:0; opacity:.35; border-radius:1px; }
-.vs-name { position:absolute; bottom:12px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); z-index:10; }
-.vs-name.gold { left:14px; }
-.vs-name.feno { right:14px; }
+.vs-namebar { display:flex; justify-content:space-between; padding:6px 14px 0; }
+.vs-name { font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 
 /* 02 BATTLE TABLE */
 .bt { margin-top:10px; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
@@ -1001,9 +1000,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
 /* CLAN 12GEN SECTION — clan-box 내 젠틸돈나 섹션 */
 .clan-12gen { margin-top:18px; padding-top:18px; border-top:1px solid var(--border); }
-.clan-12gen-head { margin-bottom:14px; }
-.clan-12gen-head h4 { font-size:14px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-top:4px; }
-.clan-12gen-head p { font-size:12.5px; color:var(--dim); line-height:1.78; margin-top:4px; }
+.clan-12gen-lead { font-size:12.5px; color:var(--dim); line-height:1.78; margin-top:4px; margin-bottom:14px; }
 
 /* FOOTER COPY */
 .footer-copy-brand { font-size:10px; letter-spacing:.06em; }
