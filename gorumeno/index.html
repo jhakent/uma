@@ -159,6 +159,12 @@ body.goru::before { background:
 /* ═══ SECTION HEAD — 공용 CSS로 이동 완료 ═══ */
 .kicker-gold { color:var(--gold-main); }
 .kicker-feno { color:var(--feno-main); }
+.core-label.cl-gold { color:var(--gold-main); }
+.core-label.cl-feno { color:var(--feno-main); }
+.core-label.cl-mix { color:var(--dim); }
+.clan-sub-head h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-top:3px; }
+.clan-sub-head p { margin-top:4px; font-size:12.5px; color:var(--dim); line-height:1.78; }
+.clan-sub-head { margin-top:18px; }
 
 /* ═══ 01 CORE READ ═══ */
 .core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
@@ -183,7 +189,7 @@ body.goru::before { background:
   border:1px solid rgba(87,74,119,.10); color:var(--feno-main); display:grid; gap:6px;
 }
 .feno-quote .q-main { margin:0; font-size:17px; line-height:1.5; font-weight:900; }
-.feno-quote .q-sfx { font-size:12px; font-style:italic; background:none; }
+.feno-quote .q-sfx { font-size:12px; font-style:italic; background:none; text-decoration:none; }
 .feno-quote .q-sfx.top { justify-self:start; }
 .feno-quote .q-sfx.bottom { justify-self:end; }
 
@@ -326,8 +332,6 @@ body.goru::before { background:
 .clan-item.donna { background:linear-gradient(180deg,rgba(207,47,43,.05),rgba(255,255,255,.97) 50%); }
 
 /* ═══ SIDE NAV — 공용 .dot-nav 사용 ═══ */
-.dot-nav .dot-tip { position:absolute; right:16px; top:50%; transform:translateY(-50%) translateX(4px); opacity:0; pointer-events:none; white-space:nowrap; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04); box-shadow:0 4px 14px rgba(0,0,0,.07); color:var(--dim); font-size:10px; font-weight:600; transition:opacity .2s,transform .2s; }
-.dot-nav .dot:hover .dot-tip { opacity:1; transform:translateY(-50%) translateX(0); }
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:901px){ .haruten{display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start} .haruten-media{max-width:280px;margin:0} }
@@ -412,10 +416,10 @@ body.goru::before { background:
 <div class="dv"><hr></div>
 <div class="section-head fi" id="topic01"><div class="section-num">01</div><div class="section-kicker kicker-gold">핵심 요약</div><h2 class="section-title">고루메노 관계성 핵심 요약</h2><p class="section-lead">겉으로는 그냥 개그 콤비 같지만, 이들에게는 한마디로 정의할 수 없는 입체적인 관계성과 서사가 있다. 고루메노는 일상에서도, 진지한 육성 스토리에서도 고유한 매력을 보여주는 앙숙이자 동지, 친구이자 라이벌이다.</p></div>
 <div class="core-grid fi">
-  <div class="wc core-card cc-gold"><span class="core-label" style="color:var(--gold-main)">gold ship</span><h3>종잡을 수 없는 사고뭉치</h3><p>골드쉽은 본래 트레센 학원 내에서 둘째 가라면 서러울 장난꾸러기다. 페노메노 앞에서는 유독 그 장난의 수위가 한 단계 더 올라간다. 일부러 더 긁고, 반응을 살핀다.</p></div>
-  <div class="wc core-card cc-feno"><span class="core-label" style="color:var(--feno-main)">fenomeno</span><h3>그를 쫓는 정의로운 선도부원</h3><p>페노메노는 책임감 강한 선도부원이자 경찰(지망생)이다. 골드쉽이 일으키는 사건사고는 하루도 그냥 넘어갈 수 없다. 그의 진심어린 대응이 오히려 골드쉽을 더욱 날뛰게 한다.</p></div>
-  <div class="wc core-card cc-mix"><span class="core-label" style="color:var(--dim)">in game</span><h3>개그 콤비이자 최광의 라이벌</h3><p>덤앤더머 케미도 일품이지만, 별미는 라이벌 서사에 있다. 골드쉽은 페노메노의 삶에 자꾸만 끼어들고, 자꾸만 신경쓰이게 한다. 하지만, 그건 골드쉽 쪽도 마찬가지다.</p></div>
-  <div class="wc core-card cc-mix"><span class="core-label" style="color:var(--dim)">original horse</span><h3>최광의 세대가 남긴 대결 구도</h3><p>두 원본마는 흔히 ‘최광(狂)의 세대’라 불리는 12세대, 2009년생 동기다. 일본 더비, 봄 천황상, 타카라즈카 기념, 아리마 기념까지 큰 무대에서 여러 차례 붙은 전적이 있다. 특히, 봄 천황상에서 페노메노는 골드쉽을 2년 연속으로 꺾었다.</p></div>
+  <div class="wc core-card cc-gold"><span class="core-label cl-gold">gold ship</span><h3>종잡을 수 없는 사고뭉치</h3><p>골드쉽은 본래 트레센 학원 내에서 둘째 가라면 서러울 장난꾸러기다. 페노메노 앞에서는 유독 그 장난의 수위가 한 단계 더 올라간다. 일부러 더 긁고, 반응을 살핀다.</p></div>
+  <div class="wc core-card cc-feno"><span class="core-label cl-feno">fenomeno</span><h3>그를 쫓는 정의로운 선도부원</h3><p>페노메노는 책임감 강한 선도부원이자 경찰(지망생)이다. 골드쉽이 일으키는 사건사고는 하루도 그냥 넘어갈 수 없다. 그의 진심어린 대응이 오히려 골드쉽을 더욱 날뛰게 한다.</p></div>
+  <div class="wc core-card cc-mix"><span class="core-label cl-mix">in game</span><h3>개그 콤비이자 최광의 라이벌</h3><p>덤앤더머 케미도 일품이지만, 별미는 라이벌 서사에 있다. 골드쉽은 페노메노의 삶에 자꾸만 끼어들고, 자꾸만 신경쓰이게 한다. 하지만, 그건 골드쉽 쪽도 마찬가지다.</p></div>
+  <div class="wc core-card cc-mix"><span class="core-label cl-mix">original horse</span><h3>최광의 세대가 남긴 대결 구도</h3><p>두 원본마는 흔히 ‘최광(狂)의 세대’라 불리는 12세대, 2009년생 동기다. 일본 더비, 봄 천황상, 타카라즈카 기념, 아리마 기념까지 큰 무대에서 여러 차례 붙은 전적이 있다. 특히, 봄 천황상에서 페노메노는 골드쉽을 2년 연속으로 꺾었다.</p></div>
 </div>
 <div class="onecut fi"><div class="onecut-kicker">official 1cut</div><div class="onecut-title">정의의 추격</div><div class="onecut-media"><img alt="페노메노 공식 1컷 만화" src="../images/meno-onecut.jpg"/></div><div class="feno-quote"><div class="q-sfx top">(부릅!)</div><p class="q-main">“매번매번 규칙을 벗어나기나 하고… <br class="mo-br">오늘은 반드시 잡고야 말겠습니다!!”</p><div class="q-sfx bottom">(다다다다다다다)</div></div></div>
 
@@ -486,8 +490,8 @@ body.goru::before { background:
     <article class="clan-item" style="--main:#da3c57;--sub:#e0d23d"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽"/></div><div class="clan-body"><h4>골드쉽</h4><p>‘고루시’라는 애칭으로 불리는 예측 불가의 아이콘. 강렬한 기믹과 팬덤 화력이 특히 강하고, 황금일족 서사를 바깥으로 가장 크게 확장시킨 얼굴이기도 하다.</p><span class="clan-sub">예측 불가 · 강한 기믹</span></div></article>
     <article class="clan-item" style="--main:#574a77;--sub:#EADC68"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>비교적 늦게 합류했지만, 골드쉽과의 라이벌 구도를 선명하게 채운 신흥 핵심 축이다. 유일한 정상인 포지션이라는 점까지 더해져 황금일족 안에서도 존재감이 또렷하다.</p><span class="clan-sub">정상인 포지션 · 신흥 핵심 축</span></div></article>
   </div>
-  <div style="margin-top:18px"><div class="compare-label en">12th generation rivals</div><h3 style="font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-top:3px">고루메노의 12세대 동기</h3><p style="margin-top:4px;font-size:12.5px;color:var(--dim);line-height:1.78">젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도에서 함께 두는 편이 훨씬 입체적이다.</p></div>
-  <div class="clan-grid" style="margin-top:10px"><article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article></div>
+  <div class="clan-sub-head"><div class="compare-label en">12th generation rivals</div><h3>고루메노의 12세대 동기</h3><p>젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도에서 함께 두는 편이 훨씬 입체적이다.</p></div>
+  <div class="clan-grid"><article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article></div>
 </div>
 </div>
 
@@ -501,7 +505,7 @@ body.goru::before { background:
 </nav>
 
 <footer class="footer">
-  <div class="footer-links footer-links-own" style="margin-bottom:12px">
+  <div class="footer-links footer-links-own">
     <a href="../guide/">입문 가이드</a>
     <a href="../movie-guide/">극장판 가이드</a>
   </div>
