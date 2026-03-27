@@ -85,7 +85,7 @@ body.goru::before { background:
   padding:7px 14px; border-radius:999px;
   background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04);
   box-shadow:0 2px 10px rgba(0,0,0,.04);
-  font-family:'Outfit',sans-serif; font-size:10px; font-weight:600;
+  font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600;
   letter-spacing:3px; text-transform:uppercase; color:var(--dim);
   backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
 }
@@ -96,12 +96,12 @@ body.goru::before { background:
 .hero-title { font-size:clamp(32px,6.5vw,52px); font-weight:900; letter-spacing:-.065em; line-height:1.0; color:var(--bright); }
 .hero-title .times { 
   display:inline-block; 
-  font-family:'Cormorant Garamond',serif; font-weight:400; font-style:italic;
+  font-family:‘Cormorant Garamond',serif; font-weight:400; font-style:italic;
   font-size:.75em; letter-spacing:0; margin:0 .08em; vertical-align:.08em;
   opacity:.35;
 }
 .hero-jp { margin-top:10px; font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--dim); }
-.hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
+.hero-en { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
 
 /* CP 명칭 — 가벼운 인라인 텍스트 */
 .hero-cp {
@@ -110,7 +110,7 @@ body.goru::before { background:
   letter-spacing:.02em;
 }
 .hero-cp .sep { margin:0 .4em; opacity:.35; }
-.hero-cp .en { font-family:'Outfit',sans-serif; letter-spacing:.08em; }
+.hero-cp .en { font-family:‘Outfit',sans-serif; letter-spacing:.08em; }
 
 /* 설명 + 뱃지 글래스 패널 */
 .hero-desc-wrap {
@@ -152,11 +152,13 @@ body.goru::before { background:
 .hook-card.gold::before { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
 .hook-card.mix::before { background:var(--goru-accent); }
 .hook-card.feno::before { background:linear-gradient(90deg,var(--feno-sub),var(--feno-main)); }
-.hook-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.hook-kicker { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .hook-card h3 { margin-top:6px; font-size:14.5px; font-weight:800; letter-spacing:-.04em; line-height:1.24; color:var(--bright); }
 .hook-card p { margin-top:5px; font-size:12px; line-height:1.72; color:var(--dim); }
 
 /* ═══ SECTION HEAD — 공용 CSS로 이동 완료 ═══ */
+.kicker-gold { color:var(--gold-main); }
+.kicker-feno { color:var(--feno-main); }
 
 /* ═══ 01 CORE READ ═══ */
 .core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
@@ -165,13 +167,13 @@ body.goru::before { background:
 .core-card.cc-gold::before { background:linear-gradient(135deg,rgba(218,60,87,.06),transparent 65%); }
 .core-card.cc-feno::before { background:linear-gradient(135deg,rgba(87,74,119,.07),transparent 65%); }
 .core-card.cc-mix::before { background:linear-gradient(135deg,rgba(218,60,87,.03),rgba(87,74,119,.03),transparent 65%); }
-.core-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; margin-bottom:4px; position:relative; z-index:1; }
+.core-label { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; margin-bottom:4px; position:relative; z-index:1; }
 .core-card h3 { font-size:15px; position:relative; z-index:1; }
 .core-card p { font-size:13px; position:relative; z-index:1; }
 
 /* onecut */
 .onecut { margin-top:18px; padding:22px; border-radius:14px; border:1px solid rgba(87,74,119,.08); background:rgba(255,255,255,.97); box-shadow:0 3px 18px rgba(0,0,0,.06); }
-.onecut-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
+.onecut-kicker { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
 .onecut-title { font-size:17px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-bottom:12px; }
 .onecut-media { width:100%; max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden; border:1px solid rgba(87,74,119,.10); }
 .onecut-media img { display:block; width:100%; height:auto; }
@@ -209,7 +211,7 @@ body.goru::before { background:
 .profile-ko { font-size:22px; font-weight:900; letter-spacing:-.05em; line-height:1.1; margin-top:2px; }
 .profile-card.gold .profile-ko { color:#b72f48; }
 .profile-card.feno .profile-ko { color:#4d416c; }
-.profile-en { font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.16em; text-transform:uppercase; margin-top:2px; }
+.profile-en { font-family:‘Outfit',sans-serif; font-size:10px; letter-spacing:.16em; text-transform:uppercase; margin-top:2px; }
 .profile-card.gold .profile-en { color:var(--gold-main); }
 .profile-card.feno .profile-en { color:var(--feno-main); }
 .profile-facts { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:12px; border-top:1px solid var(--border); }
@@ -224,7 +226,7 @@ body.goru::before { background:
 
 /* ═══ 02 COMPARE ═══ */
 .compare-section { margin-top:24px; }
-.compare-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.compare-label { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .compare-section > h3 { font-size:clamp(20px,3.8vw,28px); font-weight:800; letter-spacing:-.055em; line-height:1.15; color:var(--bright); margin-top:4px; }
 .compare-section > p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; max-width:480px; }
 .compare-showcase { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:end; margin:20px 0; }
@@ -233,14 +235,14 @@ body.goru::before { background:
 .showcase-fig.gold::before { background:radial-gradient(circle,rgba(224,210,61,.9),rgba(218,60,87,.2) 55%,transparent 74%); }
 .showcase-fig.feno::before { background:radial-gradient(circle,rgba(234,220,104,.85),rgba(87,74,119,.25) 55%,transparent 74%); }
 .showcase-fig img { position:relative; z-index:1; max-width:100%; max-height:380px; object-fit:contain; filter:drop-shadow(0 16px 24px rgba(0,0,0,.10)); }
-.showcase-fig figcaption { position:relative; z-index:2; margin-top:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.90); border:1px solid rgba(0,0,0,.04); font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.showcase-fig figcaption { position:relative; z-index:2; margin-top:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.90); border:1px solid rgba(0,0,0,.04); font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .compare-deck { display:grid; gap:10px; }
 .compare-topic { overflow:hidden; border:1px solid rgba(0,0,0,.04); border-radius:14px; background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.05); }
 .compare-topic-head { display:flex; align-items:center; justify-content:center; min-height:40px; padding:8px 14px; font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#fff; }
 .compare-topic.appearance .compare-topic-head, .compare-topic.naming .compare-topic-head, .compare-topic.common .compare-topic-head { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
 .compare-topic.personality .compare-topic-head, .compare-topic.role .compare-topic-head { background:linear-gradient(90deg,var(--feno-main),var(--feno-sub)); }
 .compare-topic-body { display:grid; grid-template-columns:1fr 48px 1fr; align-items:stretch; }
-.compare-topic-vs { display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.02); border-left:1px solid rgba(0,0,0,.03); border-right:1px solid rgba(0,0,0,.03); font-family:'Outfit',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; color:rgba(0,0,0,.12); }
+.compare-topic-vs { display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.02); border-left:1px solid rgba(0,0,0,.03); border-right:1px solid rgba(0,0,0,.03); font-family:‘Outfit',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; color:rgba(0,0,0,.12); }
 .compare-topic-side { padding:14px 16px; }
 .compare-topic-side.gold { background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(218,60,87,.03)); }
 .compare-topic-side.feno { background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(87,74,119,.03)); }
@@ -255,9 +257,12 @@ body.goru::before { background:
 
 /* ═══ 03 STORY ═══ */
 .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
+.story-card:nth-child(-n+2) { grid-column:1 / -1; }
+.story-card:nth-child(-n+2) h3 { font-size:16px; }
+.story-card:nth-child(-n+2) p { font-size:13.5px; }
 .story-card { position:relative; overflow:hidden; }
 .story-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(218,60,87,.03),rgba(87,74,119,.03),transparent 65%); pointer-events:none; }
-.story-step { display:inline-block; padding:3px 8px; border-radius:999px; background:rgba(0,0,0,.03); font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); position:relative; z-index:1; }
+.story-step { display:inline-block; padding:3px 8px; border-radius:999px; background:rgba(0,0,0,.03); font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); position:relative; z-index:1; }
 .story-card h3 { margin-top:6px; font-size:15px; position:relative; z-index:1; }
 .story-card p { font-size:12.5px; position:relative; z-index:1; }
 .story-card small { display:block; margin-top:6px; font-size:10px; color:var(--dim); opacity:.5; position:relative; z-index:1; }
@@ -265,7 +270,7 @@ body.goru::before { background:
 /* ═══ 04 TIMELINE ═══ */
 .timeline { display:grid; gap:8px; position:relative; margin-top:18px; }
 .race { display:grid; grid-template-columns:auto minmax(0,1fr); gap:12px; align-items:start; position:relative; }
-.race-year { display:flex; flex-direction:column; align-items:center; gap:3px; padding:14px 0 0; font-family:'Outfit',sans-serif; width:44px; position:relative; z-index:1; }
+.race-year { display:flex; flex-direction:column; align-items:center; gap:3px; padding:14px 0 0; font-family:‘Outfit',sans-serif; width:44px; position:relative; z-index:1; }
 .race-dot { width:10px; height:10px; border-radius:50%; position:relative; z-index:2; }
 .race-year.gold .race-dot { background:linear-gradient(135deg,var(--gold-main),#e85f6a); box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(218,60,87,.12); }
 .race-year.feno .race-dot { background:linear-gradient(135deg,var(--feno-main),#7a68a6); box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(87,74,119,.12); }
@@ -280,7 +285,7 @@ body.goru::before { background:
 .race-card { border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); padding:16px 18px; box-shadow:0 2px 12px rgba(0,0,0,.05); }
 .race-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
 .race-name { font-size:16px; font-weight:800; letter-spacing:-.04em; line-height:1.2; color:var(--bright); }
-.race-sub { margin-top:3px; font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.10em; text-transform:uppercase; color:var(--dim); }
+.race-sub { margin-top:3px; font-family:‘Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.10em; text-transform:uppercase; color:var(--dim); }
 .race-tags { display:flex; gap:5px; flex-wrap:wrap; justify-content:flex-end; }
 .result-chip { padding:5px 9px; border-radius:999px; font-size:10px; font-weight:800; color:#fff; white-space:nowrap; }
 .result-chip.gold { background:linear-gradient(135deg,var(--gold-main),#f06f60); }
@@ -288,13 +293,13 @@ body.goru::before { background:
 .race-copy { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
 .note-box { margin-top:8px; padding:14px 16px; }
 .note-box p { margin:0; font-size:12.5px; line-height:1.78; color:var(--dim); }
-.note-label { display:block; margin-bottom:3px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
+.note-label { display:block; margin-bottom:3px; font-family:‘Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 
 /* haruten */
 .haruten { padding:18px; border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.05); }
 .haruten-media { width:100%; max-width:480px; margin:0 auto; aspect-ratio:3/4; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,.04); }
 .haruten-media img { display:block; width:100%; height:100%; object-fit:cover; }
-.haruten-label { font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
+.haruten-label { font-family:‘Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 .haruten h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-top:2px; }
 .haruten p { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
 
@@ -347,6 +352,7 @@ body.goru::before { background:
   .hero-char.feno{right:-28%}
   .hero-desc-wrap{padding:16px 18px;border-radius:22px}
   .compare-section>h3{font-size:20px}
+  .showcase-fig{min-height:160px} .showcase-fig img{max-height:180px} .showcase-fig::before{width:90px;height:90px}
   .profile-portrait{width:80px;height:80px;border-radius:14px} .profile-ko{font-size:20px}
   .profile-facts{grid-template-columns:1fr 1fr}
   .mo-br{display:block}
@@ -354,7 +360,6 @@ body.goru::before { background:
   .race-y{font-size:12px} .race::after{left:18px;top:52px} .race-year-line{width:38px} .race-year-line::after{left:18px}
   .race-name{font-size:14px} .race-head{flex-direction:column} .race-tags{justify-content:flex-start}
   .clan-item{grid-template-columns:56px 1fr;gap:8px;padding:10px} .clan-thumb{width:56px;border-radius:8px} .clan-item h4{font-size:13px}
-  .showcase-fig{min-height:160px} .showcase-fig img{max-height:180px} .showcase-fig::before{width:90px;height:90px}
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .js .hero-load{opacity:0;transform:translateY(14px);animation:fadeUp .7s ease forwards}
@@ -394,31 +399,31 @@ body.goru::before { background:
 
 <!-- ═══ HOOK ═══ -->
 <div class="hook-row fi">
-  <article class="hook-card gold"><div class="hook-kicker">nickname</div><h3>호칭부터 이미 맛도리</h3><p>골드쉽은 거침없이 '마메찡'이라 부르며 들이대고, 페노메노는 끝까지 '고루시 상'이라 부르며 선을 지킨다.</p></article>
-  <article class="hook-card mix"><div class="hook-kicker">dynamic</div><h3>상습범과 단속반의 대환장 케미</h3><p>한쪽은 전력을 다해 장난을 치고, 한쪽은 진심을 다해 반응한다. 눈이 마주치는 순간, 추격전이 벌어진다.</p></article>
-  <article class="hook-card feno"><div class="hook-kicker">rival arc</div><h3>원본마부터 이어지는 촘촘한 서사</h3><p>인게임에 나타나는 케미스트리는 원본마 대결 역사의 고증을 기반으로 한다.</p></article>
+  <article class="hook-card gold"><div class="hook-kicker">nickname</div><h3>호칭부터 이미 맛도리</h3><p>골드쉽은 거침없이 ‘마메찡’이라 부르며 들이대고, 페노메노는 끝까지 ‘고루시 상’이라 부르며 선을 지킨다. 창과 방패 같은 둘의 관계성이 호칭부터 선명하게 드러난다.</p></article>
+  <article class="hook-card mix"><div class="hook-kicker">dynamic</div><h3>상습범과 단속반의 대환장 케미</h3><p>한쪽은 전력을 다해 장난을 치고, 한쪽은 진심을 다해 반응한다. 눈이 마주치는 순간, 추격전이 벌어진다. 얼핏 반복되는 패턴임에도, 늘 새로운 웃음을 자아내는 독보적인 만담력을 자랑한다.</p></article>
+  <article class="hook-card feno"><div class="hook-kicker">rival arc</div><h3>원본마부터 이어지는 촘촘한 서사</h3><p>인게임에 나타나는 케미스트리는 원본마 대결 역사의 고증을 기반으로 한다. 각자가 지닌 탄탄한 캐릭터성과 성장 서사가 맞물려 시너지를 만든다.</p></article>
 </div>
 
 <div class="content">
 
 <!-- ═══ 01 ═══ -->
 <div class="dv"><hr></div>
-<div class="section-head fi" id="topic01"><div class="section-num">01</div><div class="section-kicker" style="color:var(--gold-main)">핵심 요약</div><h2 class="section-title">고루메노 관계성 핵심 요약</h2><p class="section-lead">겉으로는 그냥 개그 콤비 같지만, 이들에게는 한마디로 정의할 수 없는 입체적인 관계성과 서사가 있다.</p></div>
+<div class="section-head fi" id="topic01"><div class="section-num">01</div><div class="section-kicker kicker-gold">핵심 요약</div><h2 class="section-title">고루메노 관계성 핵심 요약</h2><p class="section-lead">겉으로는 그냥 개그 콤비 같지만, 이들에게는 한마디로 정의할 수 없는 입체적인 관계성과 서사가 있다. 고루메노는 일상에서도, 진지한 육성 스토리에서도 고유한 매력을 보여주는 앙숙이자 동지, 친구이자 라이벌이다.</p></div>
 <div class="core-grid fi">
-  <div class="wc core-card cc-gold"><span class="core-label" style="color:var(--gold-main)">gold ship</span><h3>종잡을 수 없는 사고뭉치</h3><p>골드쉽은 본래 트레센 학원 내에서 둘째 가라면 서러울 장난꾸러기다. 페노메노 앞에서는 유독 그 장난의 수위가 한 단계 더 올라간다.</p></div>
-  <div class="wc core-card cc-feno"><span class="core-label" style="color:var(--feno-main)">fenomeno</span><h3>그를 쫓는 정의로운 선도부원</h3><p>페노메노는 책임감 강한 선도부원이자 경찰(지망생)이다. 골드쉽이 일으키는 사건사고는 하루도 그냥 넘어갈 수 없다.</p></div>
-  <div class="wc core-card cc-mix"><span class="core-label" style="color:var(--dim)">in game</span><h3>개그 콤비이자 최광의 라이벌</h3><p>덤앤더머 케미도 일품이지만, 별미는 라이벌 서사에 있다. 골드쉽은 페노메노의 삶에 자꾸만 끼어들고, 자꾸만 신경쓰이게 한다.</p></div>
-  <div class="wc core-card cc-mix"><span class="core-label" style="color:var(--dim)">original horse</span><h3>최광의 세대가 남긴 대결 구도</h3><p>두 원본마는 흔히 '최광(狂)의 세대'라 불리는 12세대, 2009년생 동기다. 봄 천황상에서 페노메노는 골드쉽을 2년 연속으로 꺾었다.</p></div>
+  <div class="wc core-card cc-gold"><span class="core-label" style="color:var(--gold-main)">gold ship</span><h3>종잡을 수 없는 사고뭉치</h3><p>골드쉽은 본래 트레센 학원 내에서 둘째 가라면 서러울 장난꾸러기다. 페노메노 앞에서는 유독 그 장난의 수위가 한 단계 더 올라간다. 일부러 더 긁고, 반응을 살핀다.</p></div>
+  <div class="wc core-card cc-feno"><span class="core-label" style="color:var(--feno-main)">fenomeno</span><h3>그를 쫓는 정의로운 선도부원</h3><p>페노메노는 책임감 강한 선도부원이자 경찰(지망생)이다. 골드쉽이 일으키는 사건사고는 하루도 그냥 넘어갈 수 없다. 그의 진심어린 대응이 오히려 골드쉽을 더욱 날뛰게 한다.</p></div>
+  <div class="wc core-card cc-mix"><span class="core-label" style="color:var(--dim)">in game</span><h3>개그 콤비이자 최광의 라이벌</h3><p>덤앤더머 케미도 일품이지만, 별미는 라이벌 서사에 있다. 골드쉽은 페노메노의 삶에 자꾸만 끼어들고, 자꾸만 신경쓰이게 한다. 하지만, 그건 골드쉽 쪽도 마찬가지다.</p></div>
+  <div class="wc core-card cc-mix"><span class="core-label" style="color:var(--dim)">original horse</span><h3>최광의 세대가 남긴 대결 구도</h3><p>두 원본마는 흔히 ‘최광(狂)의 세대’라 불리는 12세대, 2009년생 동기다. 일본 더비, 봄 천황상, 타카라즈카 기념, 아리마 기념까지 큰 무대에서 여러 차례 붙은 전적이 있다. 특히, 봄 천황상에서 페노메노는 골드쉽을 2년 연속으로 꺾었다.</p></div>
 </div>
 <div class="onecut fi"><div class="onecut-kicker">official 1cut</div><div class="onecut-title">정의의 추격</div><div class="onecut-media"><img alt="페노메노 공식 1컷 만화" src="../images/meno-onecut.jpg"/></div><div class="feno-quote"><div class="q-sfx top">(부릅!)</div><p class="q-main">"매번매번 규칙을 벗어나기나 하고… <br class="mo-br">오늘은 반드시 잡고야 말겠습니다!!"</p><div class="q-sfx bottom">(다다다다다다다)</div></div></div>
 
 <!-- ═══ 02 ═══ -->
 <div class="dv"><hr></div>
-<div class="section-head fi" id="topic02"><div class="section-num">02</div><div class="section-kicker" style="color:var(--feno-main)">프로필</div><h2 class="section-title">모든 면이 정반대라 더 어울리는 조합</h2><p class="section-lead">문제아와 모범생, 보케와 츳코미의 대비가 선명하게 나타난다.</p></div>
+<div class="section-head fi" id="topic02"><div class="section-num">02</div><div class="section-kicker kicker-feno">프로필</div><h2 class="section-title">모든 면이 정반대라 더 어울리는 조합</h2><p class="section-lead">각자의 공식 프로필만 봐도 차이가 확연하다. 골드쉽은 속을 알 수 없는 4차원, 페노메노는 속이 훤히 보이는 쑥맥. 문제아와 모범생, 사고치는 쪽과 단속하는 쪽, 보케와 츳코미의 대비가 선명하게 나타난다.</p></div>
 <div class="profile-grid fi">
-  <article class="profile-card gold"><div class="profile-bar"></div><div class="profile-inner"><div class="profile-quote-text">"재밌으면 됐지! 되겠냐? 어느 쪽이야, 어엉!?"</div><div class="profile-top"><div class="profile-portrait"><img alt="골드쉽" src="../images/goru-portrait.webp"/></div><div class="profile-id"><div class="profile-jp">ゴールドシップ</div><div class="profile-ko">골드쉽</div><div class="profile-en en">GOLD SHIP</div></div></div><div class="profile-facts"><div class="fact"><span class="fact-label">성우</span><span class="fact-value">우에다 히토미</span></div><div class="fact"><span class="fact-label">생일</span><span class="fact-value">3월 6일</span></div><div class="fact"><span class="fact-label">신장</span><span class="fact-value">170cm</span></div><div class="fact"><span class="fact-label">체중</span><span class="fact-value">측정 불가</span></div><div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B88·W55·H88</span></div><div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">고루시 상</span></div></div><p class="profile-desc">트레센 학원 제일의 괴짜. 마음 가는 대로 행동하며 재밌고 독특하게 살아가는 자유인. 누구든 가리지 않고 말을 걸며 돌아다니지만, 그것은 모두 골쉽 극장의 번영을 위해서이며 특히 동급생 페노메노를 놀리는 일에 전력을 다 한다.</p><div class="profile-tags"><span class="profile-tag">4차원</span><span class="profile-tag">트릭스터</span><span class="profile-tag">어그로꾼</span><span class="profile-tag">예측불가</span></div></div></article>
-  <article class="profile-card feno"><div class="profile-bar"></div><div class="profile-inner"><div class="profile-quote-text">"외곽 순찰, 이상 없지 말입니다!
-지금부터, 교내 경비로 전환하겠습니다!"</div><div class="profile-top"><div class="profile-portrait"><img alt="페노메노" src="../images/meno-portrait.webp"/></div><div class="profile-id"><div class="profile-jp">フェノーメノ</div><div class="profile-ko">페노메노</div><div class="profile-en en">FENOMENO</div></div></div><div class="profile-facts"><div class="fact"><span class="fact-label">성우</span><span class="fact-value">히비 유리코</span></div><div class="fact"><span class="fact-label">생일</span><span class="fact-value">4월 20일</span></div><div class="fact"><span class="fact-label">신장</span><span class="fact-value">171cm</span></div><div class="fact"><span class="fact-label">체중</span><span class="fact-value">괴물적</span></div><div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B81·W59·H82</span></div><div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">마메찡</span></div></div><p class="profile-desc">선도위원회에 소속된 정의감이 강한 우마무스메. 매일 순찰이나 지역 자원봉사 활동에 열심히 임하며, 너무 날카로운 눈빛 탓인지 동네 아이들에게는 엄청나게 무서운 존재로 여겨지고 있다.</p><div class="profile-tags"><span class="profile-tag">경찰 우마무스메</span><span class="profile-tag">선도위원</span><span class="profile-tag">안전제일</span><span class="profile-tag">존댓말</span></div></div></article>
+  <article class="profile-card gold"><div class="profile-bar"></div><div class="profile-inner"><div class="profile-quote-text">“재밌으면 됐지! 되겠냐? 어느 쪽이야, 어엉!?”</div><div class="profile-top"><div class="profile-portrait"><img alt="골드쉽" src="../images/goru-portrait.webp"/></div><div class="profile-id"><div class="profile-jp">ゴールドシップ</div><div class="profile-ko">골드쉽</div><div class="profile-en en">GOLD SHIP</div></div></div><div class="profile-facts"><div class="fact"><span class="fact-label">성우</span><span class="fact-value">우에다 히토미</span></div><div class="fact"><span class="fact-label">생일</span><span class="fact-value">3월 6일</span></div><div class="fact"><span class="fact-label">신장</span><span class="fact-value">170cm</span></div><div class="fact"><span class="fact-label">체중</span><span class="fact-value">측정 불가</span></div><div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B88·W55·H88</span></div><div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">고루시 상</span></div></div><p class="profile-desc">트레센 학원 제일의 괴짜. 마음 가는 대로 행동하며 재밌고 독특하게 살아가는 자유인. 틈만 나면 엉뚱한 소리를 하거나 태클을 걸고, 금방 텐션 업이 되었다가 바로 식는다. 누구든 가리지 않고 말을 걸며 돌아다니지만, 그것은 모두 골쉽 극장의 번영을 위해서이며, 우정이나 유대감을 어느 정도로 생각하는지는 알 수 없다. 특히 동급생 페노메노를 놀리는 일에 전력을 다 한다.</p><div class="profile-tags"><span class="profile-tag">4차원</span><span class="profile-tag">트릭스터</span><span class="profile-tag">어그로꾼</span><span class="profile-tag">예측불가</span></div></div></article>
+  <article class="profile-card feno"><div class="profile-bar"></div><div class="profile-inner"><div class="profile-quote-text">“외곽 순찰, 이상 없지 말입니다!
+지금부터, 교내 경비로 전환하겠습니다!”</div><div class="profile-top"><div class="profile-portrait"><img alt="페노메노" src="../images/meno-portrait.webp"/></div><div class="profile-id"><div class="profile-jp">フェノーメノ</div><div class="profile-ko">페노메노</div><div class="profile-en en">FENOMENO</div></div></div><div class="profile-facts"><div class="fact"><span class="fact-label">성우</span><span class="fact-value">히비 유리코</span></div><div class="fact"><span class="fact-label">생일</span><span class="fact-value">4월 20일</span></div><div class="fact"><span class="fact-label">신장</span><span class="fact-value">171cm</span></div><div class="fact"><span class="fact-label">체중</span><span class="fact-value">괴물적</span></div><div class="fact"><span class="fact-label">쓰리사이즈</span><span class="fact-value">B81·W59·H82</span></div><div class="fact"><span class="fact-label">상대의 호칭</span><span class="fact-value">마메찡</span></div></div><p class="profile-desc">선도위원회에 소속된 정의감이 강한 우마무스메. 매일 순찰이나 지역 자원봉사 활동에 열심히 임하며, 그 모습은 마치 다정하고 믿음직한 모두의 경찰관… 같다고 말하고 싶지만, 너무 날카로운 눈빛 탓인지 동네 아이들에게는 엄청나게 무서운 존재로 여겨지고 있는 모양이다. 트레센 학원 어디서나 사고를 치는 골칫거리 골드쉽을 그냥 지나치지 못하며, 그녀의 장난에 언제나 진심으로 반응한다.</p><div class="profile-tags"><span class="profile-tag">경찰 우마무스메</span><span class="profile-tag">선도위원</span><span class="profile-tag">안전제일</span><span class="profile-tag">존댓말</span></div></div></article>
 </div>
 
 <div class="compare-section fi">
@@ -429,7 +434,7 @@ body.goru::before { background:
   <div class="compare-deck">
     <article class="compare-topic appearance"><div class="compare-topic-head">외형</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><ul class="compare-bullets"><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>느슨하고 능청스러운 표정</li></ul></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><ul class="compare-bullets"><li>검은 계열 컬러</li><li>치켜뜬 눈매</li><li>뻗친 머리</li><li>각 잡힌 인상과 절도 있는 분위기</li></ul></div></div></article>
     <article class="compare-topic personality"><div class="compare-topic-head">성격</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</span></div></div></article>
-    <article class="compare-topic naming"><div class="compare-topic-head">호칭</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">끝까지 '고루시 상'이라고 부르며 선을 지킨다</span></div></div></article>
+    <article class="compare-topic naming"><div class="compare-topic-head">호칭</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">‘마메찡’이라 부르며 거리낌 없이 훅 들어온다</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">끝까지 ‘고루시 상’이라고 부르며 선을 지킨다</span></div></div></article>
     <article class="compare-topic role"><div class="compare-topic-head">역할</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">골드쉽</span><span class="compare-topic-copy">먼저 약올리며 사건을 일으키는 보케</span></div><div class="compare-topic-vs">VS</div><div class="compare-topic-side feno"><span class="compare-topic-name">페노메노</span><span class="compare-topic-copy">진지하게 받아치며 휘말리는 츳코미</span></div></div></article>
     <article class="compare-topic common"><div class="compare-topic-head">공통점</div><div class="compare-topic-body"><div class="compare-topic-side gold"><span class="compare-topic-name">외형</span><ul class="compare-bullets"><li>가슴 밑을 휘감은 붉은색 벨트</li><li>유사한 형태의 모자 문양</li><li>모자 및 장갑 착용 여부</li></ul></div><div class="compare-topic-vs">&amp;</div><div class="compare-topic-side feno"><span class="compare-topic-name">감정</span><ul class="compare-bullets"><li>서로를 강하게 의식하며 적극적으로 상대한다.</li><li>사실은 누구보다 서로를 필요로 하며, 의지하고 있다.</li></ul></div></div></article>
   </div>
@@ -437,49 +442,49 @@ body.goru::before { background:
 
 <!-- ═══ 03 ═══ -->
 <div class="dv"><hr></div>
-<div class="section-head fi" id="topic03"><div class="section-num">03</div><div class="section-kicker" style="color:var(--gold-main)">인게임 서사</div><h2 class="section-title">상대의 서사를 완성하는 고루메노</h2><p class="section-lead">초기 캐릭터인 골드쉽의 비어 있던 라이벌 서사를 페노메노가 비로소 완성했다.</p></div>
+<div class="section-head fi" id="topic03"><div class="section-num">03</div><div class="section-kicker kicker-gold">인게임 서사</div><h2 class="section-title">상대의 서사를 완성하는 고루메노</h2><p class="section-lead">초기 캐릭터인 골드쉽의 비어 있던 라이벌 서사를 페노메노가 비로소 완성했으며, 페노메노의 육성 스토리 역시 골드쉽과의 경쟁을 중심으로 이들의 고뇌와 좌절, 성장을 다루고 있다.</p></div>
 <div class="story-grid fi">
-  <div class="wc story-card"><span class="story-step">scene 01</span><h3>호칭 차이로 드러나는 온도차</h3><p>골드쉽은 '마메찡', 페노메노는 끝까지 '고루시 상'. 무심한 친근함과 단정한 거리감이 이 호칭 차이만으로도 또렷하게 선다.</p><small>마메찡 · 고루시 상</small></div>
-  <div class="wc story-card"><span class="story-step">scene 02</span><h3>일상적으로 벌어지는 추격전</h3><p>골드쉽이 말도 안 되는 장난으로 흐름을 틀면, 페노메노는 그것을 하나하나 진지하게 받아친다.</p><small>개그 콤비</small></div>
-  <div class="wc story-card"><span class="story-step">scene 03</span><h3>고뇌와 성장을 함께하는 라이벌</h3><p>페노메노의 육성 스토리에서 골드쉽은 누구보다 특별한 존재다. 결국 넘어서야 할 경쟁 상대로 여기게 된다.</p><small>경쟁 · 연대 · 성장</small></div>
-  <div class="wc story-card"><span class="story-step">scene 04</span><h3>공식이 떠먹이는 관계성</h3><p>골드쉽에게는 오직 페노메노를 놀리기 위한 전용 코믹 모션까지 추가되었다.</p><small>공식의 맛</small></div>
+  <div class="wc story-card"><span class="story-step">scene 01</span><h3>호칭 차이로 드러나는 온도차</h3><p>골드쉽은 ‘마메찡’, 페노메노는 끝까지 ‘고루시 상’. 무심한 친근함과 단정한 거리감이 이 호칭 차이만으로도 또렷하게 선다.</p><small>마메찡 · 고루시 상</small></div>
+  <div class="wc story-card"><span class="story-step">scene 02</span><h3>일상적으로 벌어지는 추격전</h3><p>골드쉽이 말도 안 되는 장난으로 흐름을 틀면, 페노메노는 그것을 하나하나 진지하게 받아친다. 경찰과 도둑, 톰과 제리, 보케와 츳코미라는 말이 자연스럽게 붙는 이유다.</p><small>개그 콤비</small></div>
+  <div class="wc story-card"><span class="story-step">scene 03</span><h3>고뇌와 성장을 함께하는 라이벌</h3><p>페노메노의 육성 스토리에서 골드쉽은 누구보다 특별한 존재다. 계속 신경 쓰이고, 자꾸 시야에 밟히며, 결국 넘어서야 할 경쟁 상대로 여기게 된다. 그 과정에서 고뇌와 좌절, 성장도 함께 겪는다.</p><small>경쟁 · 연대 · 성장</small></div>
+  <div class="wc story-card"><span class="story-step">scene 04</span><h3>공식이 떠먹이는 관계성</h3><p>페노메노와 트레이너의 히든 이벤트 제목은 ‘CASE, 마메찡’이며, 골드쉽에게는 오직 페노메노를 놀리기 위한 전용 코믹 모션까지 추가되었다. 고루메노는 공식에서도 꾸준히 일회성 개그와 시리어스를 넘나든다.</p><small>공식의 맛</small></div>
 </div>
 
 <!-- ═══ 04 ═══ -->
 <div class="dv"><hr></div>
-<div class="section-head fi" id="topic04"><div class="section-num">04</div><div class="section-kicker" style="color:var(--feno-main)">원본마 대결 기록</div><h2 class="section-title">원본마의 대결 역사</h2><p class="section-lead">인게임의 케미는 동세대인 원본마들의 실제 관계성에서 출발한다.</p></div>
+<div class="section-head fi" id="topic04"><div class="section-num">04</div><div class="section-kicker kicker-feno">원본마 대결 기록</div><h2 class="section-title">원본마의 대결 역사</h2><p class="section-lead">인게임의 케미는 동세대인 원본마들의 실제 관계성에서 출발한다. 큰 무대에서 여러 차례 맞붙은 기록을 바탕으로, 두 캐릭터의 라이벌 구도와 서사는 더욱 탄탄하게 구축되었다.</p></div>
 <div class="timeline fi">
-  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2012</span><span class="race-date en">MAY 27</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">일본 더비</div><div class="race-sub">Tokyo Yushun</div></div><div class="race-tags"><span class="result-chip feno">페노메노 2착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">역사의 시작. 페노메노가 골드쉽보다 한발 앞서 들어왔다.</p></div></div>
-  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">APR 28</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">Kyoto 3200m</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">페노메노가 봄 천황상을 거머쥐며 '괴물 스테이어'로서의 저력을 증명한 순간.</p></div></div>
-  <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">JUN 23</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">타카라즈카 기념</div><div class="race-sub">Hanshin 2200m</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 1착</span><span class="result-chip feno">페노메노 4착</span></div></div><p class="race-copy">같은 해 여름에는 골드쉽이 되받아쳤다. 주도권이 엎치락뒤치락한다는 것이 매력이다.</p></div></div>
-  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">MAY 4</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">Kyoto 3200m</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 7착</span></div></div><p class="race-copy">페노메노가 봄 천황상 2연패를 달성한 하이라이트 무대.</p></div></div>
-  <div class="race race-interlude"><div class="race-year-line"></div><div class="note-box"><p><span class="note-label en">extra episode</span> 2014년 봄 천황상 중계에서, 골드쉽이 바로 옆 칸의 페노메노를 향해 '개처럼 짖으며' 경계를 드러내는 장면이 포착된다.</p></div></div>
-  <div class="race race-interlude"><div class="race-year-line"></div><div class="haruten"><div class="haruten-media"><img alt="2025 천황상(봄) 축전" src="../images/haruten.jpeg"/></div><div class="haruten-copy"><div class="haruten-label en">spring tenno sho 2025</div><h3>공식 축전으로 되살아난 하루텐 구도</h3><p>마이크를 든 채 서로를 노려보는 연출은 2014년 하루텐 당시의 고증이다. 공식에서도 고루메노를 전면에 내세우는 라이벌 관계로 다루고 있다.</p></div></div></div>
-  <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">DEC 28</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">아리마 기념</div><div class="race-sub">Nakayama</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 3착</span><span class="result-chip feno">페노메노 10착</span></div></div><p class="race-copy">마지막 교차점. 인게임의 집요한 신경전은 이 대결 역사를 바탕에 둔 묘사다.</p></div></div>
+  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2012</span><span class="race-date en">MAY 27</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">일본 더비</div><div class="race-sub">Tokyo Yushun / first major crossing</div></div><div class="race-tags"><span class="result-chip feno">페노메노 2착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">역사의 시작. 페노메노가 골드쉽보다 한발 앞서 들어왔다. 이때부터 동세대 라이벌 구도가 본격적으로 펼쳐지기 시작한다.</p></div></div>
+  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">APR 28</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">Kyoto 3200m / fenomeno takes the spring crown</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 5착</span></div></div><p class="race-copy">페노메노가 봄 천황상을 거머쥐며 ‘괴물 스테이어’로서의 저력을 증명한 순간. 골드쉽은 이때, 페노메노를 강력한 적으로 인지한다.</p></div></div>
+  <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2013</span><span class="race-date en">JUN 23</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">타카라즈카 기념</div><div class="race-sub">Hanshin 2200m / gold ship answers back</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 1착</span><span class="result-chip feno">페노메노 4착</span></div></div><p class="race-copy">같은 해 여름에는 골드쉽이 되받아쳤다. 주도권이 한 명에게 고정되지 않고 엎치락뒤치락했다는 점이 또한 이들의 매력이다.</p></div></div>
+  <div class="race"><div class="race-year feno"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">MAY 4</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">천황상(봄)</div><div class="race-sub">back to kyoto / fenomeno goes back-to-back</div></div><div class="race-tags"><span class="result-chip feno">페노메노 1착</span><span class="result-chip gold">골드쉽 7착</span></div></div><p class="race-copy">페노메노가 골드쉽을 또 한번 제치하고 봄 천황상 2연패를 달성한 하이라이트 무대. 시작 전부터 골드쉽이 페노메노를 향해 유독 날을 세우며 의식했던 경기로 경마 팬들 사이에서 자주 회자된다.</p></div></div>
+  <div class="race race-interlude"><div class="race-year-line"></div><div class="note-box"><p><span class="note-label en">extra episode</span> 2014년 봄 천황상 중계에서, 골드쉽이 바로 옆 칸의 페노메노를 향해 ‘개처럼 짖으며’ 경계를 드러내는 장면이 포착된다. 한쪽이 으르렁대고, 한쪽이 받아치는 구도는 원본마 시절부터 이미 강하게 각인돼 있었다.</p></div></div>
+  <div class="race race-interlude"><div class="race-year-line"></div><div class="haruten"><div class="haruten-media"><img alt="2025 천황상(봄) 축전" src="../images/haruten.jpeg"/></div><div class="haruten-copy"><div class="haruten-label en">spring tenno sho 2025</div><h3>공식 축전으로 되살아난 하루텐 구도</h3><p>2025년, 천황상(봄)을 기념해 공식 계정에 올라온 축전. 흡사 래퍼들의 디스전처럼 마이크를 든 채 서로를 노려보는 연출은 2014년 하루텐 당시 고루시가 페노메노를 향해 으르렁대던 장면의 고증이다. 공식에서도 고루메노를 단발성 개그 콤비가 아니라, 전면에 내세우는 라이벌 관계로 다루고 있다는 점이 흥미롭다.</p></div></div></div>
+  <div class="race"><div class="race-year gold"><span class="race-dot"></span><span class="race-y">2014</span><span class="race-date en">DEC 28</span></div><div class="race-card"><div class="race-head"><div><div class="race-name">아리마 기념</div><div class="race-sub">Nakayama / final major crossing</div></div><div class="race-tags"><span class="result-chip gold">골드쉽 3착</span><span class="result-chip feno">페노메노 10착</span></div></div><p class="race-copy">마지막 교차점. 여기까지 살펴보면, 인게임에서의 집요한 신경전은 두 원본마의 치열한 대결 역사를 바탕에 둔 묘사임을 알 수 있다.</p></div></div>
 </div>
 
 <!-- ═══ EX ═══ -->
 <div class="dv"><hr></div>
-<div class="section-head fi" id="topicex"><div class="section-num">EX</div><div class="section-kicker" style="color:var(--gold-main)">황금일족</div><h2 class="section-title">우마무스메에서 황금일족이 갖는 의미</h2><p class="section-lead">개개인으로도 독보적인 캐릭터성을 자랑하는 이들은 붙였을 때 환장의 케미를 만들어낸다.</p></div>
+<div class="section-head fi" id="topicex"><div class="section-num">EX</div><div class="section-kicker kicker-gold">황금일족</div><h2 class="section-title">우마무스메에서 황금일족이 갖는 의미</h2><p class="section-lead">개개인으로도 독보적인 캐릭터성을 자랑하는 이들은 붙였을 때 더욱 환장의 케미를 만들어내며, 그중에서도 고루메노는 유난히 눈에 띄는 동세대 라이벌 조합이다.</p></div>
 <div class="extra-stack fi">
-  <div class="wc extra-card"><h3>골드쉽 서사의 빈칸을 메운 상대</h3><p>초기 골드쉽은 동세대 라이벌 축이 비어 있었다. 페노메노가 등장하면서 비로소 제대로 긁히는 상대가 생겼다.</p></div>
-  <div class="wc extra-card"><h3>황금일족 안의 정상인 포지션</h3><p>제멋대로인 멤버들 사이에서 페노메노는 늘 단속하고 태클 거는 쪽이다.</p></div>
-  <div class="wc extra-card"><h3>젠틸돈나까지 이어지는 12세대 관계도</h3><p>고루메노는 둘만 봐도 선명하지만, 젠틸돈나까지 얽히는 12세대 안에 놓였을 때 더 재미있어진다.</p></div>
+  <div class="wc extra-card"><h3>골드쉽 서사의 빈칸을 메운 상대</h3><p>초기 골드쉽은 또렷한 동세대 라이벌 축이 비어 있는 편이었다. 페노메노가 등장하면서 비로소 제대로 긁히고 끝까지 신경 쓰는 상대가 생겼고, 골드쉽 쪽 서사도 훨씬 또렷해졌다.</p></div>
+  <div class="wc extra-card"><h3>황금일족 안의 정상인 포지션</h3><p>제멋대로인 멤버들 사이에서 페노메노는 늘 단속하고 태클 거는 쪽이다. 그래서 어떤 조합에 붙여도 곧바로 츳코미와 긴장이 생기고, 팬들은 그 반응을 계속 보게 된다.</p></div>
+  <div class="wc extra-card"><h3>젠틸돈나까지 이어지는 12세대 관계도</h3><p>고루메노는 둘만 봐도 선명하지만, 젠틸돈나까지 얽히는 12세대 안에 놓였을 때 더 재미있어진다. 각자 워낙 캐릭터가 세서, 같은 화면에 세울수록 환장의 합이 더 커진다.</p></div>
 </div>
 <div class="clan-box fi">
   <div class="compare-label en">golden family</div>
   <h3>지금까지 출시한 황금일족</h3>
-  <p>'황금일족'은 원본마 스테이 골드의 자마들 가운데서도 특히 기행, 승부근성, 실력으로 강한 인상을 남긴 주자들을 가리키는 별칭이다.</p>
+  <p>‘황금일족’은 원본마 스테이 골드의 자마들 가운데서도 특히 기행, 승부근성, 실력으로 강한 인상을 남긴 주자들을 가리키는 별칭이다.</p>
   <div class="clan-grid">
-    <article class="clan-item staygold" style="--main:#bfb33e;--sub:#576898"><div class="clan-thumb"><img src="../images/stego.webp" alt="스테이 골드"/></div><div class="clan-body"><h4>스테이 골드</h4><p>방랑자 타입. 황금일족의 중심축.</p><span class="clan-sub">방랑벽 · 중심축</span></div></article>
-    <article class="clan-item" style="--main:#332d1f;--sub:#E2E095"><div class="clan-thumb"><img src="../images/journey.webp" alt="드림 저니"/></div><div class="clan-body"><h4>드림 저니</h4><p>작은 체구와 집념의 형 라인.</p><span class="clan-sub">형 라인 · 집념</span></div></article>
-    <article class="clan-item" style="--main:#c0453f;--sub:#236192"><div class="clan-thumb"><img src="../images/festa.webp" alt="나카야마 페스타"/></div><div class="clan-body"><h4>나카야마 페스타</h4><p>거친 기세와 국제무대 서사.</p><span class="clan-sub">국제무대 · 불꽃</span></div></article>
-    <article class="clan-item" style="--main:#be4134;--sub:#E5D9A0"><div class="clan-thumb"><img src="../images/orfe.webp" alt="오르페브르"/></div><div class="clan-body"><h4>오르페브르</h4><p>삼관마. 황금일족의 대표격.</p><span class="clan-sub">삼관마 · 상징</span></div></article>
-    <article class="clan-item" style="--main:#da3c57;--sub:#e0d23d"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽"/></div><div class="clan-body"><h4>골드쉽</h4><p>예측 불가의 아이콘. 강렬한 기믹.</p><span class="clan-sub">예측 불가 · 기믹</span></div></article>
-    <article class="clan-item" style="--main:#574a77;--sub:#EADC68"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>유일한 정상인 포지션. 신흥 핵심 축.</p><span class="clan-sub">정상인 · 핵심 축</span></div></article>
+    <article class="clan-item staygold" style="--main:#bfb33e;--sub:#576898"><div class="clan-thumb"><img src="../images/stego.webp" alt="스테이 골드"/></div><div class="clan-body"><h4>스테이 골드</h4><p>호기심이 많고, 여행을 무엇보다 좋아하는 방랑자 타입. 늘 어딘가 달관한 듯한 태도로 개성 강한 후배들을 자연스럽게 끌어당기는, 황금일족의 중심축 같은 인물이다.</p><span class="clan-sub">방랑벽 · 사랑받는 중심축</span></div></article>
+    <article class="clan-item" style="--main:#332d1f;--sub:#E2E095"><div class="clan-thumb"><img src="../images/journey.webp" alt="드림 저니"/></div><div class="clan-body"><h4>드림 저니</h4><p>작은 체구와 집념으로 기억되는 형 라인. 묵직하게 눌러붙는 승부근성과 동생 오르페브르와의 대비까지 합쳐 늘 회자된다.</p><span class="clan-sub">형 라인 · 집념</span></div></article>
+    <article class="clan-item" style="--main:#c0453f;--sub:#236192"><div class="clan-thumb"><img src="../images/festa.webp" alt="나카야마 페스타"/></div><div class="clan-body"><h4>나카야마 페스타</h4><p>거친 기세와 국제무대 서사로 존재감이 크다. 황금일족 조합을 이야기할 때 빠지지 않는, 불꽃 같은 한 축이다.</p><span class="clan-sub">국제무대 · 불꽃 같은 기세</span></div></article>
+    <article class="clan-item" style="--main:#be4134;--sub:#E5D9A0"><div class="clan-thumb"><img src="../images/orfe.webp" alt="오르페브르"/></div><div class="clan-body"><h4>오르페브르</h4><p>삼관마. 압도적인 재능과 기행으로 황금일족의 대표격으로 꼽힌다. 등장하는 순간 장면을 장악하는 타입이라는 점에서 상징성이 특히 크다.</p><span class="clan-sub">삼관마 · 황금일족의 상징</span></div></article>
+    <article class="clan-item" style="--main:#da3c57;--sub:#e0d23d"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽"/></div><div class="clan-body"><h4>골드쉽</h4><p>‘고루시’라는 애칭으로 불리는 예측 불가의 아이콘. 강렬한 기믹과 팬덤 화력이 특히 강하고, 황금일족 서사를 바깥으로 가장 크게 확장시킨 얼굴이기도 하다.</p><span class="clan-sub">예측 불가 · 강한 기믹</span></div></article>
+    <article class="clan-item" style="--main:#574a77;--sub:#EADC68"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>비교적 늦게 합류했지만, 골드쉽과의 라이벌 구도를 선명하게 채운 신흥 핵심 축이다. 유일한 정상인 포지션이라는 점까지 더해져 황금일족 안에서도 존재감이 또렷하다.</p><span class="clan-sub">정상인 포지션 · 신흥 핵심 축</span></div></article>
   </div>
   <div style="margin-top:18px"><div class="compare-label en">12th generation rivals</div><h3 style="font-size:16px;font-weight:800;letter-spacing:-.04em;color:var(--bright);margin-top:3px">고루메노의 12세대 동기</h3><p style="margin-top:4px;font-size:12.5px;color:var(--dim);line-height:1.78">젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도에서 함께 두는 편이 훨씬 입체적이다.</p></div>
-  <div class="clan-grid" style="margin-top:10px"><article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>12세대 서사의 핵심 축.</p><span class="clan-sub">12세대 · 존재감</span></div></article></div>
+  <div class="clan-grid" style="margin-top:10px"><article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article></div>
 </div>
 </div>
 
@@ -493,9 +498,9 @@ body.goru::before { background:
 </nav>
 
 <footer class="footer">
-  <div style="display:grid;grid-template-columns:1fr 1fr;max-width:320px;margin:0 auto 12px;gap:8px">
-    <a href="../guide/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 6px;border-radius:10px;text-align:center;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">입문 가이드</a>
-    <a href="../movie-guide/" style="font-size:11px;font-weight:500;color:var(--text);text-decoration:none;padding:8px 6px;border-radius:10px;text-align:center;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.05)">극장판 가이드</a>
+  <div class="footer-links footer-links-own" style="margin-bottom:12px">
+    <a href="../guide/">입문 가이드</a>
+    <a href="../movie-guide/">극장판 가이드</a>
   </div>
   이 페이지는 고루메노 관계성 아카이브로 제작되었습니다.
   <br>모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank" rel="noopener noreferrer"><span class="en">© Cygames, Inc.</span></a> 에 귀속됩니다.
