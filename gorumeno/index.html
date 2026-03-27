@@ -237,69 +237,57 @@ body.goru::before { background:
 .compare-section > p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; max-width:480px; }
 /* stage */
 .vs-stage {
-  position:relative; height:380px; border-radius:20px; overflow:hidden; margin:20px 0 0;
-  background:
-    radial-gradient(ellipse 70% 40% at 50% 105%, rgba(255,255,255,0) 0%, rgba(255,255,255,.92) 55%),
-    linear-gradient(110deg, rgba(218,60,87,.13) 0%, rgba(255,255,255,.96) 36%, rgba(255,255,255,.96) 64%, rgba(87,74,119,.13) 100%);
-  border:1px solid rgba(0,0,0,.06);
-  box-shadow:0 4px 28px rgba(0,0,0,.08);
+  position:relative; height:360px; border-radius:20px; overflow:hidden; margin:20px 0 0;
+  background:linear-gradient(105deg, rgba(218,60,87,.07) 0%, var(--bg) 38%, var(--bg) 62%, rgba(87,74,119,.07) 100%);
+  border:1px solid var(--border);
 }
-/* center divider */
 .vs-stage::after {
-  content:''; position:absolute; left:50%; top:5%; bottom:0;
+  content:''; position:absolute; left:50%; top:12%; bottom:0;
   width:1px; transform:translateX(-50%);
-  background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.07) 60%, transparent);
+  background:linear-gradient(to bottom, transparent, rgba(0,0,0,.06) 30%, rgba(0,0,0,.06) 75%, transparent);
   z-index:1; pointer-events:none;
 }
-.vs-glow { position:absolute; bottom:-30px; width:360px; height:360px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(22px); }
-.vs-glow.gold { left:-40px; background:radial-gradient(circle, rgba(218,60,87,.22) 0%, transparent 62%); }
-.vs-glow.feno { right:-40px; background:radial-gradient(circle, rgba(87,74,119,.22) 0%, transparent 62%); }
+.vs-glow { position:absolute; bottom:-60px; width:260px; height:180px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(30px); opacity:.6; }
+.vs-glow.gold { left:-10px; background:rgba(218,60,87,.14); }
+.vs-glow.feno { right:-10px; background:rgba(87,74,119,.14); }
 .vs-char {
-  position:absolute; bottom:0; height:102%; width:auto;
+  position:absolute; bottom:0; height:96%; width:auto;
   object-fit:contain; object-position:center bottom;
-  pointer-events:none; z-index:2;
-  filter:drop-shadow(0 10px 30px rgba(0,0,0,.12));
-  max-width:48%;
-  transform-origin:center bottom;
+  pointer-events:none; z-index:2; max-width:46%;
 }
-.vs-char.gold { left:-3%; transform:rotate(-6deg) translateX(4%); }
-.vs-char.feno { right:-3%; transform:rotate(6deg) translateX(-4%); }
-/* center */
-.vs-center { position:absolute; left:50%; top:0; bottom:0; width:38%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; }
-.vs-vs { display:inline-block; padding:7px 20px; border-radius:999px; background:rgba(255,255,255,.96); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(0,0,0,.07); box-shadow:0 6px 24px rgba(0,0,0,.11); }
-.vs-vs-text { font-family:'Outfit',sans-serif; font-size:22px; font-weight:900; letter-spacing:.10em; background:linear-gradient(90deg,var(--gold-main),var(--feno-main)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.vs-char.gold { left:0; }
+.vs-char.feno { right:0; }
+.vs-center { position:absolute; left:50%; top:0; bottom:0; width:38%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; }
+.vs-vs { display:block; text-align:center; }
+.vs-vs-text { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:400; font-style:italic; line-height:1; letter-spacing:.02em; background:linear-gradient(160deg,var(--gold-main) 30%,var(--feno-main) 70%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .vs-chips { display:flex; flex-direction:column; gap:5px; width:100%; }
-.vs-chip { display:flex; align-items:center; justify-content:space-between; gap:5px; padding:5px 12px; border-radius:999px; background:rgba(255,255,255,.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 10px rgba(0,0,0,.05); font-size:11px; font-weight:700; }
+.vs-chip { display:flex; align-items:center; justify-content:space-between; gap:5px; padding:5px 12px; border-radius:8px; background:rgba(255,255,255,.82); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(0,0,0,.05); font-size:11px; font-weight:700; }
 .vc-g { color:var(--gold-main); }
 .vc-f { color:var(--feno-main); }
-.vc-sep { color:rgba(0,0,0,.18); font-size:10px; font-weight:400; flex-shrink:0; }
-/* nameplates */
-.vs-name { position:absolute; bottom:14px; font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:6px; background:rgba(255,255,255,.80); backdrop-filter:blur(6px); border:1px solid rgba(0,0,0,.04); z-index:10; }
-.vs-name.gold { left:14px; color:var(--gold-main); }
-.vs-name.feno { right:14px; color:var(--feno-main); }
-
+.vc-sep { color:rgba(0,0,0,.15); font-size:9px; font-weight:400; flex-shrink:0; }
+.vs-name { position:absolute; bottom:12px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); z-index:10; }
+.vs-name.gold { left:14px; }
+.vs-name.feno { right:14px; }
 /* battle table */
-.bt { margin-top:10px; display:flex; flex-direction:column; gap:6px; }
-.bt-row { border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 14px rgba(0,0,0,.06); }
-.bt-row::before { content:''; display:block; height:3px; background:linear-gradient(90deg, var(--gold-main) 0%, #c06070 42%, #8070a8 58%, var(--feno-main) 100%); }
-.bt-head { display:flex; align-items:center; justify-content:center; padding:8px 14px; background:linear-gradient(90deg, rgba(218,60,87,.06) 0%, rgba(150,100,140,.04) 50%, rgba(87,74,119,.06) 100%); border-bottom:1px solid rgba(0,0,0,.04); }
-.bt-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }
-.bt-body { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(0,0,0,.05); }
-.bt-side { padding:14px 16px; font-size:12.5px; line-height:1.7; color:var(--text); display:flex; align-items:center; }
-.bt-gold { background:linear-gradient(to right, rgba(218,60,87,.07), rgba(218,60,87,.02), #fff); justify-content:flex-end; text-align:right; }
-.bt-feno { background:linear-gradient(to left, rgba(87,74,119,.07), rgba(87,74,119,.02), #fff); }
+.bt { margin-top:10px; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+.bt-row { border-bottom:1px solid var(--border); }
+.bt-row:last-child { border-bottom:none; }
+.bt-head { display:flex; align-items:center; justify-content:center; padding:7px 14px; background:var(--bg-warm); }
+.bt-label { font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }
+.bt-body { display:grid; grid-template-columns:1fr 1px 1fr; }
+.bt-div { background:var(--border); }
+.bt-side { padding:13px 16px; font-size:12.5px; line-height:1.7; color:var(--text); display:flex; align-items:center; background:var(--bg); }
+.bt-gold { justify-content:flex-end; text-align:right; }
 .bt-gold ul, .bt-feno ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }
 .bt-gold ul { align-items:flex-end; }
-
 /* common bond */
-.vs-common { margin-top:8px; border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 14px rgba(0,0,0,.05); }
-.vs-common-bar { display:flex; align-items:center; gap:0; padding:10px 18px; background:linear-gradient(90deg, rgba(218,60,87,.07) 0%, rgba(255,255,255,.0) 50%, rgba(87,74,119,.07) 100%); border-bottom:1px solid rgba(0,0,0,.04); }
-.vs-common-bar::before { content:''; flex:1; height:1px; background:linear-gradient(to right,transparent,rgba(218,60,87,.25)); margin-right:10px; }
-.vs-common-bar::after  { content:''; flex:1; height:1px; background:linear-gradient(to left, transparent,rgba(87,74,119,.25)); margin-left:10px; }
-.vs-common-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); white-space:nowrap; }
-.vs-common-body { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(0,0,0,.04); }
-.vs-common-col { padding:14px 16px; background:#fff; }
-.vs-common-head { display:block; font-family:'Outfit',sans-serif; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin-bottom:8px; }
+.vs-common { margin-top:10px; }
+.vs-common-bar { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.vs-common-bar::before,.vs-common-bar::after { content:''; flex:1; height:1px; background:var(--border); }
+.vs-common-label { font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); white-space:nowrap; }
+.vs-common-body { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.vs-common-col { }
+.vs-common-head { display:block; font-size:11px; font-weight:700; color:var(--bright); letter-spacing:-.01em; margin-bottom:7px; }
 .vs-common ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px; }
 .vs-common li { font-size:12px; color:var(--dim); line-height:1.65; padding-left:.9rem; position:relative; }
 .vs-common li::before { content:''; position:absolute; left:0; top:.62em; width:.28rem; height:.28rem; border-radius:50%; background:linear-gradient(135deg,var(--gold-main),var(--feno-main)); }
@@ -353,11 +341,14 @@ body.goru::before { background:
 .haruten p { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
 
 /* ═══ EX ═══ */
-.extra-stack { display:grid; gap:10px; margin-top:18px; }
-.extra-card { position:relative; overflow:hidden; }
-.extra-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(224,210,61,.04),rgba(87,74,119,.03),transparent 65%); pointer-events:none; }
-.extra-card h3 { position:relative; z-index:1; }
-.extra-card p { position:relative; z-index:1; }
+.extra-stack { display:grid; gap:0; margin-top:14px; border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+.ex-item { padding:16px 18px; border-bottom:1px solid var(--border); }
+.ex-item:last-child { border-bottom:none; }
+.ex-item h3 { font-size:14px; font-weight:700; letter-spacing:-.03em; color:var(--bright); }
+.ex-item p { margin-top:4px; font-size:13px; color:var(--dim); line-height:1.8; }
+.ex-section { margin-top:28px; }
+.ex-section-title { font-size:clamp(17px,3vw,21px); font-weight:800; letter-spacing:-.045em; color:var(--bright); margin-top:4px; }
+.ex-section-lead { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; }
 
 .clan-box { margin-top:18px; padding:20px; border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); box-shadow:0 3px 18px rgba(0,0,0,.06); }
 .clan-box h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); }
@@ -401,18 +392,14 @@ body.goru::before { background:
   .hero-char.feno{right:-28%}
   .hero-desc-wrap{padding:16px 18px;border-radius:22px}
   .compare-section>h3{font-size:20px}
-  .vs-stage{height:280px}
-  .vs-char.gold{transform:rotate(-4deg) translateX(3%)}
-  .vs-char.feno{transform:rotate(4deg) translateX(-3%)}
+  .vs-stage{height:250px}
   .vs-center{width:44%}
-  .vs-vs{padding:5px 14px}
-  .vs-vs-text{font-size:16px}
+  .vs-vs-text{font-size:38px}
   .vs-chip{font-size:10px;padding:4px 10px}
   .vs-chips{gap:4px}
   .bt-side{padding:11px 12px;font-size:12px}
   .bt-label{font-size:9.5px}
-  .vs-common-col{padding:12px 14px}
-  .vs-common-body{grid-template-columns:1fr}
+  .vs-common-body{grid-template-columns:1fr;gap:12px}
   .profile-portrait{width:80px;height:80px;border-radius:14px} .profile-ko{font-size:20px}
   .profile-facts{grid-template-columns:1fr 1fr}
   .mo-br{display:block}
@@ -513,28 +500,28 @@ body.goru::before { background:
     <div class="bt-row">
       <div class="bt-head"><span class="bt-label">외형</span></div>
       <div class="bt-body">
-        <div class="bt-side bt-gold"><ul><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>능청스러운 표정</li></ul></div>
+        <div class="bt-side bt-gold"><ul><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>능청스러운 표정</li></ul></div><div class="bt-div"></div>
         <div class="bt-side bt-feno"><ul><li>검은 계열 컬러</li><li>치켜뜬 눈매</li><li>뻗친 머리</li><li>각 잡힌 분위기</li></ul></div>
       </div>
     </div>
     <div class="bt-row">
       <div class="bt-head"><span class="bt-label">성격</span></div>
       <div class="bt-body">
-        <div class="bt-side bt-gold">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</div>
+        <div class="bt-side bt-gold">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</div><div class="bt-div"></div>
         <div class="bt-side bt-feno">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</div>
       </div>
     </div>
     <div class="bt-row">
       <div class="bt-head"><span class="bt-label">호칭</span></div>
       <div class="bt-body">
-        <div class="bt-side bt-gold">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</div>
+        <div class="bt-side bt-gold">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</div><div class="bt-div"></div>
         <div class="bt-side bt-feno">끝까지 '고루시 상'이라고 부르며 선을 지킨다</div>
       </div>
     </div>
     <div class="bt-row">
       <div class="bt-head"><span class="bt-label">역할</span></div>
       <div class="bt-body">
-        <div class="bt-side bt-gold">먼저 약올리며 사건을 일으키는 보케</div>
+        <div class="bt-side bt-gold">먼저 약올리며 사건을 일으키는 보케</div><div class="bt-div"></div>
         <div class="bt-side bt-feno">진지하게 받아치며 휘말리는 츳코미</div>
       </div>
     </div>
@@ -594,22 +581,21 @@ body.goru::before { background:
     <article class="clan-item" style="--main:#574a77;--sub:#EADC68"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>비교적 늦게 합류했지만, 골드쉽과의 라이벌 구도를 선명하게 채운 신흥 핵심 축이다. 유일한 정상인 포지션이라는 점까지 더해져 황금일족 안에서도 존재감이 또렷하다.</p><span class="clan-sub">정상인 포지션 · 신흥 핵심 축</span></div></article>
   </div>
 </div>
-<div class="clan-box fi" style="margin-top:10px">
+<div class="ex-section fi">
   <div class="compare-label en">significance in uma musume</div>
-  <h3>우마무스메에서 황금일족이 갖는 의미</h3>
-  <p>개개인으로도 독보적인 캐릭터성을 자랑하는 이들은 붙였을 때 더욱 환장의 케미를 만들어내며, 그중에서도 고루메노는 유난히 눈에 띄는 동세대 라이벌 조합이다.</p>
+  <h3 class="ex-section-title">우마무스메에서 황금일족이 갖는 의미</h3>
+  <p class="ex-section-lead">개개인으로도 독보적인 캐릭터성을 자랑하는 이들은 붙였을 때 더욱 환장의 케미를 만들어내며, 그중에서도 고루메노는 유난히 눈에 띄는 동세대 라이벌 조합이다.</p>
   <div class="extra-stack">
-    <div class="wc extra-card"><h3>골드쉽 서사의 빈칸을 메운 상대</h3><p>초기 골드쉽은 또렷한 동세대 라이벌 축이 비어 있는 편이었다. 페노메노가 등장하면서 비로소 제대로 긁히고 끝까지 신경 쓰는 상대가 생겼고, 골드쉽 쪽 서사도 훨씬 또렷해졌다.</p></div>
-    <div class="wc extra-card"><h3>황금일족 안의 정상인 포지션</h3><p>제멋대로인 멤버들 사이에서 페노메노는 늘 단속하고 태클 거는 쪽이다. 그래서 어떤 조합에 붙여도 곧바로 츳코미와 긴장이 생기고, 팬들은 그 반응을 계속 보게 된다.</p></div>
-    <div class="wc extra-card"><h3>젠틸돈나까지 이어지는 12세대 관계도</h3><p>고루메노는 둘만 봐도 선명하지만, 젠틸돈나까지 얽히는 12세대 안에 놓였을 때 더 재미있어진다. 각자 워낙 캐릭터가 세서, 같은 화면에 세울수록 환장의 합이 더 커진다.</p></div>
+    <div class="ex-item"><h3>골드쉽 서사의 빈칸을 메운 상대</h3><p>초기 골드쉽은 또렷한 동세대 라이벌 축이 비어 있는 편이었다. 페노메노가 등장하면서 비로소 제대로 긁히고 끝까지 신경 쓰는 상대가 생겼고, 골드쉽 쪽 서사도 훨씬 또렷해졌다.</p></div>
+    <div class="ex-item"><h3>황금일족 안의 정상인 포지션</h3><p>제멋대로인 멤버들 사이에서 페노메노는 늘 단속하고 태클 거는 쪽이다. 그래서 어떤 조합에 붙여도 곧바로 츳코미와 긴장이 생기고, 팬들은 그 반응을 계속 보게 된다.</p></div>
+    <div class="ex-item"><h3>젠틸돈나까지 이어지는 12세대 관계도</h3><p>고루메노는 둘만 봐도 선명하지만, 젠틸돈나까지 얽히는 12세대 안에 놓였을 때 더 재미있어진다. 각자 워낙 캐릭터가 세서, 같은 화면에 세울수록 환장의 합이 더 커진다.</p></div>
   </div>
 </div>
-<div class="clan-box fi" style="margin-top:10px">
+<div class="ex-section fi">
   <div class="compare-label en">12th generation rivals</div>
   <h3>고루메노의 12세대 동기</h3>
   <p>젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도에서 함께 두는 편이 훨씬 입체적이다.</p>
   <div class="clan-grid"><article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article></div>
-</div>
 </div>
 
 <nav class="dot-nav" aria-label="섹션 이동">
