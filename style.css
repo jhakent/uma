@@ -254,6 +254,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fi{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
 .fi.v{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.fi,.fi.v,.hero-load{opacity:1;transform:none;transition:none;animation:none}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
@@ -288,7 +289,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   overflow:hidden;
 }
 .hero-icon img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-body{flex:1;min-width:0}
+.hero-main .hero-body{flex:1;min-width:0}
 .hero-name{font-size:21px;font-weight:800;letter-spacing:-.04em;color:var(--bright);line-height:1.2}
 .hero-slogan{font-size:13px;font-weight:400;color:var(--dim);margin-top:4px;line-height:1.4}
 .hero-dev{font-size:11.5px;font-weight:400;color:var(--dim);margin-top:6px}
@@ -378,7 +379,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
 /* ── SUPPORT TYPE CARDS ── */
 .stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0;width:100%}
-.stype{border-radius:14px;padding:14px 4px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s;min-width:0;box-sizing:border-box;overflow:hidden}
+.stype{border-radius:14px;padding:14px 4px;text-align:center;border:1px solid rgba(0,0,0,.04);background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);transition:transform .2s;min-width:0;overflow:hidden}
 .stype-icon{font-size:24px;margin-bottom:6px;line-height:1;height:28px;display:flex;align-items:center;justify-content:center}
 .stype-name{font-size:12px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .stype-en{font-family:'Outfit',sans-serif;font-size:9px;font-weight:500;color:var(--dim);letter-spacing:.5px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -659,9 +660,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .sh[id] .sh-link,.tr-feature .sh .sh-link{position:absolute;right:0;top:4px}
 .tr-var{font-size:8.5px;font-weight:600;letter-spacing:.3px;color:var(--dim);opacity:.45;background:rgba(0,0,0,.04);padding:1px 5px;border-radius:3px;margin-left:3px;vertical-align:middle;position:relative;top:1px}
 .tr-tag.pk{background:rgba(233,80,152,.1);color:#c2185b}
-.tb[data-t="start"]{position:relative}
 .tb[data-t="start"]::before{content:'';position:absolute;inset:4px 0 0;background:rgba(0,169,95,.09);border-radius:12px;filter:blur(6px);z-index:-1}
-.tb[data-t="sys"]{position:relative}
 .tb[data-t="sys"]::before{content:'';position:absolute;inset:4px 0 0;background:rgba(79,184,230,.12);border-radius:12px;filter:blur(6px);z-index:-1}
 
 /* ── 극장판 + 파생 ── */
