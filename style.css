@@ -695,11 +695,25 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   .char-ko{font-size:16px}
 }
 
+/* ── CONTENT WRAPPER ── */
+.content{max-width:720px;margin:0 auto;padding:0 24px}
+
+/* ── SECTION HEAD (numbered) ── */
+/* 넘버링 섹션 헤드: 01/02/EX 등 큰 숫자 + 킥커 + 타이틀 + 리드 */
+.section-head{margin-top:48px;margin-bottom:16px}
+.section-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:400;font-style:italic;line-height:.8;color:var(--bright);opacity:.06}
+.section-kicker{display:block;margin-top:6px;font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.section-title{margin-top:4px;font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.3;color:var(--bright)}
+.section-lead{margin-top:8px;font-size:14.5px;color:var(--dim);line-height:1.9;max-width:560px}
+@media(max-width:640px){.section-num{font-size:44px}.section-title{font-size:20px}}
+
 /* ── DOT NAV ── */
 /* 슬롯 변수: --dot-active (페이지별 :root에 선언) */
 .dot-nav{position:fixed;top:50%;right:14px;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
-.dot-nav .dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.12);border:none;cursor:pointer;transition:all .3s;padding:0}
+.dot-nav .dot{position:relative;width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.12);border:none;cursor:pointer;transition:all .3s;padding:0}
 .dot-nav .dot:hover,.dot-nav .dot.on{background:var(--dot-active,var(--green));transform:scale(1.6)}
+.dot-nav .dot-tip{position:absolute;right:16px;top:50%;transform:translateY(-50%) translateX(4px);opacity:0;pointer-events:none;white-space:nowrap;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.04);box-shadow:0 4px 14px rgba(0,0,0,.07);color:var(--dim);font-size:10px;font-weight:600;transition:opacity .2s,transform .2s}
+.dot-nav .dot:hover .dot-tip{opacity:1;transform:translateY(-50%) translateX(0)}
 @media(max-width:768px){.dot-nav{display:none}}
 
 /* ── TIMELINE ── */
