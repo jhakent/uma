@@ -236,20 +236,40 @@ body.goru::before { background:
 .compare-section > h3 { font-size:clamp(20px,3.8vw,28px); font-weight:800; letter-spacing:-.055em; line-height:1.15; color:var(--bright); margin-top:4px; }
 .compare-section > p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; max-width:480px; }
 /* stage */
-.vs-stage { position:relative; height:300px; border-radius:20px; overflow:hidden; margin:20px 0 0; background:linear-gradient(110deg,rgba(218,60,87,.09) 0%,rgba(255,255,255,.96) 36%,rgba(255,255,255,.96) 64%,rgba(87,74,119,.09) 100%); border:1px solid rgba(0,0,0,.06); box-shadow:0 4px 24px rgba(0,0,0,.07); }
-.vs-stage::after { content:''; position:absolute; left:50%; top:8%; bottom:8%; width:1px; transform:translateX(-50%); background:linear-gradient(to bottom,transparent,rgba(0,0,0,.08) 25%,rgba(0,0,0,.08) 75%,transparent); z-index:1; pointer-events:none; }
-.vs-glow { position:absolute; bottom:-10px; width:260px; height:260px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(14px); }
-.vs-glow.gold { left:-10px; background:radial-gradient(circle,rgba(218,60,87,.18) 0%,transparent 68%); }
-.vs-glow.feno { right:-10px; background:radial-gradient(circle,rgba(87,74,119,.18) 0%,transparent 68%); }
-.vs-char { position:absolute; bottom:0; height:98%; width:auto; object-fit:contain; object-position:center bottom; pointer-events:none; z-index:2; filter:drop-shadow(0 8px 24px rgba(0,0,0,.10)); max-width:45%; }
-.vs-char.gold { left:0; }
-.vs-char.feno { right:0; }
-/* center column — characters overlap this, glass ensures readability */
-.vs-center { position:absolute; left:50%; top:0; bottom:0; width:40%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; }
-.vs-vs { display:inline-block; padding:6px 18px; border-radius:999px; background:rgba(255,255,255,.90); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(0,0,0,.06); box-shadow:0 4px 16px rgba(0,0,0,.08); }
-.vs-vs-text { font-family:'Outfit',sans-serif; font-size:19px; font-weight:900; letter-spacing:.08em; background:linear-gradient(90deg,var(--gold-main),var(--feno-main)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.vs-stage {
+  position:relative; height:380px; border-radius:20px; overflow:hidden; margin:20px 0 0;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 105%, rgba(255,255,255,0) 0%, rgba(255,255,255,.92) 55%),
+    linear-gradient(110deg, rgba(218,60,87,.13) 0%, rgba(255,255,255,.96) 36%, rgba(255,255,255,.96) 64%, rgba(87,74,119,.13) 100%);
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 4px 28px rgba(0,0,0,.08);
+}
+/* center divider */
+.vs-stage::after {
+  content:''; position:absolute; left:50%; top:5%; bottom:0;
+  width:1px; transform:translateX(-50%);
+  background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.07) 60%, transparent);
+  z-index:1; pointer-events:none;
+}
+.vs-glow { position:absolute; bottom:-30px; width:360px; height:360px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(22px); }
+.vs-glow.gold { left:-40px; background:radial-gradient(circle, rgba(218,60,87,.22) 0%, transparent 62%); }
+.vs-glow.feno { right:-40px; background:radial-gradient(circle, rgba(87,74,119,.22) 0%, transparent 62%); }
+.vs-char {
+  position:absolute; bottom:0; height:102%; width:auto;
+  object-fit:contain; object-position:center bottom;
+  pointer-events:none; z-index:2;
+  filter:drop-shadow(0 10px 30px rgba(0,0,0,.12));
+  max-width:48%;
+  transform-origin:center bottom;
+}
+.vs-char.gold { left:-3%; transform:rotate(-6deg) translateX(4%); }
+.vs-char.feno { right:-3%; transform:rotate(6deg) translateX(-4%); }
+/* center */
+.vs-center { position:absolute; left:50%; top:0; bottom:0; width:38%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; }
+.vs-vs { display:inline-block; padding:7px 20px; border-radius:999px; background:rgba(255,255,255,.96); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(0,0,0,.07); box-shadow:0 6px 24px rgba(0,0,0,.11); }
+.vs-vs-text { font-family:'Outfit',sans-serif; font-size:22px; font-weight:900; letter-spacing:.10em; background:linear-gradient(90deg,var(--gold-main),var(--feno-main)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .vs-chips { display:flex; flex-direction:column; gap:5px; width:100%; }
-.vs-chip { display:flex; align-items:center; justify-content:space-between; gap:5px; padding:5px 12px; border-radius:999px; background:rgba(255,255,255,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 10px rgba(0,0,0,.05); font-size:11px; font-weight:700; }
+.vs-chip { display:flex; align-items:center; justify-content:space-between; gap:5px; padding:5px 12px; border-radius:999px; background:rgba(255,255,255,.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 10px rgba(0,0,0,.05); font-size:11px; font-weight:700; }
 .vc-g { color:var(--gold-main); }
 .vc-f { color:var(--feno-main); }
 .vc-sep { color:rgba(0,0,0,.18); font-size:10px; font-weight:400; flex-shrink:0; }
@@ -257,24 +277,32 @@ body.goru::before { background:
 .vs-name { position:absolute; bottom:14px; font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:6px; background:rgba(255,255,255,.80); backdrop-filter:blur(6px); border:1px solid rgba(0,0,0,.04); z-index:10; }
 .vs-name.gold { left:14px; color:var(--gold-main); }
 .vs-name.feno { right:14px; color:var(--feno-main); }
-/* confrontation table */
-.vs-table { margin-top:10px; border-radius:16px; overflow:hidden; border:1px solid rgba(0,0,0,.05); }
-.vs-row { display:grid; grid-template-columns:1fr 50px 1fr; align-items:stretch; border-bottom:1px solid rgba(0,0,0,.04); }
-.vs-row:last-child { border-bottom:none; }
-.vs-cell { padding:13px 16px; font-size:12.5px; line-height:1.65; color:var(--text); display:flex; align-items:center; }
-.vs-cell.vc-gold { background:linear-gradient(to right,rgba(218,60,87,.07),transparent); justify-content:flex-end; text-align:right; }
-.vs-cell.vc-feno { background:linear-gradient(to left,rgba(87,74,119,.07),transparent); }
-.vs-cell ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }
-.vs-cell.vc-gold ul { align-items:flex-end; }
-.vs-attr { display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.97); border-left:1px solid rgba(0,0,0,.04); border-right:1px solid rgba(0,0,0,.04); font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); text-align:center; padding:0 2px; }
-/* common */
-.vs-common { margin-top:10px; padding:18px 20px; border-radius:16px; border:1px solid rgba(0,0,0,.05); background:linear-gradient(135deg,rgba(218,60,87,.03),rgba(87,74,119,.03)); }
-.vs-common-label { font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin-bottom:10px; display:block; }
-.vs-common-body { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.vs-common-head { display:block; font-size:11px; font-weight:700; color:var(--dim); margin-bottom:5px; }
-.vs-common ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:4px; }
-.vs-common li { font-size:12px; color:var(--dim); line-height:1.65; padding-left:.85rem; position:relative; }
-.vs-common li::before { content:''; position:absolute; left:0; top:.6em; width:.28rem; height:.28rem; border-radius:50%; background:linear-gradient(135deg,var(--gold-main),var(--feno-main)); }
+
+/* battle table */
+.bt { margin-top:10px; display:flex; flex-direction:column; gap:6px; }
+.bt-row { border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 14px rgba(0,0,0,.06); }
+.bt-row::before { content:''; display:block; height:3px; background:linear-gradient(90deg, var(--gold-main) 0%, #c06070 42%, #8070a8 58%, var(--feno-main) 100%); }
+.bt-head { display:flex; align-items:center; justify-content:center; padding:8px 14px; background:linear-gradient(90deg, rgba(218,60,87,.06) 0%, rgba(150,100,140,.04) 50%, rgba(87,74,119,.06) 100%); border-bottom:1px solid rgba(0,0,0,.04); }
+.bt-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }
+.bt-body { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(0,0,0,.05); }
+.bt-side { padding:14px 16px; font-size:12.5px; line-height:1.7; color:var(--text); display:flex; align-items:center; }
+.bt-gold { background:linear-gradient(to right, rgba(218,60,87,.07), rgba(218,60,87,.02), #fff); justify-content:flex-end; text-align:right; }
+.bt-feno { background:linear-gradient(to left, rgba(87,74,119,.07), rgba(87,74,119,.02), #fff); }
+.bt-gold ul, .bt-feno ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }
+.bt-gold ul { align-items:flex-end; }
+
+/* common bond */
+.vs-common { margin-top:8px; border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.05); box-shadow:0 2px 14px rgba(0,0,0,.05); }
+.vs-common-bar { display:flex; align-items:center; gap:0; padding:10px 18px; background:linear-gradient(90deg, rgba(218,60,87,.07) 0%, rgba(255,255,255,.0) 50%, rgba(87,74,119,.07) 100%); border-bottom:1px solid rgba(0,0,0,.04); }
+.vs-common-bar::before { content:''; flex:1; height:1px; background:linear-gradient(to right,transparent,rgba(218,60,87,.25)); margin-right:10px; }
+.vs-common-bar::after  { content:''; flex:1; height:1px; background:linear-gradient(to left, transparent,rgba(87,74,119,.25)); margin-left:10px; }
+.vs-common-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); white-space:nowrap; }
+.vs-common-body { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(0,0,0,.04); }
+.vs-common-col { padding:14px 16px; background:#fff; }
+.vs-common-head { display:block; font-family:'Outfit',sans-serif; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin-bottom:8px; }
+.vs-common ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px; }
+.vs-common li { font-size:12px; color:var(--dim); line-height:1.65; padding-left:.9rem; position:relative; }
+.vs-common li::before { content:''; position:absolute; left:0; top:.62em; width:.28rem; height:.28rem; border-radius:50%; background:linear-gradient(135deg,var(--gold-main),var(--feno-main)); }
 
 /* ═══ 03 STORY ═══ */
 .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
@@ -350,7 +378,7 @@ body.goru::before { background:
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:901px){ .haruten{display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start} .haruten-media{max-width:280px;margin:0} }
-@media(max-width:900px){ .hook-row,.core-grid,.story-grid,.profile-grid,.clan-grid{grid-template-columns:1fr} .compare-topic-body{grid-template-columns:1fr} .compare-topic-vs{min-height:32px;border-left:0;border-right:0;border-top:1px solid rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.03)} }
+@media(max-width:900px){ .hook-row,.core-grid,.story-grid,.profile-grid,.clan-grid{grid-template-columns:1fr} }
 @media(max-width:768px){
   .hero-char{height:90%;opacity:.20}
   .hero-char.gold{left:-18%}
@@ -373,15 +401,18 @@ body.goru::before { background:
   .hero-char.feno{right:-28%}
   .hero-desc-wrap{padding:16px 18px;border-radius:22px}
   .compare-section>h3{font-size:20px}
-  .vs-stage{height:250px}
-  .vs-center{width:46%}
-  .vs-vs{padding:4px 12px}
-  .vs-vs-text{font-size:15px}
+  .vs-stage{height:280px}
+  .vs-char.gold{transform:rotate(-4deg) translateX(3%)}
+  .vs-char.feno{transform:rotate(4deg) translateX(-3%)}
+  .vs-center{width:44%}
+  .vs-vs{padding:5px 14px}
+  .vs-vs-text{font-size:16px}
   .vs-chip{font-size:10px;padding:4px 10px}
   .vs-chips{gap:4px}
-  .vs-cell{padding:10px 12px;font-size:11.5px}
-  .vs-attr{font-size:8px}
-  .vs-common-body{grid-template-columns:1fr;gap:10px}
+  .bt-side{padding:11px 12px;font-size:12px}
+  .bt-label{font-size:9.5px}
+  .vs-common-col{padding:12px 14px}
+  .vs-common-body{grid-template-columns:1fr}
   .profile-portrait{width:80px;height:80px;border-radius:14px} .profile-ko{font-size:20px}
   .profile-facts{grid-template-columns:1fr 1fr}
   .mo-br{display:block}
@@ -477,39 +508,47 @@ body.goru::before { background:
     <div class="vs-name feno">페노메노</div>
   </div>
 
-  <!-- CONFRONTATION TABLE -->
-  <div class="vs-table">
-    <div class="vs-row">
-      <div class="vs-cell vc-gold"><ul><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>능청스러운 표정</li></ul></div>
-      <div class="vs-attr">외형</div>
-      <div class="vs-cell vc-feno"><ul><li>검은 계열 컬러</li><li>치켜뜬 눈매</li><li>뻗친 머리</li><li>각 잡힌 분위기</li></ul></div>
+  <!-- BATTLE TABLE -->
+  <div class="bt fi">
+    <div class="bt-row">
+      <div class="bt-head"><span class="bt-label">외형</span></div>
+      <div class="bt-body">
+        <div class="bt-side bt-gold"><ul><li>흰 계열 컬러</li><li>처진 눈매</li><li>생머리</li><li>능청스러운 표정</li></ul></div>
+        <div class="bt-side bt-feno"><ul><li>검은 계열 컬러</li><li>치켜뜬 눈매</li><li>뻗친 머리</li><li>각 잡힌 분위기</li></ul></div>
+      </div>
     </div>
-    <div class="vs-row">
-      <div class="vs-cell vc-gold">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</div>
-      <div class="vs-attr">성격</div>
-      <div class="vs-cell vc-feno">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</div>
+    <div class="bt-row">
+      <div class="bt-head"><span class="bt-label">성격</span></div>
+      <div class="bt-body">
+        <div class="bt-side bt-gold">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</div>
+        <div class="bt-side bt-feno">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</div>
+      </div>
     </div>
-    <div class="vs-row">
-      <div class="vs-cell vc-gold">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</div>
-      <div class="vs-attr">호칭</div>
-      <div class="vs-cell vc-feno">끝까지 '고루시 상'이라고 부르며 선을 지킨다</div>
+    <div class="bt-row">
+      <div class="bt-head"><span class="bt-label">호칭</span></div>
+      <div class="bt-body">
+        <div class="bt-side bt-gold">'마메찡'이라 부르며 거리낌 없이 훅 들어온다</div>
+        <div class="bt-side bt-feno">끝까지 '고루시 상'이라고 부르며 선을 지킨다</div>
+      </div>
     </div>
-    <div class="vs-row">
-      <div class="vs-cell vc-gold">먼저 약올리며 사건을 일으키는 보케</div>
-      <div class="vs-attr">역할</div>
-      <div class="vs-cell vc-feno">진지하게 받아치며 휘말리는 츳코미</div>
+    <div class="bt-row">
+      <div class="bt-head"><span class="bt-label">역할</span></div>
+      <div class="bt-body">
+        <div class="bt-side bt-gold">먼저 약올리며 사건을 일으키는 보케</div>
+        <div class="bt-side bt-feno">진지하게 받아치며 휘말리는 츳코미</div>
+      </div>
     </div>
   </div>
 
-  <!-- COMMON -->
-  <div class="vs-common">
-    <span class="vs-common-label en">in common</span>
+  <!-- COMMON BOND -->
+  <div class="vs-common fi">
+    <div class="vs-common-bar"><span class="vs-common-label en">in common</span></div>
     <div class="vs-common-body">
-      <div>
+      <div class="vs-common-col">
         <span class="vs-common-head">외형</span>
         <ul><li>가슴 밑을 휘감은 붉은색 벨트</li><li>유사한 형태의 모자 문양</li><li>모자 및 장갑 착용 여부</li></ul>
       </div>
-      <div>
+      <div class="vs-common-col">
         <span class="vs-common-head">감정</span>
         <ul><li>서로를 강하게 의식하며 적극적으로 상대한다.</li><li>사실은 누구보다 서로를 필요로 하며, 의지하고 있다.</li></ul>
       </div>
