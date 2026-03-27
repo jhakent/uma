@@ -22,6 +22,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 .top-in{max-width:720px;margin:0 auto;padding:0 24px}
 .top-row{display:flex;align-items:center;justify-content:center;padding:14px 0 2px}
 .top-logo-img{height:60px;display:block;cursor:pointer}
+.top-logo-link{display:block}
 .tabs{display:inline-flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;position:relative;max-width:100%}
 .tabs::-webkit-scrollbar{display:none}
 .tabs-wrap{position:relative;text-align:center;overflow-x:auto}
@@ -786,6 +787,16 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   .tl-head{flex-direction:column}
   .tl-tags{justify-content:flex-start}
 }
+/* ── 공용 유틸리티 ── */
+.hero-app-meta{text-align:center;padding:6px 0 0;font-size:9.5px;font-weight:400;color:var(--dim);letter-spacing:-.01em;opacity:.7}
+.mv-logo{height:72px;margin-bottom:32px;opacity:.35;animation:fadeUp .8s ease both;position:relative;z-index:1;display:block;margin-left:auto;margin-right:auto}
+.dv-section{max-width:920px;margin:0 auto;padding:0 24px}
+.pc-spd{border-top:3px solid var(--spd)}
+.pc-sta{border-top:3px solid var(--sta)}
+.pc-pow{border-top:3px solid var(--pow)}
+.pc-gut{border-top:3px solid var(--gut)}
+.pc-int{border-top:3px solid var(--int)}
+
 /* ── 극장판 가이드 ── */
 .mv-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
 .mv-hero::before{content:'';position:absolute;inset:0;pointer-events:none}
@@ -797,6 +808,20 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 @media(max-width:640px){.mv-hero{padding:48px 20px}.mv-hero-title{font-size:32px;line-height:1.12}.mv-section{padding:52px 18px}}
 
 /* ── 고루메노 ── */
+
+/* HOOK CARDS */
+.hook-row { max-width:720px; margin:28px auto 0; padding:0 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.hook-card { position:relative; padding:16px 16px 18px; border-radius:14px; background:rgba(255,255,255,.97); border:1px solid rgba(0,0,0,.04); box-shadow:0 3px 18px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.8); overflow:hidden; }
+.hook-card::before { content:''; position:absolute; inset:0 0 auto 0; height:2px; }
+.hook-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.hook-card h3 { margin-top:6px; font-size:14.5px; font-weight:800; letter-spacing:-.04em; line-height:1.24; color:var(--bright); }
+.hook-card p { margin-top:5px; font-size:12px; line-height:1.72; color:var(--dim); }
+
+/* COMPARE SECTION */
+.compare-section { margin-top:24px; }
+.compare-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.compare-section > h3 { font-size:clamp(20px,3.8vw,28px); font-weight:800; letter-spacing:-.055em; line-height:1.15; color:var(--bright); margin-top:4px; }
+.compare-section > p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; max-width:480px; }
 
 /* HERO 레이아웃 */
 .goru .hero { position:relative; overflow:hidden; padding:48px 24px 40px; }
@@ -935,11 +960,11 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .race-name { font-size:16px; font-weight:800; letter-spacing:-.04em; line-height:1.2; color:var(--bright); }
 .race-sub { margin-top:3px; font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.10em; text-transform:uppercase; color:var(--dim); }
 .race-tags { display:flex; gap:5px; flex-wrap:wrap; justify-content:flex-end; }
-.result-chip { padding:5px 9px; border-radius:999px; font-size:10px; font-weight:800; color:#fff; white-space:nowrap; }
+.goru .result-chip { padding:5px 9px; border-radius:999px; font-size:10px; font-weight:800; color:#fff; white-space:nowrap; }
 .race-copy { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
-.note-box { margin-top:8px; padding:14px 16px; }
+.goru .note-box { margin-top:8px; padding:14px 16px; }
 .note-box p { margin:0; font-size:12.5px; line-height:1.78; color:var(--dim); }
-.note-label { display:block; margin-bottom:3px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
+.goru .note-label { display:block; margin-bottom:3px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 
 /* HARUTEN */
 .haruten { padding:18px; border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.05); }
@@ -1001,6 +1026,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   .goru .hero-char.gold{left:-28%}
   .goru .hero-char.feno{right:-28%}
   .goru .hero-desc-wrap{padding:16px 18px;border-radius:22px}
+  .hook-row{padding:0 18px}
   .compare-section>h3{font-size:20px}
   .vs-stage{height:250px} .vs-center{width:44%} .vs-vs-text{font-size:38px}
   .vs-chip{font-size:10px;padding:4px 10px} .vs-chips{gap:4px}
