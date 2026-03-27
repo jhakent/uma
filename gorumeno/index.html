@@ -85,7 +85,7 @@ body.goru::before { background:
   padding:7px 14px; border-radius:999px;
   background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04);
   box-shadow:0 2px 10px rgba(0,0,0,.04);
-  font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600;
+  font-family:'Outfit',sans-serif; font-size:10px; font-weight:600;
   letter-spacing:3px; text-transform:uppercase; color:var(--dim);
   backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
 }
@@ -96,12 +96,12 @@ body.goru::before { background:
 .hero-title { font-size:clamp(32px,6.5vw,52px); font-weight:900; letter-spacing:-.065em; line-height:1.0; color:var(--bright); }
 .hero-title .times { 
   display:inline-block; 
-  font-family:‘Cormorant Garamond',serif; font-weight:400; font-style:italic;
+  font-family:'Cormorant Garamond',serif; font-weight:400; font-style:italic;
   font-size:.75em; letter-spacing:0; margin:0 .08em; vertical-align:.08em;
   opacity:.35;
 }
 .hero-jp { margin-top:10px; font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--dim); }
-.hero-en { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
+.hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
 
 /* CP 명칭 — 가벼운 인라인 텍스트 */
 .hero-cp {
@@ -110,7 +110,7 @@ body.goru::before { background:
   letter-spacing:.02em;
 }
 .hero-cp .sep { margin:0 .4em; opacity:.35; }
-.hero-cp .en { font-family:‘Outfit',sans-serif; letter-spacing:.08em; }
+.hero-cp .en { font-family:'Outfit',sans-serif; letter-spacing:.08em; }
 
 /* 설명 + 뱃지 글래스 패널 */
 .hero-desc-wrap {
@@ -152,7 +152,7 @@ body.goru::before { background:
 .hook-card.gold::before { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
 .hook-card.mix::before { background:var(--goru-accent); }
 .hook-card.feno::before { background:linear-gradient(90deg,var(--feno-sub),var(--feno-main)); }
-.hook-kicker { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.hook-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .hook-card h3 { margin-top:6px; font-size:14.5px; font-weight:800; letter-spacing:-.04em; line-height:1.24; color:var(--bright); }
 .hook-card p { margin-top:5px; font-size:12px; line-height:1.72; color:var(--dim); }
 
@@ -162,18 +162,18 @@ body.goru::before { background:
 
 /* ═══ 01 CORE READ ═══ */
 .core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
-.core-card { position:relative; overflow:hidden; }
+.core-card { position:relative; overflow:hidden; padding:20px 20px 22px; }
 .core-card::before { content:''; position:absolute; inset:0; pointer-events:none; }
 .core-card.cc-gold::before { background:linear-gradient(135deg,rgba(218,60,87,.06),transparent 65%); }
 .core-card.cc-feno::before { background:linear-gradient(135deg,rgba(87,74,119,.07),transparent 65%); }
 .core-card.cc-mix::before { background:linear-gradient(135deg,rgba(218,60,87,.03),rgba(87,74,119,.03),transparent 65%); }
-.core-label { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; margin-bottom:4px; position:relative; z-index:1; }
-.core-card h3 { font-size:15px; position:relative; z-index:1; }
-.core-card p { font-size:13px; position:relative; z-index:1; }
+.core-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; margin-bottom:4px; position:relative; z-index:1; }
+.core-card h3 { font-size:15px; position:relative; z-index:1; margin-top:2px; }
+.core-card p { margin-top:4px; font-size:13px; position:relative; z-index:1; }
 
 /* onecut */
 .onecut { margin-top:18px; padding:22px; border-radius:14px; border:1px solid rgba(87,74,119,.08); background:rgba(255,255,255,.97); box-shadow:0 3px 18px rgba(0,0,0,.06); }
-.onecut-kicker { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
+.onecut-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
 .onecut-title { font-size:17px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-bottom:12px; }
 .onecut-media { width:100%; max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden; border:1px solid rgba(87,74,119,.10); }
 .onecut-media img { display:block; width:100%; height:auto; }
@@ -211,7 +211,7 @@ body.goru::before { background:
 .profile-ko { font-size:22px; font-weight:900; letter-spacing:-.05em; line-height:1.1; margin-top:2px; }
 .profile-card.gold .profile-ko { color:#b72f48; }
 .profile-card.feno .profile-ko { color:#4d416c; }
-.profile-en { font-family:‘Outfit',sans-serif; font-size:10px; letter-spacing:.16em; text-transform:uppercase; margin-top:2px; }
+.profile-en { font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.16em; text-transform:uppercase; margin-top:2px; }
 .profile-card.gold .profile-en { color:var(--gold-main); }
 .profile-card.feno .profile-en { color:var(--feno-main); }
 .profile-facts { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:12px; border-top:1px solid var(--border); }
@@ -226,7 +226,7 @@ body.goru::before { background:
 
 /* ═══ 02 COMPARE ═══ */
 .compare-section { margin-top:24px; }
-.compare-label { font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.compare-label { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .compare-section > h3 { font-size:clamp(20px,3.8vw,28px); font-weight:800; letter-spacing:-.055em; line-height:1.15; color:var(--bright); margin-top:4px; }
 .compare-section > p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; max-width:480px; }
 .compare-showcase { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:end; margin:20px 0; }
@@ -235,14 +235,14 @@ body.goru::before { background:
 .showcase-fig.gold::before { background:radial-gradient(circle,rgba(224,210,61,.9),rgba(218,60,87,.2) 55%,transparent 74%); }
 .showcase-fig.feno::before { background:radial-gradient(circle,rgba(234,220,104,.85),rgba(87,74,119,.25) 55%,transparent 74%); }
 .showcase-fig img { position:relative; z-index:1; max-width:100%; max-height:380px; object-fit:contain; filter:drop-shadow(0 16px 24px rgba(0,0,0,.10)); }
-.showcase-fig figcaption { position:relative; z-index:2; margin-top:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.90); border:1px solid rgba(0,0,0,.04); font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+.showcase-fig figcaption { position:relative; z-index:2; margin-top:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.90); border:1px solid rgba(0,0,0,.04); font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .compare-deck { display:grid; gap:10px; }
 .compare-topic { overflow:hidden; border:1px solid rgba(0,0,0,.04); border-radius:14px; background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.05); }
 .compare-topic-head { display:flex; align-items:center; justify-content:center; min-height:40px; padding:8px 14px; font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#fff; }
 .compare-topic.appearance .compare-topic-head, .compare-topic.naming .compare-topic-head, .compare-topic.common .compare-topic-head { background:linear-gradient(90deg,var(--gold-main),var(--gold-sub)); }
 .compare-topic.personality .compare-topic-head, .compare-topic.role .compare-topic-head { background:linear-gradient(90deg,var(--feno-main),var(--feno-sub)); }
 .compare-topic-body { display:grid; grid-template-columns:1fr 48px 1fr; align-items:stretch; }
-.compare-topic-vs { display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.02); border-left:1px solid rgba(0,0,0,.03); border-right:1px solid rgba(0,0,0,.03); font-family:‘Outfit',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; color:rgba(0,0,0,.12); }
+.compare-topic-vs { display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.02); border-left:1px solid rgba(0,0,0,.03); border-right:1px solid rgba(0,0,0,.03); font-family:'Outfit',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; color:rgba(0,0,0,.12); }
 .compare-topic-side { padding:14px 16px; }
 .compare-topic-side.gold { background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(218,60,87,.03)); }
 .compare-topic-side.feno { background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(87,74,119,.03)); }
@@ -262,7 +262,7 @@ body.goru::before { background:
 .story-card:nth-child(-n+2) p { font-size:13.5px; }
 .story-card { position:relative; overflow:hidden; }
 .story-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(218,60,87,.03),rgba(87,74,119,.03),transparent 65%); pointer-events:none; }
-.story-step { display:inline-block; padding:3px 8px; border-radius:999px; background:rgba(0,0,0,.03); font-family:‘Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); position:relative; z-index:1; }
+.story-step { display:inline-block; padding:3px 8px; border-radius:999px; background:rgba(0,0,0,.03); font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); position:relative; z-index:1; }
 .story-card h3 { margin-top:6px; font-size:15px; position:relative; z-index:1; }
 .story-card p { font-size:12.5px; position:relative; z-index:1; }
 .story-card small { display:block; margin-top:6px; font-size:10px; color:var(--dim); opacity:.5; position:relative; z-index:1; }
@@ -270,7 +270,7 @@ body.goru::before { background:
 /* ═══ 04 TIMELINE ═══ */
 .timeline { display:grid; gap:8px; position:relative; margin-top:18px; }
 .race { display:grid; grid-template-columns:auto minmax(0,1fr); gap:12px; align-items:start; position:relative; }
-.race-year { display:flex; flex-direction:column; align-items:center; gap:3px; padding:14px 0 0; font-family:‘Outfit',sans-serif; width:44px; position:relative; z-index:1; }
+.race-year { display:flex; flex-direction:column; align-items:center; gap:3px; padding:14px 0 0; font-family:'Outfit',sans-serif; width:44px; position:relative; z-index:1; }
 .race-dot { width:10px; height:10px; border-radius:50%; position:relative; z-index:2; }
 .race-year.gold .race-dot { background:linear-gradient(135deg,var(--gold-main),#e85f6a); box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(218,60,87,.12); }
 .race-year.feno .race-dot { background:linear-gradient(135deg,var(--feno-main),#7a68a6); box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(87,74,119,.12); }
@@ -285,7 +285,7 @@ body.goru::before { background:
 .race-card { border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); padding:16px 18px; box-shadow:0 2px 12px rgba(0,0,0,.05); }
 .race-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
 .race-name { font-size:16px; font-weight:800; letter-spacing:-.04em; line-height:1.2; color:var(--bright); }
-.race-sub { margin-top:3px; font-family:‘Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.10em; text-transform:uppercase; color:var(--dim); }
+.race-sub { margin-top:3px; font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.10em; text-transform:uppercase; color:var(--dim); }
 .race-tags { display:flex; gap:5px; flex-wrap:wrap; justify-content:flex-end; }
 .result-chip { padding:5px 9px; border-radius:999px; font-size:10px; font-weight:800; color:#fff; white-space:nowrap; }
 .result-chip.gold { background:linear-gradient(135deg,var(--gold-main),#f06f60); }
@@ -293,13 +293,13 @@ body.goru::before { background:
 .race-copy { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
 .note-box { margin-top:8px; padding:14px 16px; }
 .note-box p { margin:0; font-size:12.5px; line-height:1.78; color:var(--dim); }
-.note-label { display:block; margin-bottom:3px; font-family:‘Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
+.note-label { display:block; margin-bottom:3px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 
 /* haruten */
 .haruten { padding:18px; border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); box-shadow:0 2px 12px rgba(0,0,0,.05); }
 .haruten-media { width:100%; max-width:480px; margin:0 auto; aspect-ratio:3/4; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,.04); }
 .haruten-media img { display:block; width:100%; height:100%; object-fit:cover; }
-.haruten-label { font-family:‘Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
+.haruten-label { font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 .haruten h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-top:2px; }
 .haruten p { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
 
