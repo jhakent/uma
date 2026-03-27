@@ -31,7 +31,7 @@ body.goru::before { background:
 .goru .footer { max-width:720px; }
 .goru .sh, .goru .sh-title, .goru .sh-sub { all:unset; }
 
-:root { --gold-main:#da3c57; --gold-sub:#e0d23d; --feno-main:#574a77; --feno-sub:#eadc68; --goru-accent:linear-gradient(90deg,var(--gold-main),var(--feno-main)); }
+:root { --gold-main:#da3c57; --gold-sub:#e0d23d; --feno-main:#574a77; --feno-sub:#eadc68; --goru-accent:linear-gradient(90deg,var(--gold-main),var(--feno-main)); --dot-active:var(--gold-main); }
 
 /* ═══════════════════════════════════════
    HERO — 전신컷 배경 플랭킹 레이아웃
@@ -156,15 +156,7 @@ body.goru::before { background:
 .hook-card h3 { margin-top:6px; font-size:14.5px; font-weight:800; letter-spacing:-.04em; line-height:1.24; color:var(--bright); }
 .hook-card p { margin-top:5px; font-size:12px; line-height:1.72; color:var(--dim); }
 
-/* ═══ CONTENT ═══ */
-.content { max-width:720px; margin:0 auto; padding:0 24px; }
-
-/* ═══ SECTION HEAD ═══ */
-.section-head { margin-top:48px; margin-bottom:16px; }
-.section-num { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:400; font-style:italic; line-height:.8; color:var(--bright); opacity:.06; }
-.section-kicker { display:block; margin-top:6px; font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
-.section-title { margin-top:4px; font-size:clamp(22px,4.2vw,32px); font-weight:800; letter-spacing:-.055em; line-height:1.3; color:var(--bright); }
-.section-lead { margin-top:8px; font-size:14.5px; color:var(--dim); line-height:1.9; max-width:560px; }
+/* ═══ SECTION HEAD — 공용 CSS로 이동 완료 ═══ */
 
 /* ═══ 01 CORE READ ═══ */
 .core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
@@ -328,18 +320,12 @@ body.goru::before { background:
 .clan-item.staygold .clan-sub { color:#576898; }
 .clan-item.donna { background:linear-gradient(180deg,rgba(207,47,43,.05),rgba(255,255,255,.97) 50%); }
 
-/* ═══ SIDE NAV ═══ */
-.side-nav { position:fixed; top:50%; right:14px; transform:translateY(-50%); display:flex; flex-direction:column; gap:8px; z-index:100; }
-.side-dot { position:relative; width:6px; height:6px; border:none; border-radius:50%; background:rgba(0,0,0,.12); padding:0; cursor:pointer; transition:all .3s; }
-.side-dot:hover,.side-dot.on { background:var(--goru-accent); transform:scale(1.6); }
-.side-dot .side-tip { position:absolute; right:16px; top:50%; transform:translateY(-50%) translateX(4px); opacity:0; pointer-events:none; white-space:nowrap; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04); box-shadow:0 4px 14px rgba(0,0,0,.07); color:var(--dim); font-size:10px; font-weight:600; transition:opacity .2s,transform .2s; }
-.side-dot:hover .side-tip { opacity:1; transform:translateY(-50%) translateX(0); }
+/* ═══ SIDE NAV — 공용 .dot-nav 사용 ═══ */
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:901px){ .haruten{display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start} .haruten-media{max-width:280px;margin:0} }
 @media(max-width:900px){ .hook-row,.core-grid,.story-grid,.profile-grid,.clan-grid{grid-template-columns:1fr} .compare-topic-body{grid-template-columns:1fr} .compare-topic-vs{min-height:32px;border-left:0;border-right:0;border-top:1px solid rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.03)} }
 @media(max-width:768px){
-  .side-nav{display:none!important}
   .hero-char{height:90%;opacity:.20}
   .hero-char.gold{left:-18%}
   .hero-char.feno{right:-18%}
@@ -360,7 +346,6 @@ body.goru::before { background:
   .hero-char.gold{left:-28%}
   .hero-char.feno{right:-28%}
   .hero-desc-wrap{padding:16px 18px;border-radius:22px}
-  .section-num{font-size:44px} .section-title{font-size:20px}
   .compare-section>h3{font-size:20px}
   .profile-portrait{width:80px;height:80px;border-radius:14px} .profile-ko{font-size:20px}
   .profile-facts{grid-template-columns:1fr 1fr}
@@ -498,13 +483,13 @@ body.goru::before { background:
 </div>
 </div>
 
-<nav class="side-nav" aria-label="섹션 이동">
-  <button class="side-dot on" data-t="intro"><span class="side-tip">소개</span></button>
-  <button class="side-dot" data-t="topic01"><span class="side-tip">요약</span></button>
-  <button class="side-dot" data-t="topic02"><span class="side-tip">대비</span></button>
-  <button class="side-dot" data-t="topic03"><span class="side-tip">서사</span></button>
-  <button class="side-dot" data-t="topic04"><span class="side-tip">역사</span></button>
-  <button class="side-dot" data-t="topicex"><span class="side-tip">황금일족</span></button>
+<nav class="dot-nav" aria-label="섹션 이동">
+  <button class="dot on" data-t="intro"><span class="dot-tip">소개</span></button>
+  <button class="dot" data-t="topic01"><span class="dot-tip">요약</span></button>
+  <button class="dot" data-t="topic02"><span class="dot-tip">대비</span></button>
+  <button class="dot" data-t="topic03"><span class="dot-tip">서사</span></button>
+  <button class="dot" data-t="topic04"><span class="dot-tip">역사</span></button>
+  <button class="dot" data-t="topicex"><span class="dot-tip">황금일족</span></button>
 </nav>
 
 <footer class="footer">
@@ -527,7 +512,7 @@ body.goru::before { background:
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:.05,rootMargin:'0px 0px 60px 0px'});
   document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
   const ids=['intro','topic01','topic02','topic03','topic04','topicex'];
-  const dots=document.querySelectorAll('.side-dot');
+  const dots=document.querySelectorAll('.dot-nav .dot');
   dots.forEach(d=>d.addEventListener('click',()=>{const t=document.getElementById(d.dataset.t);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}));
   function updateNav(){let c=ids[0];ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<innerHeight*.45)c=id;});dots.forEach(d=>d.classList.toggle('on',d.dataset.t===c));}
   window.addEventListener('scroll',updateNav,{passive:true}); updateNav();
