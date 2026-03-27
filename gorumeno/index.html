@@ -240,6 +240,7 @@ body.goru::before { background:
   position:relative; height:360px; border-radius:20px; overflow:hidden; margin:20px 0 0;
   background:linear-gradient(105deg, rgba(218,60,87,.07) 0%, var(--bg) 38%, var(--bg) 62%, rgba(87,74,119,.07) 100%);
   border:1px solid var(--border);
+  box-shadow:inset 0 -40px 40px -20px rgba(255,255,255,.6);
 }
 .vs-stage::after {
   content:''; position:absolute; left:50%; top:12%; bottom:0;
@@ -257,14 +258,14 @@ body.goru::before { background:
 }
 .vs-char.gold { left:0; }
 .vs-char.feno { right:0; }
-.vs-center { position:absolute; left:50%; top:0; bottom:0; width:38%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; }
+.vs-center { position:absolute; left:50%; top:0; bottom:0; width:38%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding-bottom:10px; }
 .vs-vs { display:block; text-align:center; }
 .vs-vs-text { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:400; font-style:italic; line-height:1; letter-spacing:.02em; background:linear-gradient(160deg,var(--gold-main) 30%,var(--feno-main) 70%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .vs-chips { display:flex; flex-direction:column; gap:5px; width:100%; }
-.vs-chip { display:flex; align-items:center; justify-content:space-between; gap:5px; padding:5px 12px; border-radius:8px; background:rgba(255,255,255,.82); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(0,0,0,.05); font-size:11px; font-weight:700; }
+.vs-chip { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:6px 14px; border-radius:6px; background:rgba(255,255,255,.78); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); font-size:11.5px; font-weight:700; letter-spacing:-.02em; }
 .vc-g { color:var(--gold-main); }
 .vc-f { color:var(--feno-main); }
-.vc-sep { color:rgba(0,0,0,.15); font-size:9px; font-weight:400; flex-shrink:0; }
+.vc-sep { width:1px; height:13px; background:linear-gradient(to bottom,var(--gold-main),var(--feno-main)); flex-shrink:0; opacity:.35; border-radius:1px; }
 .vs-name { position:absolute; bottom:12px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); z-index:10; }
 .vs-name.gold { left:14px; }
 .vs-name.feno { right:14px; }
@@ -272,11 +273,11 @@ body.goru::before { background:
 .bt { margin-top:10px; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
 .bt-row { border-bottom:1px solid var(--border); }
 .bt-row:last-child { border-bottom:none; }
-.bt-head { display:flex; align-items:center; justify-content:center; padding:7px 14px; background:var(--bg-warm); }
-.bt-label { font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }
+.bt-head { display:flex; align-items:center; justify-content:center; padding:8px 14px; background:linear-gradient(90deg,rgba(218,60,87,.05) 0%,var(--bg-warm) 30%,var(--bg-warm) 70%,rgba(87,74,119,.05) 100%); }
+.bt-label { font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--bright); opacity:.45; }
 .bt-body { display:grid; grid-template-columns:1fr 1px 1fr; }
 .bt-div { background:var(--border); }
-.bt-side { padding:13px 16px; font-size:12.5px; line-height:1.7; color:var(--text); display:flex; align-items:center; background:var(--bg); }
+.bt-side { padding:14px 16px; font-size:12.5px; line-height:1.7; color:var(--text); display:flex; align-items:center; background:var(--bg); }
 .bt-gold { justify-content:flex-end; text-align:right; }
 .bt-gold ul, .bt-feno ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }
 .bt-gold ul { align-items:flex-end; }
@@ -338,20 +339,21 @@ body.goru::before { background:
 .haruten-media img { display:block; width:100%; height:100%; object-fit:cover; }
 .haruten-label { font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--dim); }
 .haruten h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); margin-top:2px; }
+.haruten-copy { margin-top:16px; }
 .haruten p { margin-top:8px; font-size:12.5px; line-height:1.78; color:var(--dim); }
 
 /* ═══ EX ═══ */
 .extra-stack { display:grid; gap:0; margin-top:14px; border:1px solid var(--border); border-radius:14px; overflow:hidden; }
 .ex-item { padding:16px 18px; border-bottom:1px solid var(--border); }
 .ex-item:last-child { border-bottom:none; }
-.ex-item h3 { font-size:14px; font-weight:700; letter-spacing:-.03em; color:var(--bright); }
-.ex-item p { margin-top:4px; font-size:13px; color:var(--dim); line-height:1.8; }
+.ex-item h3 { font-size:14px; font-weight:700; letter-spacing:-.03em; color:var(--bright); display:inline; background-image:linear-gradient(90deg,rgba(218,60,87,.15),rgba(87,74,119,.12)); background-size:100% 36%; background-position:0 88%; background-repeat:no-repeat; padding:0 2px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.ex-item p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; }
 .ex-section { margin-top:28px; }
 .ex-section-title { font-size:clamp(17px,3vw,21px); font-weight:800; letter-spacing:-.045em; color:var(--bright); margin-top:4px; }
 .ex-section-lead { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; }
 
 .clan-box { margin-top:18px; padding:20px; border-radius:14px; border:1px solid rgba(0,0,0,.04); background:rgba(255,255,255,.97); box-shadow:0 3px 18px rgba(0,0,0,.06); }
-.clan-box h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); }
+.clan-box h3 { font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--bright); display:inline; background-image:linear-gradient(90deg,rgba(218,60,87,.14),rgba(87,74,119,.10)); background-size:100% 36%; background-position:0 88%; background-repeat:no-repeat; padding:0 2px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
 .clan-box > p { margin-top:6px; font-size:12.5px; color:var(--dim); line-height:1.78; }
 .clan-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
 .clan-item { display:grid; grid-template-columns:72px 1fr; gap:10px; align-items:start; padding:12px; border-radius:14px; overflow:hidden; position:relative; border:1px solid color-mix(in srgb,var(--main) 14%,rgba(0,0,0,.04)); background:linear-gradient(180deg,color-mix(in srgb,var(--main) 5%,white),rgba(255,255,255,.97) 50%); box-shadow:0 2px 10px rgba(0,0,0,.04); }
@@ -364,6 +366,14 @@ body.goru::before { background:
 .clan-sub { display:inline-block; margin-top:5px; padding:3px 7px; border-radius:999px; font-size:9px; font-weight:800; background:color-mix(in srgb,var(--main) 8%,white); color:var(--main); border:1px solid color-mix(in srgb,var(--main) 14%,white); }
 .clan-item.staygold .clan-sub { color:#576898; }
 .clan-item.donna { background:linear-gradient(180deg,rgba(207,47,43,.05),rgba(255,255,255,.97) 50%); }
+/* clan-item 캐릭터별 컬러 슬롯 */
+.ci-stego  { --main:#bfb33e; --sub:#576898; }
+.ci-journey{ --main:#332d1f; --sub:#E2E095; }
+.ci-festa  { --main:#c0453f; --sub:#236192; }
+.ci-orfe   { --main:#be4134; --sub:#E5D9A0; }
+.ci-goru   { --main:#da3c57; --sub:#e0d23d; }
+.ci-meno   { --main:#574a77; --sub:#EADC68; }
+.ci-donna  { --main:#cf2f2b; --sub:#533c3d; }
 
 /* ═══ SIDE NAV — 공용 .dot-nav 사용 ═══ */
 
@@ -411,6 +421,9 @@ body.goru::before { background:
 .js .hero-load{opacity:0;transform:translateY(14px);animation:fadeUp .7s ease forwards}
 .hero-load-1{animation-delay:.02s}.hero-load-2{animation-delay:.12s}.hero-load-3{animation-delay:.22s}
 .hero-load-4{animation-delay:.30s}.hero-load-5{animation-delay:.38s}.hero-load-6{animation-delay:.46s}
+.footer-copy-brand { font-size:10px; letter-spacing:.06em; }
+.footer-copy-brand a { text-decoration:underline dotted; text-underline-offset:3px; opacity:.7; }
+.footer-copy-date { font-size:9px; opacity:.4; letter-spacing:.06em; }
 </style>
 </head>
 <body class="goru">
@@ -486,9 +499,9 @@ body.goru::before { background:
     <div class="vs-center">
       <div class="vs-vs"><span class="vs-vs-text">VS</span></div>
       <div class="vs-chips">
-        <div class="vs-chip"><span class="vc-g">보케</span><span class="vc-sep">↔</span><span class="vc-f">츳코미</span></div>
-        <div class="vs-chip"><span class="vc-g">4차원 괴짜</span><span class="vc-sep">↔</span><span class="vc-f">선도부원</span></div>
-        <div class="vs-chip"><span class="vc-g">마메찡</span><span class="vc-sep">↔</span><span class="vc-f">고루시 상</span></div>
+        <div class="vs-chip"><span class="vc-g">보케</span><span class="vc-sep"></span><span class="vc-f">츳코미</span></div>
+        <div class="vs-chip"><span class="vc-g">4차원 괴짜</span><span class="vc-sep"></span><span class="vc-f">선도부원</span></div>
+        <div class="vs-chip"><span class="vc-g">마메찡</span><span class="vc-sep"></span><span class="vc-f">고루시 상</span></div>
       </div>
     </div>
     <div class="vs-name gold">골드쉽</div>
@@ -508,7 +521,7 @@ body.goru::before { background:
       <div class="bt-head"><span class="bt-label">성격</span></div>
       <div class="bt-body">
         <div class="bt-side bt-gold">엉뚱한 소리와 장난으로 판을 흔드는 4차원 괴짜</div><div class="bt-div"></div>
-        <div class="bt-side bt-feno">규칙과 책임감으로 움직이며 끝까지 바로잡으려 드는 선도부원</div>
+        <div class="bt-side bt-feno">규칙을 중시하며 끝까지 바로잡으려 드는 선도부원</div>
       </div>
     </div>
     <div class="bt-row">
@@ -573,12 +586,12 @@ body.goru::before { background:
   <div class="compare-label en">golden family</div>
   <h3>지금까지 출시한 황금일족</h3>
   <div class="clan-grid">
-    <article class="clan-item staygold" style="--main:#bfb33e;--sub:#576898"><div class="clan-thumb"><img src="../images/stego.webp" alt="스테이 골드"/></div><div class="clan-body"><h4>스테이 골드</h4><p>호기심이 많고, 여행을 무엇보다 좋아하는 방랑자 타입. 늘 어딘가 달관한 듯한 태도로 개성 강한 후배들을 자연스럽게 끌어당기는, 황금일족의 중심축 같은 인물이다.</p><span class="clan-sub">방랑벽 · 사랑받는 중심축</span></div></article>
-    <article class="clan-item" style="--main:#332d1f;--sub:#E2E095"><div class="clan-thumb"><img src="../images/journey.webp" alt="드림 저니"/></div><div class="clan-body"><h4>드림 저니</h4><p>작은 체구와 집념으로 기억되는 형 라인. 묵직하게 눌러붙는 승부근성과 동생 오르페브르와의 대비까지 합쳐 늘 회자된다.</p><span class="clan-sub">형 라인 · 집념</span></div></article>
-    <article class="clan-item" style="--main:#c0453f;--sub:#236192"><div class="clan-thumb"><img src="../images/festa.webp" alt="나카야마 페스타"/></div><div class="clan-body"><h4>나카야마 페스타</h4><p>거친 기세와 국제무대 서사로 존재감이 크다. 황금일족 조합을 이야기할 때 빠지지 않는, 불꽃 같은 한 축이다.</p><span class="clan-sub">국제무대 · 불꽃 같은 기세</span></div></article>
-    <article class="clan-item" style="--main:#be4134;--sub:#E5D9A0"><div class="clan-thumb"><img src="../images/orfe.webp" alt="오르페브르"/></div><div class="clan-body"><h4>오르페브르</h4><p>삼관마. 압도적인 재능과 기행으로 황금일족의 대표격으로 꼽힌다. 등장하는 순간 장면을 장악하는 타입이라는 점에서 상징성이 특히 크다.</p><span class="clan-sub">삼관마 · 황금일족의 상징</span></div></article>
-    <article class="clan-item" style="--main:#da3c57;--sub:#e0d23d"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽"/></div><div class="clan-body"><h4>골드쉽</h4><p>'고루시'라는 애칭으로 불리는 예측 불가의 아이콘. 강렬한 기믹과 팬덤 화력이 특히 강하고, 황금일족 서사를 바깥으로 가장 크게 확장시킨 얼굴이기도 하다.</p><span class="clan-sub">예측 불가 · 강한 기믹</span></div></article>
-    <article class="clan-item" style="--main:#574a77;--sub:#EADC68"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>비교적 늦게 합류했지만, 골드쉽과의 라이벌 구도를 선명하게 채운 신흥 핵심 축이다. 유일한 정상인 포지션이라는 점까지 더해져 황금일족 안에서도 존재감이 또렷하다.</p><span class="clan-sub">정상인 포지션 · 신흥 핵심 축</span></div></article>
+    <article class="clan-item staygold ci-stego"><div class="clan-thumb"><img src="../images/stego.webp" alt="스테이 골드"/></div><div class="clan-body"><h4>스테이 골드</h4><p>호기심이 많고, 여행을 무엇보다 좋아하는 방랑자 타입. 늘 어딘가 달관한 듯한 태도로 개성 강한 후배들을 자연스럽게 끌어당기는, 황금일족의 중심축 같은 인물이다.</p><span class="clan-sub">방랑벽 · 사랑받는 중심축</span></div></article>
+    <article class="clan-item ci-journey"><div class="clan-thumb"><img src="../images/journey.webp" alt="드림 저니"/></div><div class="clan-body"><h4>드림 저니</h4><p>작은 체구와 집념으로 기억되는 형 라인. 묵직하게 눌러붙는 승부근성과 동생 오르페브르와의 대비까지 합쳐 늘 회자된다.</p><span class="clan-sub">형 라인 · 집념</span></div></article>
+    <article class="clan-item ci-festa"><div class="clan-thumb"><img src="../images/festa.webp" alt="나카야마 페스타"/></div><div class="clan-body"><h4>나카야마 페스타</h4><p>거친 기세와 국제무대 서사로 존재감이 크다. 황금일족 조합을 이야기할 때 빠지지 않는, 불꽃 같은 한 축이다.</p><span class="clan-sub">국제무대 · 불꽃 같은 기세</span></div></article>
+    <article class="clan-item ci-orfe"><div class="clan-thumb"><img src="../images/orfe.webp" alt="오르페브르"/></div><div class="clan-body"><h4>오르페브르</h4><p>삼관마. 압도적인 재능과 기행으로 황금일족의 대표격으로 꼽힌다. 등장하는 순간 장면을 장악하는 타입이라는 점에서 상징성이 특히 크다.</p><span class="clan-sub">삼관마 · 황금일족의 상징</span></div></article>
+    <article class="clan-item ci-goru"><div class="clan-thumb"><img src="../images/goru-portrait.webp" alt="골드쉽"/></div><div class="clan-body"><h4>골드쉽</h4><p>'고루시'라는 애칭으로 불리는 예측 불가의 아이콘. 강렬한 기믹과 팬덤 화력이 특히 강하고, 황금일족 서사를 바깥으로 가장 크게 확장시킨 얼굴이기도 하다.</p><span class="clan-sub">예측 불가 · 강한 기믹</span></div></article>
+    <article class="clan-item ci-meno"><div class="clan-thumb"><img src="../images/meno-portrait.webp" alt="페노메노"/></div><div class="clan-body"><h4>페노메노</h4><p>비교적 늦게 합류했지만, 골드쉽과의 라이벌 구도를 선명하게 채운 신흥 핵심 축이다. 유일한 정상인 포지션이라는 점까지 더해져 황금일족 안에서도 존재감이 또렷하다.</p><span class="clan-sub">정상인 포지션 · 신흥 핵심 축</span></div></article>
   </div>
 </div>
 <div class="ex-section fi">
@@ -595,7 +608,7 @@ body.goru::before { background:
   <div class="compare-label en">12th generation rivals</div>
   <h3>고루메노의 12세대 동기</h3>
   <p>젠틸돈나는 황금일족에는 포함되지 않지만, 12세대 관계도에서 함께 두는 편이 훨씬 입체적이다.</p>
-  <div class="clan-grid"><article class="clan-item donna" style="--main:#cf2f2b;--sub:#533c3d"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article></div>
+  <div class="clan-grid"><article class="clan-item donna ci-donna"><div class="clan-thumb"><img src="../images/donna.webp" alt="젠틸돈나"/></div><div class="clan-body"><h4>젠틸돈나</h4><p>압도적인 존재감과 승부사적 기질로 12세대 서사에서 빼놓기 어려운 핵심 축이다. 고루메노와 직접 엮일 때도, 동세대 전체의 긴장과 밀도를 끌어올리는 기준점처럼 기능한다.</p><span class="clan-sub">12세대 핵심축 · 압도적 존재감</span></div></article></div>
 </div>
 
 <nav class="dot-nav" aria-label="섹션 이동">
@@ -614,8 +627,8 @@ body.goru::before { background:
   </div>
   이 페이지는 고루메노 관계성 아카이브로 제작되었습니다.
   <br>모든 캐릭터와 작품은 <a href="https://umamusume.jp/" target="_blank" rel="noopener noreferrer"><span class="en">© Cygames, Inc.</span></a> 에 귀속됩니다.
-  <div class="copy"><span class="en" style="font-size:10px;letter-spacing:.06em">Made by <a href="https://jhakentertainment.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline dotted;text-underline-offset:3px;opacity:.7">JHAK Entertainment Inc.</a></span></div>
-  <div class="copy"><span class="en" style="font-size:9px;opacity:.4;letter-spacing:.06em">Last updated Mar 25, 2026</span></div>
+  <div class="copy"><span class="en footer-copy-brand">Made by <a href="https://jhakentertainment.com/" target="_blank" rel="noopener noreferrer">JHAK Entertainment Inc.</a></span></div>
+  <div class="copy"><span class="en footer-copy-date">Last updated Mar 25, 2026</span></div>
 </footer>
 
 <script>
