@@ -31,7 +31,7 @@
 <header class="top" id="topBar">
   <div class="top-in">
     <div class="top-row">
-      <a href="#" onclick="document.getElementById('tab-world').click();scrollTo({top:0,behavior:'smooth'});return false" style="display:block"><img class="top-logo-img" src="../images/uma-logo.png" alt="우마무스메 프리티 더비"></a>
+      <a href="#" onclick="document.getElementById('tab-world').click();scrollTo({top:0,behavior:'smooth'});return false" class="top-logo-link"><img class="top-logo-img" src="../images/uma-logo.png" alt="우마무스메 프리티 더비"></a>
     </div>
     <div class="tabs-wrap">
     <nav class="tabs" role="tablist" aria-label="입문 가이드 탭">
@@ -79,7 +79,7 @@
       <div class="hero-stat-label">연령</div>
     </div>
   </div>
-  <div style="text-align:center;padding:6px 0 0;font-size:9.5px;font-weight:400;color:var(--dim);letter-spacing:-.01em;opacity:.7">2025년 12월 기준 · 한국 서버</div>
+  <div class="hero-app-meta">2025년 12월 기준 · 한국 서버</div>
 </section>
 
 <!-- ═══ 세계관 ═══ -->
@@ -294,12 +294,12 @@
   <p class="bp fi">레이스는 초반·중반·종반의 세 구간으로 진행되며, 구간별로 발동하는 스킬이 다르다. 종반 직선에서 얼마나 효과적으로 가속 스킬을 터뜨리느냐가 승부의 핵심이다. <b class="hl-c">마장 적성</b>도 <b class="hl-c">잔디</b>와 <b class="hl-c">더트</b>로 나뉘어, <b class="hl-c">더트</b> 전용 레이스 역시 존재한다.</p>
 
   <div class="pair pair-stack fi">
-    <div class="pair-card" style="border-top:3px solid var(--green)">
+    <div class="pair-card pc-spd">
       <span class="pc-emoji">🌱</span>
       <h3><b class="hl-c">잔디</b></h3>
       <p>천연 <b class="hl-c">잔디</b>가 깔린 코스. 일본 경마의 주류이며, 게임 내 대부분의 <b class="hl-r">G1</b> 레이스가 <b class="hl-c">잔디</b>에서 열린다. 비가 오면 지면이 무르게 변해 스태미나 소모가 커지고 가속이 어려워진다.</p>
     </div>
-    <div class="pair-card" style="border-top:3px solid var(--sta)">
+    <div class="pair-card pc-sta">
       <span class="pc-emoji">🏜️</span>
       <h3><b class="hl-c">더트</b></h3>
       <p>모래와 흙이 깔린 코스. 미국·한국 경마에서는 주류이지만, 일본에서는 비주류 취급이다. <b class="hl-c">잔디</b>와 반대로, 비가 오면 지면이 단단해져 오히려 달리기 쉬워진다. 게임 내 <b class="hl-c">더트</b> <b class="hl-r">G1</b>은 페브러리 S, 챔피언스컵, 도쿄 대상전, 전일본 주니어 우준 네 개다.</p>
