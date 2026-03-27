@@ -162,7 +162,7 @@ body.goru::before { background:
 
 /* ═══ 01 CORE READ ═══ */
 .core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
-.core-card { position:relative; overflow:hidden; padding:20px 20px 22px; }
+.core-card { position:relative; overflow:hidden; padding:16px 18px 18px; }
 .core-card::before { content:''; position:absolute; inset:0; pointer-events:none; }
 .core-card.cc-gold::before { background:linear-gradient(135deg,rgba(218,60,87,.06),transparent 65%); }
 .core-card.cc-feno::before { background:linear-gradient(135deg,rgba(87,74,119,.07),transparent 65%); }
@@ -183,7 +183,7 @@ body.goru::before { background:
   border:1px solid rgba(87,74,119,.10); color:var(--feno-main); display:grid; gap:6px;
 }
 .feno-quote .q-main { margin:0; font-size:17px; line-height:1.5; font-weight:900; }
-.feno-quote .q-sfx { font-size:12px; font-style:italic; }
+.feno-quote .q-sfx { font-size:12px; font-style:italic; background:none; }
 .feno-quote .q-sfx.top { justify-self:start; }
 .feno-quote .q-sfx.bottom { justify-self:end; }
 
@@ -326,6 +326,8 @@ body.goru::before { background:
 .clan-item.donna { background:linear-gradient(180deg,rgba(207,47,43,.05),rgba(255,255,255,.97) 50%); }
 
 /* ═══ SIDE NAV — 공용 .dot-nav 사용 ═══ */
+.dot-nav .dot-tip { position:absolute; right:16px; top:50%; transform:translateY(-50%) translateX(4px); opacity:0; pointer-events:none; white-space:nowrap; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04); box-shadow:0 4px 14px rgba(0,0,0,.07); color:var(--dim); font-size:10px; font-weight:600; transition:opacity .2s,transform .2s; }
+.dot-nav .dot:hover .dot-tip { opacity:1; transform:translateY(-50%) translateX(0); }
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:901px){ .haruten{display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start} .haruten-media{max-width:280px;margin:0} }
