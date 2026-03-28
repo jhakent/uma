@@ -966,7 +966,7 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 .onecut-media img { display:block; width:100%; height:auto; }
 .feno-quote { max-width:520px; margin:12px auto 0; padding:14px 16px; border-radius:14px; background:linear-gradient(180deg,rgba(87,74,119,.05),rgba(255,255,255,.97)); border:1px solid rgba(87,74,119,.10); color:var(--feno-main,#574a77); display:grid; gap:6px; }
 .feno-quote .q-main { margin:0; font-size:17px; line-height:1.5; font-weight:900; }
-.feno-quote .q-sfx { font-size:12px; font-style:italic; background:none; text-decoration:none !important; }
+.feno-quote .q-sfx { font-size:12px; font-style:italic; background:none; text-decoration:none !important; border:none; border-bottom:none; box-shadow:none; }
 .feno-quote .q-sfx.top { justify-self:start; }
 .feno-quote .q-sfx.bottom { justify-self:end; }
 
