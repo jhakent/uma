@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세리프 폰트 비교</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#fafaf8;color:#484848;padding:32px 20px 60px}
+h1{font-size:18px;font-weight:800;letter-spacing:-.04em;color:#2d2d2d;margin-bottom:6px}
+.desc{font-size:13px;color:#6a6a6a;margin-bottom:32px;line-height:1.7}
+.grid{display:grid;gap:20px;max-width:720px;margin:0 auto}
+.card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;overflow:hidden;padding:28px 24px}
+.card-name{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6a6a6a;margin-bottom:16px}
+.card-note{font-size:11px;color:#6a6a6a;margin-top:14px;line-height:1.6}
+
+/* VS preview */
+.vs-row{display:flex;align-items:center;justify-content:center;gap:18px;padding:20px 0}
+.vs-label{font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6a6a6a}
+.vs-label.g{color:#da3c57}.vs-label.f{color:#574a77}
+.vs-text{font-size:52px;line-height:1;background:linear-gradient(160deg,#da3c57 30%,#574a77 70%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* × preview */
+.times-row{display:flex;align-items:center;justify-content:center;gap:4px;padding:10px 0 6px}
+.times-title{font-family:'Noto Sans KR',sans-serif;font-size:28px;font-weight:900;letter-spacing:-.065em;color:#2d2d2d}
+.times-x{font-size:22px;opacity:.3;margin:0 2px}
+
+/* section num preview */
+.num-row{display:flex;align-items:baseline;gap:14px;padding:8px 0}
+.num{font-size:48px;line-height:.85;color:#2d2d2d;opacity:.08}
+.num-title{font-size:18px;font-weight:800;letter-spacing:-.04em;color:#2d2d2d}
+
+.tag{display:inline-block;font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:999px;margin-bottom:10px}
+.tag.current{background:rgba(0,169,95,.08);color:#00a95f}
+.tag.prev{background:rgba(229,57,53,.06);color:#e53935}
+
+/* font-specific */
+.f-cormorant .vs-text{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;letter-spacing:.02em}
+.f-cormorant .times-x{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic}
+.f-cormorant .num{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic}
+
+.f-bodoni .vs-text{font-family:'Bodoni Moda',serif;font-weight:500;font-style:italic;letter-spacing:.01em}
+.f-bodoni .times-x{font-family:'Bodoni Moda',serif;font-weight:400;font-style:italic}
+.f-bodoni .num{font-family:'Bodoni Moda',serif;font-weight:400;font-style:italic}
+
+.f-dm .vs-text{font-family:'DM Serif Display',serif;font-weight:400;font-style:italic;letter-spacing:0}
+.f-dm .times-x{font-family:'DM Serif Display',serif;font-weight:400;font-style:italic}
+.f-dm .num{font-family:'DM Serif Display',serif;font-weight:400;font-style:italic}
+
+.f-instrument .vs-text{font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;letter-spacing:0}
+.f-instrument .times-x{font-family:'Instrument Serif',serif;font-weight:400;font-style:italic}
+.f-instrument .num{font-family:'Instrument Serif',serif;font-weight:400;font-style:italic}
+
+.f-playfair .vs-text{font-family:'Playfair Display',serif;font-weight:400;font-style:italic;letter-spacing:-.01em}
+.f-playfair .times-x{font-family:'Playfair Display',serif;font-weight:400;font-style:italic}
+.f-playfair .num{font-family:'Playfair Display',serif;font-weight:400;font-style:italic}
+</style>
+</head>
+<body>
+<div class="grid">
+<div>
+<h1>세리프 폰트 비교</h1>
+<p class="desc">VS 텍스트, × 기호, 섹션 넘버에 적용했을 때의 인상을 비교합니다. 각 폰트의 이탤릭 스타일 기준.</p>
+</div>
+
+<div class="card f-cormorant">
+<span class="tag current">현재 적용</span>
+<div class="card-name">Cormorant Garamond</div>
+<div class="vs-row">
+  <span class="vs-label g">GOLD SHIP</span>
+  <span class="vs-text">VS</span>
+  <span class="vs-label f">FENOMENO</span>
+</div>
+<div class="times-row">
+  <span class="times-title">골드쉽</span>
+  <span class="times-x">×</span>
+  <span class="times-title">페노메노</span>
+</div>
+<div class="num-row">
+  <span class="num">01</span>
+  <span class="num-title">고루메노 관계성 핵심 요약</span>
+</div>
+<p class="card-note">가늘고 우아한 올드스타일 세리프. 획 대비가 높아 에디토리얼 느낌이 강하면서도 무겁지 않음. 클래식 가라몬드 계열.</p>
+</div>
+
+<div class="card f-bodoni">
+<div class="card-name">Bodoni Moda</div>
+<div class="vs-row">
+  <span class="vs-label g">GOLD SHIP</span>
+  <span class="vs-text">VS</span>
+  <span class="vs-label f">FENOMENO</span>
+</div>
+<div class="times-row">
+  <span class="times-title">골드쉽</span>
+  <span class="times-x">×</span>
+  <span class="times-title">페노메노</span>
+</div>
+<div class="num-row">
+  <span class="num">01</span>
+  <span class="num-title">고루메노 관계성 핵심 요약</span>
+</div>
+<p class="card-note">극단적 획 대비. 가는 획은 매우 가늘고 굵은 획은 뚜렷. 패션 매거진·타이포 포스터 계열. 가장 드라마틱.</p>
+</div>
+
+<div class="card f-dm">
+<div class="card-name">DM Serif Display</div>
+<div class="vs-row">
+  <span class="vs-label g">GOLD SHIP</span>
+  <span class="vs-text">VS</span>
+  <span class="vs-label f">FENOMENO</span>
+</div>
+<div class="times-row">
+  <span class="times-title">골드쉽</span>
+  <span class="times-x">×</span>
+  <span class="times-title">페노메노</span>
+</div>
+<div class="num-row">
+  <span class="num">01</span>
+  <span class="num-title">고루메노 관계성 핵심 요약</span>
+</div>
+<p class="card-note">현대적 디스플레이 세리프. 곡선이 부드럽고 세리프 끝이 둥글어 따뜻한 인상. 무난하면서도 존재감 있음.</p>
+</div>
+
+<div class="card f-instrument">
+<div class="card-name">Instrument Serif</div>
+<div class="vs-row">
+  <span class="vs-label g">GOLD SHIP</span>
+  <span class="vs-text">VS</span>
+  <span class="vs-label f">FENOMENO</span>
+</div>
+<div class="times-row">
+  <span class="times-title">골드쉽</span>
+  <span class="times-x">×</span>
+  <span class="times-title">페노메노</span>
+</div>
+<div class="num-row">
+  <span class="num">01</span>
+  <span class="num-title">고루메노 관계성 핵심 요약</span>
+</div>
+<p class="card-note">최근 트렌드의 미니멀 세리프. 얇고 기하학적이면서 세리프의 뼈대는 유지. 산세리프에 가장 가까운 세리프.</p>
+</div>
+
+<div class="card f-playfair">
+<span class="tag prev">기존</span>
+<div class="card-name">Playfair Display (참고)</div>
+<div class="vs-row">
+  <span class="vs-label g">GOLD SHIP</span>
+  <span class="vs-text">VS</span>
+  <span class="vs-label f">FENOMENO</span>
+</div>
+<div class="times-row">
+  <span class="times-title">골드쉽</span>
+  <span class="times-x">×</span>
+  <span class="times-title">페노메노</span>
+</div>
+<div class="num-row">
+  <span class="num">01</span>
+  <span class="num-title">고루메노 관계성 핵심 요약</span>
+</div>
+<p class="card-note">기존에 사용하던 폰트. 비교 참고용.</p>
+</div>
+
+</div>
+</body>
+</html>
