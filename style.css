@@ -925,8 +925,8 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 /* HERO 레이아웃 */
 .goru .hero { position:relative; overflow:hidden; padding:64px 24px 48px; }
 .goru .hero-char { position:absolute; bottom:0; height:100%; width:auto; object-fit:contain; object-position:center bottom; pointer-events:none; z-index:0; filter:drop-shadow(0 8px 24px rgba(0,0,0,.06)); opacity:.22; transition:opacity .6s ease; }
-.goru .hero-char.gold { left:-6%; }
-.goru .hero-char.feno { right:-6%; }
+.goru .hero-char.gold { left:12%; }
+.goru .hero-char.feno { right:12%; }
 .goru .hero-body { position:relative; z-index:2; max-width:520px; margin:0 auto; text-align:center; }
 .goru .hero-glass { position:relative; z-index:2; text-align:center; }
 .goru .hero-kicker { display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.04); box-shadow:var(--card-sh); font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--dim); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); }
@@ -1107,16 +1107,16 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 @media(max-width:900px){ .hook-row,.core-grid,.story-grid,.profile-grid,.clan-grid{grid-template-columns:1fr} }
 @media(max-width:768px){
   .goru .hero-char{height:105%;opacity:.20}
-  .goru .hero-char.gold{left:-22%}
-  .goru .hero-char.feno{right:-22%}
+  .goru .hero-char.gold{left:-24%}
+  .goru .hero-char.feno{right:-24%}
   .goru .hero-desc-wrap{background:rgba(255,255,255,.68);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:24px;padding:12px 22px 18px;border:1px solid rgba(255,255,255,.5);margin-left:28px;margin-right:28px;}
 }
 @media(max-width:640px){
   .goru .hero{padding:48px 14px 36px}
   .goru .hero-title{font-size:28px}
   .goru .hero-char{height:110%;opacity:.22}
-  .goru .hero-char.gold{left:-28%}
-  .goru .hero-char.feno{right:-28%}
+  .goru .hero-char.gold{left:-32%}
+  .goru .hero-char.feno{right:-32%}
   .goru .hero-desc-wrap{padding:10px 18px 16px;border-radius:22px;margin-left:20px;margin-right:20px;}
   .hook-row{padding:0 18px}
   .compare-section>h3{font-size:20px}
