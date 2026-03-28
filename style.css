@@ -12,8 +12,14 @@
   --card-sh-m:0 3px 14px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
   --card-sh-l:0 3px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02);
   --card-r:14px;--card-r-l:16px;--card-r-xl:20px;
+  /* 호버 섀도우 */
+  --card-sh-up:0 4px 16px rgba(0,0,0,.08);
+  --card-sh-up-l:0 8px 24px rgba(0,0,0,.1);
+  /* 트랜지션 */
+  --dur:.2s;--dur-fast:.15s;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+*:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;letter-spacing:-.02em;word-break:keep-all;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 120% 80% at 10% 90%,rgba(0,169,95,.06) 0%,transparent 70%),radial-gradient(ellipse 110% 70% at 95% 5%,rgba(233,80,152,.04) 0%,transparent 70%);pointer-events:none;z-index:-1}
@@ -62,7 +68,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── TYPOGRAPHY ── */
 .sl{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px}
 .st{font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.3;color:var(--bright);margin-bottom:24px}
-.sd{font-size:14.5px;font-weight:400;color:var(--dim);line-height:1.9;max-width:560px;margin-bottom:24px}
+.sd{font-size:14px;font-weight:400;color:var(--dim);line-height:1.85;max-width:560px;margin-bottom:24px}
 .bp{font-size:14px;font-weight:400;color:var(--text);line-height:1.85}
 .bp+.bp{margin-top:8px}
 
@@ -153,7 +159,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
 /* ── LINK GRID ── */
 .lg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
 .lk{display:block;background:var(--card-bg);border:var(--card-bd);border-radius:var(--card-r);padding:16px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:var(--card-sh)}
-.lk:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.lk:hover{transform:translateY(-2px);box-shadow:var(--card-sh-up)}
 .lk-l{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:2px}
 .lk-t{font-size:13px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .lk-d{font-size:11.5px;font-weight:400;color:var(--dim);margin-top:1px;line-height:1.4}
@@ -218,7 +224,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   text-decoration:none;color:var(--text);
   transition:transform .15s,box-shadow .15s;
 }
-.ref-link:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.ref-link:hover{transform:translateY(-1px);box-shadow:var(--card-sh-up)}
 .ref-emoji{font-size:16px;flex-shrink:0}
 .ref-text{font-size:12.5px;font-weight:600;letter-spacing:-.02em;flex:1}
 .ref-arrow{font-size:14px;color:var(--dim);opacity:.4;flex-shrink:0}
@@ -239,7 +245,7 @@ b.ch{font-weight:700;background-image:linear-gradient(90deg,var(--ch),var(--ch))
   text-decoration:none;color:var(--text);
   transition:transform .2s,box-shadow .2s;
 }
-.qa-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.qa-btn:hover{transform:translateY(-1px);box-shadow:var(--card-sh-up-l)}
 .qa-icon{
   width:40px;height:40px;border-radius:10px;
   display:flex;align-items:center;justify-content:center;
@@ -325,7 +331,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   transition:transform .2s,box-shadow .2s;
   letter-spacing:-.01em;
 }
-.hero-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.hero-btn:hover{transform:translateY(-1px);box-shadow:var(--card-sh-up)}
 .hero-btn.g{background:var(--green);color:#fff}
 .hero-btn.w{background:var(--bg);color:var(--bright);border:1px solid var(--border-s)}
 
@@ -431,7 +437,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   box-shadow:0 3px 14px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02);
   transition:transform .2s,box-shadow .2s;
 }
-.ssr-duo-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.11)}
+.ssr-duo-card:hover{transform:translateY(-2px);box-shadow:var(--card-sh-up-l)}
 .ssr-duo-icon{
   width:96px;height:auto;
   overflow:visible;margin:0 auto 10px;
@@ -442,12 +448,12 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .ssr-duo-desc{font-size:11.5px;font-weight:400;color:var(--dim);margin-top:4px;line-height:1.45}
 .ssr-duo-badge{
   display:inline-block;font-size:10px;font-weight:600;
-  padding:2px 10px;border-radius:100px;margin-top:8px;
+  padding:2px 10px;border-radius:999px;margin-top:8px;
 }
 
 /* compact SSR row */
 .ssr{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card-bg);border:var(--card-bd);border-radius:var(--card-r);margin-bottom:8px;transition:transform .2s,box-shadow .2s;box-shadow:var(--card-sh)}
-.ssr:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.ssr:hover{transform:translateY(-1px);box-shadow:var(--card-sh-up-l)}
 .ssr-icon{width:44px;height:auto;flex-shrink:0;overflow:visible}
 .ssr-icon img{width:100%;height:auto;display:block}
 .ssr-tier{
@@ -462,7 +468,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .ssr-info{flex:1}
 .ssr-name{font-size:13.5px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .ssr-sub{font-size:12px;font-weight:400;color:var(--dim)}
-.ssr-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0}
+.ssr-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:999px;flex-shrink:0}
 
 @media(max-width:640px){
   .ssr-duo-icon{width:80px}
@@ -473,7 +479,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .sc-list{margin:20px 0}
 .sc-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;margin-bottom:6px;border:var(--card-bd);background:var(--card-bg);box-shadow:var(--card-sh);transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit;cursor:pointer}
 .sc-item::after{content:'›';font-size:16px;color:var(--dim);opacity:.3;flex-shrink:0;margin-left:auto}
-.sc-item:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.sc-item:hover{transform:translateY(-1px);box-shadow:var(--card-sh-up)}
 .sc-item:hover::after{opacity:.6;color:var(--sc-c,var(--green))}
 .sc-bar{width:4px;height:36px;border-radius:2px;flex-shrink:0}
 .sc-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--dim);width:20px;flex-shrink:0;text-align:center}
@@ -595,7 +601,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 /* ── EVENT BANNERS ── */
 .ev-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
 .ev-card{display:block;position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.04);box-shadow:var(--card-sh);transition:transform .2s,box-shadow .2s;text-decoration:none}
-.ev-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.ev-card:hover{transform:translateY(-2px);box-shadow:var(--card-sh-up-l)}
 .ev-card img{width:100%;height:auto;display:block}
 .ev-label{position:absolute;bottom:8px;left:8px;font-size:10px;font-weight:600;color:#fff;padding:3px 10px;border-radius:6px;letter-spacing:-.01em}
 @media(max-width:640px){.ev-row{grid-template-columns:1fr}}
@@ -694,14 +700,14 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .char-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
 .char-grid{display:grid;gap:12px}
 .char-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .3s}
-.char-card:hover{border-color:var(--border-s);box-shadow:0 4px 24px rgba(0,0,0,.05);transform:translateY(-2px)}
+.char-card:hover{border-color:var(--border-s);box-shadow:var(--card-sh-up);transform:translateY(-2px)}
 .char-top{padding:22px 22px 0;display:flex;align-items:flex-start;gap:12px}
 .char-bar{width:4px;border-radius:2px;flex-shrink:0;margin-top:3px;height:42px;background:linear-gradient(to bottom,var(--char-sub) 30%,var(--char-main) 30%)}
 .char-portrait{width:72px;height:72px;border-radius:12px;object-fit:cover;object-position:top center;flex-shrink:0;border:1.5px solid var(--border)}
 .char-id{flex:1}
 .char-ko{font-size:18px;font-weight:800;letter-spacing:-.045em;color:var(--bright);line-height:1.25}
 .char-en{font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:3px}
-.char-role{font-size:11px;font-weight:500;letter-spacing:-.01em;padding:3px 10px;border-radius:100px;display:inline-block;margin-top:8px;line-height:1.5;color:var(--char-main,var(--dim));background:color-mix(in srgb,var(--char-main,var(--dim)) 10%,transparent)}
+.char-role{font-size:11px;font-weight:500;letter-spacing:-.01em;padding:3px 10px;border-radius:999px;display:inline-block;margin-top:8px;line-height:1.5;color:var(--char-main,var(--dim));background:color-mix(in srgb,var(--char-main,var(--dim)) 10%,transparent)}
 .char-body{padding:12px 22px 20px}
 .char-desc{font-size:13.5px;font-weight:400;line-height:1.85;letter-spacing:-.012em;color:var(--text);margin-bottom:14px}
 .char-ref{background:var(--bg-warm);border-radius:10px;padding:14px 16px;border-left:3px solid var(--char-main,var(--dim))}
@@ -733,7 +739,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 /* ── DOT NAV ── */
 /* 슬롯 변수: --dot-active (페이지별 :root에 선언) */
 .dot-nav{position:fixed;top:50%;right:14px;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
-.dot-nav .dot{position:relative;width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.12);border:none;cursor:pointer;transition:all .3s;padding:0}
+.dot-nav .dot{position:relative;width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.12);border:none;cursor:pointer;transition:all .2s;padding:0}
 .dot-nav .dot:hover,.dot-nav .dot.on{background:var(--dot-active,var(--green));transform:scale(1.6)}
 .dot-nav .dot-tip{position:absolute;right:16px;top:50%;transform:translateY(-50%) translateX(4px);opacity:0;pointer-events:none;white-space:nowrap;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.04);box-shadow:0 4px 14px rgba(0,0,0,.07);color:var(--dim);font-size:10px;font-weight:600;transition:opacity .2s,transform .2s}
 .dot-nav .dot:hover .dot-tip{opacity:1;transform:translateY(-50%) translateX(0)}
@@ -755,7 +761,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .film-header{display:flex;align-items:flex-start;gap:18px;margin-bottom:40px}
 .film-number{font-family:'Outfit',sans-serif;font-size:clamp(48px,10vw,84px);font-weight:900;line-height:.85;letter-spacing:-.03em;color:var(--surface-2);flex-shrink:0}
 .film-info{flex:1}
-.film-info .tag{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px}
+.film-info .tag{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:4px 12px;border-radius:999px;display:inline-block;margin-bottom:12px}
 .film-info h2{font-size:clamp(23px,4.5vw,36px);font-weight:800;letter-spacing:-.055em;line-height:1.15;color:var(--bright);margin-bottom:6px}
 .film-info h2.en{font-family:'Outfit',sans-serif;font-weight:700}
 .film-info .en-title{font-family:'Outfit',sans-serif;font-size:12px;font-weight:400;letter-spacing:.04em;color:var(--dim);text-transform:uppercase;margin-bottom:12px}
@@ -910,7 +916,7 @@ body.goru::before{background:radial-gradient(ellipse 70% 50% at 8% 85%,rgba(218,
 .hook-card::before { content:''; position:absolute; inset:0 0 auto 0; height:2px; }
 .hook-kicker { font-family:'Outfit',sans-serif; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 .hook-card h3 { margin-top:6px; font-size:14.5px; font-weight:800; letter-spacing:-.04em; line-height:1.24; color:var(--bright); }
-.hook-card p { margin-top:5px; font-size:12px; line-height:1.72; color:var(--dim); }
+.hook-card p { margin-top:5px; font-size:12px; line-height:1.78; color:var(--dim); }
 
 /* COMPARE SECTION */
 .compare-section { margin-top:24px; }
