@@ -1128,7 +1128,7 @@ body.goru::before{background:radial-gradient(ellipse 70% 50% at 8% 85%,rgba(218,
   .profile-facts{grid-template-columns:1fr 1fr}
   .mo-br{display:block}
   .race{gap:10px} .race-year{width:38px;padding:12px 0 0} .race-dot{width:8px;height:8px}
-  .race-y{font-size:12px} .race::after{left:18px;top:58px;bottom:-6px} .race-year-line{width:38px} .race-year-line::after{left:18px;bottom:-6px}
+  .race-y{font-size:12px} .race::after{left:18px;top:60px;bottom:-6px} .race-year-line{width:38px} .race-year-line::after{left:18px;bottom:-6px}
   .race-name{font-size:14px} .race-head{flex-direction:column} .race-tags{justify-content:flex-start}
   .clan-item{grid-template-columns:56px 1fr;gap:8px;padding:10px} .clan-thumb{width:56px;border-radius:8px} .clan-item h4{font-size:13px}
 }
