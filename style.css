@@ -923,7 +923,7 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 .compare-section > p { margin-top:6px; font-size:13px; color:var(--dim); line-height:1.8; max-width:480px; }
 
 /* HERO 레이아웃 */
-.goru .hero { position:relative; overflow:hidden; padding:48px 24px 40px; }
+.goru .hero { position:relative; overflow:hidden; padding:64px 24px 48px; }
 .goru .hero-char { position:absolute; bottom:0; height:100%; width:auto; object-fit:contain; object-position:center bottom; pointer-events:none; z-index:0; filter:drop-shadow(0 8px 24px rgba(0,0,0,.06)); opacity:.22; transition:opacity .6s ease; }
 .goru .hero-char.gold { left:-6%; }
 .goru .hero-char.feno { right:-6%; }
@@ -933,7 +933,7 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 .goru .hero-kicker-dot { width:6px; height:6px; border-radius:50%; }
 .goru .hero-title-block { margin-top:20px; }
 .goru .hero-title { font-size:clamp(32px,6.5vw,52px); font-weight:900; letter-spacing:-.065em; line-height:1.0; color:var(--bright); }
-.goru .hero-title .times { display:inline-block; font-family:'Bodoni Moda',serif; font-weight:500; font-size:.7em; letter-spacing:0; margin:0 .1em; vertical-align:.1em; color:var(--bright); }
+.goru .hero-title .times { display:inline-block; font-family:'Bodoni Moda',serif; font-weight:700; font-size:.85em; letter-spacing:0; margin:0 .1em; vertical-align:.06em; color:var(--bright); }
 .goru .hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:14px; }
 .goru .hero-cp { font-size:12px; font-weight:500; color:var(--dim); opacity:.6; letter-spacing:.02em; margin-bottom:16px; }
 .goru .hero-cp .sep { margin:0 .4em; opacity:.35; }
@@ -1107,16 +1107,16 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 @media(max-width:900px){ .hook-row,.core-grid,.story-grid,.profile-grid,.clan-grid{grid-template-columns:1fr} }
 @media(max-width:768px){
   .goru .hero-char{height:105%;opacity:.20}
-  .goru .hero-char.gold{left:-18%}
-  .goru .hero-char.feno{right:-18%}
+  .goru .hero-char.gold{left:-22%}
+  .goru .hero-char.feno{right:-22%}
   .goru .hero-desc-wrap{background:rgba(255,255,255,.68);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:24px;padding:12px 22px 18px;border:1px solid rgba(255,255,255,.5);margin-left:28px;margin-right:28px;}
 }
 @media(max-width:640px){
-  .goru .hero{padding:32px 14px 28px}
+  .goru .hero{padding:48px 14px 36px}
   .goru .hero-title{font-size:28px}
   .goru .hero-char{height:110%;opacity:.22}
-  .goru .hero-char.gold{left:-24%}
-  .goru .hero-char.feno{right:-24%}
+  .goru .hero-char.gold{left:-28%}
+  .goru .hero-char.feno{right:-28%}
   .goru .hero-desc-wrap{padding:10px 18px 16px;border-radius:22px;margin-left:20px;margin-right:20px;}
   .hook-row{padding:0 18px}
   .compare-section>h3{font-size:20px}
