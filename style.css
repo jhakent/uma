@@ -861,7 +861,6 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 
 /* 히어로 컬러 */
 .goru .hero-kicker-dot{background:var(--goru-accent)}
-.goru .hero-accent-line{background:var(--goru-accent)}
 
 /* VS 스테이지 컬러 */
 .vs-stage{background:none}
@@ -935,9 +934,8 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 .goru .hero-title-block { margin-top:20px; }
 .goru .hero-title { font-size:clamp(32px,6.5vw,52px); font-weight:900; letter-spacing:-.065em; line-height:1.0; color:var(--bright); }
 .goru .hero-title .times { display:inline-block; font-family:'Bodoni Moda',serif; font-weight:400; font-style:italic; font-size:.75em; letter-spacing:0; margin:0 .08em; vertical-align:.08em; opacity:.3; }
-.goru .hero-jp { margin-top:10px; font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--dim); }
-.goru .hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
-.goru .hero-cp { margin-top:18px; font-size:12px; font-weight:500; color:var(--dim); opacity:.55; letter-spacing:.02em; }
+.goru .hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:8px; }
+.goru .hero-cp { font-size:12px; font-weight:500; color:var(--dim); opacity:.6; letter-spacing:.02em; margin-bottom:10px; }
 .goru .hero-cp .sep { margin:0 .4em; opacity:.35; }
 .goru .hero-cp .en { font-family:'Outfit',sans-serif; letter-spacing:.08em; }
 .goru .hero-desc-wrap { max-width:460px; margin:14px auto 0; text-align:center; }
@@ -946,7 +944,6 @@ body.goru::before{background:radial-gradient(ellipse 90% 60% at 8% 65%,rgba(218,
 .goru .hero-badge { padding:5px 11px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:-.01em; color:var(--dim); background:rgba(255,255,255,.65); border:1px solid rgba(0,0,0,.04); }
 .goru .hero-foot { max-width:460px; margin:6px auto 0; font-size:10px; color:var(--dim); opacity:.45; line-height:1.7; text-align:center; }
 .mo-br { display:none; }
-.goru .hero-accent-line { position:relative; z-index:2; width:min(100%, 400px); height:2px; margin:28px auto 0; border-radius:1px; opacity:.18; }
 
 /* 01 CORE READ */
 .core-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; }
