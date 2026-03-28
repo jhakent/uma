@@ -730,7 +730,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 /* ── SECTION HEAD (numbered) ── */
 /* 넘버링 섹션 헤드: 01/02/EX 등 큰 숫자 + 킥커 + 타이틀 + 리드 */
 .section-head{margin-top:48px;margin-bottom:16px}
-.section-num{font-family:'Outfit',sans-serif;font-size:56px;font-weight:900;line-height:.8;color:var(--bright);opacity:.06}
+.section-num{font-family:'Bodoni Moda',serif;font-size:56px;font-weight:400;font-style:italic;line-height:.8;color:var(--bright);opacity:.06}
 .section-kicker{display:block;margin-top:6px;font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
 .section-title{margin-top:4px;font-size:clamp(22px,4.2vw,32px);font-weight:800;letter-spacing:-.055em;line-height:1.3;color:var(--bright)}
 .section-lead{margin-top:8px;font-size:14.5px;color:var(--dim);line-height:1.9;max-width:560px}
@@ -935,7 +935,7 @@ body.goru::before{background:radial-gradient(ellipse 80% 50% at 5% 75%,rgba(218,
 .goru .hero-kicker-dot { width:6px; height:6px; border-radius:50%; }
 .goru .hero-title-block { margin-top:20px; }
 .goru .hero-title { font-size:clamp(32px,6.5vw,52px); font-weight:900; letter-spacing:-.065em; line-height:1.0; color:var(--bright); }
-.goru .hero-title .times { display:inline-block; font-family:'Outfit',sans-serif; font-weight:300; font-size:.7em; letter-spacing:.08em; margin:0 .1em; vertical-align:.1em; opacity:.3; }
+.goru .hero-title .times { display:inline-block; font-family:'Bodoni Moda',serif; font-weight:400; font-style:italic; font-size:.75em; letter-spacing:0; margin:0 .08em; vertical-align:.08em; opacity:.3; }
 .goru .hero-jp { margin-top:10px; font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--dim); }
 .goru .hero-en { font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); opacity:.45; margin-top:2px; }
 .goru .hero-cp { margin-top:18px; font-size:12px; font-weight:500; color:var(--dim); opacity:.55; letter-spacing:.02em; }
@@ -1001,7 +1001,7 @@ body.goru::before{background:radial-gradient(ellipse 80% 50% at 5% 75%,rgba(218,
 .vs-char.feno { right:0; }
 .vs-center { position:absolute; left:50%; top:0; bottom:0; width:38%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding-bottom:10px; }
 .vs-vs { display:block; text-align:center; }
-.vs-vs-text { font-family:'Outfit',sans-serif; font-size:48px; font-weight:900; line-height:1; letter-spacing:.08em; }
+.vs-vs-text { font-family:'Bodoni Moda',serif; font-size:52px; font-weight:500; font-style:italic; line-height:1; letter-spacing:.02em; }
 .vs-badge { position:absolute; bottom:8px; z-index:3; font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; padding:4px 12px; border-radius:999px; background:rgba(255,255,255,.85); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border:1px solid rgba(0,0,0,.04); }
 .vs-badge.gold { left:12%; transform:translateX(-50%); color:var(--gold-main); }
 .vs-badge.feno { right:12%; transform:translateX(50%); color:var(--feno-main); }
@@ -1010,8 +1010,6 @@ body.goru::before{background:radial-gradient(ellipse 80% 50% at 5% 75%,rgba(218,
 .vc-g { text-align:right; }
 .vc-f { text-align:left; }
 .vc-sep { width:1px; height:13px; flex-shrink:0; opacity:.35; border-radius:1px; }
-.vs-namebar { display:flex; justify-content:space-between; padding:6px 14px 0; }
-.vs-name { font-family:'Outfit',sans-serif; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
 
 /* 02 BATTLE TABLE */
 .bt { margin-top:10px; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
@@ -1129,7 +1127,7 @@ body.goru::before{background:radial-gradient(ellipse 80% 50% at 5% 75%,rgba(218,
   .goru .hero-desc-wrap{padding:16px 18px;border-radius:22px}
   .hook-row{padding:0 18px}
   .compare-section>h3{font-size:20px}
-  .vs-stage{height:250px} .vs-center{width:44%} .vs-vs-text{font-size:32px}
+  .vs-stage{height:250px} .vs-center{width:44%} .vs-vs-text{font-size:42px}
   .vs-badge{font-size:8px;padding:3px 9px;letter-spacing:.12em}
   .vs-chip{font-size:10px;padding:4px 10px} .vs-chips{gap:4px}
   .bt-side{padding:11px 12px;font-size:12px} .bt-label{font-size:9.5px}
