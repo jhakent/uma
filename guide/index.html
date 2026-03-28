@@ -1032,19 +1032,13 @@ obsPn(document.getElementById('pn-world'));
 
 /* ── Deep link: open tab (or section) from URL hash ── */
 var isDeepLink=false;
-(function(){
-  const hash=location.hash.replace('#','');
-  if(!hash) return;
-  isDeepLink=true;
-  /* legacy hash redirects */
-  const legacy={'card':'sy-card','sys':'sy-train','s-flow':'s-train'};
-  const resolved=legacy[hash]||hash;
-  /* section→tab mapping */
-  const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-friend':'sys','sy-card':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+const secMap={'s-install':'prep','s-reroll':'prep','s-first':'prep','s-card-prep':'start','s-train':'start','s-teamrace':'start','s-circle':'start','s-daily':'start','s-factor':'start','s-mistakes':'start','sy-train':'sys','sy-friend':'sys','sy-card':'sys','sy-g1':'sys','sy-ach':'sys','c-awaken':'sys','c-level':'sys','c-limit':'sys','c-gacha':'sys','t-jewel':'tips','t-future':'tips','t-rental':'tips','t-guides':'tips','t-community':'tips'};
+const legacy={'card':'sy-card','sys':'sy-train','s-flow':'s-train'};
+function goSection(id){
+  const resolved=legacy[id]||id;
   const tabId=secMap[resolved]||resolved;
   const tab=document.getElementById('tab-'+tabId);
   if(tab) tab.click();
-  /* scroll to section after tab renders */
   const sec=document.getElementById(resolved);
   if(sec&&secMap[resolved]){
     setTimeout(()=>{
@@ -1054,8 +1048,21 @@ var isDeepLink=false;
       window.scrollTo({top:sec.getBoundingClientRect().top+window.scrollY-topH-subH-24,behavior:'smooth'});
     },350);
   }
+}
+(function(){
+  const hash=location.hash.replace('#','');
+  if(!hash) return;
+  isDeepLink=true;
+  goSection(hash);
   setTimeout(()=>{isDeepLink=false;},500);
 })();
+/* 페이지 내 #해시 링크 클릭 시 탭 전환 + 스크롤 */
+document.addEventListener('click',function(e){
+  const a=e.target.closest('a[href^="#"]');
+  if(!a) return;
+  const id=a.getAttribute('href').slice(1);
+  if(id&&secMap[id]){e.preventDefault();goSection(id);}
+});
 
 // hide tab fade when scrolled to end
 const tabsNav=document.querySelector('.tabs');
