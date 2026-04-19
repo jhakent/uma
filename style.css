@@ -5,7 +5,8 @@
   --border:rgba(0,0,0,.06);--border-s:rgba(0,0,0,.1);
   --text:#484848;--dim:#6a6a6a;--bright:#2d2d2d;
   --green:#00a95f;--sky:#4fb8e6;--pink:#e95098;
-  --spd:#4fb8e6;--sta:#f09a3e;--pow:#e8c842;--gut:#e95098;--int:#00a95f;
+  --spd:#4fb8e6;--sta:#f09a3e;--pow:#ed6a2d;--gut:#e95098;--int:#00a95f;
+  --fri:#c9a218;--grp:#6fb12a;
   /* 카드 표면 토큰 */
   --card-bg:rgba(255,255,255,.97);--card-bd:1px solid rgba(0,0,0,.04);
   --card-sh:0 2px 12px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.02);
@@ -293,7 +294,18 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 
 /* ── 색상 유틸리티 ── */
 .c-green{color:var(--green)}.c-pink{color:var(--pink)}.c-sky{color:var(--sky)}
-.c-spd{color:var(--spd)}.c-sta{color:var(--sta)}.c-pow{color:var(--pow)}.c-gut{color:var(--gut)}.c-int{color:var(--int)}
+.c-spd{color:var(--spd)}.c-sta{color:var(--sta)}.c-pow{color:var(--pow)}.c-gut{color:var(--gut)}.c-int{color:var(--int)}.c-fri{color:var(--fri)}.c-grp{color:var(--grp)}
+
+/* 속성 칩 공용 - 아이콘 + 라벨 인라인. 색상은 .c-* 클래스와 조합 */
+.attr{display:inline-flex;align-items:center;gap:4px;line-height:1.2;vertical-align:middle}
+.attr::before{content:'';display:inline-block;width:1.15em;height:1.15em;background-size:contain;background-repeat:no-repeat;background-position:center;flex-shrink:0}
+.attr-spd::before{background-image:url('images/icon-speed.webp')}
+.attr-sta::before{background-image:url('images/icon-stamina.webp')}
+.attr-pow::before{background-image:url('images/icon-power.webp')}
+.attr-gut::before{background-image:url('images/icon-guts.webp')}
+.attr-int::before{background-image:url('images/icon-wit.webp')}
+.attr-fri::before{background-image:url('images/icon-friend.webp')}
+.attr-grp::before{background-image:url('images/icon-group.webp')}
 .bg-green{background:var(--green)}.bg-pink{background:var(--pink)}.bg-sky{background:var(--sky)}
 
 /* ── 입문 가이드 유틸리티 ── */
@@ -409,9 +421,18 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 /* ── SUPPORT TYPE CARDS ── */
 .stype-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0;width:100%}
 .stype{border-radius:14px;padding:14px 4px;text-align:center;border:var(--card-bd);background:var(--card-bg);box-shadow:var(--card-sh);transition:transform .2s;min-width:0;overflow:hidden}
-.stype-icon{font-size:24px;margin-bottom:6px;line-height:1;height:28px;display:flex;align-items:center;justify-content:center}
+.stype-icon{width:28px;height:28px;margin:0 auto 6px;background-size:contain;background-repeat:no-repeat;background-position:center}
 .stype-name{font-size:12px;font-weight:700;color:var(--bright);letter-spacing:-.02em}
 .stype-en{font-family:'Outfit',sans-serif;font-size:9px;font-weight:500;color:var(--dim);letter-spacing:.5px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* 속성별 stype 바리언트 - 배경 tint + 아이콘 이미지 */
+.stype-spd{background:rgba(79,184,230,.06)}.stype-spd .stype-icon{background-image:url('images/icon-speed.webp')}
+.stype-sta{background:rgba(240,154,62,.06)}.stype-sta .stype-icon{background-image:url('images/icon-stamina.webp')}
+.stype-pow{background:rgba(237,106,45,.06)}.stype-pow .stype-icon{background-image:url('images/icon-power.webp')}
+.stype-gut{background:rgba(233,80,152,.06)}.stype-gut .stype-icon{background-image:url('images/icon-guts.webp')}
+.stype-int{background:rgba(0,169,95,.06)}.stype-int .stype-icon{background-image:url('images/icon-wit.webp')}
+.stype-fri{background:rgba(232,195,74,.06)}.stype-fri .stype-icon{background-image:url('images/icon-friend.webp')}
+.stype-grp{background:rgba(138,214,73,.06)}.stype-grp .stype-icon{background-image:url('images/icon-group.webp')}
 
 /* ── SSR CARDS ── */
 .ssr-list{margin:18px 0}
@@ -427,7 +448,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
 .ssr-duo{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px;
 }
 .ssr-duo-card{
   padding:16px;border-radius:16px;text-align:center;
@@ -471,6 +492,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .ssr-tier.ssr-badge-sm{display:inline-flex;vertical-align:middle;width:auto;padding:1px 7px;font-size:9px;height:auto;line-height:1.6;flex-shrink:initial}
 
 @media(max-width:640px){
+  .ssr-duo{grid-template-columns:1fr 1fr}
   .ssr-duo-icon{width:80px}
   .ssr-duo-name{font-size:13px}
 }
