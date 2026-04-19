@@ -704,7 +704,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .tr-tag{font-size:9px;font-weight:600;letter-spacing:.5px;padding:1px 6px;border-radius:4px}
 [id^="s-"],[id^="t-"],[id^="c-"],[id^="sy-"]{scroll-margin-top:140px}
 .sh-link{background:none;border:none;padding:4px;cursor:pointer;opacity:0;transition:opacity .2s;color:var(--dim);flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.sh:hover .sh-link,.sh-link:focus{opacity:.35}
+.sh:hover .sh-link,.sh-link:focus,.sys-hero:hover .sh-link{opacity:.35}
 .sh-link:active{opacity:.6}
 .sh-link svg{width:14px;height:14px;display:block}
 .sh-link.done{opacity:.5;color:#00a95f}
