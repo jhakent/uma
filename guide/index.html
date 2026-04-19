@@ -1179,10 +1179,8 @@ document.querySelectorAll('.sh[id], .sys-hero[id]').forEach(el=>{
     }
   });
   if(el.classList.contains('sys-hero')){
-    const top=el.querySelector('.sys-hero-top');
-    const emoji=top&&top.querySelector('.sys-hero-emoji');
-    if(top&&emoji){top.insertBefore(btn,emoji);}
-    else if(top){top.appendChild(btn);}
+    const title=el.querySelector('.sys-hero-title');
+    if(title){title.parentNode.insertBefore(btn,title.nextSibling);}
     else{el.appendChild(btn);}
   } else {
     el.appendChild(btn);
