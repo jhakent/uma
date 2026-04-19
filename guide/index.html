@@ -1163,14 +1163,14 @@ initSubNavObserver('subNavSys',['sy-train','sy-friend','c-awaken','c-level','c-l
 initSubNavObserver('subNavTips',['t-jewel','t-future','t-rental','t-guides','t-community']);
 
 /* ── Section deep link copy buttons ── */
-document.querySelectorAll('.sh[id]').forEach(sh=>{
+document.querySelectorAll('.sh[id], .sys-hero[id]').forEach(el=>{
   const btn=document.createElement('button');
   btn.className='sh-link';
   btn.setAttribute('aria-label','섹션 링크 복사');
   btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>';
   btn.addEventListener('click',e=>{
     e.stopPropagation();
-    const url=location.origin+location.pathname+'#'+sh.id;
+    const url=location.origin+location.pathname+'#'+el.id;
     if(navigator.clipboard){
       navigator.clipboard.writeText(url).then(()=>{
         btn.classList.add('done');
@@ -1178,7 +1178,15 @@ document.querySelectorAll('.sh[id]').forEach(sh=>{
       });
     }
   });
-  sh.appendChild(btn);
+  if(el.classList.contains('sys-hero')){
+    const top=el.querySelector('.sys-hero-top');
+    const emoji=top&&top.querySelector('.sys-hero-emoji');
+    if(top&&emoji){top.insertBefore(btn,emoji);}
+    else if(top){top.appendChild(btn);}
+    else{el.appendChild(btn);}
+  } else {
+    el.appendChild(btn);
+  }
 });
 
 /* tr-feature deep link */
