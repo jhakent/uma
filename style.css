@@ -297,8 +297,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .c-spd{color:var(--spd)}.c-sta{color:var(--sta)}.c-pow{color:var(--pow)}.c-gut{color:var(--gut)}.c-int{color:var(--int)}.c-fri{color:var(--fri)}.c-grp{color:var(--grp)}
 
 /* 속성 칩 공용 - 아이콘 + 라벨 인라인. 색상은 .c-* 클래스와 조합 */
-.attr{display:inline-flex;align-items:center;gap:4px;line-height:1.2;vertical-align:middle}
-.attr::before{content:'';display:inline-block;width:1.15em;height:1.15em;background-size:contain;background-repeat:no-repeat;background-position:center;flex-shrink:0}
+.attr::before{content:'';display:inline-block;width:1em;height:1em;background-size:contain;background-repeat:no-repeat;background-position:center;vertical-align:-.2em;margin-right:4px}
 .attr-spd::before{background-image:url('images/icon-speed.webp')}
 .attr-sta::before{background-image:url('images/icon-stamina.webp')}
 .attr-pow::before{background-image:url('images/icon-power.webp')}
@@ -456,6 +455,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
   border:var(--card-bd);
   box-shadow:0 3px 14px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.02);
   transition:transform .2s,box-shadow .2s;
+  color:inherit;text-decoration:none;display:block;
 }
 .ssr-duo-card:hover{transform:translateY(-2px);box-shadow:var(--card-sh-up-l)}
 .ssr-duo-icon{
