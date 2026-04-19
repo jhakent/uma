@@ -702,7 +702,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .tr-list{padding:12px 16px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,.04)}
 .tr-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
 .tr-tag{font-size:9px;font-weight:600;letter-spacing:.5px;padding:1px 6px;border-radius:4px}
-[id^="s-"],[id^="t-"],[id^="c-"],[id^="sy-"]{scroll-margin-top:140px}
+[id^="s-"],[id^="t-"],[id^="c-"],[id^="sy-"],[id^="ssr"]{scroll-margin-top:140px}
 .sh-link{background:none;border:none;padding:4px;cursor:pointer;opacity:0;transition:opacity .2s;color:var(--dim);flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .sh:hover .sh-link,.sh-link:focus,.sys-hero:hover .sh-link{opacity:.35}
 .sys-hero .sh-link{margin-left:4px;vertical-align:middle;position:relative;top:-2px}
