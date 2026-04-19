@@ -297,7 +297,7 @@ img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;displa
 .c-spd{color:var(--spd)}.c-sta{color:var(--sta)}.c-pow{color:var(--pow)}.c-gut{color:var(--gut)}.c-int{color:var(--int)}.c-fri{color:var(--fri)}.c-grp{color:var(--grp)}
 
 /* 속성 칩 공용 - 아이콘 + 라벨 인라인. 색상은 .c-* 클래스와 조합 */
-.attr::before{content:'';display:inline-block;width:1em;height:1em;background-size:contain;background-repeat:no-repeat;background-position:center;vertical-align:-.2em;margin-right:4px}
+.attr::before{content:'';display:inline-block;width:1em;height:1em;background-size:contain;background-repeat:no-repeat;background-position:center;vertical-align:-.15em;margin-right:4px}
 .attr-spd::before{background-image:url('images/icon-speed.webp')}
 .attr-sta::before{background-image:url('images/icon-stamina.webp')}
 .attr-pow::before{background-image:url('images/icon-power.webp')}
